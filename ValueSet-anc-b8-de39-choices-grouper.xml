@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="anc-b8-de39-choices-grouper"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>This value set contains 9 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B8.DE40"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B8.46DE40">ANC.B8.DE40</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Respiratory exam not done</td><td><div><p>Respiratory exam result - Respiratory exam not done</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B8.DE41"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B8.46DE41">ANC.B8.DE41</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Normal respiratory exam result</td><td><div><p>Respiratory exam result - Normal respiratory exam result</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B8.DE42"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B8.46DE42">ANC.B8.DE42</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Dyspnoea</td><td><div><p>Respiratory exam result - Dyspnoea</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B8.DE43"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B8.46DE43">ANC.B8.DE43</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Cough</td><td><div><p>Respiratory exam result - Cough</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B8.DE44"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B8.46DE44">ANC.B8.DE44</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Rapid breathing</td><td><div><p>Respiratory exam result - Rapid breathing</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B8.DE45"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B8.46DE45">ANC.B8.DE45</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Slow breathing</td><td><div><p>Respiratory exam result - Slow breathing</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B8.DE46"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B8.46DE46">ANC.B8.DE46</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Wheezing</td><td><div><p>Respiratory exam result - Wheezing</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B8.DE47"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B8.46DE47">ANC.B8.DE47</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Rales</td><td><div><p>Respiratory exam result - Rales</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B8.DE48"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B8.46DE48">ANC.B8.DE48</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Other abnormal respiratory exam result (specify)</td><td><div><p>Respiratory exam result - Other abnormal respiratory exam result (specify)</p>
+</div></td></tr></table></div>
+  </text>
+  <url value="http://fhir.org/guides/who/anc-cds/ValueSet/anc-b8-de39-choices-grouper"/>
+  <version value="0.3.0"/>
+  <name value="RespiratoryexamresultChoicesGrouper"/>
+  <title value="Respiratory exam result Choices Grouper"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2021-09-07T20:15:19-06:00"/>
+  <publisher value="World Health Organization (WHO)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.who.int"/>
+    </telecom>
+  </contact>
+  <description value="Group Valueset with codes representing possible values for the Respiratory exam result Choices Grouper element"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <immutable value="true"/>
+  <compose>
+    <include>
+      <valueSet value="http://fhir.org/guides/who/anc-cds/ValueSet/anc-b8-de40"/>
+    </include>
+    <include>
+      <valueSet value="http://fhir.org/guides/who/anc-cds/ValueSet/anc-b8-de41"/>
+    </include>
+    <include>
+      <valueSet value="http://fhir.org/guides/who/anc-cds/ValueSet/anc-b8-de42"/>
+    </include>
+    <include>
+      <valueSet value="http://fhir.org/guides/who/anc-cds/ValueSet/anc-b8-de43"/>
+    </include>
+    <include>
+      <valueSet value="http://fhir.org/guides/who/anc-cds/ValueSet/anc-b8-de44"/>
+    </include>
+    <include>
+      <valueSet value="http://fhir.org/guides/who/anc-cds/ValueSet/anc-b8-de45"/>
+    </include>
+    <include>
+      <valueSet value="http://fhir.org/guides/who/anc-cds/ValueSet/anc-b8-de46"/>
+    </include>
+    <include>
+      <valueSet value="http://fhir.org/guides/who/anc-cds/ValueSet/anc-b8-de47"/>
+    </include>
+    <include>
+      <valueSet value="http://fhir.org/guides/who/anc-cds/ValueSet/anc-b8-de48"/>
+    </include>
+  </compose>
+  <expansion>
+    <timestamp value="2021-09-07T20:15:19-06:00"/>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B8.DE40"/>
+      <display value="Respiratory exam not done"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B8.DE41"/>
+      <display value="Normal respiratory exam result"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B8.DE42"/>
+      <display value="Dyspnoea"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B8.DE43"/>
+      <display value="Cough"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B8.DE44"/>
+      <display value="Rapid breathing"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B8.DE45"/>
+      <display value="Slow breathing"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B8.DE46"/>
+      <display value="Wheezing"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B8.DE47"/>
+      <display value="Rales"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B8.DE48"/>
+      <display value="Other abnormal respiratory exam result (specify)"/>
+    </contains>
+  </expansion>
+</ValueSet>

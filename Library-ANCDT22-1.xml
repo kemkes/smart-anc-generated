@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="42">
+         <a:s>library ANCDT22</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCDT22" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="7:1-7:31" localIdentifier="Config" path="http://fhir.org/guides/who/anc-cds/ANCConfig">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConfig</a:s>
+               </a:s>
+               <a:s> called Config</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="8:1-8:29" localIdentifier="Cx" path="http://fhir.org/guides/who/anc-cds/ANCConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConcepts</a:s>
+               </a:s>
+               <a:s> called Cx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="9:1-9:42" localIdentifier="PatientData" path="http://fhir.org/guides/who/anc-cds/ANCDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCDataElements</a:s>
+               </a:s>
+               <a:s> called PatientData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="10:1-10:49" localIdentifier="ContactData" path="http://fhir.org/guides/who/anc-cds/ANCContactDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCContactDataElements</a:s>
+               </a:s>
+               <a:s> called ContactData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <statements>
+      <def locator="12:1-12:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="12:1-12:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="36" locator="27:1-32:106" name="Should Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="36">
+               <a:s>/*
+((((((((((&quot;Midstream urine culture (recommended)&quot; = &quot;Positive – any agent&quot;)
+  OR (&quot;Midstream urine culture (recommended)&quot; = &quot;Positive – Group B Streptococcus (GBS)&quot;))
+  OR (&quot;Midstream urine Gram-staining&quot; = &quot;Positive&quot;))
+  OR (&quot;Urine dipstick result – nitrites&quot; = &quot;+&quot;))
+  OR (&quot;Urine dipstick result – nitrites&quot; = &quot;++&quot;))
+  OR (&quot;Urine dipstick result – nitrites&quot; = &quot;+++&quot;))
+  OR (&quot;Urine dipstick result – nitrites&quot; = &quot;++++&quot;))
+  OR (&quot;Urine dipstick result – leukocytes&quot; = &quot;+&quot;))
+  OR (&quot;Urine dipstick result – leukocytes&quot; = &quot;++&quot;))
+  OR (&quot;Urine dipstick result – leukocytes&quot; = &quot;+++&quot;))
+  OR (&quot;Urine dipstick result – leukocytes&quot; = &quot;++++&quot;)
+*/
+define &quot;Should Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)&quot;:
+  </a:s>
+               <a:s r="35">
+                  <a:s r="29">
+                     <a:s r="23">
+                        <a:s r="17">
+                           <a:s r="11">
+                              <a:s r="8">
+                                 <a:s r="7">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="8">
+                                    <a:s>&quot;Midstream urine culture (recommended)&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="10">
+                                 <a:s r="9">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="10">
+                                    <a:s>&quot;Midstream urine culture (recommended) - Positive - Any agent Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+    or </a:s>
+                           <a:s r="16">
+                              <a:s r="13">
+                                 <a:s r="12">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="13">
+                                    <a:s>&quot;Midstream urine culture (recommended)&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="15">
+                                 <a:s r="14">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="15">
+                                    <a:s>&quot;Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    or </a:s>
+                        <a:s r="22">
+                           <a:s r="19">
+                              <a:s r="18">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="19">
+                                 <a:s>&quot;Midstream urine Gram-staining&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="21">
+                              <a:s r="20">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="21">
+                                 <a:s>&quot;Midstream urine Gram-staining - Positive Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    or </a:s>
+                     <a:s r="28">
+                        <a:s r="25">
+                           <a:s r="24">
+                              <a:s>ContactData</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="25">
+                              <a:s>&quot;Urine dipstick result - nitrites&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="27">
+                           <a:s r="26">
+                              <a:s>Cx</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="27">
+                              <a:s>&quot;Urine dipstick result - nitrites Choices&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="34">
+                     <a:s r="31">
+                        <a:s r="30">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="31">
+                           <a:s>&quot;Urine dipstick result - leukocytes&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="33">
+                        <a:s r="32">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="33">
+                           <a:s>&quot;Urine dipstick result - leukocytes Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="35" locator="28:3-32:106" xsi:type="Or">
+            <operand localId="29" locator="28:3-31:102" xsi:type="Or">
+               <operand localId="23" locator="28:3-30:107" xsi:type="Or">
+                  <operand localId="17" locator="28:3-29:145" xsi:type="Or">
+                     <operand localId="11" locator="28:3-28:130" xsi:type="InValueSet">
+                        <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="8" locator="28:3-28:53" name="Midstream urine culture (recommended)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </code>
+                        <valueset localId="10" locator="28:58-28:130" name="Midstream urine culture (recommended) - Positive - Any agent Choices" libraryName="Cx"/>
+                     </operand>
+                     <operand localId="16" locator="29:8-29:145" xsi:type="InValueSet">
+                        <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="13" locator="29:8-29:58" name="Midstream urine culture (recommended)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </code>
+                        <valueset localId="15" locator="29:63-29:145" name="Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="22" locator="30:8-30:107" xsi:type="InValueSet">
+                     <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="19" locator="30:8-30:50" name="Midstream urine Gram-staining" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </code>
+                     <valueset localId="21" locator="30:55-30:107" name="Midstream urine Gram-staining - Positive Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+               <operand localId="28" locator="31:8-31:102" xsi:type="InValueSet">
+                  <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="25" locator="31:8-31:53" name="Urine dipstick result - nitrites" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </code>
+                  <valueset localId="27" locator="31:58-31:102" name="Urine dipstick result - nitrites Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+            <operand localId="34" locator="32:8-32:106" xsi:type="InValueSet">
+               <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="31" locator="32:8-32:55" name="Urine dipstick result - leukocytes" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </code>
+               <valueset localId="33" locator="32:60-32:106" name="Urine dipstick result - leukocytes Choices" libraryName="Cx"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="42" locator="37:1-38:140" name="Should Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="42">
+               <a:s>/*
+&quot;Midstream urine culture (recommended)&quot; = &quot;Positive – Group B Streptococcus (GBS)&quot;
+*/
+define &quot;Should Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling&quot;:
+  </a:s>
+               <a:s r="41">
+                  <a:s r="38">
+                     <a:s r="37">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="38">
+                        <a:s>&quot;Midstream urine culture (recommended)&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="40">
+                     <a:s r="39">
+                        <a:s>Cx</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="40">
+                        <a:s>&quot;Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="41" locator="38:3-38:140" xsi:type="InValueSet">
+            <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="38" locator="38:3-38:53" name="Midstream urine culture (recommended)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </code>
+            <valueset localId="40" locator="38:58-38:140" name="Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices" libraryName="Cx"/>
+         </expression>
+      </def>
+   </statements>
+</library>

@@ -1,0 +1,51 @@
+{
+  "resourceType" : "Immunization",
+  "id" : "hepatitis-b-3-immunization-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/hepatitis-b-3-immunization"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Immunization</b><a name=\"hepatitis-b-3-immunization-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Immunization &quot;hepatitis-b-3-immunization-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-hepatitis-b-3-immunization.html\">Hepatitis B-3 Immunization</a></p></div><p><b>identifier</b>: id: hepatitis-b-3-immunization-example (use: OFFICIAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: Hepatitis B-3 immunization provided <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B10.DE186; <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html\">ICD-10</a>#Z24.6 &quot;Need for immunization against viral hepatitis&quot;; mms#QC01.6 &quot;Need for immunization against viral hepatitis&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#170372008 &quot;Administration of third dose of vaccine product containing only hepatitis B virus antigen (procedure)&quot;; ichi#DTB.DB.AE &quot;Percutaneous administration of immunological agent, not elsewhere classified&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>occurrence</b>: 2021-03-19 11:37:38-0600</p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "hepatitis-b-3-immunization-example"
+  }],
+  "status" : "completed",
+  "vaccineCode" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B10.DE186",
+      "display" : "Hepatitis B-3 immunization provided"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-10",
+      "code" : "Z24.6",
+      "display" : "Need for immunization against viral hepatitis"
+    },
+    {
+      "system" : "http://id.who.int/icd11/mms",
+      "code" : "QC01.6",
+      "display" : "Need for immunization against viral hepatitis"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "170372008",
+      "display" : "Administration of third dose of vaccine product containing only hepatitis B virus antigen (procedure)"
+    },
+    {
+      "system" : "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code" : "DTB.DB.AE",
+      "display" : "Percutaneous administration of immunological agent, not elsewhere classified"
+    }]
+  },
+  "patient" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "occurrenceDateTime" : "2021-03-19T11:37:38-06:00"
+}

@@ -1,0 +1,183 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/ValueSet/anc-b5-de50> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "anc-b5-de50"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 12 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B5.DE50\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE50\">ANC.B5.DE50</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Bleeding vaginally</td><td><div><p>Danger signs - Bleeding vaginally</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B5.DE52\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE52\">ANC.B5.DE52</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Convulsing</td><td><div><p>Danger signs - Convulsing</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B5.DE53\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE53\">ANC.B5.DE53</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Fever</td><td><div><p>Danger signs - Fever</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B5.DE54\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE54\">ANC.B5.DE54</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Imminent delivery</td><td><div><p>Danger signs - Imminent delivery</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B5.DE55\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE55\">ANC.B5.DE55</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Labour</td><td><div><p>Danger signs - Labour</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B5.DE56\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE56\">ANC.B5.DE56</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Looks very ill</td><td><div><p>Danger signs - Looks very ill</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B5.DE57\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE57\">ANC.B5.DE57</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Severe headache</td><td><div><p>Danger signs - Severe headache</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B5.DE58\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE58\">ANC.B5.DE58</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Severe pain</td><td><div><p>Danger signs - Severe pain</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B5.DE59\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE59\">ANC.B5.DE59</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Severe vomiting</td><td><div><p>Danger signs - Severe vomiting</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B5.DE60\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE60\">ANC.B5.DE60</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Severe abdominal pain</td><td><div><p>Danger signs - Severe abdominal pain</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B5.DE61\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE61\">ANC.B5.DE61</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Unconscious</td><td><div><p>Danger signs - Unconscious</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B5.DE62\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE62\">ANC.B5.DE62</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Visual disturbance</td><td><div><p>Danger signs - Visual disturbance</p>\n</div></td></tr></table></div>"
+  ]; # 
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel" ];
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ]; # 
+  fhir:ValueSet.url [ fhir:value "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b5-de50"]; # 
+  fhir:ValueSet.version [ fhir:value "0.3.0"]; # 
+  fhir:ValueSet.name [ fhir:value "DangersignsChoices"]; # 
+  fhir:ValueSet.title [ fhir:value "Danger signs Choices"]; # 
+  fhir:ValueSet.status [ fhir:value "draft"]; # 
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean]; # 
+  fhir:ValueSet.date [ fhir:value "2023-01-04T17:07:42+07:00"^^xsd:dateTime]; # 
+  fhir:ValueSet.publisher [ fhir:value "World Health Organization (WHO)"]; # 
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ]; # 
+  fhir:ValueSet.description [ fhir:value "Codes representing possible values for the Danger signs Choices element"]; # 
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ]; # 
+  fhir:ValueSet.immutable [ fhir:value "true"^^xsd:boolean]; # 
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B5.DE50" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Bleeding vaginally" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B5.DE52" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Convulsing" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B5.DE53" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Fever" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B5.DE54" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Imminent delivery" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B5.DE55" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Labour" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B5.DE56" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Looks very ill" ]
+       ], [
+         fhir:index 6;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B5.DE57" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Severe headache" ]
+       ], [
+         fhir:index 7;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B5.DE58" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Severe pain" ]
+       ], [
+         fhir:index 8;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B5.DE59" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Severe vomiting" ]
+       ], [
+         fhir:index 9;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B5.DE60" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Severe abdominal pain" ]
+       ], [
+         fhir:index 10;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B5.DE61" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Unconscious" ]
+       ], [
+         fhir:index 11;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B5.DE62" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Visual disturbance" ]
+       ]
+     ]
+  ]; # 
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2021-11-30T07:11:22-07:00"^^xsd:dateTime ];
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B5.DE50" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Bleeding vaginally" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B5.DE52" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Convulsing" ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B5.DE53" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Fever" ]
+     ], [
+       fhir:index 3;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B5.DE54" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Imminent delivery" ]
+     ], [
+       fhir:index 4;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B5.DE55" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Labour" ]
+     ], [
+       fhir:index 5;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B5.DE56" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Looks very ill" ]
+     ], [
+       fhir:index 6;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B5.DE57" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Severe headache" ]
+     ], [
+       fhir:index 7;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B5.DE58" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Severe pain" ]
+     ], [
+       fhir:index 8;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B5.DE59" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Severe vomiting" ]
+     ], [
+       fhir:index 9;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B5.DE60" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Severe abdominal pain" ]
+     ], [
+       fhir:index 10;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B5.DE61" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Unconscious" ]
+     ], [
+       fhir:index 11;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B5.DE62" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Visual disturbance" ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/ValueSet/anc-b5-de50.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

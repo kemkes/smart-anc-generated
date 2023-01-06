@@ -1,0 +1,851 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="117">
+         <a:s>/*
+Library ANC.IND.3
+WHO Antenatal Care (ANC) Indicator 3
+Percentage of pregnant women screened for syphilis during ANC 
+
+Numerator: Number of pregnant women screened for syphilis
+Numerator Computation: COUNT of number of women who had at least one syphilis test result recorded during pregnancy
+Denominator: Total number of antenatal clients with a first contact
+Denominator Computation: COUNT of all women whose records were closed (ANC close form) in the last reporting period due to any of the reasons below:
+*live birth
+*stillbirth
+*miscarriage
+*abortion
+*woman died
+*lost to follow-up
+*moved away
+
+Disaggregation:
+Age (10-14, 15-19, 20+)
+Education Level (none, don't know, primary, secondary, higher)
+
+Contact number categories: (1, 2–3, 4–8, 9+)
+*If the woman had multiple syphilis tests done during pregnancy, use the contact number of the first test result recorded
+
+Reference:
+WHO ANC monitoring framework (1) 
+
+WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health-care facility data (2) 
+*/
+library ANCIND03</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCIND03" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="32:1-32:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="34:1-34:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="35:1-35:28" localIdentifier="FC" path="http://fhir.org/guides/who/anc-cds/FHIRCommon">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRCommon</a:s>
+               </a:s>
+               <a:s> called FC</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="36:1-36:27" localIdentifier="AC" path="http://fhir.org/guides/who/anc-cds/ANCCommon">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCCommon</a:s>
+               </a:s>
+               <a:s> called AC</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="37:1-37:34" localIdentifier="BCx" path="http://fhir.org/guides/who/anc-cds/ANCBaseConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCBaseConcepts</a:s>
+               </a:s>
+               <a:s> called BCx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="38:1-38:29" localIdentifier="Cx" path="http://fhir.org/guides/who/anc-cds/ANCConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConcepts</a:s>
+               </a:s>
+               <a:s> called Cx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="7" locator="39:1-39:43" localIdentifier="BaseData" path="http://fhir.org/guides/who/anc-cds/ANCBaseDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="7">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCBaseDataElements</a:s>
+               </a:s>
+               <a:s> called BaseData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="8" locator="40:1-40:42" localIdentifier="PatientData" path="http://fhir.org/guides/who/anc-cds/ANCDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="8">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCDataElements</a:s>
+               </a:s>
+               <a:s> called PatientData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="9" locator="41:1-41:49" localIdentifier="ContactData" path="http://fhir.org/guides/who/anc-cds/ANCContactDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="9">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCContactDataElements</a:s>
+               </a:s>
+               <a:s> called ContactData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="10" locator="42:1-42:41" localIdentifier="Stratifiers" path="http://fhir.org/guides/who/anc-cds/ANCStratifiers">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="10">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCStratifiers</a:s>
+               </a:s>
+               <a:s> called Stratifiers</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <parameters>
+      <def localId="16" locator="44:1-44:88" name="Measurement Period" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="16">
+               <a:s>parameter &quot;Measurement Period&quot; </a:s>
+               <a:s r="15">
+                  <a:s>Interval&lt;</a:s>
+                  <a:s r="14">
+                     <a:s>Date</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s> default </a:s>
+               <a:s r="13">
+                  <a:s r="11">Interval[@2020-01-01, @2020-01-31]</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <default localId="13" locator="44:55-44:88" lowClosed="true" highClosed="true" xsi:type="Interval">
+            <low localId="11" locator="44:64-44:74" xsi:type="Date">
+               <year valueType="t:Integer" value="2020" xsi:type="Literal"/>
+               <month valueType="t:Integer" value="1" xsi:type="Literal"/>
+               <day valueType="t:Integer" value="1" xsi:type="Literal"/>
+            </low>
+            <high localId="12" locator="44:77-44:87" xsi:type="Date">
+               <year valueType="t:Integer" value="2020" xsi:type="Literal"/>
+               <month valueType="t:Integer" value="1" xsi:type="Literal"/>
+               <day valueType="t:Integer" value="31" xsi:type="Literal"/>
+            </high>
+         </default>
+         <parameterTypeSpecifier localId="15" locator="44:32-44:45" xsi:type="IntervalTypeSpecifier">
+            <pointType localId="14" locator="44:41-44:44" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+         </parameterTypeSpecifier>
+      </def>
+   </parameters>
+   <statements>
+      <def locator="46:1-46:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="46:1-46:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="20" locator="51:1-52:41" name="Initial Population" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="20">
+               <a:s>/*
+Initial population: Antenatal clients
+*/
+define &quot;Initial Population&quot;:
+  </a:s>
+               <a:s r="19">
+                  <a:s>exists </a:s>
+                  <a:s r="18">
+                     <a:s>(</a:s>
+                     <a:s r="18">
+                        <a:s r="17">
+                           <a:s>BaseData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="18">
+                           <a:s>&quot;Antenatal care case&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="19" locator="52:3-52:41" xsi:type="Exists">
+            <operand localId="18" locator="52:10-52:41" name="Antenatal care case" libraryName="BaseData" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def localId="31" locator="58:1-62:3" name="Numerator" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="31">
+               <a:s>/*
+Numerator: Percentage of pregnant women screened for syphilis during ANC 
+Numerator Computation: COUNT of number of women who had at least one syphilis test result recorded during pregnancy
+*/
+define Numerator:
+  </a:s>
+               <a:s r="30">
+                  <a:s>exists </a:s>
+                  <a:s r="29">
+                     <a:s>(
+    </a:s>
+                     <a:s r="29">
+                        <a:s>
+                           <a:s r="22">
+                              <a:s r="21">
+                                 <a:s>
+                                    <a:s>PatientData.&quot;Syphilis test result&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> T</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      </a:s>
+                        <a:s r="28">
+                           <a:s>where </a:s>
+                           <a:s r="28">
+                              <a:s r="24">
+                                 <a:s r="23">
+                                    <a:s>T</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="24">
+                                    <a:s>issued</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s r="28"> during </a:s>
+                              <a:s r="27">
+                                 <a:s r="26">
+                                    <a:s r="25">
+                                       <a:s>BaseData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="26">
+                                       <a:s>&quot;Pregnancy&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="27">
+                                    <a:s>period</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="30" locator="59:3-62:3" xsi:type="Exists">
+            <operand localId="29" locator="59:10-62:3" xsi:type="Query">
+               <source localId="22" locator="60:5-60:40" alias="T">
+                  <expression localId="21" locator="60:5-60:38" name="Syphilis test result" libraryName="PatientData" xsi:type="ExpressionRef"/>
+               </source>
+               <where localId="28" locator="61:7-61:55" xsi:type="In">
+                  <operand name="ToDateTime" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="24" locator="61:13-61:20" path="issued" scope="T" xsi:type="Property"/>
+                  </operand>
+                  <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="27" locator="61:29-61:55" path="period" xsi:type="Property">
+                        <source localId="26" locator="61:29-61:48" name="Pregnancy" libraryName="BaseData" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </operand>
+               </where>
+            </operand>
+         </expression>
+      </def>
+      <def localId="50" locator="76:1-81:3" name="Denominator" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="50">
+               <a:s>/*
+Denominator: Total number of antenatal clients with a first contact
+Denominator Computation: COUNT of all women whose records were closed (ANC
+  close form) in the last reporting period due to any of the reasons below:
+    » live birth
+    » stillbirth
+    » miscarriage
+    » abortion
+    » woman died
+    » lost to follow-up
+    » moved away
+*/
+define Denominator:
+  </a:s>
+               <a:s r="49">
+                  <a:s>exists </a:s>
+                  <a:s r="48">
+                     <a:s>(
+    </a:s>
+                     <a:s r="48">
+                        <a:s>
+                           <a:s r="33">
+                              <a:s r="32">
+                                 <a:s>
+                                    <a:s>PatientData.&quot;Reason for closing ANC record&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> R</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      </a:s>
+                        <a:s r="47">
+                           <a:s>where </a:s>
+                           <a:s r="47">
+                              <a:s r="39">
+                                 <a:s r="37">
+                                    <a:s r="34">
+                                       <a:s>FC</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="37">
+                                       <a:s>ToInterval(</a:s>
+                                       <a:s r="36">
+                                          <a:s r="35">
+                                             <a:s>R</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="36">
+                                             <a:s>effective</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s r="39"> during </a:s>
+                                 <a:s r="38">
+                                    <a:s>&quot;Measurement Period&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+        and </a:s>
+                              <a:s r="46">
+                                 <a:s r="43">
+                                    <a:s r="41">
+                                       <a:s r="40">
+                                          <a:s>R</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="41">
+                                          <a:s>value</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> as </a:s>
+                                    <a:s r="42">
+                                       <a:s>FHIR.CodeableConcept</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="45">
+                                    <a:s r="44">
+                                       <a:s>Stratifiers</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="45">
+                                       <a:s>&quot;Qualifying Reason for closing ANC record Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="49" locator="77:3-81:3" xsi:type="Exists">
+            <operand localId="48" locator="77:10-81:3" xsi:type="Query">
+               <source localId="33" locator="78:5-78:49" alias="R">
+                  <expression localId="32" locator="78:5-78:47" name="Reason for closing ANC record" libraryName="PatientData" xsi:type="ExpressionRef"/>
+               </source>
+               <where localId="47" locator="79:7-80:109" xsi:type="And">
+                  <operand localId="39" locator="79:13-79:66" xsi:type="IncludedIn">
+                     <operand localId="37" locator="79:13-79:38" name="ToInterval" libraryName="FC" xsi:type="FunctionRef">
+                        <operand localId="36" locator="79:27-79:37" path="effective" scope="R" xsi:type="Property"/>
+                     </operand>
+                     <operand xsi:type="Interval">
+                        <low xsi:type="ToDateTime">
+                           <operand path="low" xsi:type="Property">
+                              <source localId="38" locator="79:47-79:66" name="Measurement Period" xsi:type="ParameterRef"/>
+                           </operand>
+                        </low>
+                        <lowClosedExpression path="lowClosed" xsi:type="Property">
+                           <source localId="38" locator="79:47-79:66" name="Measurement Period" xsi:type="ParameterRef"/>
+                        </lowClosedExpression>
+                        <high xsi:type="ToDateTime">
+                           <operand path="high" xsi:type="Property">
+                              <source localId="38" locator="79:47-79:66" name="Measurement Period" xsi:type="ParameterRef"/>
+                           </operand>
+                        </high>
+                        <highClosedExpression path="highClosed" xsi:type="Property">
+                           <source localId="38" locator="79:47-79:66" name="Measurement Period" xsi:type="ParameterRef"/>
+                        </highClosedExpression>
+                     </operand>
+                  </operand>
+                  <operand localId="46" locator="80:13-80:109" xsi:type="InValueSet">
+                     <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="43" locator="80:13-80:43" strict="false" xsi:type="As">
+                           <operand localId="41" locator="80:13-80:19" path="value" scope="R" xsi:type="Property"/>
+                           <asTypeSpecifier localId="42" locator="80:24-80:43" name="fhir:CodeableConcept" xsi:type="NamedTypeSpecifier"/>
+                        </operand>
+                     </code>
+                     <valueset localId="45" locator="80:48-80:109" name="Qualifying Reason for closing ANC record Choices" libraryName="Stratifiers"/>
+                  </operand>
+               </where>
+            </operand>
+         </expression>
+      </def>
+      <def localId="53" locator="86:1-87:22" name="Age Stratifier" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="53">
+               <a:s>/*
+Disaggregation: Age (10-14, 15-19, 20+)
+*/
+define &quot;Age Stratifier&quot;:
+  </a:s>
+               <a:s r="52">
+                  <a:s r="51">
+                     <a:s>Stratifiers</a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="52">
+                     <a:s>&quot;By Age&quot;</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="52" locator="87:3-87:22" name="By Age" libraryName="Stratifiers" xsi:type="ExpressionRef"/>
+      </def>
+      <def localId="79" locator="89:1-96:5" name="GetContactNumberCategory" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="79">
+               <a:s>define function GetContactNumberCategory(contactNumber </a:s>
+               <a:s r="54">
+                  <a:s>Integer</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="78">
+                  <a:s r="78">
+                     <a:s>case
+    </a:s>
+                     <a:s r="59">
+                        <a:s>when </a:s>
+                        <a:s r="57">
+                           <a:s r="55">
+                              <a:s>contactNumber</a:s>
+                           </a:s>
+                           <a:s r="56"> = 1</a:s>
+                        </a:s>
+                        <a:s> then </a:s>
+                        <a:s r="58">
+                           <a:s>'1'</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    </a:s>
+                     <a:s r="65">
+                        <a:s>when </a:s>
+                        <a:s r="63">
+                           <a:s r="60">
+                              <a:s>contactNumber</a:s>
+                           </a:s>
+                           <a:s r="61"> between 2 and 3</a:s>
+                        </a:s>
+                        <a:s> then </a:s>
+                        <a:s r="64">
+                           <a:s>'2-3'</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    </a:s>
+                     <a:s r="71">
+                        <a:s>when </a:s>
+                        <a:s r="69">
+                           <a:s r="66">
+                              <a:s>contactNumber</a:s>
+                           </a:s>
+                           <a:s r="67"> between 4 and 8</a:s>
+                        </a:s>
+                        <a:s> then </a:s>
+                        <a:s r="70">
+                           <a:s>'4-8'</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    </a:s>
+                     <a:s r="76">
+                        <a:s>when </a:s>
+                        <a:s r="74">
+                           <a:s r="72">
+                              <a:s>contactNumber</a:s>
+                           </a:s>
+                           <a:s r="73"> >= 9</a:s>
+                        </a:s>
+                        <a:s> then </a:s>
+                        <a:s r="75">
+                           <a:s>'9+'</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s r="77">
+    else null
+  end</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="78" locator="90:3-96:5" xsi:type="Case">
+            <caseItem localId="59" locator="91:5-91:35">
+               <when localId="57" locator="91:10-91:26" xsi:type="Equal">
+                  <operand localId="55" locator="91:10-91:22" name="contactNumber" xsi:type="OperandRef"/>
+                  <operand localId="56" locator="91:26" valueType="t:Integer" value="1" xsi:type="Literal"/>
+               </when>
+               <then localId="58" locator="91:33-91:35" valueType="t:String" value="1" xsi:type="Literal"/>
+            </caseItem>
+            <caseItem localId="65" locator="92:5-92:49">
+               <when localId="63" locator="92:10-92:38" xsi:type="And">
+                  <operand xsi:type="GreaterOrEqual">
+                     <operand localId="60" locator="92:10-92:22" name="contactNumber" xsi:type="OperandRef"/>
+                     <operand localId="61" locator="92:32" valueType="t:Integer" value="2" xsi:type="Literal"/>
+                  </operand>
+                  <operand xsi:type="LessOrEqual">
+                     <operand localId="60" locator="92:10-92:22" name="contactNumber" xsi:type="OperandRef"/>
+                     <operand localId="62" locator="92:38" valueType="t:Integer" value="3" xsi:type="Literal"/>
+                  </operand>
+               </when>
+               <then localId="64" locator="92:45-92:49" valueType="t:String" value="2-3" xsi:type="Literal"/>
+            </caseItem>
+            <caseItem localId="71" locator="93:5-93:49">
+               <when localId="69" locator="93:10-93:38" xsi:type="And">
+                  <operand xsi:type="GreaterOrEqual">
+                     <operand localId="66" locator="93:10-93:22" name="contactNumber" xsi:type="OperandRef"/>
+                     <operand localId="67" locator="93:32" valueType="t:Integer" value="4" xsi:type="Literal"/>
+                  </operand>
+                  <operand xsi:type="LessOrEqual">
+                     <operand localId="66" locator="93:10-93:22" name="contactNumber" xsi:type="OperandRef"/>
+                     <operand localId="68" locator="93:38" valueType="t:Integer" value="8" xsi:type="Literal"/>
+                  </operand>
+               </when>
+               <then localId="70" locator="93:45-93:49" valueType="t:String" value="4-8" xsi:type="Literal"/>
+            </caseItem>
+            <caseItem localId="76" locator="94:5-94:37">
+               <when localId="74" locator="94:10-94:27" xsi:type="GreaterOrEqual">
+                  <operand localId="72" locator="94:10-94:22" name="contactNumber" xsi:type="OperandRef"/>
+                  <operand localId="73" locator="94:27" valueType="t:Integer" value="9" xsi:type="Literal"/>
+               </when>
+               <then localId="75" locator="94:34-94:37" valueType="t:String" value="9+" xsi:type="Literal"/>
+            </caseItem>
+            <else asType="t:String" xsi:type="As">
+               <operand localId="77" locator="95:10-95:13" xsi:type="Null"/>
+            </else>
+         </expression>
+         <operand name="contactNumber">
+            <operandTypeSpecifier localId="54" locator="89:56-89:62" name="t:Integer" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="114" locator="102:1-109:3" name="Contact Number Category Stratifier" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="114">
+               <a:s>/*
+Disaggregation: Contact number categories: (1, 2–3, 4–8, 9+)
+*If the woman had multiple syphilis tests done during pregnancy, use the contact number of the first test result recorded
+*/
+define &quot;Contact Number Category Stratifier&quot;:
+  </a:s>
+               <a:s r="113">
+                  <a:s>First(
+    </a:s>
+                  <a:s r="112">
+                     <a:s>
+                        <a:s r="81">
+                           <a:s r="80">
+                              <a:s>
+                                 <a:s>PatientData.&quot;Syphilis test result&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> T</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+      </a:s>
+                     <a:s>
+                        <a:s>let </a:s>
+                        <a:s r="91">
+                           <a:s>TC: </a:s>
+                           <a:s r="90">
+                              <a:s>First(</a:s>
+                              <a:s r="89">
+                                 <a:s>
+                                    <a:s r="83">
+                                       <a:s r="82">
+                                          <a:s>
+                                             <a:s>BaseData.&quot;Antenatal care contact&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> C</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> </a:s>
+                                 <a:s r="88">
+                                    <a:s>where </a:s>
+                                    <a:s r="88">
+                                       <a:s r="85">
+                                          <a:s r="84">
+                                             <a:s>T</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="85">
+                                             <a:s>issued</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s r="88"> during </a:s>
+                                       <a:s r="87">
+                                          <a:s r="86">
+                                             <a:s>C</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="87">
+                                             <a:s>period</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+      </a:s>
+                     <a:s r="97">
+                        <a:s>where </a:s>
+                        <a:s r="97">
+                           <a:s r="93">
+                              <a:s r="92">
+                                 <a:s>T</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="93">
+                                 <a:s>issued</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s r="97"> during </a:s>
+                           <a:s r="96">
+                              <a:s r="95">
+                                 <a:s r="94">
+                                    <a:s>BaseData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="95">
+                                    <a:s>&quot;Pregnancy&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="96">
+                                 <a:s>period</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+      </a:s>
+                     <a:s r="108">
+                        <a:s>return </a:s>
+                        <a:s r="107">
+                           <a:s>{ </a:s>
+                           <a:s>
+                              <a:s>issued: </a:s>
+                              <a:s r="99">
+                                 <a:s r="98">
+                                    <a:s>T</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="99">
+                                    <a:s>issued</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>, </a:s>
+                           <a:s>
+                              <a:s>contactNumber: </a:s>
+                              <a:s r="106">
+                                 <a:s r="104">
+                                    <a:s r="103">
+                                       <a:s r="100">
+                                          <a:s>AC</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="103">
+                                          <a:s>Extension(</a:s>
+                                          <a:s r="101">
+                                             <a:s>TC</a:s>
+                                          </a:s>
+                                          <a:s>, </a:s>
+                                          <a:s r="102">
+                                             <a:s>'contactNumber'</a:s>
+                                          </a:s>
+                                          <a:s>)</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="104">
+                                       <a:s>value</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> as </a:s>
+                                 <a:s r="105">
+                                    <a:s>FHIR.integer</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> }</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+      </a:s>
+                     <a:s r="111">
+                        <a:s>sort by </a:s>
+                        <a:s r="110">
+                           <a:s r="109">
+                              <a:s>issued</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  )</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="113" locator="103:3-109:3" xsi:type="First">
+            <source localId="112" locator="104:5-108:20" xsi:type="Query">
+               <source localId="81" locator="104:5-104:40" alias="T">
+                  <expression localId="80" locator="104:5-104:38" name="Syphilis test result" libraryName="PatientData" xsi:type="ExpressionRef"/>
+               </source>
+               <let localId="91" locator="105:11-105:87" identifier="TC">
+                  <expression localId="90" locator="105:15-105:87" xsi:type="First">
+                     <source localId="89" locator="105:21-105:86" xsi:type="Query">
+                        <source localId="83" locator="105:21-105:55" alias="C">
+                           <expression localId="82" locator="105:21-105:53" name="Antenatal care contact" libraryName="BaseData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <where localId="88" locator="105:57-105:86" xsi:type="In">
+                           <operand name="ToDateTime" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="85" locator="105:63-105:70" path="issued" scope="T" xsi:type="Property"/>
+                           </operand>
+                           <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="87" locator="105:79-105:86" path="period" scope="C" xsi:type="Property"/>
+                           </operand>
+                        </where>
+                     </source>
+                  </expression>
+               </let>
+               <where localId="97" locator="106:7-106:55" xsi:type="In">
+                  <operand name="ToDateTime" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="93" locator="106:13-106:20" path="issued" scope="T" xsi:type="Property"/>
+                  </operand>
+                  <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="96" locator="106:29-106:55" path="period" xsi:type="Property">
+                        <source localId="95" locator="106:29-106:48" name="Pregnancy" libraryName="BaseData" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </operand>
+               </where>
+               <return localId="108" locator="107:7-107:105">
+                  <expression localId="107" locator="107:14-107:105" xsi:type="Tuple">
+                     <element name="issued">
+                        <value localId="99" locator="107:24-107:31" path="issued" scope="T" xsi:type="Property"/>
+                     </element>
+                     <element name="contactNumber">
+                        <value localId="106" locator="107:49-107:103" strict="false" xsi:type="As">
+                           <operand localId="104" locator="107:49-107:87" path="value" xsi:type="Property">
+                              <source localId="103" locator="107:49-107:81" name="Extension" libraryName="AC" xsi:type="FunctionRef">
+                                 <operand localId="101" locator="107:62-107:63" name="TC" xsi:type="QueryLetRef"/>
+                                 <operand localId="102" locator="107:66-107:80" valueType="t:String" value="contactNumber" xsi:type="Literal"/>
+                              </source>
+                           </operand>
+                           <asTypeSpecifier localId="105" locator="107:92-107:103" name="fhir:integer" xsi:type="NamedTypeSpecifier"/>
+                        </value>
+                     </element>
+                  </expression>
+               </return>
+               <sort localId="111" locator="108:7-108:20">
+                  <by localId="110" locator="108:15-108:20" direction="asc" path="issued" xsi:type="ByColumn"/>
+               </sort>
+            </source>
+         </expression>
+      </def>
+      <def localId="117" locator="114:1-115:34" name="Education Level Stratifier" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="117">
+               <a:s>/*
+Disaggregation: Education Level (none, don't know, primary, secondary, higher)
+*/
+define &quot;Education Level Stratifier&quot;:
+  </a:s>
+               <a:s r="116">
+                  <a:s r="115">
+                     <a:s>Stratifiers</a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="116">
+                     <a:s>&quot;By Education Level&quot;</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="116" locator="115:3-115:34" name="By Education Level" libraryName="Stratifiers" xsi:type="ExpressionRef"/>
+      </def>
+   </statements>
+</library>

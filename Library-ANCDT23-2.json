@@ -1,0 +1,2040 @@
+{
+  "library" : {
+    "type" : "Library",
+    "identifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "ANCDT23",
+      "system" : "http://fhir.org/guides/who/anc-cds"
+    },
+    "schemaIdentifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "urn:hl7-org:elm",
+      "version" : "r1"
+    },
+    "usings" : {
+      "type" : "Library$Usings",
+      "def" : [ {
+        "type" : "UsingDef",
+        "localIdentifier" : "System",
+        "uri" : "urn:hl7-org:elm-types:r1"
+      }, {
+        "type" : "UsingDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "using " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ "FHIR" ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ " version ", "'4.0.1'" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "1"
+          }
+        } ],
+        "localId" : "1",
+        "locator" : "3:1-3:26",
+        "localIdentifier" : "FHIR",
+        "uri" : "http://hl7.org/fhir",
+        "version" : "4.0.1"
+      } ]
+    },
+    "includes" : {
+      "type" : "Library$Includes",
+      "def" : [ {
+        "type" : "IncludeDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "include " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ "FHIRHelpers" ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ " version ", "'4.0.1'" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "2"
+          }
+        } ],
+        "localId" : "2",
+        "locator" : "5:1-5:35",
+        "localIdentifier" : "FHIRHelpers",
+        "path" : "http://fhir.org/guides/who/anc-cds/FHIRHelpers",
+        "version" : "4.0.1"
+      }, {
+        "type" : "IncludeDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "include " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ "ANCConfig" ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ " called ", "Config" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "3"
+          }
+        } ],
+        "localId" : "3",
+        "locator" : "7:1-7:31",
+        "localIdentifier" : "Config",
+        "path" : "http://fhir.org/guides/who/anc-cds/ANCConfig"
+      }, {
+        "type" : "IncludeDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "include " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ "ANCConcepts" ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ " called ", "Cx" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "4"
+          }
+        } ],
+        "localId" : "4",
+        "locator" : "8:1-8:29",
+        "localIdentifier" : "Cx",
+        "path" : "http://fhir.org/guides/who/anc-cds/ANCConcepts"
+      }, {
+        "type" : "IncludeDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "include " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ "ANCContactDataElements" ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ " called ", "ContactData" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "5"
+          }
+        } ],
+        "localId" : "5",
+        "locator" : "9:1-9:49",
+        "localIdentifier" : "ContactData",
+        "path" : "http://fhir.org/guides/who/anc-cds/ANCContactDataElements"
+      }, {
+        "type" : "IncludeDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "include " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ "ANCDataElements" ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ " called ", "PatientData" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "6"
+          }
+        } ],
+        "localId" : "6",
+        "locator" : "10:1-10:42",
+        "localIdentifier" : "PatientData",
+        "path" : "http://fhir.org/guides/who/anc-cds/ANCDataElements"
+      } ]
+    },
+    "statements" : {
+      "type" : "Library$Statements",
+      "def" : [ {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "SingletonFrom",
+          "operand" : {
+            "type" : "Retrieve",
+            "locator" : "12:1-12:15",
+            "dataType" : "{http://hl7.org/fhir}Patient",
+            "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient"
+          }
+        },
+        "locator" : "12:1-12:15",
+        "name" : "Patient",
+        "context" : "Patient"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "In",
+          "operand" : [ {
+            "type" : "FunctionRef",
+            "operand" : [ {
+              "type" : "ExpressionRef",
+              "localId" : "8",
+              "locator" : "18:3-18:38",
+              "name" : "Fasting plasma glucose",
+              "libraryName" : "ContactData"
+            } ],
+            "name" : "ToQuantity",
+            "libraryName" : "FHIRHelpers"
+          }, {
+            "type" : "Interval",
+            "low" : {
+              "type" : "Quantity",
+              "localId" : "9",
+              "locator" : "18:52-18:61",
+              "value" : 92,
+              "unit" : "mg/dL"
+            },
+            "high" : {
+              "type" : "Quantity",
+              "localId" : "10",
+              "locator" : "18:64-18:74",
+              "value" : 126,
+              "unit" : "mg/dL"
+            },
+            "localId" : "11",
+            "locator" : "18:43-18:75",
+            "lowClosed" : true,
+            "highClosed" : false
+          } ],
+          "localId" : "12",
+          "locator" : "18:3-18:75"
+        },
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "/*\n92 mg/dL ≤ \"Fasting plasma glucose results\" < 126 mg/dL\n*/\n", "define ", "\"Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling\"", ":\n  " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "ContactData" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "7"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "." ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "\"Fasting plasma glucose\"" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "8"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "8"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ " in " ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "Interval[" ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "92 ", "'mg/dL'" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "9"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ ", " ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "126 ", "'mg/dL'" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "10"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ ")" ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "11"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ],
+                "r" : "12"
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "13"
+          }
+        } ],
+        "localId" : "13",
+        "locator" : "17:1-18:75",
+        "name" : "Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "In",
+          "operand" : [ {
+            "type" : "FunctionRef",
+            "operand" : [ {
+              "type" : "ExpressionRef",
+              "localId" : "15",
+              "locator" : "24:3-24:73",
+              "name" : "75 g oral glucose tolerance test (OGTT) - fasting glucose",
+              "libraryName" : "ContactData"
+            } ],
+            "name" : "ToQuantity",
+            "libraryName" : "FHIRHelpers"
+          }, {
+            "type" : "Interval",
+            "low" : {
+              "type" : "Quantity",
+              "localId" : "16",
+              "locator" : "24:87-24:96",
+              "value" : 92,
+              "unit" : "mg/dL"
+            },
+            "high" : {
+              "type" : "Quantity",
+              "localId" : "17",
+              "locator" : "24:99-24:109",
+              "value" : 126,
+              "unit" : "mg/dL"
+            },
+            "localId" : "18",
+            "locator" : "24:78-24:110",
+            "lowClosed" : true,
+            "highClosed" : false
+          } ],
+          "localId" : "19",
+          "locator" : "24:3-24:110"
+        },
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "/*\n92 mg/dL ≤ \"75 g OGTT – fasting glucose results\" < 126 mg/dL\n*/\n", "define ", "\"Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 2\"", ":\n  " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "ContactData" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "14"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "." ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "\"75 g oral glucose tolerance test (OGTT) - fasting glucose\"" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "15"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "15"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ " in " ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "Interval[" ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "92 ", "'mg/dL'" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "16"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ ", " ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "126 ", "'mg/dL'" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "17"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ ")" ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "18"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ],
+                "r" : "19"
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "20"
+          }
+        } ],
+        "localId" : "20",
+        "locator" : "23:1-24:110",
+        "name" : "Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 2",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "In",
+          "operand" : [ {
+            "type" : "FunctionRef",
+            "operand" : [ {
+              "type" : "ExpressionRef",
+              "localId" : "22",
+              "locator" : "30:3-30:64",
+              "name" : "75 g oral glucose tolerance test (OGTT) - 1 hour",
+              "libraryName" : "ContactData"
+            } ],
+            "name" : "ToQuantity",
+            "libraryName" : "FHIRHelpers"
+          }, {
+            "type" : "Interval",
+            "low" : {
+              "type" : "Quantity",
+              "localId" : "23",
+              "locator" : "30:78-30:88",
+              "value" : 180,
+              "unit" : "mg/dL"
+            },
+            "high" : {
+              "type" : "Quantity",
+              "localId" : "24",
+              "locator" : "30:91-30:101",
+              "value" : 200,
+              "unit" : "mg/dL"
+            },
+            "localId" : "25",
+            "locator" : "30:69-30:102",
+            "lowClosed" : true,
+            "highClosed" : false
+          } ],
+          "localId" : "26",
+          "locator" : "30:3-30:102"
+        },
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "/*\n180 mg/dL ≤ \"75 g OGTT – 1 hour results\" < 200 mg/dL\n*/\n", "define ", "\"Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 3\"", ":\n  " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "ContactData" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "21"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "." ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "\"75 g oral glucose tolerance test (OGTT) - 1 hour\"" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "22"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "22"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ " in " ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "Interval[" ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "180 ", "'mg/dL'" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "23"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ ", " ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "200 ", "'mg/dL'" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "24"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ ")" ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "25"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ],
+                "r" : "26"
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "27"
+          }
+        } ],
+        "localId" : "27",
+        "locator" : "29:1-30:102",
+        "name" : "Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 3",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "In",
+          "operand" : [ {
+            "type" : "FunctionRef",
+            "operand" : [ {
+              "type" : "ExpressionRef",
+              "localId" : "29",
+              "locator" : "36:3-36:65",
+              "name" : "75 g oral glucose tolerance test (OGTT) - 2 hours",
+              "libraryName" : "ContactData"
+            } ],
+            "name" : "ToQuantity",
+            "libraryName" : "FHIRHelpers"
+          }, {
+            "type" : "Interval",
+            "low" : {
+              "type" : "Quantity",
+              "localId" : "30",
+              "locator" : "36:79-36:89",
+              "value" : 180,
+              "unit" : "mg/dL"
+            },
+            "high" : {
+              "type" : "Quantity",
+              "localId" : "31",
+              "locator" : "36:92-36:102",
+              "value" : 200,
+              "unit" : "mg/dL"
+            },
+            "localId" : "32",
+            "locator" : "36:70-36:103",
+            "lowClosed" : true,
+            "highClosed" : false
+          } ],
+          "localId" : "33",
+          "locator" : "36:3-36:103"
+        },
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "/*\n153 mg/dL ≤ \"75 g OGTT – 2 hours results\" < 200 mg/dL\n*/\n", "define ", "\"Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 4\"", ":\n  " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "ContactData" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "28"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "." ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "\"75 g oral glucose tolerance test (OGTT) - 2 hours\"" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "29"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "29"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ " in " ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "Interval[" ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "180 ", "'mg/dL'" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "30"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ ", " ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "200 ", "'mg/dL'" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "31"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ ")" ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "32"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ],
+                "r" : "33"
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "34"
+          }
+        } ],
+        "localId" : "34",
+        "locator" : "35:1-36:103",
+        "name" : "Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 4",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "GreaterOrEqual",
+          "operand" : [ {
+            "type" : "FunctionRef",
+            "operand" : [ {
+              "type" : "ExpressionRef",
+              "localId" : "36",
+              "locator" : "42:3-42:38",
+              "name" : "Fasting plasma glucose",
+              "libraryName" : "ContactData"
+            } ],
+            "name" : "ToQuantity",
+            "libraryName" : "FHIRHelpers"
+          }, {
+            "type" : "Quantity",
+            "localId" : "37",
+            "locator" : "42:43-42:53",
+            "value" : 126,
+            "unit" : "mg/dL"
+          } ],
+          "localId" : "38",
+          "locator" : "42:3-42:53"
+        },
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "/*\n\"Fasting plasma glucose results\" ≥ 126 mg/dL\n*/\n", "define ", "\"Should Conduct REQUIRED diabetes mellitus (DM) counselling\"", ":\n  " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "ContactData" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "35"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "." ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "\"Fasting plasma glucose\"" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "36"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "36"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ " ", ">=", " " ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "126 ", "'mg/dL'" ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "37"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ],
+                "r" : "38"
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "39"
+          }
+        } ],
+        "localId" : "39",
+        "locator" : "41:1-42:53",
+        "name" : "Should Conduct REQUIRED diabetes mellitus (DM) counselling",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "GreaterOrEqual",
+          "operand" : [ {
+            "type" : "FunctionRef",
+            "operand" : [ {
+              "type" : "ExpressionRef",
+              "localId" : "41",
+              "locator" : "48:3-48:73",
+              "name" : "75 g oral glucose tolerance test (OGTT) - fasting glucose",
+              "libraryName" : "ContactData"
+            } ],
+            "name" : "ToQuantity",
+            "libraryName" : "FHIRHelpers"
+          }, {
+            "type" : "Quantity",
+            "localId" : "42",
+            "locator" : "48:78-48:88",
+            "value" : 126,
+            "unit" : "mg/dL"
+          } ],
+          "localId" : "43",
+          "locator" : "48:3-48:88"
+        },
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "/*\n\"75 g OGTT – fasting glucose results\" ≥ 126 mg/dL\n*/\n", "define ", "\"Should Conduct REQUIRED diabetes mellitus (DM) counselling 2\"", ":\n  " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "ContactData" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "40"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "." ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "\"75 g oral glucose tolerance test (OGTT) - fasting glucose\"" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "41"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "41"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ " ", ">=", " " ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "126 ", "'mg/dL'" ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "42"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ],
+                "r" : "43"
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "44"
+          }
+        } ],
+        "localId" : "44",
+        "locator" : "47:1-48:88",
+        "name" : "Should Conduct REQUIRED diabetes mellitus (DM) counselling 2",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "GreaterOrEqual",
+          "operand" : [ {
+            "type" : "FunctionRef",
+            "operand" : [ {
+              "type" : "ExpressionRef",
+              "localId" : "46",
+              "locator" : "54:3-54:64",
+              "name" : "75 g oral glucose tolerance test (OGTT) - 1 hour",
+              "libraryName" : "ContactData"
+            } ],
+            "name" : "ToQuantity",
+            "libraryName" : "FHIRHelpers"
+          }, {
+            "type" : "Quantity",
+            "localId" : "47",
+            "locator" : "54:69-54:79",
+            "value" : 200,
+            "unit" : "mg/dL"
+          } ],
+          "localId" : "48",
+          "locator" : "54:3-54:79"
+        },
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "/*\n\"75 g OGTT – 1 hour results\" ≥ 200 mg/dL\n*/\n", "define ", "\"Should Conduct REQUIRED diabetes mellitus (DM) counselling 3\"", ":\n  " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "ContactData" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "45"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "." ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "\"75 g oral glucose tolerance test (OGTT) - 1 hour\"" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "46"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "46"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ " ", ">=", " " ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "200 ", "'mg/dL'" ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "47"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ],
+                "r" : "48"
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "49"
+          }
+        } ],
+        "localId" : "49",
+        "locator" : "53:1-54:79",
+        "name" : "Should Conduct REQUIRED diabetes mellitus (DM) counselling 3",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "GreaterOrEqual",
+          "operand" : [ {
+            "type" : "FunctionRef",
+            "operand" : [ {
+              "type" : "ExpressionRef",
+              "localId" : "51",
+              "locator" : "60:3-60:65",
+              "name" : "75 g oral glucose tolerance test (OGTT) - 2 hours",
+              "libraryName" : "ContactData"
+            } ],
+            "name" : "ToQuantity",
+            "libraryName" : "FHIRHelpers"
+          }, {
+            "type" : "Quantity",
+            "localId" : "52",
+            "locator" : "60:70-60:80",
+            "value" : 200,
+            "unit" : "mg/dL"
+          } ],
+          "localId" : "53",
+          "locator" : "60:3-60:80"
+        },
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "/*\n\"75 g OGTT – 2 hours results\" ≥ 200 mg/dL\n*/\n", "define ", "\"Should Conduct REQUIRED diabetes mellitus (DM) counselling 4\"", ":\n  " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "ContactData" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "50"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "." ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "\"75 g oral glucose tolerance test (OGTT) - 2 hours\"" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "51"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "51"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ " ", ">=", " " ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "200 ", "'mg/dL'" ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "52"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ],
+                "r" : "53"
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "54"
+          }
+        } ],
+        "localId" : "54",
+        "locator" : "59:1-60:80",
+        "name" : "Should Conduct REQUIRED diabetes mellitus (DM) counselling 4",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "GreaterOrEqual",
+          "operand" : [ {
+            "type" : "FunctionRef",
+            "operand" : [ {
+              "type" : "ExpressionRef",
+              "localId" : "56",
+              "locator" : "66:3-66:37",
+              "name" : "Random plasma glucose",
+              "libraryName" : "ContactData"
+            } ],
+            "name" : "ToQuantity",
+            "libraryName" : "FHIRHelpers"
+          }, {
+            "type" : "Quantity",
+            "localId" : "57",
+            "locator" : "66:42-66:52",
+            "value" : 200,
+            "unit" : "mg/dL"
+          } ],
+          "localId" : "58",
+          "locator" : "66:3-66:52"
+        },
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "/*\n\"Random plasma glucose test results\" ≥ 200 mg/dL\n*/\n", "define ", "\"Should Conduct REQUIRED diabetes mellitus (DM) counselling 5\"", ":\n  " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "ContactData" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "55"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "." ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "\"Random plasma glucose\"" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "56"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "56"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ " ", ">=", " " ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "200 ", "'mg/dL'" ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "57"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ],
+                "r" : "58"
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "59"
+          }
+        } ],
+        "localId" : "59",
+        "locator" : "65:1-66:52",
+        "name" : "Should Conduct REQUIRED diabetes mellitus (DM) counselling 5",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "annotation" : [ {
+      "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion"
+    }, {
+      "s" : {
+        "s" : [ {
+          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+          "value" : {
+            "s" : [ "", "library ANCDT23" ]
+          },
+          "nil" : false,
+          "typeSubstituted" : false,
+          "globalScope" : true
+        } ],
+        "r" : "59"
+      }
+    } ]
+  }
+}

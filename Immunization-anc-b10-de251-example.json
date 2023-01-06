@@ -1,0 +1,52 @@
+{
+  "resourceType" : "Immunization",
+  "id" : "anc-b10-de251-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de251"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Immunization</b><a name=\"anc-b10-de251-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Immunization &quot;anc-b10-de251-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b10-de251.html\">Reason malaria prophylaxis not provided</a></p></div><p><b>identifier</b>: id: anc-b10-de251-example (use: OFFICIAL)</p><p><b>status</b>: completed</p><p><b>statusReason</b>: Client was referred <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B10.DE252; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#3457005 &quot;Patient referral (procedure)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#39269-6 &quot;39269-6 Follow-up (referred to) provider/specialist, provider type [CPHS]&quot;; ichi#UEP.TI.ZZ &quot;Referral to health provider&quot;)</span></p><p><b>vaccineCode</b>: Reason malaria prophylaxis not provided <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B10.DE251)</span></p><p><b>patient</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-b10-de251-example"
+  }],
+  "status" : "completed",
+  "statusReason" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B10.DE252",
+      "display" : "Client was referred"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "3457005",
+      "display" : "Patient referral (procedure)"
+    },
+    {
+      "system" : "http://loinc.org",
+      "code" : "39269-6",
+      "display" : "39269-6 Follow-up (referred to) provider/specialist, provider type [CPHS]"
+    },
+    {
+      "system" : "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code" : "UEP.TI.ZZ",
+      "display" : "Referral to health provider"
+    }]
+  },
+  "vaccineCode" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B10.DE251",
+      "display" : "Reason malaria prophylaxis not provided"
+    }]
+  },
+  "patient" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  }
+}

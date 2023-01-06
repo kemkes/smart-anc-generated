@@ -1,0 +1,55 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Location/anc-location-example> a fhir:Location;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "anc-location-example"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-location";
+       fhir:index 0;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-location>
+     ], [
+       fhir:value "http://fhir.org/guides/who/core/StructureDefinition/who-location";
+       fhir:index 1;
+       fhir:link <http://fhir.org/guides/who/core/StructureDefinition/who-location>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Location</b><a name=\"anc-location-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Location &quot;anc-location-example&quot; </p><p style=\"margin-bottom: 0px\">Profiles: <a href=\"StructureDefinition-anc-location.html\">ANC Location</a>, <a href=\"StructureDefinition-who-location.html\">WHO Location</a></p></div><p><b>identifier</b>: id: 123 (use: OFFICIAL)</p><p><b>status</b>: active</p><p><b>name</b>: 123</p><p><b>mode</b>: instance</p><p><b>type</b>: Obstetrics clinic <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-RoleCode.html\">RoleCode</a>#OB)</span></p><p><b>managingOrganization</b>: <a href=\"Organization-anc-organization-example.html\">Organization/anc-organization-example</a> &quot;ABC&quot;</p></div>"
+  ]; # 
+  fhir:Location.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "http://example.org/fhir/NamingSystem/identifier" ];
+     fhir:Identifier.value [ fhir:value "123" ]
+  ]; # 
+  fhir:Location.status [ fhir:value "active"]; # 
+  fhir:Location.name [ fhir:value "123"]; # 
+  fhir:Location.mode [ fhir:value "instance"]; # 
+  fhir:Location.type [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+       fhir:Coding.code [ fhir:value "OB" ];
+       fhir:Coding.display [ fhir:value "Obstetrics clinic" ]
+     ]
+  ]; # 
+  fhir:Location.managingOrganization [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Organization/anc-organization-example>;
+     fhir:Reference.reference [ fhir:value "Organization/anc-organization-example" ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Location/anc-location-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,1509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="214">
+         <a:s>library ANCDT27</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCDT27" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="7:1-7:31" localIdentifier="Config" path="http://fhir.org/guides/who/anc-cds/ANCConfig">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConfig</a:s>
+               </a:s>
+               <a:s> called Config</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="8:1-8:29" localIdentifier="Cx" path="http://fhir.org/guides/who/anc-cds/ANCConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConcepts</a:s>
+               </a:s>
+               <a:s> called Cx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="9:1-9:42" localIdentifier="PatientData" path="http://fhir.org/guides/who/anc-cds/ANCDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCDataElements</a:s>
+               </a:s>
+               <a:s> called PatientData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="10:1-10:49" localIdentifier="ContactData" path="http://fhir.org/guides/who/anc-cds/ANCContactDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCContactDataElements</a:s>
+               </a:s>
+               <a:s> called ContactData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <statements>
+      <def locator="12:1-12:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="12:1-12:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="71" locator="24:1-35:123" name="Should Provide counselling on pre-eclampsia risk" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="71">
+               <a:s>/*
+(((((((&quot;Number of fetuses&quot; ≥ 2 )
+  OR (&quot;Past pregnancy complications&quot; = &quot;Pre-eclampsia&quot;))
+  OR (&quot;Past pregnancy complications&quot; = &quot;Eclampsia&quot;))
+  OR (&quot;Past pregnancy complications&quot; = &quot;Convulsions&quot;))
+  OR (&quot;Existing chronic health conditions&quot; = &quot;Autoimmune disease&quot;))
+  OR (&quot;Existing chronic health conditions&quot; = &quot;Diabetes&quot;))
+  OR (&quot;Existing chronic health conditions&quot; = &quot;Hypertension&quot;))
+  OR (&quot;Existing chronic health conditions&quot; = &quot;Kidney disease&quot;)
+*/
+define &quot;Should Provide counselling on pre-eclampsia risk&quot;:
+  </a:s>
+               <a:s r="70">
+                  <a:s r="64">
+                     <a:s r="58">
+                        <a:s r="52">
+                           <a:s r="46">
+                              <a:s r="40">
+                                 <a:s r="34">
+                                    <a:s r="28">
+                                       <a:s r="22">
+                                          <a:s r="16">
+                                             <a:s r="10">
+                                                <a:s r="8">
+                                                   <a:s r="7">
+                                                      <a:s>ContactData</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="8">
+                                                      <a:s>&quot;Number of fetuses&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s r="9"> >= 2</a:s>
+                                             </a:s>
+                                             <a:s>
+    or </a:s>
+                                             <a:s r="15">
+                                                <a:s r="12">
+                                                   <a:s r="11">
+                                                      <a:s>ContactData</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="12">
+                                                      <a:s>&quot;Past pregnancy complications&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s> in </a:s>
+                                                <a:s r="14">
+                                                   <a:s r="13">
+                                                      <a:s>Cx</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="14">
+                                                      <a:s>&quot;Past pregnancy complications - Pre-eclampsia Choices&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>
+    or </a:s>
+                                          <a:s r="21">
+                                             <a:s r="18">
+                                                <a:s r="17">
+                                                   <a:s>ContactData</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="18">
+                                                   <a:s>&quot;Past pregnancy complications&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s> in </a:s>
+                                             <a:s r="20">
+                                                <a:s r="19">
+                                                   <a:s>Cx</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="20">
+                                                   <a:s>&quot;Past pregnancy complications - Eclampsia Choices&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>
+    or </a:s>
+                                       <a:s r="27">
+                                          <a:s r="24">
+                                             <a:s r="23">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="24">
+                                                <a:s>&quot;Past pregnancy complications&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="26">
+                                             <a:s r="25">
+                                                <a:s>Cx</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="26">
+                                                <a:s>&quot;Past pregnancy complications - Convulsions Choices&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+    or </a:s>
+                                    <a:s r="33">
+                                       <a:s r="30">
+                                          <a:s r="29">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="30">
+                                             <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="32">
+                                          <a:s r="31">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="32">
+                                             <a:s>&quot;Existing chronic health conditions - Autoimmune disease Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+    or </a:s>
+                                 <a:s r="39">
+                                    <a:s r="36">
+                                       <a:s r="35">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="36">
+                                          <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="38">
+                                       <a:s r="37">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="38">
+                                          <a:s>&quot;Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+    or </a:s>
+                              <a:s r="45">
+                                 <a:s r="42">
+                                    <a:s r="41">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="42">
+                                       <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="44">
+                                    <a:s r="43">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="44">
+                                       <a:s>&quot;Existing chronic health conditions - Diabetes, other or unspecified Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+    or </a:s>
+                           <a:s r="51">
+                              <a:s r="48">
+                                 <a:s r="47">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="48">
+                                    <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="50">
+                                 <a:s r="49">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="50">
+                                    <a:s>&quot;Existing chronic health conditions - Diabetes, pre-existing type 1 Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    or </a:s>
+                        <a:s r="57">
+                           <a:s r="54">
+                              <a:s r="53">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="54">
+                                 <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="56">
+                              <a:s r="55">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="56">
+                                 <a:s>&quot;Existing chronic health conditions - Diabetes, pre-existing type 2 Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    or </a:s>
+                     <a:s r="63">
+                        <a:s r="60">
+                           <a:s r="59">
+                              <a:s>ContactData</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="60">
+                              <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="62">
+                           <a:s r="61">
+                              <a:s>Cx</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="62">
+                              <a:s>&quot;Existing chronic health conditions - Hypertension Choices&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="69">
+                     <a:s r="66">
+                        <a:s r="65">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="66">
+                           <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="68">
+                        <a:s r="67">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="68">
+                           <a:s>&quot;Existing chronic health conditions - Kidney disease Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="70" locator="25:3-35:123" xsi:type="Or">
+            <operand localId="64" locator="25:3-34:121" xsi:type="Or">
+               <operand localId="58" locator="25:3-33:138" xsi:type="Or">
+                  <operand localId="52" locator="25:3-32:138" xsi:type="Or">
+                     <operand localId="46" locator="25:3-31:139" xsi:type="Or">
+                        <operand localId="40" locator="25:3-30:161" xsi:type="Or">
+                           <operand localId="34" locator="25:3-29:127" xsi:type="Or">
+                              <operand localId="28" locator="25:3-28:108" xsi:type="Or">
+                                 <operand localId="22" locator="25:3-27:106" xsi:type="Or">
+                                    <operand localId="16" locator="25:3-26:110" xsi:type="Or">
+                                       <operand localId="10" locator="25:3-25:38" xsi:type="GreaterOrEqual">
+                                          <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                             <operand localId="8" locator="25:3-25:33" name="Number of fetuses" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                          </operand>
+                                          <operand xsi:type="ToQuantity">
+                                             <operand localId="9" locator="25:38" valueType="t:Integer" value="2" xsi:type="Literal"/>
+                                          </operand>
+                                       </operand>
+                                       <operand localId="15" locator="26:8-26:110" xsi:type="AnyInValueSet">
+                                          <codes xsi:type="Query">
+                                             <source alias="X">
+                                                <expression localId="12" locator="26:8-26:49" name="Past pregnancy complications" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                             </source>
+                                             <return distinct="false">
+                                                <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                   <operand name="X" xsi:type="AliasRef"/>
+                                                </expression>
+                                             </return>
+                                          </codes>
+                                          <valueset localId="14" locator="26:54-26:110" name="Past pregnancy complications - Pre-eclampsia Choices" libraryName="Cx"/>
+                                       </operand>
+                                    </operand>
+                                    <operand localId="21" locator="27:8-27:106" xsi:type="AnyInValueSet">
+                                       <codes xsi:type="Query">
+                                          <source alias="X">
+                                             <expression localId="18" locator="27:8-27:49" name="Past pregnancy complications" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                          </source>
+                                          <return distinct="false">
+                                             <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                <operand name="X" xsi:type="AliasRef"/>
+                                             </expression>
+                                          </return>
+                                       </codes>
+                                       <valueset localId="20" locator="27:54-27:106" name="Past pregnancy complications - Eclampsia Choices" libraryName="Cx"/>
+                                    </operand>
+                                 </operand>
+                                 <operand localId="27" locator="28:8-28:108" xsi:type="AnyInValueSet">
+                                    <codes xsi:type="Query">
+                                       <source alias="X">
+                                          <expression localId="24" locator="28:8-28:49" name="Past pregnancy complications" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                       </source>
+                                       <return distinct="false">
+                                          <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                             <operand name="X" xsi:type="AliasRef"/>
+                                          </expression>
+                                       </return>
+                                    </codes>
+                                    <valueset localId="26" locator="28:54-28:108" name="Past pregnancy complications - Convulsions Choices" libraryName="Cx"/>
+                                 </operand>
+                              </operand>
+                              <operand localId="33" locator="29:8-29:127" xsi:type="AnyInValueSet">
+                                 <codes xsi:type="Query">
+                                    <source alias="X">
+                                       <expression localId="30" locator="29:8-29:55" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                    </source>
+                                    <return distinct="false">
+                                       <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                          <operand name="X" xsi:type="AliasRef"/>
+                                       </expression>
+                                    </return>
+                                 </codes>
+                                 <valueset localId="32" locator="29:60-29:127" name="Existing chronic health conditions - Autoimmune disease Choices" libraryName="Cx"/>
+                              </operand>
+                           </operand>
+                           <operand localId="39" locator="30:8-30:161" xsi:type="AnyInValueSet">
+                              <codes xsi:type="Query">
+                                 <source alias="X">
+                                    <expression localId="36" locator="30:8-30:55" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </source>
+                                 <return distinct="false">
+                                    <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand name="X" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </codes>
+                              <valueset localId="38" locator="30:60-30:161" name="Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                        <operand localId="45" locator="31:8-31:139" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="42" locator="31:8-31:55" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="44" locator="31:60-31:139" name="Existing chronic health conditions - Diabetes, other or unspecified Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                     <operand localId="51" locator="32:8-32:138" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="48" locator="32:8-32:55" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="50" locator="32:60-32:138" name="Existing chronic health conditions - Diabetes, pre-existing type 1 Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="57" locator="33:8-33:138" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="54" locator="33:8-33:55" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="56" locator="33:60-33:138" name="Existing chronic health conditions - Diabetes, pre-existing type 2 Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+               <operand localId="63" locator="34:8-34:121" xsi:type="AnyInValueSet">
+                  <codes xsi:type="Query">
+                     <source alias="X">
+                        <expression localId="60" locator="34:8-34:55" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </source>
+                     <return distinct="false">
+                        <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand name="X" xsi:type="AliasRef"/>
+                        </expression>
+                     </return>
+                  </codes>
+                  <valueset localId="62" locator="34:60-34:121" name="Existing chronic health conditions - Hypertension Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+            <operand localId="69" locator="35:8-35:123" xsi:type="AnyInValueSet">
+               <codes xsi:type="Query">
+                  <source alias="X">
+                     <expression localId="66" locator="35:8-35:55" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </source>
+                  <return distinct="false">
+                     <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand name="X" xsi:type="AliasRef"/>
+                     </expression>
+                  </return>
+               </codes>
+               <valueset localId="68" locator="35:60-35:123" name="Existing chronic health conditions - Kidney disease Choices" libraryName="Cx"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="141" locator="55:1-69:5" name="Should Provide counselling on pre-eclampsia risk 2" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="141">
+               <a:s>/*
+((((((((&quot;Number of fetuses&quot; ≥ 2 )
+  AND (&quot;Gestational age&quot; ≥ 12 weeks))
+  OR ((&quot;Past pregnancy complications&quot; = &quot;Pre-eclampsia&quot;)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks)))
+  OR ((&quot;Past pregnancy complications&quot; = &quot;Eclampsia&quot;)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks)))
+  OR ((&quot;Past pregnancy complications&quot; = &quot;Convulsions&quot;)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks)))
+  OR ((&quot;Existing chronic health conditions&quot; = &quot;Autoimmune disease&quot;)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks)))
+  OR ((&quot;Existing chronic health conditions&quot; = &quot;Diabetes&quot;)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks)))
+  OR ((&quot;Existing chronic health conditions&quot; = &quot;Hypertension&quot;)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks)))
+  OR ((&quot;Existing chronic health conditions&quot; = &quot;Kidney disease&quot;)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks))
+*/
+define &quot;Should Provide counselling on pre-eclampsia risk 2&quot;:
+  </a:s>
+               <a:s r="140">
+                  <a:s r="75">
+                     <a:s r="73">
+                        <a:s r="72">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="73">
+                           <a:s>&quot;Gestational age&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> &lt;= </a:s>
+                     <a:s r="74">
+                        <a:s>12 'weeks'</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    and </a:s>
+                  <a:s r="139">
+                     <a:s>(
+      </a:s>
+                     <a:s r="139">
+                        <a:s r="133">
+                           <a:s r="127">
+                              <a:s r="121">
+                                 <a:s r="115">
+                                    <a:s r="109">
+                                       <a:s r="103">
+                                          <a:s r="97">
+                                             <a:s r="91">
+                                                <a:s r="85">
+                                                   <a:s r="79">
+                                                      <a:s r="77">
+                                                         <a:s r="76">
+                                                            <a:s>ContactData</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="77">
+                                                            <a:s>&quot;Number of fetuses&quot;</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                      <a:s r="78"> >= 2</a:s>
+                                                   </a:s>
+                                                   <a:s>
+        or </a:s>
+                                                   <a:s r="84">
+                                                      <a:s r="81">
+                                                         <a:s r="80">
+                                                            <a:s>ContactData</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="81">
+                                                            <a:s>&quot;Past pregnancy complications&quot;</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                      <a:s> in </a:s>
+                                                      <a:s r="83">
+                                                         <a:s r="82">
+                                                            <a:s>Cx</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="83">
+                                                            <a:s>&quot;Past pregnancy complications - Pre-eclampsia Choices&quot;</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s>
+        or </a:s>
+                                                <a:s r="90">
+                                                   <a:s r="87">
+                                                      <a:s r="86">
+                                                         <a:s>ContactData</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="87">
+                                                         <a:s>&quot;Past pregnancy complications&quot;</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s> in </a:s>
+                                                   <a:s r="89">
+                                                      <a:s r="88">
+                                                         <a:s>Cx</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="89">
+                                                         <a:s>&quot;Past pregnancy complications - Eclampsia Choices&quot;</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>
+        or </a:s>
+                                             <a:s r="96">
+                                                <a:s r="93">
+                                                   <a:s r="92">
+                                                      <a:s>ContactData</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="93">
+                                                      <a:s>&quot;Past pregnancy complications&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s> in </a:s>
+                                                <a:s r="95">
+                                                   <a:s r="94">
+                                                      <a:s>Cx</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="95">
+                                                      <a:s>&quot;Past pregnancy complications - Convulsions Choices&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>
+        or </a:s>
+                                          <a:s r="102">
+                                             <a:s r="99">
+                                                <a:s r="98">
+                                                   <a:s>ContactData</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="99">
+                                                   <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s> in </a:s>
+                                             <a:s r="101">
+                                                <a:s r="100">
+                                                   <a:s>Cx</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="101">
+                                                   <a:s>&quot;Existing chronic health conditions - Autoimmune disease Choices&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>
+        or </a:s>
+                                       <a:s r="108">
+                                          <a:s r="105">
+                                             <a:s r="104">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="105">
+                                                <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="107">
+                                             <a:s r="106">
+                                                <a:s>Cx</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="107">
+                                                <a:s>&quot;Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+        or </a:s>
+                                    <a:s r="114">
+                                       <a:s r="111">
+                                          <a:s r="110">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="111">
+                                             <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="113">
+                                          <a:s r="112">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="113">
+                                             <a:s>&quot;Existing chronic health conditions - Diabetes, other or unspecified Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+        or </a:s>
+                                 <a:s r="120">
+                                    <a:s r="117">
+                                       <a:s r="116">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="117">
+                                          <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="119">
+                                       <a:s r="118">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="119">
+                                          <a:s>&quot;Existing chronic health conditions - Diabetes, pre-existing type 1 Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+        or </a:s>
+                              <a:s r="126">
+                                 <a:s r="123">
+                                    <a:s r="122">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="123">
+                                       <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="125">
+                                    <a:s r="124">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="125">
+                                       <a:s>&quot;Existing chronic health conditions - Diabetes, pre-existing type 2 Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+        or </a:s>
+                           <a:s r="132">
+                              <a:s r="129">
+                                 <a:s r="128">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="129">
+                                    <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="131">
+                                 <a:s r="130">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="131">
+                                    <a:s>&quot;Existing chronic health conditions - Hypertension Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+        or </a:s>
+                        <a:s r="138">
+                           <a:s r="135">
+                              <a:s r="134">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="135">
+                                 <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="137">
+                              <a:s r="136">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="137">
+                                 <a:s>&quot;Existing chronic health conditions - Kidney disease Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="140" locator="56:3-69:5" xsi:type="And">
+            <operand localId="75" locator="56:3-56:45" xsi:type="LessOrEqual">
+               <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="73" locator="56:3-56:31" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand localId="74" locator="56:36-56:45" value="12" unit="weeks" xsi:type="Quantity"/>
+            </operand>
+            <operand localId="139" locator="57:9-69:5" xsi:type="Or">
+               <operand localId="133" locator="58:7-67:125" xsi:type="Or">
+                  <operand localId="127" locator="58:7-66:142" xsi:type="Or">
+                     <operand localId="121" locator="58:7-65:142" xsi:type="Or">
+                        <operand localId="115" locator="58:7-64:143" xsi:type="Or">
+                           <operand localId="109" locator="58:7-63:165" xsi:type="Or">
+                              <operand localId="103" locator="58:7-62:131" xsi:type="Or">
+                                 <operand localId="97" locator="58:7-61:112" xsi:type="Or">
+                                    <operand localId="91" locator="58:7-60:110" xsi:type="Or">
+                                       <operand localId="85" locator="58:7-59:114" xsi:type="Or">
+                                          <operand localId="79" locator="58:7-58:42" xsi:type="GreaterOrEqual">
+                                             <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                <operand localId="77" locator="58:7-58:37" name="Number of fetuses" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                             </operand>
+                                             <operand xsi:type="ToQuantity">
+                                                <operand localId="78" locator="58:42" valueType="t:Integer" value="2" xsi:type="Literal"/>
+                                             </operand>
+                                          </operand>
+                                          <operand localId="84" locator="59:12-59:114" xsi:type="AnyInValueSet">
+                                             <codes xsi:type="Query">
+                                                <source alias="X">
+                                                   <expression localId="81" locator="59:12-59:53" name="Past pregnancy complications" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                </source>
+                                                <return distinct="false">
+                                                   <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                      <operand name="X" xsi:type="AliasRef"/>
+                                                   </expression>
+                                                </return>
+                                             </codes>
+                                             <valueset localId="83" locator="59:58-59:114" name="Past pregnancy complications - Pre-eclampsia Choices" libraryName="Cx"/>
+                                          </operand>
+                                       </operand>
+                                       <operand localId="90" locator="60:12-60:110" xsi:type="AnyInValueSet">
+                                          <codes xsi:type="Query">
+                                             <source alias="X">
+                                                <expression localId="87" locator="60:12-60:53" name="Past pregnancy complications" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                             </source>
+                                             <return distinct="false">
+                                                <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                   <operand name="X" xsi:type="AliasRef"/>
+                                                </expression>
+                                             </return>
+                                          </codes>
+                                          <valueset localId="89" locator="60:58-60:110" name="Past pregnancy complications - Eclampsia Choices" libraryName="Cx"/>
+                                       </operand>
+                                    </operand>
+                                    <operand localId="96" locator="61:12-61:112" xsi:type="AnyInValueSet">
+                                       <codes xsi:type="Query">
+                                          <source alias="X">
+                                             <expression localId="93" locator="61:12-61:53" name="Past pregnancy complications" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                          </source>
+                                          <return distinct="false">
+                                             <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                <operand name="X" xsi:type="AliasRef"/>
+                                             </expression>
+                                          </return>
+                                       </codes>
+                                       <valueset localId="95" locator="61:58-61:112" name="Past pregnancy complications - Convulsions Choices" libraryName="Cx"/>
+                                    </operand>
+                                 </operand>
+                                 <operand localId="102" locator="62:12-62:131" xsi:type="AnyInValueSet">
+                                    <codes xsi:type="Query">
+                                       <source alias="X">
+                                          <expression localId="99" locator="62:12-62:59" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                       </source>
+                                       <return distinct="false">
+                                          <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                             <operand name="X" xsi:type="AliasRef"/>
+                                          </expression>
+                                       </return>
+                                    </codes>
+                                    <valueset localId="101" locator="62:64-62:131" name="Existing chronic health conditions - Autoimmune disease Choices" libraryName="Cx"/>
+                                 </operand>
+                              </operand>
+                              <operand localId="108" locator="63:12-63:165" xsi:type="AnyInValueSet">
+                                 <codes xsi:type="Query">
+                                    <source alias="X">
+                                       <expression localId="105" locator="63:12-63:59" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                    </source>
+                                    <return distinct="false">
+                                       <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                          <operand name="X" xsi:type="AliasRef"/>
+                                       </expression>
+                                    </return>
+                                 </codes>
+                                 <valueset localId="107" locator="63:64-63:165" name="Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices" libraryName="Cx"/>
+                              </operand>
+                           </operand>
+                           <operand localId="114" locator="64:12-64:143" xsi:type="AnyInValueSet">
+                              <codes xsi:type="Query">
+                                 <source alias="X">
+                                    <expression localId="111" locator="64:12-64:59" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </source>
+                                 <return distinct="false">
+                                    <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand name="X" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </codes>
+                              <valueset localId="113" locator="64:64-64:143" name="Existing chronic health conditions - Diabetes, other or unspecified Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                        <operand localId="120" locator="65:12-65:142" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="117" locator="65:12-65:59" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="119" locator="65:64-65:142" name="Existing chronic health conditions - Diabetes, pre-existing type 1 Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                     <operand localId="126" locator="66:12-66:142" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="123" locator="66:12-66:59" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="125" locator="66:64-66:142" name="Existing chronic health conditions - Diabetes, pre-existing type 2 Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="132" locator="67:12-67:125" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="129" locator="67:12-67:59" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="131" locator="67:64-67:125" name="Existing chronic health conditions - Hypertension Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+               <operand localId="138" locator="68:12-68:127" xsi:type="AnyInValueSet">
+                  <codes xsi:type="Query">
+                     <source alias="X">
+                        <expression localId="135" locator="68:12-68:59" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </source>
+                     <return distinct="false">
+                        <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand name="X" xsi:type="AliasRef"/>
+                        </expression>
+                     </return>
+                  </codes>
+                  <valueset localId="137" locator="68:64-68:127" name="Existing chronic health conditions - Kidney disease Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="214" locator="97:1-112:5" name="Should Provide counselling on pre-eclampsia risk 3" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="214">
+               <a:s>/*
+((((((((&quot;Number of fetuses&quot; ≥ 2)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks)
+  AND (&quot;Population with low dietary calcium intake&quot; = TRUE))
+  OR ((&quot;Past pregnancy complications&quot; = &quot;Pre-eclampsia&quot;)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks)
+  AND (&quot;Population with low dietary calcium intake&quot; = TRUE)))
+  OR ((&quot;Past pregnancy complications&quot; = &quot;Eclampsia&quot;)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks)
+  AND (&quot;Population with low dietary calcium intake&quot; = TRUE)))
+  OR ((&quot;Past pregnancy complications&quot; = &quot;Convulsions&quot;)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks)
+  AND (&quot;Population with low dietary calcium intake&quot; = TRUE)))
+  OR ((&quot;Existing chronic health conditions&quot; = &quot;Autoimmune disease&quot;)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks)
+  AND (&quot;Population with low dietary calcium intake&quot; = TRUE)))
+  OR ((&quot;Existing chronic health conditions&quot; = &quot;Diabetes&quot;)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks)
+  AND (&quot;Population with low dietary calcium intake&quot; = TRUE)))
+  OR ((&quot;Existing chronic health conditions&quot; = &quot;Hypertension&quot;)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks)
+  AND (&quot;Population with low dietary calcium intake&quot; = TRUE)))
+  OR ((&quot;Existing chronic health conditions&quot; = &quot;Kidney disease&quot;)
+  AND (&quot;Gestational age&quot; ≥ 12 weeks)
+  AND (&quot;Population with low dietary calcium intake&quot; = TRUE))
+*/
+define &quot;Should Provide counselling on pre-eclampsia risk 3&quot;:
+  </a:s>
+               <a:s r="213">
+                  <a:s r="148">
+                     <a:s r="143">
+                        <a:s r="142">
+                           <a:s>Config</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="143">
+                           <a:s>&quot;Population with low dietary calcium intake&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    and </a:s>
+                     <a:s r="147">
+                        <a:s r="145">
+                           <a:s r="144">
+                              <a:s>ContactData</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="145">
+                              <a:s>&quot;Gestational age&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> &lt;= </a:s>
+                        <a:s r="146">
+                           <a:s>12 'weeks'</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    and </a:s>
+                  <a:s r="212">
+                     <a:s>(
+      </a:s>
+                     <a:s r="212">
+                        <a:s r="206">
+                           <a:s r="200">
+                              <a:s r="194">
+                                 <a:s r="188">
+                                    <a:s r="182">
+                                       <a:s r="176">
+                                          <a:s r="170">
+                                             <a:s r="164">
+                                                <a:s r="158">
+                                                   <a:s r="152">
+                                                      <a:s r="150">
+                                                         <a:s r="149">
+                                                            <a:s>ContactData</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="150">
+                                                            <a:s>&quot;Number of fetuses&quot;</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                      <a:s r="151"> >= 2</a:s>
+                                                   </a:s>
+                                                   <a:s>
+        or </a:s>
+                                                   <a:s r="157">
+                                                      <a:s r="154">
+                                                         <a:s r="153">
+                                                            <a:s>ContactData</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="154">
+                                                            <a:s>&quot;Past pregnancy complications&quot;</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                      <a:s> in </a:s>
+                                                      <a:s r="156">
+                                                         <a:s r="155">
+                                                            <a:s>Cx</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="156">
+                                                            <a:s>&quot;Past pregnancy complications - Pre-eclampsia Choices&quot;</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s>
+        or </a:s>
+                                                <a:s r="163">
+                                                   <a:s r="160">
+                                                      <a:s r="159">
+                                                         <a:s>ContactData</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="160">
+                                                         <a:s>&quot;Past pregnancy complications&quot;</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s> in </a:s>
+                                                   <a:s r="162">
+                                                      <a:s r="161">
+                                                         <a:s>Cx</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="162">
+                                                         <a:s>&quot;Past pregnancy complications - Eclampsia Choices&quot;</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>
+        or </a:s>
+                                             <a:s r="169">
+                                                <a:s r="166">
+                                                   <a:s r="165">
+                                                      <a:s>ContactData</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="166">
+                                                      <a:s>&quot;Past pregnancy complications&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s> in </a:s>
+                                                <a:s r="168">
+                                                   <a:s r="167">
+                                                      <a:s>Cx</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="168">
+                                                      <a:s>&quot;Past pregnancy complications - Convulsions Choices&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>
+        or </a:s>
+                                          <a:s r="175">
+                                             <a:s r="172">
+                                                <a:s r="171">
+                                                   <a:s>ContactData</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="172">
+                                                   <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s> in </a:s>
+                                             <a:s r="174">
+                                                <a:s r="173">
+                                                   <a:s>Cx</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="174">
+                                                   <a:s>&quot;Existing chronic health conditions - Autoimmune disease Choices&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>
+        or </a:s>
+                                       <a:s r="181">
+                                          <a:s r="178">
+                                             <a:s r="177">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="178">
+                                                <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="180">
+                                             <a:s r="179">
+                                                <a:s>Cx</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="180">
+                                                <a:s>&quot;Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+        or </a:s>
+                                    <a:s r="187">
+                                       <a:s r="184">
+                                          <a:s r="183">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="184">
+                                             <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="186">
+                                          <a:s r="185">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="186">
+                                             <a:s>&quot;Existing chronic health conditions - Diabetes, other or unspecified Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+        or </a:s>
+                                 <a:s r="193">
+                                    <a:s r="190">
+                                       <a:s r="189">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="190">
+                                          <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="192">
+                                       <a:s r="191">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="192">
+                                          <a:s>&quot;Existing chronic health conditions - Diabetes, pre-existing type 1 Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+        or </a:s>
+                              <a:s r="199">
+                                 <a:s r="196">
+                                    <a:s r="195">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="196">
+                                       <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="198">
+                                    <a:s r="197">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="198">
+                                       <a:s>&quot;Existing chronic health conditions - Diabetes, pre-existing type 2 Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+        or </a:s>
+                           <a:s r="205">
+                              <a:s r="202">
+                                 <a:s r="201">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="202">
+                                    <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="204">
+                                 <a:s r="203">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="204">
+                                    <a:s>&quot;Existing chronic health conditions - Hypertension Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+        or </a:s>
+                        <a:s r="211">
+                           <a:s r="208">
+                              <a:s r="207">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="208">
+                                 <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="210">
+                              <a:s r="209">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="210">
+                                 <a:s>&quot;Existing chronic health conditions - Kidney disease Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="213" locator="98:3-112:5" xsi:type="And">
+            <operand localId="148" locator="98:3-99:51" xsi:type="And">
+               <operand localId="143" locator="98:3-98:53" name="Population with low dietary calcium intake" libraryName="Config" xsi:type="ExpressionRef"/>
+               <operand localId="147" locator="99:9-99:51" xsi:type="LessOrEqual">
+                  <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="145" locator="99:9-99:37" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </operand>
+                  <operand localId="146" locator="99:42-99:51" value="12" unit="weeks" xsi:type="Quantity"/>
+               </operand>
+            </operand>
+            <operand localId="212" locator="100:9-112:5" xsi:type="Or">
+               <operand localId="206" locator="101:7-110:125" xsi:type="Or">
+                  <operand localId="200" locator="101:7-109:142" xsi:type="Or">
+                     <operand localId="194" locator="101:7-108:142" xsi:type="Or">
+                        <operand localId="188" locator="101:7-107:143" xsi:type="Or">
+                           <operand localId="182" locator="101:7-106:165" xsi:type="Or">
+                              <operand localId="176" locator="101:7-105:131" xsi:type="Or">
+                                 <operand localId="170" locator="101:7-104:112" xsi:type="Or">
+                                    <operand localId="164" locator="101:7-103:110" xsi:type="Or">
+                                       <operand localId="158" locator="101:7-102:114" xsi:type="Or">
+                                          <operand localId="152" locator="101:7-101:42" xsi:type="GreaterOrEqual">
+                                             <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                <operand localId="150" locator="101:7-101:37" name="Number of fetuses" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                             </operand>
+                                             <operand xsi:type="ToQuantity">
+                                                <operand localId="151" locator="101:42" valueType="t:Integer" value="2" xsi:type="Literal"/>
+                                             </operand>
+                                          </operand>
+                                          <operand localId="157" locator="102:12-102:114" xsi:type="AnyInValueSet">
+                                             <codes xsi:type="Query">
+                                                <source alias="X">
+                                                   <expression localId="154" locator="102:12-102:53" name="Past pregnancy complications" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                </source>
+                                                <return distinct="false">
+                                                   <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                      <operand name="X" xsi:type="AliasRef"/>
+                                                   </expression>
+                                                </return>
+                                             </codes>
+                                             <valueset localId="156" locator="102:58-102:114" name="Past pregnancy complications - Pre-eclampsia Choices" libraryName="Cx"/>
+                                          </operand>
+                                       </operand>
+                                       <operand localId="163" locator="103:12-103:110" xsi:type="AnyInValueSet">
+                                          <codes xsi:type="Query">
+                                             <source alias="X">
+                                                <expression localId="160" locator="103:12-103:53" name="Past pregnancy complications" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                             </source>
+                                             <return distinct="false">
+                                                <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                   <operand name="X" xsi:type="AliasRef"/>
+                                                </expression>
+                                             </return>
+                                          </codes>
+                                          <valueset localId="162" locator="103:58-103:110" name="Past pregnancy complications - Eclampsia Choices" libraryName="Cx"/>
+                                       </operand>
+                                    </operand>
+                                    <operand localId="169" locator="104:12-104:112" xsi:type="AnyInValueSet">
+                                       <codes xsi:type="Query">
+                                          <source alias="X">
+                                             <expression localId="166" locator="104:12-104:53" name="Past pregnancy complications" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                          </source>
+                                          <return distinct="false">
+                                             <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                <operand name="X" xsi:type="AliasRef"/>
+                                             </expression>
+                                          </return>
+                                       </codes>
+                                       <valueset localId="168" locator="104:58-104:112" name="Past pregnancy complications - Convulsions Choices" libraryName="Cx"/>
+                                    </operand>
+                                 </operand>
+                                 <operand localId="175" locator="105:12-105:131" xsi:type="AnyInValueSet">
+                                    <codes xsi:type="Query">
+                                       <source alias="X">
+                                          <expression localId="172" locator="105:12-105:59" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                       </source>
+                                       <return distinct="false">
+                                          <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                             <operand name="X" xsi:type="AliasRef"/>
+                                          </expression>
+                                       </return>
+                                    </codes>
+                                    <valueset localId="174" locator="105:64-105:131" name="Existing chronic health conditions - Autoimmune disease Choices" libraryName="Cx"/>
+                                 </operand>
+                              </operand>
+                              <operand localId="181" locator="106:12-106:165" xsi:type="AnyInValueSet">
+                                 <codes xsi:type="Query">
+                                    <source alias="X">
+                                       <expression localId="178" locator="106:12-106:59" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                    </source>
+                                    <return distinct="false">
+                                       <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                          <operand name="X" xsi:type="AliasRef"/>
+                                       </expression>
+                                    </return>
+                                 </codes>
+                                 <valueset localId="180" locator="106:64-106:165" name="Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices" libraryName="Cx"/>
+                              </operand>
+                           </operand>
+                           <operand localId="187" locator="107:12-107:143" xsi:type="AnyInValueSet">
+                              <codes xsi:type="Query">
+                                 <source alias="X">
+                                    <expression localId="184" locator="107:12-107:59" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </source>
+                                 <return distinct="false">
+                                    <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand name="X" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </codes>
+                              <valueset localId="186" locator="107:64-107:143" name="Existing chronic health conditions - Diabetes, other or unspecified Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                        <operand localId="193" locator="108:12-108:142" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="190" locator="108:12-108:59" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="192" locator="108:64-108:142" name="Existing chronic health conditions - Diabetes, pre-existing type 1 Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                     <operand localId="199" locator="109:12-109:142" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="196" locator="109:12-109:59" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="198" locator="109:64-109:142" name="Existing chronic health conditions - Diabetes, pre-existing type 2 Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="205" locator="110:12-110:125" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="202" locator="110:12-110:59" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="204" locator="110:64-110:125" name="Existing chronic health conditions - Hypertension Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+               <operand localId="211" locator="111:12-111:127" xsi:type="AnyInValueSet">
+                  <codes xsi:type="Query">
+                     <source alias="X">
+                        <expression localId="208" locator="111:12-111:59" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </source>
+                     <return distinct="false">
+                        <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand name="X" xsi:type="AliasRef"/>
+                        </expression>
+                     </return>
+                  </codes>
+                  <valueset localId="210" locator="111:64-111:127" name="Existing chronic health conditions - Kidney disease Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+   </statements>
+</library>

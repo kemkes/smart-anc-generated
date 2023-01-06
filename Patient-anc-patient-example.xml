@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="anc-patient-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"/>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-base-patient"/>
+    <profile value="http://fhir.org/guides/who/core/StructureDefinition/who-patient"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;"><b>bkxb1u3focs0 ujm2ja8ighp1a </b> (no stated gender), DoB: 2021-03-10 ( id: dh0xw4oes8c)</p><hr/><table class="grid"><tr><td style="background-color: #f3f5da" title="Ways to contact the Patient">Contact Details:</td><td colspan="3"><ul><li>pgmitchv75x2e0ng</li><li>3vanfiig97ar0klcac </li></ul></td></tr><tr><td style="background-color: #f3f5da" title="Patient contact">Contact</td><td colspan="3"><ul><li>4tlbrth8c84</li></ul></td></tr><tr><td style="background-color: #f3f5da" title="Patient Links">Links:</td><td colspan="3"><ul><li>General Practitioner: <a href="PractitionerRole-anc-practitionerrole-example.html">PractitionerRole/anc-practitionerrole-example</a></li></ul></td></tr></table></div>
+  </text>
+  <identifier>
+    <value value="dh0xw4oes8c"/>
+  </identifier>
+  <name>
+    <family value="ujm2ja8ighp1a"/>
+    <given value="bkxb1u3focs0"/>
+  </name>
+  <telecom>
+    <value value="pgmitchv75x2e0ng"/>
+  </telecom>
+  <birthDate value="2021-03-10"/>
+  <address>
+    <line value="3vanfiig97ar0klcac"/>
+  </address>
+  <contact>
+    <telecom>
+      <value value="4tlbrth8c84"/>
+    </telecom>
+  </contact>
+  <generalPractitioner>
+    <reference value="PractitionerRole/anc-practitionerrole-example"/>
+  </generalPractitioner>
+</Patient>

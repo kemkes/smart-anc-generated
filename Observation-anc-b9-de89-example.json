@@ -1,0 +1,55 @@
+{
+  "resourceType" : "Observation",
+  "id" : "anc-b9-de89-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de89"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"anc-b9-de89-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;anc-b9-de89-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b9-de89.html\">Hepatitis C test result</a></p></div><p><b>identifier</b>: id: anc-b9-de89-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Hepatitis C test result <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B9.DE89)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: Hepatitis C negative <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B9.DE91; <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html\">ICD-10</a>#Z03.8 &quot;Observation for other suspected diseases and conditions&quot;; mms#QA02.Y Medical observation or evaluation for other suspected diseases or conditions, ruled out &quot;Medical observation or evaluation for other suspected diseases or conditions, ruled out&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#314707006 &quot;Hepatitis C antibody test negative (finding)&quot;)</span></p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-b9-de89-example"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B9.DE89",
+      "display" : "Hepatitis C test result"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "performer" : [{
+    "reference" : "PractitionerRole/anc-practitionerrole-example"
+  }],
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B9.DE91",
+      "display" : "Hepatitis C negative"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-10",
+      "code" : "Z03.8",
+      "display" : "Observation for other suspected diseases and conditions"
+    },
+    {
+      "system" : "http://id.who.int/icd11/mms",
+      "code" : "QA02.Y Medical observation or evaluation for other suspected diseases or conditions, ruled out",
+      "display" : "Medical observation or evaluation for other suspected diseases or conditions, ruled out"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "314707006",
+      "display" : "Hepatitis C antibody test negative (finding)"
+    }]
+  }
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ServiceRequest xmlns="http://hl7.org/fhir">
+  <id value="mom-vitals-request-second-contact"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: ServiceRequest</b><a name="mom-vitals-request-second-contact"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource ServiceRequest &quot;mom-vitals-request-second-contact&quot; </p></div><p><b>status</b>: active</p><p><b>intent</b>: plan</p><p><b>code</b>: Medical procedure related to reproduction (procedure) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#4589007)</span></p><p><b>subject</b>: <a href="Patient-mom-second-contact.html">Patient/mom-second-contact</a> &quot; OTALA&quot;</p><p><b>encounter</b>: <a href="Encounter-mom-second-contact.html">Encounter/mom-second-contact</a></p><p><b>occurrence</b>: 2019-06-24 16:16:00-0700</p><p><b>requester</b>: <a href="Practitioner-midwife-amina-second-contact.html">Practitioner/midwife-amina-second-contact</a> &quot; MIDWIFE&quot;</p><p><b>performer</b>: <a href="Practitioner-midwife-amina-second-contact.html">Practitioner/midwife-amina-second-contact</a> &quot; MIDWIFE&quot;</p><hr/><blockquote><p><b>Generated Narrative: Observation #mom-vitals-observation-second-contact</b><a name="mom-vitals-observation-second-contact"> </a></p><p><b>status</b>: final</p><p><b>code</b>: vital-signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (codesystem-observation-category.html#vital-signs)</span></p><p><b>subject</b>: <a href="Patient-mom-second-contact.html">Patient/mom-second-contact</a> &quot; OTALA&quot;</p><p><b>value</b>: Yes <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/R4/v2/0136/index.html">v2 Y/N Indicator</a>#Y)</span></p></blockquote><hr/><blockquote><p><b>Generated Narrative: Specimen #clinical-exam-2</b><a name="clinical-exam-2"> </a></p><p><b>identifier</b>: id: 20150107-0012</p><p><b>type</b>: VitalSigns <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#vitalsigns)</span></p><p><b>subject</b>: <a href="Patient-example.html">Patient/example</a></p><h3>Collections</h3><table class="grid"><tr><td>-</td><td><b>Collected[x]</b></td></tr><tr><td>*</td><td>2015-08-16 06:40:17+0000</td></tr></table></blockquote></div>
+  </text>
+  <contained>
+    <Observation>
+      <id value="mom-vitals-observation-second-contact"/>
+      <!--  the mandatory quality flag:  -->
+      <status value="final"/>
+      <code>
+        <coding>
+          <system value="http://hl7.org/fhir/codesystem-observation-category.html"/>
+          <code value="vital-signs"/>
+          <display value="vital-signs"/>
+        </coding>
+      </code>
+      <subject>
+        <reference value="Patient/mom-second-contact"/>
+      </subject>
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0136"/>
+          <code value="Y"/>
+          <display value="Yes"/>
+        </coding>
+      </valueCodeableConcept>
+    </Observation>
+  </contained>
+  <contained>
+    <Specimen>
+      <id value="clinical-exam-2"/>
+      <identifier>
+        <system value="http://acme.org/specimens"/>
+        <value value="20150107-0012"/>
+      </identifier>
+      <type>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="vitalsigns"/>
+          <display value="VitalSigns"/>
+        </coding>
+      </type>
+      <subject>
+        <reference value="Patient/example"/>
+      </subject>
+      <collection>
+        <collectedDateTime value="2015-08-16T06:40:17Z"/>
+      </collection>
+    </Specimen>
+  </contained>
+  <status value="active"/>
+  <intent value="plan"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="4589007"/>
+    </coding>
+    <text value="Medical procedure related to reproduction (procedure)"/>
+  </code>
+  <subject>
+    <reference value="Patient/mom-second-contact"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/mom-second-contact"/>
+  </encounter>
+  <occurrenceDateTime value="2019-06-24T16:16:00-07:00"/>
+  <requester>
+    <reference value="Practitioner/midwife-amina-second-contact"/>
+  </requester>
+  <performer>
+    <reference value="Practitioner/midwife-amina-second-contact"/>
+  </performer>
+</ServiceRequest>

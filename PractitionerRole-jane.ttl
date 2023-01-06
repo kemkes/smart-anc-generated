@@ -1,0 +1,90 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/PractitionerRole/jane> a fhir:PractitionerRole;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "jane"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitionerrole";
+       fhir:index 0;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitionerrole>
+     ], [
+       fhir:value "http://fhir.org/guides/who/core/StructureDefinition/who-practitionerrole";
+       fhir:index 1;
+       fhir:link <http://fhir.org/guides/who/core/StructureDefinition/who-practitionerrole>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"jane\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;jane&quot; </p><p style=\"margin-bottom: 0px\">Profiles: <a href=\"StructureDefinition-anc-practitionerrole.html\">ANC PractitionerRole</a>, <a href=\"StructureDefinition-who-practitionerrole.html\">WHO PractitionerRole</a></p></div><p><b>active</b>: true</p><p><b>practitioner</b>: <a href=\"Practitioner-jane.html\">Practitioner/jane: Jane Nurse</a> &quot; NURSE&quot;</p><p><b>code</b>: Nurse <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-persona.html\">ANC Personas</a>#NRS)</span></p><p><b>telecom</b>: ph: (03) 5555 6473(WORK)</p><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: mon, tue, wed</p><p><b>availableStartTime</b>: 09:00:00</p><p><b>availableEndTime</b>: 16:30:00</p></blockquote><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: thu, fri</p><p><b>availableStartTime</b>: 09:00:00</p><p><b>availableEndTime</b>: 12:00:00</p></blockquote><h3>NotAvailables</h3><table class=\"grid\"><tr><td>-</td><td><b>Description</b></td><td><b>During</b></td></tr><tr><td>*</td><td>Jane will be on extended leave during May 2022</td><td>2022-05-01 --&gt; 2022-05-20</td></tr></table><p><b>availabilityExceptions</b>: Jane is generally unavailable on public holidays and during the Christmas/New Year break</p></div>"
+  ]; # 
+  fhir:PractitionerRole.active [ fhir:value "true"^^xsd:boolean]; #  TODO: identifier 
+  fhir:PractitionerRole.practitioner [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Practitioner/jane>;
+     fhir:Reference.reference [ fhir:value "Practitioner/jane" ];
+     fhir:Reference.display [ fhir:value "Jane Nurse" ]
+  ]; # 
+  fhir:PractitionerRole.code [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-persona" ];
+       fhir:Coding.code [ fhir:value "NRS" ];
+       fhir:Coding.display [ fhir:value "Nurse" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Nurse" ]
+  ]; #  TODO: organization 
+  fhir:PractitionerRole.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "(03) 5555 6473" ];
+     fhir:ContactPoint.use [ fhir:value "work" ]
+  ]; #  TODO: specialty ,  TODO: location ,  TODO: healthcareService 
+  fhir:PractitionerRole.availableTime [
+     fhir:index 0;
+     fhir:PractitionerRole.availableTime.daysOfWeek [
+       fhir:value "mon";
+       fhir:index 0
+     ], [
+       fhir:value "tue";
+       fhir:index 1
+     ], [
+       fhir:value "wed";
+       fhir:index 2
+     ];
+     fhir:PractitionerRole.availableTime.availableStartTime [ fhir:value "09:00:00"^^xsd:time ];
+     fhir:PractitionerRole.availableTime.availableEndTime [ fhir:value "16:30:00"^^xsd:time ]
+  ], [
+     fhir:index 1;
+     fhir:PractitionerRole.availableTime.daysOfWeek [
+       fhir:value "thu";
+       fhir:index 0
+     ], [
+       fhir:value "fri";
+       fhir:index 1
+     ];
+     fhir:PractitionerRole.availableTime.availableStartTime [ fhir:value "09:00:00"^^xsd:time ];
+     fhir:PractitionerRole.availableTime.availableEndTime [ fhir:value "12:00:00"^^xsd:time ]
+  ]; # 
+  fhir:PractitionerRole.notAvailable [
+     fhir:index 0;
+     fhir:PractitionerRole.notAvailable.description [ fhir:value "Jane will be on extended leave during May 2022" ];
+     fhir:PractitionerRole.notAvailable.during [
+       fhir:Period.start [ fhir:value "2022-05-01"^^xsd:date ];
+       fhir:Period.end [ fhir:value "2022-05-20"^^xsd:date ]
+     ]
+  ]; # 
+  fhir:PractitionerRole.availabilityExceptions [ fhir:value "Jane is generally unavailable on public holidays and during the Christmas/New Year break"] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/PractitionerRole/jane.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

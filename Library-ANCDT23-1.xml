@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="59">
+         <a:s>library ANCDT23</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCDT23" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="7:1-7:31" localIdentifier="Config" path="http://fhir.org/guides/who/anc-cds/ANCConfig">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConfig</a:s>
+               </a:s>
+               <a:s> called Config</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="8:1-8:29" localIdentifier="Cx" path="http://fhir.org/guides/who/anc-cds/ANCConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConcepts</a:s>
+               </a:s>
+               <a:s> called Cx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="9:1-9:49" localIdentifier="ContactData" path="http://fhir.org/guides/who/anc-cds/ANCContactDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCContactDataElements</a:s>
+               </a:s>
+               <a:s> called ContactData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="10:1-10:42" localIdentifier="PatientData" path="http://fhir.org/guides/who/anc-cds/ANCDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCDataElements</a:s>
+               </a:s>
+               <a:s> called PatientData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <statements>
+      <def locator="12:1-12:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="12:1-12:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="13" locator="17:1-18:75" name="Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="13">
+               <a:s>/*
+92 mg/dL ≤ &quot;Fasting plasma glucose results&quot; &lt; 126 mg/dL
+*/
+define &quot;Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling&quot;:
+  </a:s>
+               <a:s r="12">
+                  <a:s r="8">
+                     <a:s r="7">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="8">
+                        <a:s>&quot;Fasting plasma glucose&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="11">
+                     <a:s>Interval[</a:s>
+                     <a:s r="9">
+                        <a:s>92 'mg/dL'</a:s>
+                     </a:s>
+                     <a:s>, </a:s>
+                     <a:s r="10">
+                        <a:s>126 'mg/dL'</a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="12" locator="18:3-18:75" xsi:type="In">
+            <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="8" locator="18:3-18:38" name="Fasting plasma glucose" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="11" locator="18:43-18:75" lowClosed="true" highClosed="false" xsi:type="Interval">
+               <low localId="9" locator="18:52-18:61" value="92" unit="mg/dL" xsi:type="Quantity"/>
+               <high localId="10" locator="18:64-18:74" value="126" unit="mg/dL" xsi:type="Quantity"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="20" locator="23:1-24:110" name="Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 2" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="20">
+               <a:s>/*
+92 mg/dL ≤ &quot;75 g OGTT – fasting glucose results&quot; &lt; 126 mg/dL
+*/
+define &quot;Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 2&quot;:
+  </a:s>
+               <a:s r="19">
+                  <a:s r="15">
+                     <a:s r="14">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="15">
+                        <a:s>&quot;75 g oral glucose tolerance test (OGTT) - fasting glucose&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="18">
+                     <a:s>Interval[</a:s>
+                     <a:s r="16">
+                        <a:s>92 'mg/dL'</a:s>
+                     </a:s>
+                     <a:s>, </a:s>
+                     <a:s r="17">
+                        <a:s>126 'mg/dL'</a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="19" locator="24:3-24:110" xsi:type="In">
+            <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="15" locator="24:3-24:73" name="75 g oral glucose tolerance test (OGTT) - fasting glucose" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="18" locator="24:78-24:110" lowClosed="true" highClosed="false" xsi:type="Interval">
+               <low localId="16" locator="24:87-24:96" value="92" unit="mg/dL" xsi:type="Quantity"/>
+               <high localId="17" locator="24:99-24:109" value="126" unit="mg/dL" xsi:type="Quantity"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="27" locator="29:1-30:102" name="Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 3" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="27">
+               <a:s>/*
+180 mg/dL ≤ &quot;75 g OGTT – 1 hour results&quot; &lt; 200 mg/dL
+*/
+define &quot;Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 3&quot;:
+  </a:s>
+               <a:s r="26">
+                  <a:s r="22">
+                     <a:s r="21">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="22">
+                        <a:s>&quot;75 g oral glucose tolerance test (OGTT) - 1 hour&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="25">
+                     <a:s>Interval[</a:s>
+                     <a:s r="23">
+                        <a:s>180 'mg/dL'</a:s>
+                     </a:s>
+                     <a:s>, </a:s>
+                     <a:s r="24">
+                        <a:s>200 'mg/dL'</a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="26" locator="30:3-30:102" xsi:type="In">
+            <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="22" locator="30:3-30:64" name="75 g oral glucose tolerance test (OGTT) - 1 hour" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="25" locator="30:69-30:102" lowClosed="true" highClosed="false" xsi:type="Interval">
+               <low localId="23" locator="30:78-30:88" value="180" unit="mg/dL" xsi:type="Quantity"/>
+               <high localId="24" locator="30:91-30:101" value="200" unit="mg/dL" xsi:type="Quantity"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="34" locator="35:1-36:103" name="Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 4" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="34">
+               <a:s>/*
+153 mg/dL ≤ &quot;75 g OGTT – 2 hours results&quot; &lt; 200 mg/dL
+*/
+define &quot;Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 4&quot;:
+  </a:s>
+               <a:s r="33">
+                  <a:s r="29">
+                     <a:s r="28">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="29">
+                        <a:s>&quot;75 g oral glucose tolerance test (OGTT) - 2 hours&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="32">
+                     <a:s>Interval[</a:s>
+                     <a:s r="30">
+                        <a:s>180 'mg/dL'</a:s>
+                     </a:s>
+                     <a:s>, </a:s>
+                     <a:s r="31">
+                        <a:s>200 'mg/dL'</a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="33" locator="36:3-36:103" xsi:type="In">
+            <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="29" locator="36:3-36:65" name="75 g oral glucose tolerance test (OGTT) - 2 hours" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="32" locator="36:70-36:103" lowClosed="true" highClosed="false" xsi:type="Interval">
+               <low localId="30" locator="36:79-36:89" value="180" unit="mg/dL" xsi:type="Quantity"/>
+               <high localId="31" locator="36:92-36:102" value="200" unit="mg/dL" xsi:type="Quantity"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="39" locator="41:1-42:53" name="Should Conduct REQUIRED diabetes mellitus (DM) counselling" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="39">
+               <a:s>/*
+&quot;Fasting plasma glucose results&quot; ≥ 126 mg/dL
+*/
+define &quot;Should Conduct REQUIRED diabetes mellitus (DM) counselling&quot;:
+  </a:s>
+               <a:s r="38">
+                  <a:s r="36">
+                     <a:s r="35">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="36">
+                        <a:s>&quot;Fasting plasma glucose&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> >= </a:s>
+                  <a:s r="37">
+                     <a:s>126 'mg/dL'</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="38" locator="42:3-42:53" xsi:type="GreaterOrEqual">
+            <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="36" locator="42:3-42:38" name="Fasting plasma glucose" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="37" locator="42:43-42:53" value="126" unit="mg/dL" xsi:type="Quantity"/>
+         </expression>
+      </def>
+      <def localId="44" locator="47:1-48:88" name="Should Conduct REQUIRED diabetes mellitus (DM) counselling 2" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="44">
+               <a:s>/*
+&quot;75 g OGTT – fasting glucose results&quot; ≥ 126 mg/dL
+*/
+define &quot;Should Conduct REQUIRED diabetes mellitus (DM) counselling 2&quot;:
+  </a:s>
+               <a:s r="43">
+                  <a:s r="41">
+                     <a:s r="40">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="41">
+                        <a:s>&quot;75 g oral glucose tolerance test (OGTT) - fasting glucose&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> >= </a:s>
+                  <a:s r="42">
+                     <a:s>126 'mg/dL'</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="43" locator="48:3-48:88" xsi:type="GreaterOrEqual">
+            <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="41" locator="48:3-48:73" name="75 g oral glucose tolerance test (OGTT) - fasting glucose" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="42" locator="48:78-48:88" value="126" unit="mg/dL" xsi:type="Quantity"/>
+         </expression>
+      </def>
+      <def localId="49" locator="53:1-54:79" name="Should Conduct REQUIRED diabetes mellitus (DM) counselling 3" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="49">
+               <a:s>/*
+&quot;75 g OGTT – 1 hour results&quot; ≥ 200 mg/dL
+*/
+define &quot;Should Conduct REQUIRED diabetes mellitus (DM) counselling 3&quot;:
+  </a:s>
+               <a:s r="48">
+                  <a:s r="46">
+                     <a:s r="45">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="46">
+                        <a:s>&quot;75 g oral glucose tolerance test (OGTT) - 1 hour&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> >= </a:s>
+                  <a:s r="47">
+                     <a:s>200 'mg/dL'</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="48" locator="54:3-54:79" xsi:type="GreaterOrEqual">
+            <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="46" locator="54:3-54:64" name="75 g oral glucose tolerance test (OGTT) - 1 hour" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="47" locator="54:69-54:79" value="200" unit="mg/dL" xsi:type="Quantity"/>
+         </expression>
+      </def>
+      <def localId="54" locator="59:1-60:80" name="Should Conduct REQUIRED diabetes mellitus (DM) counselling 4" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="54">
+               <a:s>/*
+&quot;75 g OGTT – 2 hours results&quot; ≥ 200 mg/dL
+*/
+define &quot;Should Conduct REQUIRED diabetes mellitus (DM) counselling 4&quot;:
+  </a:s>
+               <a:s r="53">
+                  <a:s r="51">
+                     <a:s r="50">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="51">
+                        <a:s>&quot;75 g oral glucose tolerance test (OGTT) - 2 hours&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> >= </a:s>
+                  <a:s r="52">
+                     <a:s>200 'mg/dL'</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="53" locator="60:3-60:80" xsi:type="GreaterOrEqual">
+            <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="51" locator="60:3-60:65" name="75 g oral glucose tolerance test (OGTT) - 2 hours" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="52" locator="60:70-60:80" value="200" unit="mg/dL" xsi:type="Quantity"/>
+         </expression>
+      </def>
+      <def localId="59" locator="65:1-66:52" name="Should Conduct REQUIRED diabetes mellitus (DM) counselling 5" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="59">
+               <a:s>/*
+&quot;Random plasma glucose test results&quot; ≥ 200 mg/dL
+*/
+define &quot;Should Conduct REQUIRED diabetes mellitus (DM) counselling 5&quot;:
+  </a:s>
+               <a:s r="58">
+                  <a:s r="56">
+                     <a:s r="55">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="56">
+                        <a:s>&quot;Random plasma glucose&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> >= </a:s>
+                  <a:s r="57">
+                     <a:s>200 'mg/dL'</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="58" locator="66:3-66:52" xsi:type="GreaterOrEqual">
+            <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="56" locator="66:3-66:37" name="Random plasma glucose" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="57" locator="66:42-66:52" value="200" unit="mg/dL" xsi:type="Quantity"/>
+         </expression>
+      </def>
+   </statements>
+</library>

@@ -1,0 +1,2742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="431">
+         <a:s>library ANCDT17</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCDT17" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="7:1-7:31" localIdentifier="Config" path="http://fhir.org/guides/who/anc-cds/ANCConfig">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConfig</a:s>
+               </a:s>
+               <a:s> called Config</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="8:1-8:29" localIdentifier="Cx" path="http://fhir.org/guides/who/anc-cds/ANCConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConcepts</a:s>
+               </a:s>
+               <a:s> called Cx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="9:1-9:42" localIdentifier="PatientData" path="http://fhir.org/guides/who/anc-cds/ANCDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCDataElements</a:s>
+               </a:s>
+               <a:s> called PatientData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="10:1-10:49" localIdentifier="ContactData" path="http://fhir.org/guides/who/anc-cds/ANCContactDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCContactDataElements</a:s>
+               </a:s>
+               <a:s> called ContactData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <statements>
+      <def locator="12:1-12:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="12:1-12:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="106" locator="70:1-100:3" name="Should Refer urgently to a hospital" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="106">
+               <a:s>/*
+((((((((((((((((&quot;Systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Repeat systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;Severe headache&quot;))
+  OR ((&quot;Diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Repeat diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;Severe headache&quot;)))
+  OR ((&quot;Systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Repeat systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;Blurred vision&quot;)))
+  OR ((&quot;Diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Repeat diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;Blurred vision&quot;)))
+  OR ((&quot;Systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Repeat systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;Epigastric pain&quot;)))
+  OR ((&quot;Diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Repeat diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;Epigastric pain&quot;)))
+  OR ((&quot;Systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Repeat systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;Dizziness&quot;)))
+  OR ((&quot;Diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Repeat diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;Dizziness&quot;)))
+  OR ((&quot;Systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Repeat systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;Vomiting&quot;)))
+  OR ((&quot;Diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Repeat diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;Vomiting&quot;)))
+  OR ((&quot;Systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Repeat systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;None&quot;)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;++&quot;)))
+  OR ((&quot;Diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Repeat diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;None&quot;)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;++&quot;)))
+  OR ((&quot;Systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Repeat systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;None&quot;)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;+++&quot;)))
+  OR ((&quot;Diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Repeat diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;None&quot;)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;+++&quot;)))
+  OR ((&quot;Systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Repeat systolic blood pressure&quot; ≥ 140 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;None&quot;)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;++++&quot;)))
+  OR ((&quot;Diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Repeat diastolic blood pressure&quot; ≥ 90 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;None&quot;)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;++++&quot;))
+*/
+define &quot;Should Refer urgently to a hospital&quot;:
+  </a:s>
+               <a:s r="105">
+                  <a:s r="71">
+                     <a:s r="37">
+                        <a:s r="21">
+                           <a:s>(
+    </a:s>
+                           <a:s r="21">
+                              <a:s r="15">
+                                 <a:s r="10">
+                                    <a:s r="8">
+                                       <a:s r="7">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="8">
+                                          <a:s>&quot;Systolic blood pressure&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="9">
+                                       <a:s>140 'mm[Hg]'</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="14">
+                                    <a:s r="12">
+                                       <a:s r="11">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="12">
+                                          <a:s>&quot;Repeat systolic blood pressure&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="13">
+                                       <a:s>140 'mm[Hg]'</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="20">
+                                 <a:s r="17">
+                                    <a:s r="16">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="17">
+                                       <a:s>&quot;Symptoms of severe pre-eclampsia&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="19">
+                                    <a:s r="18">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="19">
+                                       <a:s>&quot;Symptoms of severe pre-eclampsia Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                        <a:s> or
+  </a:s>
+                        <a:s r="36">
+                           <a:s>(
+    </a:s>
+                           <a:s r="36">
+                              <a:s r="30">
+                                 <a:s r="25">
+                                    <a:s r="23">
+                                       <a:s r="22">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="23">
+                                          <a:s>&quot;Diastolic blood pressure&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="24">
+                                       <a:s>90 'mm[Hg]'</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="29">
+                                    <a:s r="27">
+                                       <a:s r="26">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="27">
+                                          <a:s>&quot;Repeat diastolic blood pressure&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="28">
+                                       <a:s>90 'mm[Hg]'</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="35">
+                                 <a:s r="32">
+                                    <a:s r="31">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="32">
+                                       <a:s>&quot;Symptoms of severe pre-eclampsia&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="34">
+                                    <a:s r="33">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="34">
+                                       <a:s>&quot;Symptoms of severe pre-eclampsia Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> or
+  </a:s>
+                     <a:s r="70">
+                        <a:s>(
+    </a:s>
+                        <a:s r="70">
+                           <a:s r="52">
+                              <a:s r="46">
+                                 <a:s r="41">
+                                    <a:s r="39">
+                                       <a:s r="38">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="39">
+                                          <a:s>&quot;Systolic blood pressure&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="40">
+                                       <a:s>140 'mm[Hg]'</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="45">
+                                    <a:s r="43">
+                                       <a:s r="42">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="43">
+                                          <a:s>&quot;Repeat systolic blood pressure&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="44">
+                                       <a:s>140 'mm[Hg]'</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="51">
+                                 <a:s r="48">
+                                    <a:s r="47">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="48">
+                                       <a:s>&quot;Symptoms of severe pre-eclampsia&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="50">
+                                    <a:s r="49">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="50">
+                                       <a:s>&quot;Symptoms of severe pre-eclampsia - No symptoms Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="69">
+                              <a:s>(
+        </a:s>
+                              <a:s r="69">
+                                 <a:s r="63">
+                                    <a:s r="57">
+                                       <a:s r="54">
+                                          <a:s r="53">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="54">
+                                             <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="56">
+                                          <a:s r="55">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="56">
+                                             <a:s>&quot;Urine dipstick result - protein - 2 plus Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+        or </a:s>
+                                    <a:s r="62">
+                                       <a:s r="59">
+                                          <a:s r="58">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="59">
+                                             <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="61">
+                                          <a:s r="60">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="61">
+                                             <a:s>&quot;Urine dipstick result - protein - 3 plus Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+        or </a:s>
+                                 <a:s r="68">
+                                    <a:s r="65">
+                                       <a:s r="64">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="65">
+                                          <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="67">
+                                       <a:s r="66">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="67">
+                                          <a:s>&quot;Urine dipstick result - protein - 4 plus Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      )</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> or
+  </a:s>
+                  <a:s r="104">
+                     <a:s>(
+    </a:s>
+                     <a:s r="104">
+                        <a:s r="86">
+                           <a:s r="80">
+                              <a:s r="75">
+                                 <a:s r="73">
+                                    <a:s r="72">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="73">
+                                       <a:s>&quot;Diastolic blood pressure&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> >= </a:s>
+                                 <a:s r="74">
+                                    <a:s>90 'mm[Hg]'</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="79">
+                                 <a:s r="77">
+                                    <a:s r="76">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="77">
+                                       <a:s>&quot;Repeat diastolic blood pressure&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> >= </a:s>
+                                 <a:s r="78">
+                                    <a:s>90 'mm[Hg]'</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="85">
+                              <a:s r="82">
+                                 <a:s r="81">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="82">
+                                    <a:s>&quot;Symptoms of severe pre-eclampsia&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="84">
+                                 <a:s r="83">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="84">
+                                    <a:s>&quot;Symptoms of severe pre-eclampsia - No symptoms Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      and </a:s>
+                        <a:s r="103">
+                           <a:s>(
+        </a:s>
+                           <a:s r="103">
+                              <a:s r="97">
+                                 <a:s r="91">
+                                    <a:s r="88">
+                                       <a:s r="87">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="88">
+                                          <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="90">
+                                       <a:s r="89">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="90">
+                                          <a:s>&quot;Urine dipstick result - protein - 2 plus Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+        or </a:s>
+                                 <a:s r="96">
+                                    <a:s r="93">
+                                       <a:s r="92">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="93">
+                                          <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="95">
+                                       <a:s r="94">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="95">
+                                          <a:s>&quot;Urine dipstick result - protein - 3 plus Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+        or </a:s>
+                              <a:s r="102">
+                                 <a:s r="99">
+                                    <a:s r="98">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="99">
+                                       <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="101">
+                                    <a:s r="100">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="101">
+                                       <a:s>&quot;Urine dipstick result - protein - 4 plus Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      )</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="105" locator="71:3-100:3" xsi:type="Or">
+            <operand localId="71" locator="71:3-90:3" xsi:type="Or">
+               <operand localId="37" locator="71:3-80:3" xsi:type="Or">
+                  <operand localId="21" locator="71:3-75:3" xsi:type="And">
+                     <operand localId="15" locator="72:5-73:70" xsi:type="And">
+                        <operand localId="10" locator="72:5-72:57" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="8" locator="72:5-72:41" name="Systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="9" locator="72:46-72:57" value="140" unit="mm[Hg]" xsi:type="Quantity"/>
+                        </operand>
+                        <operand localId="14" locator="73:11-73:70" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="12" locator="73:11-73:54" name="Repeat systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="13" locator="73:59-73:70" value="140" unit="mm[Hg]" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="20" locator="74:11-74:105" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="17" locator="74:11-74:56" name="Symptoms of severe pre-eclampsia" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="19" locator="74:61-74:105" name="Symptoms of severe pre-eclampsia Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="36" locator="76:3-80:3" xsi:type="And">
+                     <operand localId="30" locator="77:5-78:70" xsi:type="And">
+                        <operand localId="25" locator="77:5-77:57" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="23" locator="77:5-77:42" name="Diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="24" locator="77:47-77:57" value="90" unit="mm[Hg]" xsi:type="Quantity"/>
+                        </operand>
+                        <operand localId="29" locator="78:11-78:70" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="27" locator="78:11-78:55" name="Repeat diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="28" locator="78:60-78:70" value="90" unit="mm[Hg]" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="35" locator="79:11-79:105" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="32" locator="79:11-79:56" name="Symptoms of severe pre-eclampsia" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="34" locator="79:61-79:105" name="Symptoms of severe pre-eclampsia Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="70" locator="81:3-90:3" xsi:type="And">
+                  <operand localId="52" locator="82:5-84:119" xsi:type="And">
+                     <operand localId="46" locator="82:5-83:70" xsi:type="And">
+                        <operand localId="41" locator="82:5-82:57" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="39" locator="82:5-82:41" name="Systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="40" locator="82:46-82:57" value="140" unit="mm[Hg]" xsi:type="Quantity"/>
+                        </operand>
+                        <operand localId="45" locator="83:11-83:70" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="43" locator="83:11-83:54" name="Repeat systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="44" locator="83:59-83:70" value="140" unit="mm[Hg]" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="51" locator="84:11-84:119" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="48" locator="84:11-84:56" name="Symptoms of severe pre-eclampsia" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="50" locator="84:61-84:119" name="Symptoms of severe pre-eclampsia - No symptoms Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="69" locator="85:11-89:7" xsi:type="Or">
+                     <operand localId="63" locator="86:9-87:113" xsi:type="Or">
+                        <operand localId="57" locator="86:9-86:110" xsi:type="InValueSet">
+                           <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="54" locator="86:9-86:53" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </code>
+                           <valueset localId="56" locator="86:58-86:110" name="Urine dipstick result - protein - 2 plus Choices" libraryName="Cx"/>
+                        </operand>
+                        <operand localId="62" locator="87:12-87:113" xsi:type="InValueSet">
+                           <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="59" locator="87:12-87:56" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </code>
+                           <valueset localId="61" locator="87:61-87:113" name="Urine dipstick result - protein - 3 plus Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                     <operand localId="68" locator="88:12-88:113" xsi:type="InValueSet">
+                        <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="65" locator="88:12-88:56" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </code>
+                        <valueset localId="67" locator="88:61-88:113" name="Urine dipstick result - protein - 4 plus Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+               </operand>
+            </operand>
+            <operand localId="104" locator="91:3-100:3" xsi:type="And">
+               <operand localId="86" locator="92:5-94:119" xsi:type="And">
+                  <operand localId="80" locator="92:5-93:70" xsi:type="And">
+                     <operand localId="75" locator="92:5-92:57" xsi:type="GreaterOrEqual">
+                        <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="73" locator="92:5-92:42" name="Diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand localId="74" locator="92:47-92:57" value="90" unit="mm[Hg]" xsi:type="Quantity"/>
+                     </operand>
+                     <operand localId="79" locator="93:11-93:70" xsi:type="GreaterOrEqual">
+                        <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="77" locator="93:11-93:55" name="Repeat diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand localId="78" locator="93:60-93:70" value="90" unit="mm[Hg]" xsi:type="Quantity"/>
+                     </operand>
+                  </operand>
+                  <operand localId="85" locator="94:11-94:119" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="82" locator="94:11-94:56" name="Symptoms of severe pre-eclampsia" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="84" locator="94:61-94:119" name="Symptoms of severe pre-eclampsia - No symptoms Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+               <operand localId="103" locator="95:11-99:7" xsi:type="Or">
+                  <operand localId="97" locator="96:9-97:113" xsi:type="Or">
+                     <operand localId="91" locator="96:9-96:110" xsi:type="InValueSet">
+                        <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="88" locator="96:9-96:53" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </code>
+                        <valueset localId="90" locator="96:58-96:110" name="Urine dipstick result - protein - 2 plus Choices" libraryName="Cx"/>
+                     </operand>
+                     <operand localId="96" locator="97:12-97:113" xsi:type="InValueSet">
+                        <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="93" locator="97:12-97:56" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </code>
+                        <valueset localId="95" locator="97:61-97:113" name="Urine dipstick result - protein - 3 plus Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="102" locator="98:12-98:113" xsi:type="InValueSet">
+                     <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="99" locator="98:12-98:56" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </code>
+                     <valueset localId="101" locator="98:61-98:113" name="Urine dipstick result - protein - 4 plus Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="280" locator="132:1-174:3" name="Should Refer urgently to a hospital 2" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="280">
+               <a:s>/*
+(((((((&quot;Systolic blood pressure&quot; ≤ 140 mmHg)
+  AND (&quot;Repeat systolic blood pressure&quot; ≤ 140 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;No symptoms of severe pre-eclampsia&quot;)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;++&quot;))
+  OR ((&quot;Systolic blood pressure&quot; > 160 mmHg)
+  AND (&quot;Repeat systolic blood pressure&quot; > 160 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;No symptoms of severe pre-eclampsia&quot;)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;++&quot;)))
+  OR ((90 mmHg ≤ &quot;Diastolic blood pressure&quot; &lt; 110 mmHg)
+  AND (90 mmHg ≤ &quot;Repeat diastolic blood pressure&quot; &lt; 110 mmHg)
+  AND (Symptoms of severe pre-eclampsia&quot; = &quot;No symptoms of severe pre-eclampsia&quot;)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;++&quot;)))
+  OR ((140 mmHg ≤ &quot;Systolic blood pressure&quot; &lt; 160 mmHg)
+  AND (140 mmHg ≤ &quot;Repeat systolic blood pressure&quot; &lt; 160 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;No symptoms of severe pre-eclampsia&quot;)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;+++&quot;)))
+  OR ((90 mmHg ≤ &quot;Diastolic blood pressure&quot; &lt; 110 mmHg)
+  AND (90 mmHg – &quot;Repeat diastolic blood pressure&quot; &lt; 110 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;No symptoms of severe pre-eclampsia&quot;)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;+++&quot;)))
+  OR ((140 mmHg ≤ &quot;Systolic blood pressure&quot; &lt; 160 mmHg)
+  AND (140 mmHg ≤ &quot;Repeat systolic blood pressure&quot; &lt; 160 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;No symptoms of severe pre-eclampsia&quot;)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;++++&quot;)))
+  OR ((90 mmHg ≤ &quot;Diastolic blood pressure&quot; &lt; 110 mmHg)
+  AND (90 mmHg ≤ &quot;Repeat diastolic blood pressure&quot; &lt; 110 mmHg)
+  AND (&quot;Symptoms of severe pre-eclampsia&quot; = &quot;No symptoms of severe pre-eclampsia&quot;)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;++++&quot;))
+*/
+define &quot;Should Refer urgently to a hospital 2&quot;:
+  </a:s>
+               <a:s r="279">
+                  <a:s r="253">
+                     <a:s r="227">
+                        <a:s r="201">
+                           <a:s r="175">
+                              <a:s r="149">
+                                 <a:s r="127">
+                                    <a:s>(
+    </a:s>
+                                    <a:s r="127">
+                                       <a:s r="121">
+                                          <a:s r="115">
+                                             <a:s r="110">
+                                                <a:s r="108">
+                                                   <a:s r="107">
+                                                      <a:s>ContactData</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="108">
+                                                      <a:s>&quot;Systolic blood pressure&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s> &lt;= </a:s>
+                                                <a:s r="109">
+                                                   <a:s>140 'mm[Hg]'</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>
+      and </a:s>
+                                             <a:s r="114">
+                                                <a:s r="112">
+                                                   <a:s r="111">
+                                                      <a:s>ContactData</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="112">
+                                                      <a:s>&quot;Repeat systolic blood pressure&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s> &lt;= </a:s>
+                                                <a:s r="113">
+                                                   <a:s>140 'mm[Hg]'</a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>
+      and </a:s>
+                                          <a:s r="120">
+                                             <a:s r="117">
+                                                <a:s r="116">
+                                                   <a:s>ContactData</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="117">
+                                                   <a:s>&quot;Symptoms of severe pre-eclampsia&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s> in </a:s>
+                                             <a:s r="119">
+                                                <a:s r="118">
+                                                   <a:s>Cx</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="119">
+                                                   <a:s>&quot;Symptoms of severe pre-eclampsia - No symptoms Choices&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>
+      and </a:s>
+                                       <a:s r="126">
+                                          <a:s r="123">
+                                             <a:s r="122">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="123">
+                                                <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="125">
+                                             <a:s r="124">
+                                                <a:s>Cx</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="125">
+                                                <a:s>&quot;Urine dipstick result - protein - 2 plus Choices&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+  )</a:s>
+                                 </a:s>
+                                 <a:s> or
+  </a:s>
+                                 <a:s r="148">
+                                    <a:s>(
+    </a:s>
+                                    <a:s r="148">
+                                       <a:s r="142">
+                                          <a:s r="136">
+                                             <a:s r="131">
+                                                <a:s r="129">
+                                                   <a:s r="128">
+                                                      <a:s>ContactData</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="129">
+                                                      <a:s>&quot;Systolic blood pressure&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s> > </a:s>
+                                                <a:s r="130">
+                                                   <a:s>160 'mm[Hg]'</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>
+      and </a:s>
+                                             <a:s r="135">
+                                                <a:s r="133">
+                                                   <a:s r="132">
+                                                      <a:s>ContactData</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="133">
+                                                      <a:s>&quot;Repeat systolic blood pressure&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s> > </a:s>
+                                                <a:s r="134">
+                                                   <a:s>160 'mm[Hg]'</a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>
+      and </a:s>
+                                          <a:s r="141">
+                                             <a:s r="138">
+                                                <a:s r="137">
+                                                   <a:s>ContactData</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="138">
+                                                   <a:s>&quot;Symptoms of severe pre-eclampsia&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s> in </a:s>
+                                             <a:s r="140">
+                                                <a:s r="139">
+                                                   <a:s>Cx</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="140">
+                                                   <a:s>&quot;Symptoms of severe pre-eclampsia - No symptoms Choices&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>
+      and </a:s>
+                                       <a:s r="147">
+                                          <a:s r="144">
+                                             <a:s r="143">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="144">
+                                                <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="146">
+                                             <a:s r="145">
+                                                <a:s>Cx</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="146">
+                                                <a:s>&quot;Urine dipstick result - protein - 2 plus Choices&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+  )</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> or
+  </a:s>
+                              <a:s r="174">
+                                 <a:s>(
+    </a:s>
+                                 <a:s r="174">
+                                    <a:s r="168">
+                                       <a:s r="162">
+                                          <a:s r="155">
+                                             <a:s r="151">
+                                                <a:s r="150">
+                                                   <a:s>ContactData</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="151">
+                                                   <a:s>&quot;Diastolic blood pressure&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s> in </a:s>
+                                             <a:s r="154">
+                                                <a:s>Interval[</a:s>
+                                                <a:s r="152">
+                                                   <a:s>90 'mm[Hg]'</a:s>
+                                                </a:s>
+                                                <a:s>, </a:s>
+                                                <a:s r="153">
+                                                   <a:s>110 'mm[Hg]'</a:s>
+                                                </a:s>
+                                                <a:s>]</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>
+      and </a:s>
+                                          <a:s r="161">
+                                             <a:s r="157">
+                                                <a:s r="156">
+                                                   <a:s>ContactData</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="157">
+                                                   <a:s>&quot;Repeat diastolic blood pressure&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s> in </a:s>
+                                             <a:s r="160">
+                                                <a:s>Interval[</a:s>
+                                                <a:s r="158">
+                                                   <a:s>90 'mm[Hg]'</a:s>
+                                                </a:s>
+                                                <a:s>, </a:s>
+                                                <a:s r="159">
+                                                   <a:s>110 'mm[Hg]'</a:s>
+                                                </a:s>
+                                                <a:s>]</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>
+      and </a:s>
+                                       <a:s r="167">
+                                          <a:s r="164">
+                                             <a:s r="163">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="164">
+                                                <a:s>&quot;Symptoms of severe pre-eclampsia&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="166">
+                                             <a:s r="165">
+                                                <a:s>Cx</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="166">
+                                                <a:s>&quot;Symptoms of severe pre-eclampsia - No symptoms Choices&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+      and </a:s>
+                                    <a:s r="173">
+                                       <a:s r="170">
+                                          <a:s r="169">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="170">
+                                             <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="172">
+                                          <a:s r="171">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="172">
+                                             <a:s>&quot;Urine dipstick result - protein - 2 plus Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+  )</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> or
+  </a:s>
+                           <a:s r="200">
+                              <a:s>(
+    </a:s>
+                              <a:s r="200">
+                                 <a:s r="194">
+                                    <a:s r="188">
+                                       <a:s r="181">
+                                          <a:s r="177">
+                                             <a:s r="176">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="177">
+                                                <a:s>&quot;Systolic blood pressure&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="180">
+                                             <a:s>Interval[</a:s>
+                                             <a:s r="178">
+                                                <a:s>140 'mm[Hg]'</a:s>
+                                             </a:s>
+                                             <a:s>, </a:s>
+                                             <a:s r="179">
+                                                <a:s>160 'mm[Hg]'</a:s>
+                                             </a:s>
+                                             <a:s>]</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>
+      and </a:s>
+                                       <a:s r="187">
+                                          <a:s r="183">
+                                             <a:s r="182">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="183">
+                                                <a:s>&quot;Repeat systolic blood pressure&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="186">
+                                             <a:s>Interval[</a:s>
+                                             <a:s r="184">
+                                                <a:s>140 'mm[Hg]'</a:s>
+                                             </a:s>
+                                             <a:s>, </a:s>
+                                             <a:s r="185">
+                                                <a:s>160 'mm[Hg]'</a:s>
+                                             </a:s>
+                                             <a:s>]</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+      and </a:s>
+                                    <a:s r="193">
+                                       <a:s r="190">
+                                          <a:s r="189">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="190">
+                                             <a:s>&quot;Symptoms of severe pre-eclampsia&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="192">
+                                          <a:s r="191">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="192">
+                                             <a:s>&quot;Symptoms of severe pre-eclampsia - No symptoms Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="199">
+                                    <a:s r="196">
+                                       <a:s r="195">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="196">
+                                          <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="198">
+                                       <a:s r="197">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="198">
+                                          <a:s>&quot;Urine dipstick result - protein - 3 plus Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+  )</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> or
+  </a:s>
+                        <a:s r="226">
+                           <a:s>(
+    </a:s>
+                           <a:s r="226">
+                              <a:s r="220">
+                                 <a:s r="214">
+                                    <a:s r="207">
+                                       <a:s r="203">
+                                          <a:s r="202">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="203">
+                                             <a:s>&quot;Diastolic blood pressure&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="206">
+                                          <a:s>Interval[</a:s>
+                                          <a:s r="204">
+                                             <a:s>90 'mm[Hg]'</a:s>
+                                          </a:s>
+                                          <a:s>, </a:s>
+                                          <a:s r="205">
+                                             <a:s>110 'mm[Hg]'</a:s>
+                                          </a:s>
+                                          <a:s>]</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+      and </a:s>
+                                    <a:s r="213">
+                                       <a:s r="209">
+                                          <a:s r="208">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="209">
+                                             <a:s>&quot;Repeat diastolic blood pressure&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="212">
+                                          <a:s>Interval[</a:s>
+                                          <a:s r="210">
+                                             <a:s>90 'mm[Hg]'</a:s>
+                                          </a:s>
+                                          <a:s>, </a:s>
+                                          <a:s r="211">
+                                             <a:s>110 'mm[Hg]'</a:s>
+                                          </a:s>
+                                          <a:s>]</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="219">
+                                    <a:s r="216">
+                                       <a:s r="215">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="216">
+                                          <a:s>&quot;Symptoms of severe pre-eclampsia&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="218">
+                                       <a:s r="217">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="218">
+                                          <a:s>&quot;Symptoms of severe pre-eclampsia - No symptoms Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="225">
+                                 <a:s r="222">
+                                    <a:s r="221">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="222">
+                                       <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="224">
+                                    <a:s r="223">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="224">
+                                       <a:s>&quot;Urine dipstick result - protein - 3 plus Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> or
+  </a:s>
+                     <a:s r="252">
+                        <a:s>(
+    </a:s>
+                        <a:s r="252">
+                           <a:s r="246">
+                              <a:s r="240">
+                                 <a:s r="233">
+                                    <a:s r="229">
+                                       <a:s r="228">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="229">
+                                          <a:s>&quot;Systolic blood pressure&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="232">
+                                       <a:s>Interval[</a:s>
+                                       <a:s r="230">
+                                          <a:s>140 'mm[Hg]'</a:s>
+                                       </a:s>
+                                       <a:s>, </a:s>
+                                       <a:s r="231">
+                                          <a:s>160 'mm[Hg]'</a:s>
+                                       </a:s>
+                                       <a:s>]</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="239">
+                                    <a:s r="235">
+                                       <a:s r="234">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="235">
+                                          <a:s>&quot;Repeat systolic blood pressure&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="238">
+                                       <a:s>Interval[</a:s>
+                                       <a:s r="236">
+                                          <a:s>140 'mm[Hg]'</a:s>
+                                       </a:s>
+                                       <a:s>, </a:s>
+                                       <a:s r="237">
+                                          <a:s>160 'mm[Hg]'</a:s>
+                                       </a:s>
+                                       <a:s>]</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="245">
+                                 <a:s r="242">
+                                    <a:s r="241">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="242">
+                                       <a:s>&quot;Symptoms of severe pre-eclampsia&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="244">
+                                    <a:s r="243">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="244">
+                                       <a:s>&quot;Symptoms of severe pre-eclampsia - No symptoms Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="251">
+                              <a:s r="248">
+                                 <a:s r="247">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="248">
+                                    <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="250">
+                                 <a:s r="249">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="250">
+                                    <a:s>&quot;Urine dipstick result - protein - 4 plus Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> or
+  </a:s>
+                  <a:s r="278">
+                     <a:s>(
+    </a:s>
+                     <a:s r="278">
+                        <a:s r="272">
+                           <a:s r="266">
+                              <a:s r="259">
+                                 <a:s r="255">
+                                    <a:s r="254">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="255">
+                                       <a:s>&quot;Diastolic blood pressure&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="258">
+                                    <a:s>Interval[</a:s>
+                                    <a:s r="256">
+                                       <a:s>90 'mm[Hg]'</a:s>
+                                    </a:s>
+                                    <a:s>, </a:s>
+                                    <a:s r="257">
+                                       <a:s>110 'mm[Hg]'</a:s>
+                                    </a:s>
+                                    <a:s>]</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="265">
+                                 <a:s r="261">
+                                    <a:s r="260">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="261">
+                                       <a:s>&quot;Repeat diastolic blood pressure&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="264">
+                                    <a:s>Interval[</a:s>
+                                    <a:s r="262">
+                                       <a:s>90 'mm[Hg]'</a:s>
+                                    </a:s>
+                                    <a:s>, </a:s>
+                                    <a:s r="263">
+                                       <a:s>110 'mm[Hg]'</a:s>
+                                    </a:s>
+                                    <a:s>]</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="271">
+                              <a:s r="268">
+                                 <a:s r="267">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="268">
+                                    <a:s>&quot;Symptoms of severe pre-eclampsia&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="270">
+                                 <a:s r="269">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="270">
+                                    <a:s>&quot;Symptoms of severe pre-eclampsia - No symptoms Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      and </a:s>
+                        <a:s r="277">
+                           <a:s r="274">
+                              <a:s r="273">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="274">
+                                 <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="276">
+                              <a:s r="275">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="276">
+                                 <a:s>&quot;Urine dipstick result - protein - 4 plus Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="279" locator="133:3-174:3" xsi:type="Or">
+            <operand localId="253" locator="133:3-168:3" xsi:type="Or">
+               <operand localId="227" locator="133:3-162:3" xsi:type="Or">
+                  <operand localId="201" locator="133:3-156:3" xsi:type="Or">
+                     <operand localId="175" locator="133:3-150:3" xsi:type="Or">
+                        <operand localId="149" locator="133:3-144:3" xsi:type="Or">
+                           <operand localId="127" locator="133:3-138:3" xsi:type="And">
+                              <operand localId="121" locator="134:5-136:119" xsi:type="And">
+                                 <operand localId="115" locator="134:5-135:70" xsi:type="And">
+                                    <operand localId="110" locator="134:5-134:57" xsi:type="LessOrEqual">
+                                       <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                          <operand localId="108" locator="134:5-134:41" name="Systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                       </operand>
+                                       <operand localId="109" locator="134:46-134:57" value="140" unit="mm[Hg]" xsi:type="Quantity"/>
+                                    </operand>
+                                    <operand localId="114" locator="135:11-135:70" xsi:type="LessOrEqual">
+                                       <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                          <operand localId="112" locator="135:11-135:54" name="Repeat systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                       </operand>
+                                       <operand localId="113" locator="135:59-135:70" value="140" unit="mm[Hg]" xsi:type="Quantity"/>
+                                    </operand>
+                                 </operand>
+                                 <operand localId="120" locator="136:11-136:119" xsi:type="AnyInValueSet">
+                                    <codes xsi:type="Query">
+                                       <source alias="X">
+                                          <expression localId="117" locator="136:11-136:56" name="Symptoms of severe pre-eclampsia" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                       </source>
+                                       <return distinct="false">
+                                          <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                             <operand name="X" xsi:type="AliasRef"/>
+                                          </expression>
+                                       </return>
+                                    </codes>
+                                    <valueset localId="119" locator="136:61-136:119" name="Symptoms of severe pre-eclampsia - No symptoms Choices" libraryName="Cx"/>
+                                 </operand>
+                              </operand>
+                              <operand localId="126" locator="137:11-137:112" xsi:type="InValueSet">
+                                 <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand localId="123" locator="137:11-137:55" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </code>
+                                 <valueset localId="125" locator="137:60-137:112" name="Urine dipstick result - protein - 2 plus Choices" libraryName="Cx"/>
+                              </operand>
+                           </operand>
+                           <operand localId="148" locator="139:3-144:3" xsi:type="And">
+                              <operand localId="142" locator="140:5-142:119" xsi:type="And">
+                                 <operand localId="136" locator="140:5-141:69" xsi:type="And">
+                                    <operand localId="131" locator="140:5-140:56" xsi:type="Greater">
+                                       <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                          <operand localId="129" locator="140:5-140:41" name="Systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                       </operand>
+                                       <operand localId="130" locator="140:45-140:56" value="160" unit="mm[Hg]" xsi:type="Quantity"/>
+                                    </operand>
+                                    <operand localId="135" locator="141:11-141:69" xsi:type="Greater">
+                                       <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                          <operand localId="133" locator="141:11-141:54" name="Repeat systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                       </operand>
+                                       <operand localId="134" locator="141:58-141:69" value="160" unit="mm[Hg]" xsi:type="Quantity"/>
+                                    </operand>
+                                 </operand>
+                                 <operand localId="141" locator="142:11-142:119" xsi:type="AnyInValueSet">
+                                    <codes xsi:type="Query">
+                                       <source alias="X">
+                                          <expression localId="138" locator="142:11-142:56" name="Symptoms of severe pre-eclampsia" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                       </source>
+                                       <return distinct="false">
+                                          <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                             <operand name="X" xsi:type="AliasRef"/>
+                                          </expression>
+                                       </return>
+                                    </codes>
+                                    <valueset localId="140" locator="142:61-142:119" name="Symptoms of severe pre-eclampsia - No symptoms Choices" libraryName="Cx"/>
+                                 </operand>
+                              </operand>
+                              <operand localId="147" locator="143:11-143:112" xsi:type="InValueSet">
+                                 <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand localId="144" locator="143:11-143:55" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </code>
+                                 <valueset localId="146" locator="143:60-143:112" name="Urine dipstick result - protein - 2 plus Choices" libraryName="Cx"/>
+                              </operand>
+                           </operand>
+                        </operand>
+                        <operand localId="174" locator="145:3-150:3" xsi:type="And">
+                           <operand localId="168" locator="146:5-148:119" xsi:type="And">
+                              <operand localId="162" locator="146:5-147:94" xsi:type="And">
+                                 <operand localId="155" locator="146:5-146:81" xsi:type="In">
+                                    <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand localId="151" locator="146:5-146:42" name="Diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                    </operand>
+                                    <operand localId="154" locator="146:47-146:81" lowClosed="true" highClosed="true" xsi:type="Interval">
+                                       <low localId="152" locator="146:56-146:66" value="90" unit="mm[Hg]" xsi:type="Quantity"/>
+                                       <high localId="153" locator="146:69-146:80" value="110" unit="mm[Hg]" xsi:type="Quantity"/>
+                                    </operand>
+                                 </operand>
+                                 <operand localId="161" locator="147:11-147:94" xsi:type="In">
+                                    <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand localId="157" locator="147:11-147:55" name="Repeat diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                    </operand>
+                                    <operand localId="160" locator="147:60-147:94" lowClosed="true" highClosed="true" xsi:type="Interval">
+                                       <low localId="158" locator="147:69-147:79" value="90" unit="mm[Hg]" xsi:type="Quantity"/>
+                                       <high localId="159" locator="147:82-147:93" value="110" unit="mm[Hg]" xsi:type="Quantity"/>
+                                    </operand>
+                                 </operand>
+                              </operand>
+                              <operand localId="167" locator="148:11-148:119" xsi:type="AnyInValueSet">
+                                 <codes xsi:type="Query">
+                                    <source alias="X">
+                                       <expression localId="164" locator="148:11-148:56" name="Symptoms of severe pre-eclampsia" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                    </source>
+                                    <return distinct="false">
+                                       <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                          <operand name="X" xsi:type="AliasRef"/>
+                                       </expression>
+                                    </return>
+                                 </codes>
+                                 <valueset localId="166" locator="148:61-148:119" name="Symptoms of severe pre-eclampsia - No symptoms Choices" libraryName="Cx"/>
+                              </operand>
+                           </operand>
+                           <operand localId="173" locator="149:11-149:112" xsi:type="InValueSet">
+                              <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="170" locator="149:11-149:55" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </code>
+                              <valueset localId="172" locator="149:60-149:112" name="Urine dipstick result - protein - 2 plus Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                     </operand>
+                     <operand localId="200" locator="151:3-156:3" xsi:type="And">
+                        <operand localId="194" locator="152:5-154:119" xsi:type="And">
+                           <operand localId="188" locator="152:5-153:94" xsi:type="And">
+                              <operand localId="181" locator="152:5-152:81" xsi:type="In">
+                                 <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand localId="177" locator="152:5-152:41" name="Systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </operand>
+                                 <operand localId="180" locator="152:46-152:81" lowClosed="true" highClosed="true" xsi:type="Interval">
+                                    <low localId="178" locator="152:55-152:66" value="140" unit="mm[Hg]" xsi:type="Quantity"/>
+                                    <high localId="179" locator="152:69-152:80" value="160" unit="mm[Hg]" xsi:type="Quantity"/>
+                                 </operand>
+                              </operand>
+                              <operand localId="187" locator="153:11-153:94" xsi:type="In">
+                                 <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand localId="183" locator="153:11-153:54" name="Repeat systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </operand>
+                                 <operand localId="186" locator="153:59-153:94" lowClosed="true" highClosed="true" xsi:type="Interval">
+                                    <low localId="184" locator="153:68-153:79" value="140" unit="mm[Hg]" xsi:type="Quantity"/>
+                                    <high localId="185" locator="153:82-153:93" value="160" unit="mm[Hg]" xsi:type="Quantity"/>
+                                 </operand>
+                              </operand>
+                           </operand>
+                           <operand localId="193" locator="154:11-154:119" xsi:type="AnyInValueSet">
+                              <codes xsi:type="Query">
+                                 <source alias="X">
+                                    <expression localId="190" locator="154:11-154:56" name="Symptoms of severe pre-eclampsia" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </source>
+                                 <return distinct="false">
+                                    <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand name="X" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </codes>
+                              <valueset localId="192" locator="154:61-154:119" name="Symptoms of severe pre-eclampsia - No symptoms Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                        <operand localId="199" locator="155:11-155:112" xsi:type="InValueSet">
+                           <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="196" locator="155:11-155:55" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </code>
+                           <valueset localId="198" locator="155:60-155:112" name="Urine dipstick result - protein - 3 plus Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="226" locator="157:3-162:3" xsi:type="And">
+                     <operand localId="220" locator="158:5-160:119" xsi:type="And">
+                        <operand localId="214" locator="158:5-159:94" xsi:type="And">
+                           <operand localId="207" locator="158:5-158:81" xsi:type="In">
+                              <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="203" locator="158:5-158:42" name="Diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </operand>
+                              <operand localId="206" locator="158:47-158:81" lowClosed="true" highClosed="true" xsi:type="Interval">
+                                 <low localId="204" locator="158:56-158:66" value="90" unit="mm[Hg]" xsi:type="Quantity"/>
+                                 <high localId="205" locator="158:69-158:80" value="110" unit="mm[Hg]" xsi:type="Quantity"/>
+                              </operand>
+                           </operand>
+                           <operand localId="213" locator="159:11-159:94" xsi:type="In">
+                              <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="209" locator="159:11-159:55" name="Repeat diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </operand>
+                              <operand localId="212" locator="159:60-159:94" lowClosed="true" highClosed="true" xsi:type="Interval">
+                                 <low localId="210" locator="159:69-159:79" value="90" unit="mm[Hg]" xsi:type="Quantity"/>
+                                 <high localId="211" locator="159:82-159:93" value="110" unit="mm[Hg]" xsi:type="Quantity"/>
+                              </operand>
+                           </operand>
+                        </operand>
+                        <operand localId="219" locator="160:11-160:119" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="216" locator="160:11-160:56" name="Symptoms of severe pre-eclampsia" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="218" locator="160:61-160:119" name="Symptoms of severe pre-eclampsia - No symptoms Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                     <operand localId="225" locator="161:11-161:112" xsi:type="InValueSet">
+                        <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="222" locator="161:11-161:55" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </code>
+                        <valueset localId="224" locator="161:60-161:112" name="Urine dipstick result - protein - 3 plus Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="252" locator="163:3-168:3" xsi:type="And">
+                  <operand localId="246" locator="164:5-166:119" xsi:type="And">
+                     <operand localId="240" locator="164:5-165:94" xsi:type="And">
+                        <operand localId="233" locator="164:5-164:81" xsi:type="In">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="229" locator="164:5-164:41" name="Systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="232" locator="164:46-164:81" lowClosed="true" highClosed="true" xsi:type="Interval">
+                              <low localId="230" locator="164:55-164:66" value="140" unit="mm[Hg]" xsi:type="Quantity"/>
+                              <high localId="231" locator="164:69-164:80" value="160" unit="mm[Hg]" xsi:type="Quantity"/>
+                           </operand>
+                        </operand>
+                        <operand localId="239" locator="165:11-165:94" xsi:type="In">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="235" locator="165:11-165:54" name="Repeat systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="238" locator="165:59-165:94" lowClosed="true" highClosed="true" xsi:type="Interval">
+                              <low localId="236" locator="165:68-165:79" value="140" unit="mm[Hg]" xsi:type="Quantity"/>
+                              <high localId="237" locator="165:82-165:93" value="160" unit="mm[Hg]" xsi:type="Quantity"/>
+                           </operand>
+                        </operand>
+                     </operand>
+                     <operand localId="245" locator="166:11-166:119" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="242" locator="166:11-166:56" name="Symptoms of severe pre-eclampsia" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="244" locator="166:61-166:119" name="Symptoms of severe pre-eclampsia - No symptoms Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="251" locator="167:11-167:112" xsi:type="InValueSet">
+                     <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="248" locator="167:11-167:55" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </code>
+                     <valueset localId="250" locator="167:60-167:112" name="Urine dipstick result - protein - 4 plus Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+            </operand>
+            <operand localId="278" locator="169:3-174:3" xsi:type="And">
+               <operand localId="272" locator="170:5-172:119" xsi:type="And">
+                  <operand localId="266" locator="170:5-171:94" xsi:type="And">
+                     <operand localId="259" locator="170:5-170:81" xsi:type="In">
+                        <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="255" locator="170:5-170:42" name="Diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand localId="258" locator="170:47-170:81" lowClosed="true" highClosed="true" xsi:type="Interval">
+                           <low localId="256" locator="170:56-170:66" value="90" unit="mm[Hg]" xsi:type="Quantity"/>
+                           <high localId="257" locator="170:69-170:80" value="110" unit="mm[Hg]" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="265" locator="171:11-171:94" xsi:type="In">
+                        <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="261" locator="171:11-171:55" name="Repeat diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand localId="264" locator="171:60-171:94" lowClosed="true" highClosed="true" xsi:type="Interval">
+                           <low localId="262" locator="171:69-171:79" value="90" unit="mm[Hg]" xsi:type="Quantity"/>
+                           <high localId="263" locator="171:82-171:93" value="110" unit="mm[Hg]" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="271" locator="172:11-172:119" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="268" locator="172:11-172:56" name="Symptoms of severe pre-eclampsia" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="270" locator="172:61-172:119" name="Symptoms of severe pre-eclampsia - No symptoms Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+               <operand localId="277" locator="173:11-173:112" xsi:type="InValueSet">
+                  <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="274" locator="173:11-173:55" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </code>
+                  <valueset localId="276" locator="173:60-173:112" name="Urine dipstick result - protein - 4 plus Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="345" locator="190:1-210:3" name="Should Refer urgently to a hospital 3" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="345">
+               <a:s>/*
+((((&quot;Systolic blood pressure&quot; ≥ 160 mmHg)
+  AND (&quot;Repeat systolic blood pressure&quot; ≥ 160 mmHg)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;+&quot;))
+  OR ((&quot;Diastolic blood pressure&quot; ≥ 110 mmHg)
+  AND (&quot;Repeat diastolic blood pressure&quot; ≥ 110 mmHg)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;+&quot;)))
+  OR ((&quot;Systolic blood pressure&quot; ≥ 160 mmHg)
+  AND (&quot;Repeat systolic blood pressure&quot; ≥ 160 mmHg)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;None&quot;)))
+  OR ((&quot;Diastolic blood pressure&quot; ≥ 110 mmHg)
+  AND (&quot;Repeat diastolic blood pressure&quot; ≥ 110 mmHg)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;None&quot;))
+*/
+define &quot;Should Refer urgently to a hospital 3&quot;:
+  </a:s>
+               <a:s r="344">
+                  <a:s r="328">
+                     <a:s r="311">
+                        <a:s r="295">
+                           <a:s>(
+    </a:s>
+                           <a:s r="295">
+                              <a:s r="289">
+                                 <a:s r="284">
+                                    <a:s r="282">
+                                       <a:s r="281">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="282">
+                                          <a:s>&quot;Systolic blood pressure&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="283">
+                                       <a:s>160 'mm[Hg]'</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="288">
+                                    <a:s r="286">
+                                       <a:s r="285">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="286">
+                                          <a:s>&quot;Repeat systolic blood pressure&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="287">
+                                       <a:s>160 'mm[Hg]'</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="294">
+                                 <a:s r="291">
+                                    <a:s r="290">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="291">
+                                       <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="293">
+                                    <a:s r="292">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="293">
+                                       <a:s>&quot;Urine dipstick result - protein - 1 plus Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                        <a:s> or
+  </a:s>
+                        <a:s r="310">
+                           <a:s>(
+    </a:s>
+                           <a:s r="310">
+                              <a:s r="304">
+                                 <a:s r="299">
+                                    <a:s r="297">
+                                       <a:s r="296">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="297">
+                                          <a:s>&quot;Diastolic blood pressure&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="298">
+                                       <a:s>110 'mm[Hg]'</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="303">
+                                    <a:s r="301">
+                                       <a:s r="300">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="301">
+                                          <a:s>&quot;Repeat diastolic blood pressure&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="302">
+                                       <a:s>110 'mm[Hg]'</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="309">
+                                 <a:s r="306">
+                                    <a:s r="305">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="306">
+                                       <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="308">
+                                    <a:s r="307">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="308">
+                                       <a:s>&quot;Urine dipstick result - protein - 1 plus Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> or
+  </a:s>
+                     <a:s r="327">
+                        <a:s>(
+    </a:s>
+                        <a:s r="327">
+                           <a:s r="321">
+                              <a:s r="315">
+                                 <a:s r="313">
+                                    <a:s r="312">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="313">
+                                       <a:s>&quot;Systolic blood pressure&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> >= </a:s>
+                                 <a:s r="314">
+                                    <a:s>160 'mm[Hg]'</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="320">
+                                 <a:s r="318">
+                                    <a:s>
+                                       <a:s r="317">
+                                          <a:s r="316">
+                                             <a:s>
+                                                <a:s>ContactData.&quot;Repeat systolic blood pressure&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> value</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> >= </a:s>
+                                 <a:s r="319">
+                                    <a:s>160 'mm[Hg]'</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="326">
+                              <a:s r="323">
+                                 <a:s r="322">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="323">
+                                    <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="325">
+                                 <a:s r="324">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="325">
+                                    <a:s>&quot;Urine dipstick result - protein - None Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> or
+  </a:s>
+                  <a:s r="343">
+                     <a:s>(
+    </a:s>
+                     <a:s r="343">
+                        <a:s r="337">
+                           <a:s r="332">
+                              <a:s r="330">
+                                 <a:s r="329">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="330">
+                                    <a:s>&quot;Diastolic blood pressure&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> >= </a:s>
+                              <a:s r="331">
+                                 <a:s>110 'mm[Hg]'</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="336">
+                              <a:s r="334">
+                                 <a:s r="333">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="334">
+                                    <a:s>&quot;Repeat diastolic blood pressure&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> >= </a:s>
+                              <a:s r="335">
+                                 <a:s>110 'mm[Hg]'</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      and </a:s>
+                        <a:s r="342">
+                           <a:s r="339">
+                              <a:s r="338">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="339">
+                                 <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="341">
+                              <a:s r="340">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="341">
+                                 <a:s>&quot;Urine dipstick result - protein - None Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="344" locator="191:3-210:3" xsi:type="Or">
+            <operand localId="328" locator="191:3-205:3" xsi:type="Or">
+               <operand localId="311" locator="191:3-200:3" xsi:type="Or">
+                  <operand localId="295" locator="191:3-195:3" xsi:type="And">
+                     <operand localId="289" locator="192:5-193:70" xsi:type="And">
+                        <operand localId="284" locator="192:5-192:57" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="282" locator="192:5-192:41" name="Systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="283" locator="192:46-192:57" value="160" unit="mm[Hg]" xsi:type="Quantity"/>
+                        </operand>
+                        <operand localId="288" locator="193:11-193:70" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="286" locator="193:11-193:54" name="Repeat systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="287" locator="193:59-193:70" value="160" unit="mm[Hg]" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="294" locator="194:11-194:112" xsi:type="InValueSet">
+                        <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="291" locator="194:11-194:55" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </code>
+                        <valueset localId="293" locator="194:60-194:112" name="Urine dipstick result - protein - 1 plus Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="310" locator="196:3-200:3" xsi:type="And">
+                     <operand localId="304" locator="197:5-198:71" xsi:type="And">
+                        <operand localId="299" locator="197:5-197:58" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="297" locator="197:5-197:42" name="Diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="298" locator="197:47-197:58" value="110" unit="mm[Hg]" xsi:type="Quantity"/>
+                        </operand>
+                        <operand localId="303" locator="198:11-198:71" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="301" locator="198:11-198:55" name="Repeat diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="302" locator="198:60-198:71" value="110" unit="mm[Hg]" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="309" locator="199:11-199:112" xsi:type="InValueSet">
+                        <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="306" locator="199:11-199:55" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </code>
+                        <valueset localId="308" locator="199:60-199:112" name="Urine dipstick result - protein - 1 plus Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="327" locator="201:3-205:3" xsi:type="And">
+                  <operand localId="321" locator="202:5-203:76" xsi:type="And">
+                     <operand localId="315" locator="202:5-202:57" xsi:type="GreaterOrEqual">
+                        <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="313" locator="202:5-202:41" name="Systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand localId="314" locator="202:46-202:57" value="160" unit="mm[Hg]" xsi:type="Quantity"/>
+                     </operand>
+                     <operand localId="320" locator="203:11-203:76" xsi:type="GreaterOrEqual">
+                        <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="318" locator="203:11-203:60" xsi:type="Query">
+                              <source localId="317" locator="203:11-203:60" alias="value">
+                                 <expression localId="316" locator="203:11-203:54" name="Repeat systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                           </operand>
+                        </operand>
+                        <operand localId="319" locator="203:65-203:76" value="160" unit="mm[Hg]" xsi:type="Quantity"/>
+                     </operand>
+                  </operand>
+                  <operand localId="326" locator="204:11-204:110" xsi:type="InValueSet">
+                     <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="323" locator="204:11-204:55" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </code>
+                     <valueset localId="325" locator="204:60-204:110" name="Urine dipstick result - protein - None Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+            </operand>
+            <operand localId="343" locator="206:3-210:3" xsi:type="And">
+               <operand localId="337" locator="207:5-208:71" xsi:type="And">
+                  <operand localId="332" locator="207:5-207:58" xsi:type="GreaterOrEqual">
+                     <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="330" locator="207:5-207:42" name="Diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </operand>
+                     <operand localId="331" locator="207:47-207:58" value="110" unit="mm[Hg]" xsi:type="Quantity"/>
+                  </operand>
+                  <operand localId="336" locator="208:11-208:71" xsi:type="GreaterOrEqual">
+                     <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="334" locator="208:11-208:55" name="Repeat diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </operand>
+                     <operand localId="335" locator="208:60-208:71" value="110" unit="mm[Hg]" xsi:type="Quantity"/>
+                  </operand>
+               </operand>
+               <operand localId="342" locator="209:11-209:110" xsi:type="InValueSet">
+                  <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="339" locator="209:11-209:55" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </code>
+                  <valueset localId="341" locator="209:60-209:110" name="Urine dipstick result - protein - None Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="431" locator="227:1-248:5" name="Should Conduct hypertension counselling" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="431">
+               <a:s>/*
+((((&quot;Existing chronic health conditions&quot; = &quot;Hypertension&quot;)
+  OR ((140 mmHg ≤ &quot;Systolic blood pressure&quot; &lt; 160 mmHg)
+  AND (140 mmHg ≤ &quot;Repeat systolic blood pressure&quot; &lt; 160 mmHg)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;+&quot;)))
+  OR ((90 mmHg ≤ &quot;Diastolic blood pressure&quot; &lt; 110 mmHg)
+  AND (90 mmHg ≤ &quot;Repeat diastolic blood pressure&quot; &lt; 110 mmHg)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;+&quot;)))
+  OR ((140 mmHg ≤ &quot;Systolic blood pressure&quot; &lt; 160 mmHg)
+  AND (140 mmHg ≤ &quot;Repeat systolic blood pressure&quot; &lt; 160 mmHg)
+  AND (Urine dipstick result – protein&quot; = &quot;None&quot;)))
+  OR ((90 mmHg ≤ &quot;Diastolic blood pressure&quot; &lt; 110 mmHg)
+  AND (90 mmHg ≤ &quot;Repeat diastolic blood pressure&quot; &lt; 110 mmHg)
+  AND (&quot;Urine dipstick result – protein&quot; = &quot;None&quot;))
+*/
+define &quot;Should Conduct hypertension counselling&quot;:
+  </a:s>
+               <a:s r="430">
+                  <a:s r="410">
+                     <a:s r="390">
+                        <a:s r="370">
+                           <a:s r="350">
+                              <a:s r="347">
+                                 <a:s r="346">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="347">
+                                    <a:s>&quot;Existing chronic health conditions&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="349">
+                                 <a:s r="348">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="349">
+                                    <a:s>&quot;Existing chronic health conditions - Hypertension Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+    or </a:s>
+                           <a:s r="369">
+                              <a:s>(
+      </a:s>
+                              <a:s r="369">
+                                 <a:s r="363">
+                                    <a:s r="356">
+                                       <a:s r="352">
+                                          <a:s r="351">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="352">
+                                             <a:s>&quot;Systolic blood pressure&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="355">
+                                          <a:s>Interval[</a:s>
+                                          <a:s r="353">
+                                             <a:s>140 'mm[Hg]'</a:s>
+                                          </a:s>
+                                          <a:s>, </a:s>
+                                          <a:s r="354">
+                                             <a:s>160 'mm[Hg]'</a:s>
+                                          </a:s>
+                                          <a:s>]</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+        and </a:s>
+                                    <a:s r="362">
+                                       <a:s r="358">
+                                          <a:s r="357">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="358">
+                                             <a:s>&quot;Repeat systolic blood pressure&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="361">
+                                          <a:s>Interval[</a:s>
+                                          <a:s r="359">
+                                             <a:s>140 'mm[Hg]'</a:s>
+                                          </a:s>
+                                          <a:s>, </a:s>
+                                          <a:s r="360">
+                                             <a:s>160 'mm[Hg]'</a:s>
+                                          </a:s>
+                                          <a:s>]</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+        and </a:s>
+                                 <a:s r="368">
+                                    <a:s r="365">
+                                       <a:s r="364">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="365">
+                                          <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="367">
+                                       <a:s r="366">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="367">
+                                          <a:s>&quot;Urine dipstick result - protein - 1 plus Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+    )</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    or </a:s>
+                        <a:s r="389">
+                           <a:s>(
+      </a:s>
+                           <a:s r="389">
+                              <a:s r="383">
+                                 <a:s r="376">
+                                    <a:s r="372">
+                                       <a:s r="371">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="372">
+                                          <a:s>&quot;Diastolic blood pressure&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="375">
+                                       <a:s>Interval[</a:s>
+                                       <a:s r="373">
+                                          <a:s>90 'mm[Hg]'</a:s>
+                                       </a:s>
+                                       <a:s>, </a:s>
+                                       <a:s r="374">
+                                          <a:s>110 'mm[Hg]'</a:s>
+                                       </a:s>
+                                       <a:s>]</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+        and </a:s>
+                                 <a:s r="382">
+                                    <a:s r="378">
+                                       <a:s r="377">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="378">
+                                          <a:s>&quot;Repeat diastolic blood pressure&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="381">
+                                       <a:s>Interval[</a:s>
+                                       <a:s r="379">
+                                          <a:s>90 'mm[Hg]'</a:s>
+                                       </a:s>
+                                       <a:s>, </a:s>
+                                       <a:s r="380">
+                                          <a:s>110 'mm[Hg]'</a:s>
+                                       </a:s>
+                                       <a:s>]</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+        and </a:s>
+                              <a:s r="388">
+                                 <a:s r="385">
+                                    <a:s r="384">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="385">
+                                       <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="387">
+                                    <a:s r="386">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="387">
+                                       <a:s>&quot;Urine dipstick result - protein - 1 plus Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+    )</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    or </a:s>
+                     <a:s r="409">
+                        <a:s>(
+      </a:s>
+                        <a:s r="409">
+                           <a:s r="403">
+                              <a:s r="396">
+                                 <a:s r="392">
+                                    <a:s r="391">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="392">
+                                       <a:s>&quot;Systolic blood pressure&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="395">
+                                    <a:s>Interval[</a:s>
+                                    <a:s r="393">
+                                       <a:s>140 'mm[Hg]'</a:s>
+                                    </a:s>
+                                    <a:s>, </a:s>
+                                    <a:s r="394">
+                                       <a:s>160 'mm[Hg]'</a:s>
+                                    </a:s>
+                                    <a:s>]</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+        and </a:s>
+                              <a:s r="402">
+                                 <a:s r="398">
+                                    <a:s r="397">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="398">
+                                       <a:s>&quot;Repeat systolic blood pressure&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="401">
+                                    <a:s>Interval[</a:s>
+                                    <a:s r="399">
+                                       <a:s>140 'mm[Hg]'</a:s>
+                                    </a:s>
+                                    <a:s>, </a:s>
+                                    <a:s r="400">
+                                       <a:s>160 'mm[Hg]'</a:s>
+                                    </a:s>
+                                    <a:s>]</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+        and </a:s>
+                           <a:s r="408">
+                              <a:s r="405">
+                                 <a:s r="404">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="405">
+                                    <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="407">
+                                 <a:s r="406">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="407">
+                                    <a:s>&quot;Urine dipstick result - protein - None Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    )</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="429">
+                     <a:s>(
+      </a:s>
+                     <a:s r="429">
+                        <a:s r="423">
+                           <a:s r="416">
+                              <a:s r="412">
+                                 <a:s r="411">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="412">
+                                    <a:s>&quot;Diastolic blood pressure&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="415">
+                                 <a:s>Interval[</a:s>
+                                 <a:s r="413">
+                                    <a:s>90 'mm[Hg]'</a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="414">
+                                    <a:s>110 'mm[Hg]'</a:s>
+                                 </a:s>
+                                 <a:s>]</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+        and </a:s>
+                           <a:s r="422">
+                              <a:s r="418">
+                                 <a:s r="417">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="418">
+                                    <a:s>&quot;Repeat diastolic blood pressure&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="421">
+                                 <a:s>Interval[</a:s>
+                                 <a:s r="419">
+                                    <a:s>90 'mm[Hg]'</a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="420">
+                                    <a:s>110 'mm[Hg]'</a:s>
+                                 </a:s>
+                                 <a:s>]</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+        and </a:s>
+                        <a:s r="428">
+                           <a:s r="425">
+                              <a:s r="424">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="425">
+                                 <a:s>&quot;Urine dipstick result - protein&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="427">
+                              <a:s r="426">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="427">
+                                 <a:s>&quot;Urine dipstick result - protein - None Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="430" locator="228:3-248:5" xsi:type="Or">
+            <operand localId="410" locator="228:3-243:5" xsi:type="Or">
+               <operand localId="390" locator="228:3-238:5" xsi:type="Or">
+                  <operand localId="370" locator="228:3-233:5" xsi:type="Or">
+                     <operand localId="350" locator="228:3-228:116" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="347" locator="228:3-228:50" name="Existing chronic health conditions" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="349" locator="228:55-228:116" name="Existing chronic health conditions - Hypertension Choices" libraryName="Cx"/>
+                     </operand>
+                     <operand localId="369" locator="229:8-233:5" xsi:type="And">
+                        <operand localId="363" locator="230:7-231:96" xsi:type="And">
+                           <operand localId="356" locator="230:7-230:83" xsi:type="In">
+                              <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="352" locator="230:7-230:43" name="Systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </operand>
+                              <operand localId="355" locator="230:48-230:83" lowClosed="true" highClosed="true" xsi:type="Interval">
+                                 <low localId="353" locator="230:57-230:68" value="140" unit="mm[Hg]" xsi:type="Quantity"/>
+                                 <high localId="354" locator="230:71-230:82" value="160" unit="mm[Hg]" xsi:type="Quantity"/>
+                              </operand>
+                           </operand>
+                           <operand localId="362" locator="231:13-231:96" xsi:type="In">
+                              <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="358" locator="231:13-231:56" name="Repeat systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </operand>
+                              <operand localId="361" locator="231:61-231:96" lowClosed="true" highClosed="true" xsi:type="Interval">
+                                 <low localId="359" locator="231:70-231:81" value="140" unit="mm[Hg]" xsi:type="Quantity"/>
+                                 <high localId="360" locator="231:84-231:95" value="160" unit="mm[Hg]" xsi:type="Quantity"/>
+                              </operand>
+                           </operand>
+                        </operand>
+                        <operand localId="368" locator="232:13-232:114" xsi:type="InValueSet">
+                           <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="365" locator="232:13-232:57" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </code>
+                           <valueset localId="367" locator="232:62-232:114" name="Urine dipstick result - protein - 1 plus Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="389" locator="234:8-238:5" xsi:type="And">
+                     <operand localId="383" locator="235:7-236:96" xsi:type="And">
+                        <operand localId="376" locator="235:7-235:83" xsi:type="In">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="372" locator="235:7-235:44" name="Diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="375" locator="235:49-235:83" lowClosed="true" highClosed="true" xsi:type="Interval">
+                              <low localId="373" locator="235:58-235:68" value="90" unit="mm[Hg]" xsi:type="Quantity"/>
+                              <high localId="374" locator="235:71-235:82" value="110" unit="mm[Hg]" xsi:type="Quantity"/>
+                           </operand>
+                        </operand>
+                        <operand localId="382" locator="236:13-236:96" xsi:type="In">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="378" locator="236:13-236:57" name="Repeat diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="381" locator="236:62-236:96" lowClosed="true" highClosed="true" xsi:type="Interval">
+                              <low localId="379" locator="236:71-236:81" value="90" unit="mm[Hg]" xsi:type="Quantity"/>
+                              <high localId="380" locator="236:84-236:95" value="110" unit="mm[Hg]" xsi:type="Quantity"/>
+                           </operand>
+                        </operand>
+                     </operand>
+                     <operand localId="388" locator="237:13-237:114" xsi:type="InValueSet">
+                        <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="385" locator="237:13-237:57" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </code>
+                        <valueset localId="387" locator="237:62-237:114" name="Urine dipstick result - protein - 1 plus Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="409" locator="239:8-243:5" xsi:type="And">
+                  <operand localId="403" locator="240:7-241:96" xsi:type="And">
+                     <operand localId="396" locator="240:7-240:83" xsi:type="In">
+                        <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="392" locator="240:7-240:43" name="Systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand localId="395" locator="240:48-240:83" lowClosed="true" highClosed="true" xsi:type="Interval">
+                           <low localId="393" locator="240:57-240:68" value="140" unit="mm[Hg]" xsi:type="Quantity"/>
+                           <high localId="394" locator="240:71-240:82" value="160" unit="mm[Hg]" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="402" locator="241:13-241:96" xsi:type="In">
+                        <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="398" locator="241:13-241:56" name="Repeat systolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand localId="401" locator="241:61-241:96" lowClosed="true" highClosed="true" xsi:type="Interval">
+                           <low localId="399" locator="241:70-241:81" value="140" unit="mm[Hg]" xsi:type="Quantity"/>
+                           <high localId="400" locator="241:84-241:95" value="160" unit="mm[Hg]" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="408" locator="242:13-242:112" xsi:type="InValueSet">
+                     <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="405" locator="242:13-242:57" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </code>
+                     <valueset localId="407" locator="242:62-242:112" name="Urine dipstick result - protein - None Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+            </operand>
+            <operand localId="429" locator="244:8-248:5" xsi:type="And">
+               <operand localId="423" locator="245:7-246:96" xsi:type="And">
+                  <operand localId="416" locator="245:7-245:83" xsi:type="In">
+                     <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="412" locator="245:7-245:44" name="Diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </operand>
+                     <operand localId="415" locator="245:49-245:83" lowClosed="true" highClosed="true" xsi:type="Interval">
+                        <low localId="413" locator="245:58-245:68" value="90" unit="mm[Hg]" xsi:type="Quantity"/>
+                        <high localId="414" locator="245:71-245:82" value="110" unit="mm[Hg]" xsi:type="Quantity"/>
+                     </operand>
+                  </operand>
+                  <operand localId="422" locator="246:13-246:96" xsi:type="In">
+                     <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="418" locator="246:13-246:57" name="Repeat diastolic blood pressure" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </operand>
+                     <operand localId="421" locator="246:62-246:96" lowClosed="true" highClosed="true" xsi:type="Interval">
+                        <low localId="419" locator="246:71-246:81" value="90" unit="mm[Hg]" xsi:type="Quantity"/>
+                        <high localId="420" locator="246:84-246:95" value="110" unit="mm[Hg]" xsi:type="Quantity"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="428" locator="247:13-247:112" xsi:type="InValueSet">
+                  <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="425" locator="247:13-247:57" name="Urine dipstick result - protein" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </code>
+                  <valueset localId="427" locator="247:62-247:112" name="Urine dipstick result - protein - None Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+   </statements>
+</library>

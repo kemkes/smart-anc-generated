@@ -1,0 +1,53 @@
+{
+  "resourceType" : "Observation",
+  "id" : "anc-b8-de16-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de16"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"anc-b8-de16-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;anc-b8-de16-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b8-de16.html\">Total weight gain (kg)</a></p></div><p><b>identifier</b>: id: anc-b8-de16-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Total weight gain (kg) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B8.DE16; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#816159004 &quot;Measured weight gain (observable entity)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#56078-9 &quot;Weight gain [Mass] – during current pregnancy??Note: Trial code&quot;; <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-ICFDut.html\">International Classification of Functioning, Disability and Health, Dutch Translation</a>#b530 &quot;Weight maintenance functions&quot;)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: 26.70530000000000114823706098832190036773681640625 g<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code g = 'g')</span></p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-b8-de16-example"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B8.DE16",
+      "display" : "Total weight gain (kg)"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "816159004",
+      "display" : "Measured weight gain (observable entity)"
+    },
+    {
+      "system" : "http://loinc.org",
+      "code" : "56078-9",
+      "display" : "Weight gain [Mass] – during current pregnancy??Note: Trial code"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icf-nl",
+      "code" : "b530",
+      "display" : "Weight maintenance functions"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "performer" : [{
+    "reference" : "PractitionerRole/anc-practitionerrole-example"
+  }],
+  "valueQuantity" : {
+    "value" : 26.70530000000000114823706098832190036773681640625,
+    "system" : "http://unitsofmeasure.org",
+    "code" : "g"
+  }
+}

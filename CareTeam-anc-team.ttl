@@ -1,0 +1,51 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/CareTeam/anc-team> a fhir:CareTeam;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "anc-team"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-careteam";
+       fhir:index 0;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-careteam>
+     ], [
+       fhir:value "http://fhir.org/guides/who/core/StructureDefinition/who-careteam";
+       fhir:index 1;
+       fhir:link <http://fhir.org/guides/who/core/StructureDefinition/who-careteam>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: CareTeam</b><a name=\"anc-team\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource CareTeam &quot;anc-team&quot; </p><p style=\"margin-bottom: 0px\">Profiles: <a href=\"StructureDefinition-anc-careteam.html\">ANC CareTeam</a>, <a href=\"StructureDefinition-who-careteam.html\">WHO CareTeam</a></p></div><h3>Participants</h3><table class=\"grid\"><tr><td>-</td><td><b>Role</b></td><td><b>Member</b></td></tr><tr><td>*</td><td>Nurse <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (anc-common-persona#NRS)</span></td><td><a href=\"Practitioner-jane.html\">Practitioner/jane: Jane Nurse</a> &quot; NURSE&quot;</td></tr></table></div>"
+  ]; # 
+  fhir:CareTeam.participant [
+     fhir:index 0;
+     fhir:CareTeam.participant.role [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-common-persona" ];
+         fhir:Coding.code [ fhir:value "NRS" ];
+         fhir:Coding.display [ fhir:value "Nurse" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Nurse" ]
+     ];
+     fhir:CareTeam.participant.member [
+       fhir:link <http://fhir.org/guides/who/anc-cds/Practitioner/jane>;
+       fhir:Reference.reference [ fhir:value "Practitioner/jane" ];
+       fhir:Reference.display [ fhir:value "Jane Nurse" ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/CareTeam/anc-team.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

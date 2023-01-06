@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="ANCDT16"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">ANCDT16</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT16">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT16</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.3.0</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Identifier: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                <p style="margin-bottom: 5px;">
+                    <b>value: </b> <span>ANC.DT.16</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">ANCDT16</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">ANC.DT.16 Dietary counselling</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">active</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">false</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/CodeSystem/plan-definition-type">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2021-06-11 23:21:39-0600</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">World Health Organization (WHO)</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;">ALL women should have &amp;quot;Healthy eating and keeping physically active counselling&amp;quot; with guidance on nutrition and exercise. If a woman is classified as &amp;quot;underweight&amp;quot; AND she is part of a population whereby the prevalence of undernourishment is greater than or equal to 20%, then additional dietary counselling is needed.</td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Use Context: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>
+                    
+                      <tr>
+                        <td>task</td>
+                        <td>ANC.B10.</td>
+                        <td>Counselling, in-facility management &amp;amp; treatment </td>
+                      </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">001</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        <tr>
+          <th scope="row"><b>Libraries: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              
+                <tr><td><a href="http://fhir.org/guides/who/anc-cds/Library/ANCDT16">http://fhir.org/guides/who/anc-cds/Library/ANCDT16</a></td></tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+
+        
+        <tr>
+          <th scope="row"><b>Actions: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              
+                <tr>
+                  <td>
+                    <b> ANC.DT.16 Dietary counselling:</b> <br/>
+                    <b>When:</b> <i>named-event:</i> ANC.B10. Counselling, in-facility management &amp;amp; treatment <br/>
+                    
+                    
+                      <b>Then:</b>
+                      <table class="grid-dict">
+                        
+                          <tr>
+                            <td>
+                              Increase daily energy and protein intake to reduce the risk of low-birth-weight neonates
+
+[Protein Sources and Energy Sources]<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> (&amp;quot;Population prevalence of undernourishment&amp;quot; ≥ 20%)
+  AND (&amp;quot;Weight category&amp;quot; = &amp;quot;Underweight&amp;quot;) <i>(Should Conduct counselling on dietary interventions)</i><br/>
+                              
+                                <b>Then:</b>
+                                <table class="grid-dict">
+                                  
+                                    <tr>
+                                      <td>
+                                        <b> Conduct counselling on dietary interventions:</b> <br/>
+                                        
+                                        
+                                        
+                                          
+                                        
+                                      </td>
+                                    </tr>
+                                  
+                                    <tr>
+                                      <td>
+                                        <b> Counselling on increasing daily energy and protein intake:</b> <br/>
+                                        
+                                        
+                                        
+                                          
+                                        
+                                      </td>
+                                    </tr>
+                                  
+                                </table>
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              Balanced energy and protein dietary supplementation is recommended for pregnant women to reduce the risk of stillbirths and small-for-gestational-age neonates<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> (&amp;quot;Population prevalence of undernourishment&amp;quot; ≥ 20%)
+  AND (&amp;quot;Weight category&amp;quot; = &amp;quot;Underweight&amp;quot;) <i>(Should Conduct counselling on dietary interventions 2)</i><br/>
+                              
+                                <b>Then:</b>
+                                <table class="grid-dict">
+                                  
+                                    <tr>
+                                      <td>
+                                        <b> Conduct counselling on dietary interventions:</b> <br/>
+                                        
+                                        
+                                        
+                                          
+                                        
+                                      </td>
+                                    </tr>
+                                  
+                                    <tr>
+                                      <td>
+                                        <b> Counselling on balanced energy and protein dietary supplementation:</b> <br/>
+                                        
+                                        
+                                        
+                                          
+                                        
+                                      </td>
+                                    </tr>
+                                  
+                                </table>
+                              
+                            </td>
+                          </tr>
+                        
+                      </table>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+    </table>
+</div>
+  </text>
+  <url value="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT16"/>
+  <identifier>
+    <use value="official"/>
+    <value value="ANC.DT.16"/>
+  </identifier>
+  <version value="0.3.0"/>
+  <name value="ANCDT16"/>
+  <title value="ANC.DT.16 Dietary counselling"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2021-06-11T23:21:39-06:00"/>
+  <publisher value="World Health Organization (WHO)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.who.int"/>
+    </telecom>
+  </contact>
+  <description value="ALL women should have &quot;Healthy eating and keeping physically active counselling&quot; with guidance on nutrition and exercise. If a woman is classified as &quot;underweight&quot; AND she is part of a population whereby the prevalence of undernourishment is greater than or equal to 20%, then additional dietary counselling is needed."/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="task"/>
+      <display value="Workflow Task"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes"/>
+        <code value="ANC.B10."/>
+        <display value="Counselling, in-facility management &amp; treatment "/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <library value="http://fhir.org/guides/who/anc-cds/Library/ANCDT16"/>
+  <action>
+    <title value="ANC.DT.16 Dietary counselling"/>
+    <trigger>
+      <type value="named-event"/>
+      <name value="ANC.B10. Counselling, in-facility management &amp; treatment "/>
+    </trigger>
+    <action id="1">
+      <title value="Conduct counselling on dietary interventions"/>
+      <description value="Conduct counselling on dietary interventions"/>
+      <textEquivalent value="Increase daily energy and protein intake to reduce the risk of low-birth-weight neonates&#xA;&#xA;[Protein Sources and Energy Sources]"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): A1.2. Dietary interventions (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="(&quot;Population prevalence of undernourishment&quot; ≥ 20%)&#xA;  AND (&quot;Weight category&quot; = &quot;Underweight&quot;)"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct counselling on dietary interventions"/>
+        </expression>
+      </condition>
+      <action>
+        <title value="Conduct counselling on dietary interventions"/>
+      </action>
+      <action>
+        <title value="Counselling on increasing daily energy and protein intake"/>
+      </action>
+    </action>
+    <action id="2">
+      <title value="Conduct counselling on dietary interventions"/>
+      <description value="Conduct counselling on dietary interventions 2"/>
+      <textEquivalent value="Balanced energy and protein dietary supplementation is recommended for pregnant women to reduce the risk of stillbirths and small-for-gestational-age neonates"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): A1.3. Dietary interventions (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="(&quot;Population prevalence of undernourishment&quot; ≥ 20%)&#xA;  AND (&quot;Weight category&quot; = &quot;Underweight&quot;)"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct counselling on dietary interventions 2"/>
+        </expression>
+      </condition>
+      <action>
+        <title value="Conduct counselling on dietary interventions"/>
+      </action>
+      <action>
+        <title value="Counselling on balanced energy and protein dietary supplementation"/>
+      </action>
+    </action>
+  </action>
+</PlanDefinition>

@@ -1,0 +1,110 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT02> a fhir:PlanDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ANCDT02"]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <table class=\"grid dict\">\r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Id: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT02</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Url: </b></th>\r\n            <td style=\"padding-left: 4px;\"><a href=\"http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT02\">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT02</a></td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Version: </b></th>\r\n            <td style=\"padding-left: 4px;\">0.3.0</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Identifier: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                \r\n                <p style=\"margin-bottom: 5px;\">\r\n                    <b>value: </b> <span>ANC.DT.02</span>\r\n                </p>\r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Name: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT02</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Title: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANC.DT.02 Adolescent HEADSS asessement</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Status: </b></th>\r\n            <td style=\"padding-left: 4px;\">active</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Experimental: </b></th>\r\n            <td style=\"padding-left: 4px;\">false</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Type: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                    \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/CodeSystem/plan-definition-type\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\r\n                        </p>\r\n                        \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>code: </b> <span>eca-rule</span>\r\n                        </p>\r\n                        \r\n                        \r\n                    \r\n                \r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Date: </b></th>\r\n            <td style=\"padding-left: 4px;\">2021-06-10 18:11:17-0600</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Publisher: </b></th>\r\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Description: </b></th>\r\n            <td style=\"padding-left: 4px;\">If client is an adolescent, conduct Home-Eating-Activity-Drugs-Sexuality-Safety-Suicide (HEADSS) assessment</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Use Context: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                <table class=\"grid-dict\">\r\n                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>\r\n                    \r\n                      <tr>\r\n                        <td>task</td>\r\n                        <td>Client</td>\r\n                        <td>is an adolescent (age &amp;gt;19)</td>\r\n                      </tr>\r\n                    \r\n                </table>\r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\r\n            <td style=\"padding-left: 4px;\">001</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Libraries: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr><td><a href=\"http://fhir.org/guides/who/anc-cds/Library/ANCDT02\">http://fhir.org/guides/who/anc-cds/Library/ANCDT02</a></td></tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Actions: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr>\r\n                  <td>\r\n                    <b> ANC.DT.02 Adolescent HEADSS asessement:</b> <br/>\r\n                    <b>When:</b> <i>named-event:</i> Client is an adolescent (age &amp;gt;19)<br/>\r\n                    \r\n                    \r\n                      <b>Then:</b>\r\n                      <table class=\"grid-dict\">\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Questions to consider include:\n-Whether the adolescent studies/works?\n-How they perceive their home situation?\n-How they perceive their relation with their teachers and fellow students/employers\nand colleagues?\n-Whether there have been any recent changes in their situation?\n-Whether they feel safe at home, in the community, in their place of study or work;\non the road, etc?<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Age&amp;quot; &amp;gt; 19 <i>(Should Conduct HEADSS assessment)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                      </table>\r\n                    \r\n                  </td>\r\n                </tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n    </table>\r\n</div>"
+  ]; # 
+  fhir:PlanDefinition.url [ fhir:value "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT02"]; # 
+  fhir:PlanDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.value [ fhir:value "ANC.DT.02" ]
+  ]; # 
+  fhir:PlanDefinition.version [ fhir:value "0.3.0"]; # 
+  fhir:PlanDefinition.name [ fhir:value "ANCDT02"]; # 
+  fhir:PlanDefinition.title [ fhir:value "ANC.DT.02 Adolescent HEADSS asessement"]; # 
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ];
+       fhir:Coding.code [ fhir:value "eca-rule" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.status [ fhir:value "active"]; # 
+  fhir:PlanDefinition.experimental [ fhir:value "false"^^xsd:boolean]; # 
+  fhir:PlanDefinition.date [ fhir:value "2021-06-10T18:11:17-06:00"^^xsd:dateTime]; # 
+  fhir:PlanDefinition.publisher [ fhir:value "World Health Organization (WHO)"]; # 
+  fhir:PlanDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.description [ fhir:value "If client is an adolescent, conduct Home-Eating-Activity-Drugs-Sexuality-Safety-Suicide (HEADSS) assessment"]; # 
+  fhir:PlanDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "task" ];
+       fhir:Coding.display [ fhir:value "Workflow Task" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes" ];
+         fhir:Coding.code [ fhir:value "Client" ];
+         fhir:Coding.display [ fhir:value "is an adolescent (age >19)" ]
+       ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.library [
+     fhir:value "http://fhir.org/guides/who/anc-cds/Library/ANCDT02";
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/who/anc-cds/Library/ANCDT02>
+  ]; # 
+  fhir:PlanDefinition.action [
+     fhir:index 0;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC.DT.02 Adolescent HEADSS asessement" ];
+     fhir:PlanDefinition.action.trigger [
+       fhir:index 0;
+       fhir:TriggerDefinition.type [ fhir:value "named-event" ];
+       fhir:TriggerDefinition.name [ fhir:value "Client is an adolescent (age >19)" ]
+     ];
+     fhir:PlanDefinition.action.action [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value "1" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct HEADSS assessment" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct HEADSS assessment" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Questions to consider include:\n-Whether the adolescent studies/works?\n-How they perceive their home situation?\n-How they perceive their relation with their teachers and fellow students/employers\nand colleagues?\n-Whether there have been any recent changes in their situation?\n-Whether they feel safe at home, in the community, in their place of study or work;\non the road, etc?" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "Adolescent job aid: a handy desk reference tool for primary level health (2010) pp.11 (2)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Age\" > 19" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct HEADSS assessment" ]
+         ]
+       ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT02.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

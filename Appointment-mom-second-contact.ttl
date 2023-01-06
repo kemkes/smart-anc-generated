@@ -1,0 +1,99 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Appointment/mom-second-contact> a fhir:Appointment;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "mom-second-contact"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-appointment";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-appointment>
+     ], [
+       fhir:value "http://fhir.org/guides/who/core/StructureDefinition/who-appointment";
+       fhir:index 1;
+       fhir:link <http://fhir.org/guides/who/core/StructureDefinition/who-appointment>
+     ], [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-appointment";
+       fhir:index 2;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-appointment>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Appointment</b><a name=\"mom-second-contact\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Appointment &quot;mom-second-contact&quot; </p><p style=\"margin-bottom: 0px\">Profiles: <code>http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-appointment</code>, <a href=\"StructureDefinition-who-appointment.html\">WHO Appointment</a>, <a href=\"StructureDefinition-anc-appointment.html\">ANC Appointment</a></p></div><p><b>status</b>: booked</p><p><b>serviceCategory</b>: General Practice <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (service-category#gp)</span></p><p><b>serviceType</b>: General Discussion <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ([not stated]#52)</span></p><p><b>appointmentType</b>: Unplanned Visit <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v2-0276.html\">appointmentReason</a>#FOLLOWUP)</span></p><p><b>reasonReference</b>: <a href=\"Condition-mom-pregnancy-second-contact.html\">Condition/mom-pregnancy-second-contact</a></p><p><b>description</b>: Antenatal care second contact</p><p><b>start</b>: Jul 26, 2019, 10:00:00 PM</p><p><b>minutesDuration</b>: 30</p><p><b>created</b>: 2019-06-24</p><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href=\"Patient-mom-second-contact.html\">Patient/mom-second-contact: Charity Otala</a> &quot; OTALA&quot;</p><p><b>required</b>: required</p><p><b>status</b>: accepted</p></blockquote><blockquote><p><b>participant</b></p><p><b>type</b>: attender <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ParticipationType.html\">ParticipationType</a>#ATND)</span></p><p><b>actor</b>: <a href=\"Practitioner-midwife-amina-second-contact.html\">Practitioner/midwife-amina-second-contact: Amina Midwife</a> &quot; MIDWIFE&quot;</p><p><b>required</b>: required</p><p><b>status</b>: accepted</p></blockquote></div>"
+  ]; # 
+  fhir:Appointment.status [ fhir:value "booked"]; # 
+  fhir:Appointment.serviceCategory [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://example.org/service-category" ];
+       fhir:Coding.code [ fhir:value "gp" ];
+       fhir:Coding.display [ fhir:value "General Practice" ]
+     ]
+  ]; #  TODO: serviceCategory 
+  fhir:Appointment.serviceType [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.code [ fhir:value "52" ];
+       fhir:Coding.display [ fhir:value "General Discussion" ]
+     ]
+  ]; #  TODO: serviceType 
+  fhir:Appointment.appointmentType [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0276" ];
+       fhir:Coding.code [ fhir:value "FOLLOWUP" ];
+       fhir:Coding.display [ fhir:value "Unplanned Visit" ]
+     ]
+  ]; #  TODO: specialty 
+  fhir:Appointment.reasonReference [
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/who/anc-cds/Condition/mom-pregnancy-second-contact>;
+     fhir:Reference.reference [ fhir:value "Condition/mom-pregnancy-second-contact" ]
+  ]; # 
+  fhir:Appointment.description [ fhir:value "Antenatal care second contact"]; # 
+  fhir:Appointment.start [ fhir:value "2019-07-26T15:00:00Z"^^xsd:dateTime]; # 
+  fhir:Appointment.minutesDuration [ fhir:value "30"^^xsd:positiveInteger]; # 
+  fhir:Appointment.created [ fhir:value "2019-06-24"^^xsd:date]; # 
+  fhir:Appointment.participant [
+     fhir:index 0;
+     fhir:Appointment.participant.actor [
+       fhir:link <http://fhir.org/guides/who/anc-cds/Patient/mom-second-contact>;
+       fhir:Reference.reference [ fhir:value "Patient/mom-second-contact" ];
+       fhir:Reference.display [ fhir:value "Charity Otala" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "required" ];
+     fhir:Appointment.participant.status [ fhir:value "accepted" ]
+  ], [
+     fhir:index 1;
+     fhir:Appointment.participant.type [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+         fhir:Coding.code [ fhir:value "ATND" ]
+       ]
+     ];
+     fhir:Appointment.participant.actor [
+       fhir:link <http://fhir.org/guides/who/anc-cds/Practitioner/midwife-amina-second-contact>;
+       fhir:Reference.reference [ fhir:value "Practitioner/midwife-amina-second-contact" ];
+       fhir:Reference.display [ fhir:value "Amina Midwife" ]
+     ];
+     fhir:Appointment.participant.required [ fhir:value "required" ];
+     fhir:Appointment.participant.status [ fhir:value "accepted" ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Appointment/mom-second-contact.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

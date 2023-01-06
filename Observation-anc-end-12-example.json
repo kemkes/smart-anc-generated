@@ -1,0 +1,44 @@
+{
+  "resourceType" : "Observation",
+  "id" : "anc-end-12-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-end-12"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"anc-end-12-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;anc-end-12-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-end-12.html\">Delivery date</a></p></div><p><b>identifier</b>: id: anc-end-12-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Delivery date <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.End.12; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#184099003 &quot;Date of birth (observable entity)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#93857-1 &quot;Date and time of obstetric delivery&quot;)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: 2021-06-06 11:11:27-0600</p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-end-12-example"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.End.12",
+      "display" : "Delivery date"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "184099003",
+      "display" : "Date of birth (observable entity)"
+    },
+    {
+      "system" : "http://loinc.org",
+      "code" : "93857-1",
+      "display" : "Date and time of obstetric delivery"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "performer" : [{
+    "reference" : "PractitionerRole/anc-practitionerrole-example"
+  }],
+  "valueDateTime" : "2021-06-06T11:11:27-06:00"
+}

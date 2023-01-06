@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CarePlan xmlns="http://hl7.org/fhir">
+  <id value="charity-otala-1-transient-first-contact"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: CarePlan</b><a name="charity-otala-1-transient-first-contact"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource CarePlan &quot;charity-otala-1-transient-first-contact&quot; </p></div><p><b>instantiatesCanonical</b>: <a href="PlanDefinition-ANCB.html">ANC.B Routine contact</a></p><p><b>status</b>: active</p><p><b>intent</b>: plan</p><p><b>subject</b>: <a href="Patient-charity-otala-1.html">Patient/charity-otala-1: Charity Otala</a> &quot; OTALA&quot;</p><h3>Activities</h3><table class="grid"><tr><td>-</td><td><b>Reference</b></td></tr><tr><td>*</td><td><a name="requestgroup-anc-b"> </a><blockquote><p/><p><a name="requestgroup-anc-b"> </a></p><p><b>instantiatesCanonical</b>: <a href="PlanDefinition-ANCB.html">ANC.B Routine contact</a></p><p><b>status</b>: draft</p><p><b>intent</b>: proposal</p><p><b>subject</b>: <a href="Patient-charity-otala-1.html">Patient/charity-otala-1: Charity Otala</a> &quot; OTALA&quot;</p><p><b>encounter</b>: <a href="Encounter-anc-encounter-charity-otala-1.html">Encounter/anc-encounter-charity-otala-1</a></p><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>5</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b4">#task-anc-b4</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>6</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b5">#task-anc-b5</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>7</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b6">#task-anc-b6</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>8</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b7">#task-anc-b7</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>9</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b8">#task-anc-b8</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>10</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b9">#task-anc-b9</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>11</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b10">#task-anc-b10</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>12</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b11">#task-anc-b11</a></p></blockquote><blockquote><p><b>action</b></p><p><b>resource</b>: <a href="#task-anc-b12">#task-anc-b12</a></p></blockquote></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: RequestGroup #requestgroup-anc-b</b><a name="requestgroup-anc-b"> </a></p><p><b>instantiatesCanonical</b>: <a href="PlanDefinition-ANCB.html">ANC.B Routine contact</a></p><p><b>status</b>: draft</p><p><b>intent</b>: proposal</p><p><b>subject</b>: <a href="Patient-charity-otala-1.html">Patient/charity-otala-1: Charity Otala</a> &quot; OTALA&quot;</p><p><b>encounter</b>: <a href="Encounter-anc-encounter-charity-otala-1.html">Encounter/anc-encounter-charity-otala-1</a></p><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>5</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b4">#task-anc-b4</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>6</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b5">#task-anc-b5</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>7</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b6">#task-anc-b6</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>8</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b7">#task-anc-b7</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>9</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b8">#task-anc-b8</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>10</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b9">#task-anc-b9</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>11</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b10">#task-anc-b10</a></p></blockquote><blockquote><p><b>action</b></p><h3>RelatedActions</h3><table class="grid"><tr><td>-</td><td><b>ActionId</b></td><td><b>Relationship</b></td></tr><tr><td>*</td><td>12</td><td>before-start</td></tr></table><p><b>resource</b>: <a href="#task-anc-b11">#task-anc-b11</a></p></blockquote><blockquote><p><b>action</b></p><p><b>resource</b>: <a href="#task-anc-b12">#task-anc-b12</a></p></blockquote></blockquote><hr/><blockquote><p><b>Generated Narrative: Task #task-anc-b4</b><a name="task-anc-b4"> </a></p><p><b>instantiatesCanonical</b>: <a href="ActivityDefinition-ANCB4.html">ANC.B4 Confirm pregnancy</a></p><p><b>status</b>: draft</p><p><b>intent</b>: proposal</p><p><b>code</b>: Confirm pregnancy <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (activity-codes#ANC.B4; <a href="http://hl7.org/fhir/uv/cpg/STU1/CodeSystem-cpg-activity-type.html">CPG Activity Type</a>#collect-information &quot;Collect Information&quot;; <a href="http://hl7.org/fhir/uv/cpg/STU1/CodeSystem-cpg-common-process.html">CPG Common Process</a>#history-and-physical &quot;History and Physical&quot;)</span></p><h3>Inputs</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Value[x]</b></td></tr><tr><td>*</td><td>Collect Information <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/uv/cpg/STU1/CodeSystem-cpg-activity-type.html">CPG Activity Type</a>#collect-information)</span></td><td><a href="Questionnaire-ANCB4.html">ANC.B4 Confirm pregnancy</a></td></tr></table></blockquote></div>
+  </text>
+  <contained>
+    <RequestGroup>
+      <id value="requestgroup-anc-b"/>
+      <instantiatesCanonical value="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCB"/>
+      <status value="draft"/>
+      <intent value="proposal"/>
+      <subject>
+        <reference value="Patient/charity-otala-1"/>
+        <display value="Charity Otala"/>
+      </subject>
+      <encounter>
+        <reference value="Encounter/anc-encounter-charity-otala-1"/>
+      </encounter>
+      <!--  ANC.B4 Confirm Pregnancy  -->
+      <action id="4">
+        <relatedAction>
+          <actionId value="5"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b4"/>
+        </resource>
+      </action>
+      <!--  ANC.B5 Quick Check  -->
+      <action id="5">
+        <relatedAction>
+          <actionId value="6"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b5"/>
+        </resource>
+      </action>
+      <!--  ANC.B6 Profile  -->
+      <action id="6">
+        <relatedAction>
+          <actionId value="7"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b6"/>
+        </resource>
+      </action>
+      <!--  ANC.B7 Symptoms and Followup  -->
+      <action id="7">
+        <relatedAction>
+          <actionId value="8"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b7"/>
+        </resource>
+      </action>
+      <!--  ANC.B8 Physical Exam  -->
+      <action id="8">
+        <relatedAction>
+          <actionId value="9"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b8"/>
+        </resource>
+      </action>
+      <!--  ANC.B9 Laboratory Testing and Imaging  -->
+      <action id="9">
+        <relatedAction>
+          <actionId value="10"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b9"/>
+        </resource>
+      </action>
+      <!--  ANC.B10 Counselling and Treatment  -->
+      <action id="10">
+        <relatedAction>
+          <actionId value="11"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b10"/>
+        </resource>
+      </action>
+      <!--  ANC.B11 Referral Needed  -->
+      <action id="11">
+        <relatedAction>
+          <actionId value="12"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b11"/>
+        </resource>
+      </action>
+      <!--  ANC.B12 Scheduling  -->
+      <action id="12">
+        <resource>
+          <reference value="#task-anc-b12"/>
+        </resource>
+      </action>
+    </RequestGroup>
+  </contained>
+  <contained>
+    <Task>
+      <id value="task-anc-b4"/>
+      <instantiatesCanonical value="http://fhir.org/guides/who/anc-cds/ActivityDefinition/ANCB4"/>
+      <status value="draft"/>
+      <intent value="proposal"/>
+      <code>
+        <coding>
+          <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes"/>
+          <code value="ANC.B4"/>
+          <display value="Confirm pregnancy"/>
+        </coding>
+        <coding>
+          <system value="http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type"/>
+          <code value="collect-information"/>
+          <display value="Collect Information"/>
+        </coding>
+        <coding>
+          <system value="http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"/>
+          <code value="history-and-physical"/>
+          <display value="History and Physical"/>
+        </coding>
+      </code>
+      <input>
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type"/>
+            <code value="collect-information"/>
+            <display value="Collect Information"/>
+          </coding>
+        </type>
+        <valueCanonical value="http://fhir.org/guides/who/anc-cds/Questionnaire/ANCB4"/>
+      </input>
+    </Task>
+  </contained>
+  <instantiatesCanonical value="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCB"/>
+  <status value="active"/>
+  <intent value="plan"/>
+  <subject>
+    <reference value="Patient/charity-otala-1"/>
+    <display value="Charity Otala"/>
+  </subject>
+  <!--  ANC.B Routine Contact  -->
+  <activity>
+    <reference>
+      <reference value="#requestgroup-anc-b"/>
+    </reference>
+  </activity>
+</CarePlan>

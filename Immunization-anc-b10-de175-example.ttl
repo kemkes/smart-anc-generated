@@ -1,0 +1,52 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Immunization/anc-b10-de175-example> a fhir:Immunization;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "anc-b10-de175-example"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de175";
+       fhir:index 0;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de175>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Immunization</b><a name=\"anc-b10-de175-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Immunization &quot;anc-b10-de175-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b10-de175.html\">Reason tetanus toxoid (TT) vaccination not provided</a></p></div><p><b>identifier</b>: id: anc-b10-de175-example (use: OFFICIAL)</p><p><b>status</b>: completed</p><p><b>statusReason</b>: Reason tetanus toxoid (TT) vaccination not provided <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B10.DE175)</span></p><p><b>patient</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p></div>"
+  ]; # 
+  fhir:Immunization.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "http://example.org/fhir/NamingSystem/identifiers" ];
+     fhir:Identifier.value [ fhir:value "anc-b10-de175-example" ]
+  ]; # 
+  fhir:Immunization.status [ fhir:value "completed"]; # 
+  fhir:Immunization.statusReason [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:Coding.code [ fhir:value "ANC.B10.DE175" ];
+       fhir:Coding.display [ fhir:value "Reason tetanus toxoid (TT) vaccination not provided" ]
+     ]
+  ]; # 
+  fhir:Immunization.patient [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Patient/anc-patient-example>;
+     fhir:Reference.reference [ fhir:value "Patient/anc-patient-example" ]
+  ]; # 
+  fhir:Immunization.encounter [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Encounter/anc-encounter-example>;
+     fhir:Reference.reference [ fhir:value "Encounter/anc-encounter-example" ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Immunization/anc-b10-de175-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

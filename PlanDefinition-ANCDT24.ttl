@@ -1,0 +1,110 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT24> a fhir:PlanDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ANCDT24"]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <table class=\"grid dict\">\r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Id: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT24</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Url: </b></th>\r\n            <td style=\"padding-left: 4px;\"><a href=\"http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT24\">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT24</a></td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Version: </b></th>\r\n            <td style=\"padding-left: 4px;\">0.3.0</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Identifier: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                \r\n                <p style=\"margin-bottom: 5px;\">\r\n                    <b>value: </b> <span>ANC.DT.24</span>\r\n                </p>\r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Name: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT24</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Title: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANC.DT.24 TB diagnosis</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Status: </b></th>\r\n            <td style=\"padding-left: 4px;\">active</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Experimental: </b></th>\r\n            <td style=\"padding-left: 4px;\">false</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Type: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                    \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/CodeSystem/plan-definition-type\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\r\n                        </p>\r\n                        \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>code: </b> <span>eca-rule</span>\r\n                        </p>\r\n                        \r\n                        \r\n                    \r\n                \r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Date: </b></th>\r\n            <td style=\"padding-left: 4px;\">2021-06-11 23:25:04-0600</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Publisher: </b></th>\r\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Description: </b></th>\r\n            <td style=\"padding-left: 4px;\">If the woman's TB screening results are positive for TB, provide the required treatment as per local TB protocols</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Use Context: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                <table class=\"grid-dict\">\r\n                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>\r\n                    \r\n                      <tr>\r\n                        <td>task</td>\r\n                        <td>ANC.B10.4.</td>\r\n                        <td>Diagnosis and treatment</td>\r\n                      </tr>\r\n                    \r\n                </table>\r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\r\n            <td style=\"padding-left: 4px;\">001</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Libraries: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr><td><a href=\"http://fhir.org/guides/who/anc-cds/Library/ANCDT24\">http://fhir.org/guides/who/anc-cds/Library/ANCDT24</a></td></tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Actions: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr>\r\n                  <td>\r\n                    <b> ANC.DT.24 TB diagnosis:</b> <br/>\r\n                    <b>When:</b> <i>named-event:</i> ANC.B10.4. Diagnosis and treatment<br/>\r\n                    \r\n                    \r\n                      <b>Then:</b>\r\n                      <table class=\"grid-dict\">\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Treat according to local protocol and/or refer for treatment.\n&amp;quot;In settings where the tuberculosis (TB) prevalence in the general population is 100/100 000 population or higher, systematic screening for active TB should be considered for pregnant women as part of antenatal care&amp;quot; (2)<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;TB screening result&amp;quot; = &amp;quot;Positive for TB&amp;quot; <i>(Should Conduct TB screening positive counseling)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                      </table>\r\n                    \r\n                  </td>\r\n                </tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n    </table>\r\n</div>"
+  ]; # 
+  fhir:PlanDefinition.url [ fhir:value "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT24"]; # 
+  fhir:PlanDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.value [ fhir:value "ANC.DT.24" ]
+  ]; # 
+  fhir:PlanDefinition.version [ fhir:value "0.3.0"]; # 
+  fhir:PlanDefinition.name [ fhir:value "ANCDT24"]; # 
+  fhir:PlanDefinition.title [ fhir:value "ANC.DT.24 TB diagnosis"]; # 
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ];
+       fhir:Coding.code [ fhir:value "eca-rule" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.status [ fhir:value "active"]; # 
+  fhir:PlanDefinition.experimental [ fhir:value "false"^^xsd:boolean]; # 
+  fhir:PlanDefinition.date [ fhir:value "2021-06-11T23:25:04-06:00"^^xsd:dateTime]; # 
+  fhir:PlanDefinition.publisher [ fhir:value "World Health Organization (WHO)"]; # 
+  fhir:PlanDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.description [ fhir:value "If the woman's TB screening results are positive for TB, provide the required treatment as per local TB protocols"]; # 
+  fhir:PlanDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "task" ];
+       fhir:Coding.display [ fhir:value "Workflow Task" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes" ];
+         fhir:Coding.code [ fhir:value "ANC.B10.4." ];
+         fhir:Coding.display [ fhir:value "Diagnosis and treatment" ]
+       ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.library [
+     fhir:value "http://fhir.org/guides/who/anc-cds/Library/ANCDT24";
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/who/anc-cds/Library/ANCDT24>
+  ]; # 
+  fhir:PlanDefinition.action [
+     fhir:index 0;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC.DT.24 TB diagnosis" ];
+     fhir:PlanDefinition.action.trigger [
+       fhir:index 0;
+       fhir:TriggerDefinition.type [ fhir:value "named-event" ];
+       fhir:TriggerDefinition.name [ fhir:value "ANC.B10.4. Diagnosis and treatment" ]
+     ];
+     fhir:PlanDefinition.action.action [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value "1" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct TB screening positive counseling" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct TB screening positive counseling" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Treat according to local protocol and/or refer for treatment.\n\"In settings where the tuberculosis (TB) prevalence in the general population is 100/100 000 population or higher, systematic screening for active TB should be considered for pregnant women as part of antenatal care\" (2)" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): B.1.8. Tuberculosis (TB) (3)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"TB screening result\" = \"Positive for TB\"" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct TB screening positive counseling" ]
+         ]
+       ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT24.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

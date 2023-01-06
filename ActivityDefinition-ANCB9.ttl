@@ -1,0 +1,115 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/ActivityDefinition/ANCB9> a fhir:ActivityDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ANCB9"]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <table class=\"grid dict\">\r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Id: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCB9</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Url: </b></th>\r\n            <td style=\"padding-left: 4px;\"><a href=\"http://fhir.org/guides/who/anc-cds/ActivityDefinition/ANCB9\">http://fhir.org/guides/who/anc-cds/ActivityDefinition/ANCB9</a></td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Version: </b></th>\r\n            <td style=\"padding-left: 4px;\">0.3.0</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Identifier: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                \r\n                <p style=\"margin-bottom: 5px;\">\r\n                    <b>value: </b> <span>ANC.B9</span>\r\n                </p>\r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Name: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCB9</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Title: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANC.B9 Conduct laboratory test and imaging</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Status: </b></th>\r\n            <td style=\"padding-left: 4px;\">active</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Experimental: </b></th>\r\n            <td style=\"padding-left: 4px;\">false</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Date: </b></th>\r\n            <td style=\"padding-left: 4px;\">2021-06-08 16:08:55-0600</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Publisher: </b></th>\r\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Description: </b></th>\r\n            <td style=\"padding-left: 4px;\">Health worker orders or follows up on required laboratory tests and ultrasound, as necessary. Health worker informs woman of all tests ordered and explains why.</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Knowledge Capability: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            shareable computable publishable \r\n          </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Knowledge Representation Level: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            structured\r\n          </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Use Context: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                <table class=\"grid-dict\">\r\n                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>\r\n                    \r\n                      <tr>\r\n                        <td>task</td>\r\n                        <td>ANC.B9</td>\r\n                        <td>Lab tests &amp;amp; imaging</td>\r\n                      </tr>\r\n                    \r\n                </table>\r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\r\n            <td style=\"padding-left: 4px;\">001</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Kind: </b></th>\r\n            <td style=\"padding-left: 4px;\">?</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Profile: </b></th>\r\n            <td style=\"padding-left: 4px;\">http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Type: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                    \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>system: </b> <span><a href=\"http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type\">http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type</a></span>\r\n                        </p>\r\n                        \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>code: </b> <span>collect-information</span>\r\n                        </p>\r\n                        \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>display: </b> <span>Collect information</span>\r\n                        </p>\r\n                        \r\n                    \r\n                \r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Intent: </b></th>\r\n            <td style=\"padding-left: 4px;\">proposal</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>doNotPerform: </b></th>\r\n            <td style=\"padding-left: 4px;\">false</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Dynamic Values: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n              \r\n                <li>\r\n                  input: <i>({ type: code, value: extension('http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith').value })</i><br/>\r\n                </li>\r\n              \r\n            </td>\r\n        </tr>\r\n        \r\n    </table>\r\n</div>"
+  ]; # 
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueCode [ fhir:value "shareable" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueCode [ fhir:value "computable" ]
+  ], [
+     fhir:index 2;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueCode [ fhir:value "publishable" ]
+  ], [
+     fhir:index 3;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel" ];
+     fhir:Extension.valueCode [ fhir:value "structured" ]
+  ], [
+     fhir:index 4;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith" ];
+     fhir:Extension.valueCanonical [
+       fhir:value "http://fhir.org/guides/who/anc-cds/Questionnaire/ANCB9";
+       fhir:link <http://fhir.org/guides/who/anc-cds/Questionnaire/ANCB9>
+     ]
+  ]; # 
+  fhir:ActivityDefinition.url [ fhir:value "http://fhir.org/guides/who/anc-cds/ActivityDefinition/ANCB9"]; # 
+  fhir:ActivityDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.value [ fhir:value "ANC.B9" ]
+  ]; # 
+  fhir:ActivityDefinition.version [ fhir:value "0.3.0"]; # 
+  fhir:ActivityDefinition.name [ fhir:value "ANCB9"]; # 
+  fhir:ActivityDefinition.title [ fhir:value "ANC.B9 Conduct laboratory test and imaging"]; # 
+  fhir:ActivityDefinition.status [ fhir:value "active"]; # 
+  fhir:ActivityDefinition.experimental [ fhir:value "false"^^xsd:boolean]; # 
+  fhir:ActivityDefinition.date [ fhir:value "2021-06-08T16:08:55-06:00"^^xsd:dateTime]; # 
+  fhir:ActivityDefinition.publisher [ fhir:value "World Health Organization (WHO)"]; # 
+  fhir:ActivityDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ]; # 
+  fhir:ActivityDefinition.description [ fhir:value "Health worker orders or follows up on required laboratory tests and ultrasound, as necessary. Health worker informs woman of all tests ordered and explains why."]; # 
+  fhir:ActivityDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "task" ];
+       fhir:Coding.display [ fhir:value "Workflow Task" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-activity-codes" ];
+         fhir:Coding.code [ fhir:value "ANC.B9" ];
+         fhir:Coding.display [ fhir:value "Lab tests & imaging" ]
+       ]
+     ]
+  ]; # 
+  fhir:ActivityDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ]; # 
+  fhir:ActivityDefinition.kind [ fhir:value "?"]; # 
+  fhir:ActivityDefinition.profile [
+     fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask";
+     fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask>
+  ]; # 
+  fhir:ActivityDefinition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type" ];
+       fhir:Coding.code [ fhir:value "collect-information" ];
+       fhir:Coding.display [ fhir:value "Collect information" ]
+     ]
+  ]; # 
+  fhir:ActivityDefinition.intent [ fhir:value "proposal"]; # 
+  fhir:ActivityDefinition.doNotPerform [ fhir:value "false"^^xsd:boolean]; # 
+  fhir:ActivityDefinition.dynamicValue [
+     fhir:index 0;
+     fhir:ActivityDefinition.dynamicValue.path [ fhir:value "input" ];
+     fhir:ActivityDefinition.dynamicValue.expression [
+       fhir:Expression.language [ fhir:value "text/cql-expression" ];
+       fhir:Expression.expression [ fhir:value "{ type: code, value: extension('http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith').value }" ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/ActivityDefinition/ANCB9.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

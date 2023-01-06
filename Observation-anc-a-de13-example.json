@@ -1,0 +1,50 @@
+{
+  "resourceType" : "Observation",
+  "id" : "anc-a-de13-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-a-de13"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"anc-a-de13-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;anc-a-de13-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-a-de13.html\">Co-habitants</a></p></div><p><b>identifier</b>: id: anc-a-de13-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Co-habitants <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.A.DE13)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: Parents <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.A.DE14; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#224137008 &quot;Lives with parents (finding)&quot;; <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-ICFDut.html\">International Classification of Functioning, Disability and Health, Dutch Translation</a>#e310 &quot;Immediate family?Individuals related by birth, marriage or other relationship recognized by the culture as immediate family, e.g. spouses, partners, parents, siblings, children, foster parents, adoptive parents and grandparents&quot;)</span></p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-a-de13-example"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.A.DE13",
+      "display" : "Co-habitants"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "performer" : [{
+    "reference" : "PractitionerRole/anc-practitionerrole-example"
+  }],
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.A.DE14",
+      "display" : "Parents"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "224137008",
+      "display" : "Lives with parents (finding)"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icf-nl",
+      "code" : "e310",
+      "display" : "Immediate family?Individuals related by birth, marriage or other relationship recognized by the culture as immediate family, e.g. spouses, partners, parents, siblings, children, foster parents, adoptive parents and grandparents"
+    }]
+  }
+}

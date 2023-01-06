@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="ANCDT04"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">ANCDT04</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT04">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT04</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.3.0</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Identifier: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                <p style="margin-bottom: 5px;">
+                    <b>value: </b> <span>ANC.DT.04</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">ANCDT04</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">ANC.DT.04 Conducting physical exams</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">active</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">false</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/CodeSystem/plan-definition-type">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2021-06-11 22:32:40-0600</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">World Health Organization (WHO)</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;">Depending on the results of some physical exams, additional examinations or repeat measurements are required</td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Use Context: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>
+                    
+                      <tr>
+                        <td>task</td>
+                        <td>ANC.B8</td>
+                        <td>Conduct physical exam</td>
+                      </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">001</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        <tr>
+          <th scope="row"><b>Libraries: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              
+                <tr><td><a href="http://fhir.org/guides/who/anc-cds/Library/ANCDT04">http://fhir.org/guides/who/anc-cds/Library/ANCDT04</a></td></tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+
+        
+        <tr>
+          <th scope="row"><b>Actions: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              
+                <tr>
+                  <td>
+                    <b> ANC.DT.04 Conducting physical exams:</b> <br/>
+                    <b>When:</b> <i>named-event:</i> ANC.B8 Conduct physical exam<br/>
+                    
+                    
+                      <b>Then:</b>
+                      <table class="grid-dict">
+                        
+                          <tr>
+                            <td>
+                              Given high values (SBP ≥ 140 or DBP ≥ 90) upon first measure, blood pressure should be measured again<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> (&amp;quot;Systolic blood pressure&amp;quot; ≥ 140 mmHg)
+  OR (&amp;quot;Diastolic blood pressure&amp;quot; ≥ 90 mmHg) <i>(Should Measure BP again after 10–15 minutes rest)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              The health worker should retake the woman's temperature if the first reading is over 38°C<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> &amp;quot;Body temperature&amp;quot; ≥ 38°C <i>(Should Measure temperature again)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              The health worker should retake the woman's pulse rate if the first reading is lower than 60 or higher than 100 beats per minute<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> 60 &amp;gt; Pulse rate &amp;gt; 100 <i>(Should Check again after 10 minutes rest)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              If the woman has an abnormal respiratory exam result or respiratory distress, conduct oximetry test<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> ((((((&amp;quot;Respiratory exam result&amp;quot; = &amp;quot;Dyspnoea&amp;quot;)
+  OR (&amp;quot;Respiratory exam result&amp;quot; = &amp;quot;Cough&amp;quot;))
+  OR (&amp;quot;Respiratory exam result&amp;quot; = &amp;quot;Rapid breathing&amp;quot;))
+  OR (&amp;quot;Respiratory exam result&amp;quot; = &amp;quot;Slow breathing&amp;quot;))
+  OR (&amp;quot;Respiratory exam result&amp;quot; = &amp;quot;Wheezing&amp;quot;))
+  OR (&amp;quot;Respiratory exam result&amp;quot; = &amp;quot;Rales&amp;quot;))
+  OR (&amp;quot;Respiratory exam result&amp;quot; = &amp;quot;Other abnormal respiratory exam result (specify)&amp;quot;) <i>(Should Conduct oximetry test)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              Fetal heart rate out of normal range (100–180) – please have the woman lay on her left side for 15 minutes and check again<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> 100 bpm &amp;gt; Fetal heart rate &amp;gt; 180 bpm <i>(Should Measure the fetal heart rate again)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                      </table>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+    </table>
+</div>
+  </text>
+  <url value="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT04"/>
+  <identifier>
+    <use value="official"/>
+    <value value="ANC.DT.04"/>
+  </identifier>
+  <version value="0.3.0"/>
+  <name value="ANCDT04"/>
+  <title value="ANC.DT.04 Conducting physical exams"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2021-06-11T22:32:40-06:00"/>
+  <publisher value="World Health Organization (WHO)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.who.int"/>
+    </telecom>
+  </contact>
+  <description value="Depending on the results of some physical exams, additional examinations or repeat measurements are required"/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="task"/>
+      <display value="Workflow Task"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes"/>
+        <code value="ANC.B8"/>
+        <display value="Conduct physical exam"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <library value="http://fhir.org/guides/who/anc-cds/Library/ANCDT04"/>
+  <action>
+    <title value="ANC.DT.04 Conducting physical exams"/>
+    <trigger>
+      <type value="named-event"/>
+      <name value="ANC.B8 Conduct physical exam"/>
+    </trigger>
+    <action id="1">
+      <title value="Measure BP again after 10–15 minutes rest"/>
+      <description value="Measure BP again after 10–15 minutes rest"/>
+      <textEquivalent value="Given high values (SBP ≥ 140 or DBP ≥ 90) upon first measure, blood pressure should be measured again"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="Managing complications guide (IMPAC) (2017): Section S-51 (5)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="(&quot;Systolic blood pressure&quot; ≥ 140 mmHg)&#xA;  OR (&quot;Diastolic blood pressure&quot; ≥ 90 mmHg)"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Measure BP again after 10–15 minutes rest"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="2">
+      <title value="Measure temperature again"/>
+      <description value="Measure temperature again"/>
+      <textEquivalent value="The health worker should retake the woman's temperature if the first reading is over 38°C"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="Managing complications guide (IMPAC) (2017): Section S-113 (5)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="&quot;Body temperature&quot; ≥ 38°C"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Measure temperature again"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="3">
+      <title value="Check again after 10 minutes rest"/>
+      <description value="Check again after 10 minutes rest"/>
+      <textEquivalent value="The health worker should retake the woman's pulse rate if the first reading is lower than 60 or higher than 100 beats per minute"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="Managing complications guide (IMPAC) (2017): Section S-1 (5)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="60 &gt; Pulse rate &gt; 100"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Check again after 10 minutes rest"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="4">
+      <title value="Conduct oximetry test"/>
+      <description value="Conduct oximetry test"/>
+      <textEquivalent value="If the woman has an abnormal respiratory exam result or respiratory distress, conduct oximetry test"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="Managing complications guide (IMPAC) (2017): Section S-149 (5)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="((((((&quot;Respiratory exam result&quot; = &quot;Dyspnoea&quot;)&#xA;  OR (&quot;Respiratory exam result&quot; = &quot;Cough&quot;))&#xA;  OR (&quot;Respiratory exam result&quot; = &quot;Rapid breathing&quot;))&#xA;  OR (&quot;Respiratory exam result&quot; = &quot;Slow breathing&quot;))&#xA;  OR (&quot;Respiratory exam result&quot; = &quot;Wheezing&quot;))&#xA;  OR (&quot;Respiratory exam result&quot; = &quot;Rales&quot;))&#xA;  OR (&quot;Respiratory exam result&quot; = &quot;Other abnormal respiratory exam result (specify)&quot;)"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct oximetry test"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="5">
+      <title value="Measure the fetal heart rate again"/>
+      <description value="Measure the fetal heart rate again"/>
+      <textEquivalent value="Fetal heart rate out of normal range (100–180) – please have the woman lay on her left side for 15 minutes and check again"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="Managing complications guide (IMPAC) (2017): C-89 (5)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="100 bpm &gt; Fetal heart rate &gt; 180 bpm"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Measure the fetal heart rate again"/>
+        </expression>
+      </condition>
+    </action>
+  </action>
+</PlanDefinition>

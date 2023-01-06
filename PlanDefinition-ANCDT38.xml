@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="ANCDT38"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">ANCDT38</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT38">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT38</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.3.0</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Identifier: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                <p style="margin-bottom: 5px;">
+                    <b>value: </b> <span>ANC.DT.38</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">ANCDT38</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">ANC.DT.38 Deworming and malaria prophylaxis</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">active</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">false</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/CodeSystem/plan-definition-type">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2021-06-11 23:49:11-0600</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">World Health Organization (WHO)</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;">IF the woman is currently in a malaria-endemic setting, or in an area where there is greater than 20% prevalence of infection with any soil-transmitted helminths, THEN she should receive preventative treatment accordingly</td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Use Context: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>
+                    
+                      <tr>
+                        <td>task</td>
+                        <td>ANC.B10.</td>
+                        <td>Counselling, in-facility management &amp;amp; treatment</td>
+                      </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">001</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        <tr>
+          <th scope="row"><b>Libraries: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              
+                <tr><td><a href="http://fhir.org/guides/who/anc-cds/Library/ANCDT38">http://fhir.org/guides/who/anc-cds/Library/ANCDT38</a></td></tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+
+        
+        <tr>
+          <th scope="row"><b>Actions: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              
+                <tr>
+                  <td>
+                    <b> ANC.DT.38 Deworming and malaria prophylaxis:</b> <br/>
+                    <b>When:</b> <i>named-event:</i> ANC.B10. Counselling, in-facility management and treatment<br/>
+                    
+                    
+                      <b>Then:</b>
+                      <table class="grid-dict">
+                        
+                          <tr>
+                            <td>
+                              Sleeping under an insecticide-treated bednet and the importance of seeking care and getting treatment as soon as she has any symptoms<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> Malaria-endemic setting = TRUE <i>(Should Provide malaria prophylaxis)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              IF the woman is currently taking co-trimoxazole, even in a malaria-endemic setting, she should not receive any dose of IPTp-SP. Women who are taking co-trimoxazole SHOULD NOT receive IPTp-SP. Taking both co-trimoxazole and IPTp-SP together can enhance side-effects, especially haematological side-effects such as anaemia.<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> (Malaria-endemic setting = TRUE)
+  AND (Current medications&amp;quot; = &amp;quot;Co-trimoxazole&amp;quot;) <i>(Should Do not give IPTp-SP, because woman is taking co-trimoxazole)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              In areas with a population prevalence of infection with any soil-transmitted helminths of 20% or higher OR a population anaemia prevalence 40% or higher, preventive anthelminthic treatment is recommended for pregnant women after the first trimester as part of worm infection reduction programmes<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> (&amp;quot;Population prevalence of soil-transmitted helminth infection&amp;quot; ≥ 20% )
+  OR (&amp;quot;Population prevalence of anaemia&amp;quot; ≥ 40%) <i>(Should Conduct deworming)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                      </table>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+    </table>
+</div>
+  </text>
+  <url value="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT38"/>
+  <identifier>
+    <use value="official"/>
+    <value value="ANC.DT.38"/>
+  </identifier>
+  <version value="0.3.0"/>
+  <name value="ANCDT38"/>
+  <title value="ANC.DT.38 Deworming and malaria prophylaxis"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2021-06-11T23:49:11-06:00"/>
+  <publisher value="World Health Organization (WHO)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.who.int"/>
+    </telecom>
+  </contact>
+  <description value="IF the woman is currently in a malaria-endemic setting, or in an area where there is greater than 20% prevalence of infection with any soil-transmitted helminths, THEN she should receive preventative treatment accordingly"/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="task"/>
+      <display value="Workflow Task"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes"/>
+        <code value="ANC.B10."/>
+        <display value="Counselling, in-facility management &amp; treatment"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <library value="http://fhir.org/guides/who/anc-cds/Library/ANCDT38"/>
+  <action>
+    <title value="ANC.DT.38 Deworming and malaria prophylaxis"/>
+    <trigger>
+      <type value="named-event"/>
+      <name value="ANC.B10. Counselling, in-facility management and treatment"/>
+    </trigger>
+    <action id="1">
+      <title value="Provide malaria prophylaxis"/>
+      <description value="Provide malaria prophylaxis"/>
+      <textEquivalent value="Sleeping under an insecticide-treated bednet and the importance of seeking care and getting treatment as soon as she has any symptoms"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): C.6. Malaria prevention: intermittent preventive treatment in pregnancy (IPTp) (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="Malaria-endemic setting = TRUE"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Provide malaria prophylaxis"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="2">
+      <title value="Do not give IPTp-SP, because woman is taking co-trimoxazole"/>
+      <description value="Do not give IPTp-SP, because woman is taking co-trimoxazole"/>
+      <textEquivalent value="IF the woman is currently taking co-trimoxazole, even in a malaria-endemic setting, she should not receive any dose of IPTp-SP. Women who are taking co-trimoxazole SHOULD NOT receive IPTp-SP. Taking both co-trimoxazole and IPTp-SP together can enhance side-effects, especially haematological side-effects such as anaemia."/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): C.6. Malaria prevention: intermittent preventive treatment in pregnancy (IPTp) (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="(Malaria-endemic setting = TRUE)&#xA;  AND (Current medications&quot; = &quot;Co-trimoxazole&quot;)"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Do not give IPTp-SP, because woman is taking co-trimoxazole"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="3">
+      <title value="Conduct deworming"/>
+      <description value="Conduct deworming"/>
+      <textEquivalent value="In areas with a population prevalence of infection with any soil-transmitted helminths of 20% or higher OR a population anaemia prevalence 40% or higher, preventive anthelminthic treatment is recommended for pregnant women after the first trimester as part of worm infection reduction programmes"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): C.4. Preventive anthelminthic treatment (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="(&quot;Population prevalence of soil-transmitted helminth infection&quot; ≥ 20% )&#xA;  OR (&quot;Population prevalence of anaemia&quot; ≥ 40%)"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct deworming"/>
+        </expression>
+      </condition>
+    </action>
+  </action>
+</PlanDefinition>

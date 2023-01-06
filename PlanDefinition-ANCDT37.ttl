@@ -1,0 +1,148 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT37> a fhir:PlanDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ANCDT37"]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <table class=\"grid dict\">\r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Id: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT37</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Url: </b></th>\r\n            <td style=\"padding-left: 4px;\"><a href=\"http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT37\">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT37</a></td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Version: </b></th>\r\n            <td style=\"padding-left: 4px;\">0.3.0</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Identifier: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                \r\n                <p style=\"margin-bottom: 5px;\">\r\n                    <b>value: </b> <span>ANC.DT.37</span>\r\n                </p>\r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Name: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT37</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Title: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANC.DT.37 Intimate partner violence (IPV) first-line support and treatment</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Status: </b></th>\r\n            <td style=\"padding-left: 4px;\">active</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Experimental: </b></th>\r\n            <td style=\"padding-left: 4px;\">false</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Type: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                    \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/CodeSystem/plan-definition-type\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\r\n                        </p>\r\n                        \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>code: </b> <span>eca-rule</span>\r\n                        </p>\r\n                        \r\n                        \r\n                    \r\n                \r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Date: </b></th>\r\n            <td style=\"padding-left: 4px;\">2021-06-11 23:49:11-0600</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Publisher: </b></th>\r\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Description: </b></th>\r\n            <td style=\"padding-left: 4px;\">Woman has been subjected to IPV</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Use Context: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                <table class=\"grid-dict\">\r\n                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>\r\n                    \r\n                      <tr>\r\n                        <td>task</td>\r\n                        <td>ANC.B10.</td>\r\n                        <td>Counselling, in-facility management &amp;amp; treatment</td>\r\n                      </tr>\r\n                    \r\n                </table>\r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\r\n            <td style=\"padding-left: 4px;\">001</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Libraries: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr><td><a href=\"http://fhir.org/guides/who/anc-cds/Library/ANCDT37\">http://fhir.org/guides/who/anc-cds/Library/ANCDT37</a></td></tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Actions: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr>\r\n                  <td>\r\n                    <b> ANC.DT.37 Intimate partner violence (IPV) first-line support and treatment:</b> <br/>\r\n                    <b>When:</b> <i>named-event:</i> ANC.B10. Counselling, in-facility management &amp;amp; treatment – 8. IPV first-line support and care<br/>\r\n                    \r\n                    \r\n                      <b>Then:</b>\r\n                      <table class=\"grid-dict\">\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Conduct the following 5 tasks: \n– Listen to the woman closely, with empathy, and without judging\n– Inquire about needs and concerns: assess and respond to her various needs and concerns – emotional, physical, social and practical (e.g. childcare)\n– Validate: show her that you understand and believe her; assure her that she is not to blame\n– Enhance saftey: discuss a plan to protect herself from further harm if violence occurs again\n– Support her by helping her connect to information, services and social support.<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Has the woman  been subjected to intimate partner violence&amp;quot;=TRUE <i>(Should Provide first-line support. Four (4) kinds of needs deserve attention:– Immediate emotional/psychological health needs– Immediate physical health needs– Ongoing safety needs– Ongoing support and mental health needs.)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              If woman answers &amp;quot;yes&amp;quot; to at least 3 of the questions, the woman may be at high risk of violence /danger\n<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Safety assessement conducted&amp;quot;=TRUE <i>(Should Ask the following questions:  -Has the physical violence happened more often or gotten worse over the past 6 months? - Has he ever used a weapon or threatened you with a weapon? - Has he ever tried to strangle you? - Do you believe he could kill you? - Has he ever beaten you when you were pregnant? - Is he violently and constantly jealous of you? )</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              If it is not safe for the woman to return home, make appropriate referrals for shelter or safe housing, or work with her to identify a safe place she can go to (such as a friend’s home or church).<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (&amp;quot;Has the physical violence happened more often or gotten worse over the past 6 months?&amp;quot;  = TRUE )\n  AND (&amp;quot;Has he ever used a weapon or threatened you with a weapon?&amp;quot;  = TRUE )\n  AND (&amp;quot;Has he ever tried to strangle you?&amp;quot;  = TRUE ) <i>(Should If it is not safe for the woman to return home, make appropriate referrals for shelter or safe housing, or work with her to identify a safe place she can go to (such as a friend’s home or church).)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                      </table>\r\n                    \r\n                  </td>\r\n                </tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n    </table>\r\n</div>"
+  ]; # 
+  fhir:PlanDefinition.url [ fhir:value "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT37"]; # 
+  fhir:PlanDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.value [ fhir:value "ANC.DT.37" ]
+  ]; # 
+  fhir:PlanDefinition.version [ fhir:value "0.3.0"]; # 
+  fhir:PlanDefinition.name [ fhir:value "ANCDT37"]; # 
+  fhir:PlanDefinition.title [ fhir:value "ANC.DT.37 Intimate partner violence (IPV) first-line support and treatment"]; # 
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ];
+       fhir:Coding.code [ fhir:value "eca-rule" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.status [ fhir:value "active"]; # 
+  fhir:PlanDefinition.experimental [ fhir:value "false"^^xsd:boolean]; # 
+  fhir:PlanDefinition.date [ fhir:value "2021-06-11T23:49:11-06:00"^^xsd:dateTime]; # 
+  fhir:PlanDefinition.publisher [ fhir:value "World Health Organization (WHO)"]; # 
+  fhir:PlanDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.description [ fhir:value "Woman has been subjected to IPV"]; # 
+  fhir:PlanDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "task" ];
+       fhir:Coding.display [ fhir:value "Workflow Task" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes" ];
+         fhir:Coding.code [ fhir:value "ANC.B10." ];
+         fhir:Coding.display [ fhir:value "Counselling, in-facility management & treatment" ]
+       ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.library [
+     fhir:value "http://fhir.org/guides/who/anc-cds/Library/ANCDT37";
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/who/anc-cds/Library/ANCDT37>
+  ]; # 
+  fhir:PlanDefinition.action [
+     fhir:index 0;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC.DT.37 Intimate partner violence (IPV) first-line support and treatment" ];
+     fhir:PlanDefinition.action.trigger [
+       fhir:index 0;
+       fhir:TriggerDefinition.type [ fhir:value "named-event" ];
+       fhir:TriggerDefinition.name [ fhir:value "ANC.B10. Counselling, in-facility management & treatment – 8. IPV first-line support and care" ]
+     ];
+     fhir:PlanDefinition.action.action [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value "1" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Provide first-line support. Four (4) kinds of needs deserve attention:– Immediate emotional/psychological health needs– Immediate physical health needs– Ongoing safety needs– Ongoing support and mental health needs." ];
+       fhir:PlanDefinition.action.description [ fhir:value "Provide first-line support. Four (4) kinds of needs deserve attention:– Immediate emotional/psychological health needs– Immediate physical health needs– Ongoing safety needs– Ongoing support and mental health needs." ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Conduct the following 5 tasks: \n– Listen to the woman closely, with empathy, and without judging\n– Inquire about needs and concerns: assess and respond to her various needs and concerns – emotional, physical, social and practical (e.g. childcare)\n– Validate: show her that you understand and believe her; assure her that she is not to blame\n– Enhance saftey: discuss a plan to protect herself from further harm if violence occurs again\n– Support her by helping her connect to information, services and social support." ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "IPV handbook (2014) (15)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Has the woman  been subjected to intimate partner violence\"=TRUE" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Provide first-line support. Four (4) kinds of needs deserve attention:– Immediate emotional/psychological health needs– Immediate physical health needs– Ongoing safety needs– Ongoing support and mental health needs." ]
+         ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value "2" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Ask the following questions:  -Has the physical violence happened more often or gotten worse over the past 6 months? - Has he ever used a weapon or threatened you with a weapon? - Has he ever tried to strangle you? - Do you believe he could kill you? - Has he ever beaten you when you were pregnant? - Is he violently and constantly jealous of you? " ];
+       fhir:PlanDefinition.action.description [ fhir:value "Ask the following questions:  -Has the physical violence happened more often or gotten worse over the past 6 months? - Has he ever used a weapon or threatened you with a weapon? - Has he ever tried to strangle you? - Do you believe he could kill you? - Has he ever beaten you when you were pregnant? - Is he violently and constantly jealous of you? " ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "If woman answers \"yes\" to at least 3 of the questions, the woman may be at high risk of violence /danger\n" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Safety assessement conducted\"=TRUE" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Ask the following questions:  -Has the physical violence happened more often or gotten worse over the past 6 months? - Has he ever used a weapon or threatened you with a weapon? - Has he ever tried to strangle you? - Do you believe he could kill you? - Has he ever beaten you when you were pregnant? - Is he violently and constantly jealous of you? " ]
+         ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value "3" ];
+       fhir:PlanDefinition.action.title [ fhir:value "If it is not safe for the woman to return home, make appropriate referrals for shelter or safe housing, or work with her to identify a safe place she can go to (such as a friend’s home or church)." ];
+       fhir:PlanDefinition.action.description [ fhir:value "If it is not safe for the woman to return home, make appropriate referrals for shelter or safe housing, or work with her to identify a safe place she can go to (such as a friend’s home or church)." ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "If it is not safe for the woman to return home, make appropriate referrals for shelter or safe housing, or work with her to identify a safe place she can go to (such as a friend’s home or church)." ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(\"Has the physical violence happened more often or gotten worse over the past 6 months?\"  = TRUE )\n  AND (\"Has he ever used a weapon or threatened you with a weapon?\"  = TRUE )\n  AND (\"Has he ever tried to strangle you?\"  = TRUE )" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should If it is not safe for the woman to return home, make appropriate referrals for shelter or safe housing, or work with her to identify a safe place she can go to (such as a friend’s home or church)." ]
+         ]
+       ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT37.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,79 @@
+{
+  "resourceType" : "PlanDefinition",
+  "id" : "ANCDT02",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <table class=\"grid dict\">\r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Id: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT02</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Url: </b></th>\r\n            <td style=\"padding-left: 4px;\"><a href=\"http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT02\">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT02</a></td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Version: </b></th>\r\n            <td style=\"padding-left: 4px;\">0.3.0</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Identifier: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                \r\n                <p style=\"margin-bottom: 5px;\">\r\n                    <b>value: </b> <span>ANC.DT.02</span>\r\n                </p>\r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Name: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT02</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Title: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANC.DT.02 Adolescent HEADSS asessement</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Status: </b></th>\r\n            <td style=\"padding-left: 4px;\">active</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Experimental: </b></th>\r\n            <td style=\"padding-left: 4px;\">false</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Type: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                    \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/CodeSystem/plan-definition-type\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\r\n                        </p>\r\n                        \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>code: </b> <span>eca-rule</span>\r\n                        </p>\r\n                        \r\n                        \r\n                    \r\n                \r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Date: </b></th>\r\n            <td style=\"padding-left: 4px;\">2021-06-10 18:11:17-0600</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Publisher: </b></th>\r\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Description: </b></th>\r\n            <td style=\"padding-left: 4px;\">If client is an adolescent, conduct Home-Eating-Activity-Drugs-Sexuality-Safety-Suicide (HEADSS) assessment</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Use Context: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                <table class=\"grid-dict\">\r\n                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>\r\n                    \r\n                      <tr>\r\n                        <td>task</td>\r\n                        <td>Client</td>\r\n                        <td>is an adolescent (age &amp;gt;19)</td>\r\n                      </tr>\r\n                    \r\n                </table>\r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\r\n            <td style=\"padding-left: 4px;\">001</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Libraries: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr><td><a href=\"http://fhir.org/guides/who/anc-cds/Library/ANCDT02\">http://fhir.org/guides/who/anc-cds/Library/ANCDT02</a></td></tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Actions: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr>\r\n                  <td>\r\n                    <b> ANC.DT.02 Adolescent HEADSS asessement:</b> <br/>\r\n                    <b>When:</b> <i>named-event:</i> Client is an adolescent (age &amp;gt;19)<br/>\r\n                    \r\n                    \r\n                      <b>Then:</b>\r\n                      <table class=\"grid-dict\">\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Questions to consider include:\n-Whether the adolescent studies/works?\n-How they perceive their home situation?\n-How they perceive their relation with their teachers and fellow students/employers\nand colleagues?\n-Whether there have been any recent changes in their situation?\n-Whether they feel safe at home, in the community, in their place of study or work;\non the road, etc?<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Age&amp;quot; &amp;gt; 19 <i>(Should Conduct HEADSS assessment)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                      </table>\r\n                    \r\n                  </td>\r\n                </tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n    </table>\r\n</div>"
+  },
+  "url" : "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT02",
+  "identifier" : [{
+    "use" : "official",
+    "value" : "ANC.DT.02"
+  }],
+  "version" : "0.3.0",
+  "name" : "ANCDT02",
+  "title" : "ANC.DT.02 Adolescent HEADSS asessement",
+  "type" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code" : "eca-rule"
+    }]
+  },
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2021-06-10T18:11:17-06:00",
+  "publisher" : "World Health Organization (WHO)",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.who.int"
+    }]
+  }],
+  "description" : "If client is an adolescent, conduct Home-Eating-Activity-Drugs-Sexuality-Safety-Suicide (HEADSS) assessment",
+  "useContext" : [{
+    "code" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code" : "task",
+      "display" : "Workflow Task"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code" : "Client",
+        "display" : "is an adolescent (age >19)"
+      }]
+    }
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001"
+    }]
+  }],
+  "library" : ["http://fhir.org/guides/who/anc-cds/Library/ANCDT02"],
+  "action" : [{
+    "title" : "ANC.DT.02 Adolescent HEADSS asessement",
+    "trigger" : [{
+      "type" : "named-event",
+      "name" : "Client is an adolescent (age >19)"
+    }],
+    "action" : [{
+      "id" : "1",
+      "title" : "Conduct HEADSS assessment",
+      "description" : "Conduct HEADSS assessment",
+      "textEquivalent" : "Questions to consider include:\n-Whether the adolescent studies/works?\n-How they perceive their home situation?\n-How they perceive their relation with their teachers and fellow students/employers\nand colleagues?\n-Whether there have been any recent changes in their situation?\n-Whether they feel safe at home, in the community, in their place of study or work;\non the road, etc?",
+      "documentation" : [{
+        "type" : "citation",
+        "label" : "Adolescent job aid: a handy desk reference tool for primary level health (2010) pp.11 (2)"
+      }],
+      "condition" : [{
+        "kind" : "applicability",
+        "expression" : {
+          "description" : "\"Age\" > 19",
+          "language" : "text/cql-identifier",
+          "expression" : "Should Conduct HEADSS assessment"
+        }
+      }]
+    }]
+  }]
+}

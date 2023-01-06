@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="65">
+         <a:s>/*
+Library ANC.IND.8
+WHO Antenatal Care (ANC) Indicator 8
+Percentage of pregnant women with at least one blood pressure measure in the third trimester during ANC
+
+Numerator: Number of pregnant women with blood pressure measurement in third trimester
+Numerator Computation: COUNT of all women who had their blood pressure measured at least once during their third trimester
+Denominator: Total number of pregnant women with a first contact
+Denominator Computation: COUNT of all women whose records were closed (ANC close form) in the last reporting period due to any of the reasons below:
+*live birth
+*stillbirth
+*miscarriage
+*abortion
+*woman died
+*lost to follow-up
+*moved away
+
+Disaggregation:
+Age (10-14, 15-19, 20+)
+Education Level (none, don't know, primary, secondary, higher)
+
+Reference:
+WHO ANC monitoring framework (1) 
+*/
+library ANCIND08</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCIND08" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="27:1-27:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="29:1-29:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="30:1-30:28" localIdentifier="FC" path="http://fhir.org/guides/who/anc-cds/FHIRCommon">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRCommon</a:s>
+               </a:s>
+               <a:s> called FC</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="31:1-31:27" localIdentifier="AC" path="http://fhir.org/guides/who/anc-cds/ANCCommon">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCCommon</a:s>
+               </a:s>
+               <a:s> called AC</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="32:1-32:34" localIdentifier="BCx" path="http://fhir.org/guides/who/anc-cds/ANCBaseConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCBaseConcepts</a:s>
+               </a:s>
+               <a:s> called BCx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="33:1-33:29" localIdentifier="Cx" path="http://fhir.org/guides/who/anc-cds/ANCConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConcepts</a:s>
+               </a:s>
+               <a:s> called Cx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="7" locator="34:1-34:43" localIdentifier="BaseData" path="http://fhir.org/guides/who/anc-cds/ANCBaseDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="7">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCBaseDataElements</a:s>
+               </a:s>
+               <a:s> called BaseData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="8" locator="35:1-35:42" localIdentifier="PatientData" path="http://fhir.org/guides/who/anc-cds/ANCDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="8">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCDataElements</a:s>
+               </a:s>
+               <a:s> called PatientData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="9" locator="36:1-36:49" localIdentifier="ContactData" path="http://fhir.org/guides/who/anc-cds/ANCContactDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="9">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCContactDataElements</a:s>
+               </a:s>
+               <a:s> called ContactData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="10" locator="37:1-37:41" localIdentifier="Stratifiers" path="http://fhir.org/guides/who/anc-cds/ANCStratifiers">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="10">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCStratifiers</a:s>
+               </a:s>
+               <a:s> called Stratifiers</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <parameters>
+      <def localId="16" locator="39:1-39:88" name="Measurement Period" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="16">
+               <a:s>parameter &quot;Measurement Period&quot; </a:s>
+               <a:s r="15">
+                  <a:s>Interval&lt;</a:s>
+                  <a:s r="14">
+                     <a:s>Date</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s> default </a:s>
+               <a:s r="13">
+                  <a:s r="11">Interval[@2020-01-01, @2020-01-31]</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <default localId="13" locator="39:55-39:88" lowClosed="true" highClosed="true" xsi:type="Interval">
+            <low localId="11" locator="39:64-39:74" xsi:type="Date">
+               <year valueType="t:Integer" value="2020" xsi:type="Literal"/>
+               <month valueType="t:Integer" value="1" xsi:type="Literal"/>
+               <day valueType="t:Integer" value="1" xsi:type="Literal"/>
+            </low>
+            <high localId="12" locator="39:77-39:87" xsi:type="Date">
+               <year valueType="t:Integer" value="2020" xsi:type="Literal"/>
+               <month valueType="t:Integer" value="1" xsi:type="Literal"/>
+               <day valueType="t:Integer" value="31" xsi:type="Literal"/>
+            </high>
+         </default>
+         <parameterTypeSpecifier localId="15" locator="39:32-39:45" xsi:type="IntervalTypeSpecifier">
+            <pointType localId="14" locator="39:41-39:44" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+         </parameterTypeSpecifier>
+      </def>
+   </parameters>
+   <statements>
+      <def locator="41:1-41:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="41:1-41:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="20" locator="46:1-47:41" name="Initial Population" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="20">
+               <a:s>/*
+Initial population: Antenatal clients
+*/
+define &quot;Initial Population&quot;:
+  </a:s>
+               <a:s r="19">
+                  <a:s>exists </a:s>
+                  <a:s r="18">
+                     <a:s>(</a:s>
+                     <a:s r="18">
+                        <a:s r="17">
+                           <a:s>BaseData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="18">
+                           <a:s>&quot;Antenatal care case&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="19" locator="47:3-47:41" xsi:type="Exists">
+            <operand localId="18" locator="47:10-47:41" name="Antenatal care case" libraryName="BaseData" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def localId="40" locator="53:1-61:5" name="Numerator" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="40">
+               <a:s>/*
+Numerator: Number of pregnant women with blood pressure measurement in third trimester
+Numerator Computation: COUNT of all women who had their blood pressure measured at least once during their third trimester
+*/
+define Numerator:
+  </a:s>
+               <a:s r="39">
+                  <a:s r="29">
+                     <a:s>exists </a:s>
+                     <a:s r="28">
+                        <a:s>(
+    </a:s>
+                        <a:s r="28">
+                           <a:s>
+                              <a:s r="22">
+                                 <a:s r="21">
+                                    <a:s>
+                                       <a:s>PatientData.&quot;Systolic blood pressure&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> O</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      </a:s>
+                           <a:s r="27">
+                              <a:s>where </a:s>
+                              <a:s r="27">
+                                 <a:s r="24">
+                                    <a:s r="23">
+                                       <a:s>O</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="24">
+                                       <a:s>issued</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s r="27"> during </a:s>
+                                 <a:s r="26">
+                                    <a:s r="25">
+                                       <a:s>BaseData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="26">
+                                       <a:s>&quot;Third trimester&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="38">
+                     <a:s>exists </a:s>
+                     <a:s r="37">
+                        <a:s>(
+      </a:s>
+                        <a:s r="37">
+                           <a:s>
+                              <a:s r="31">
+                                 <a:s r="30">
+                                    <a:s>
+                                       <a:s>PatientData.&quot;Diastolic blood pressure&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> O</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+        </a:s>
+                           <a:s r="36">
+                              <a:s>where </a:s>
+                              <a:s r="36">
+                                 <a:s r="33">
+                                    <a:s r="32">
+                                       <a:s>O</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="33">
+                                       <a:s>issued</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s r="36"> during </a:s>
+                                 <a:s r="35">
+                                    <a:s r="34">
+                                       <a:s>BaseData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="35">
+                                       <a:s>&quot;Third trimester&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    )</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="39" locator="54:3-61:5" xsi:type="Or">
+            <operand localId="29" locator="54:3-57:3" xsi:type="Exists">
+               <operand localId="28" locator="54:10-57:3" xsi:type="Query">
+                  <source localId="22" locator="55:5-55:43" alias="O">
+                     <expression localId="21" locator="55:5-55:41" name="Systolic blood pressure" libraryName="PatientData" xsi:type="ExpressionRef"/>
+                  </source>
+                  <where localId="27" locator="56:7-56:54" xsi:type="In">
+                     <operand name="ToDateTime" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="24" locator="56:13-56:20" path="issued" scope="O" xsi:type="Property"/>
+                     </operand>
+                     <operand localId="26" locator="56:29-56:54" name="Third trimester" libraryName="BaseData" xsi:type="ExpressionRef"/>
+                  </where>
+               </operand>
+            </operand>
+            <operand localId="38" locator="58:8-61:5" xsi:type="Exists">
+               <operand localId="37" locator="58:15-61:5" xsi:type="Query">
+                  <source localId="31" locator="59:7-59:46" alias="O">
+                     <expression localId="30" locator="59:7-59:44" name="Diastolic blood pressure" libraryName="PatientData" xsi:type="ExpressionRef"/>
+                  </source>
+                  <where localId="36" locator="60:9-60:56" xsi:type="In">
+                     <operand name="ToDateTime" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="33" locator="60:15-60:22" path="issued" scope="O" xsi:type="Property"/>
+                     </operand>
+                     <operand localId="35" locator="60:31-60:56" name="Third trimester" libraryName="BaseData" xsi:type="ExpressionRef"/>
+                  </where>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="59" locator="74:1-79:3" name="Denominator" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="59">
+               <a:s>/*
+Denominator: Total number of antenatal clients with a first contact
+Denominator Computation: COUNT of all women whose records were closed (ANC close form) in the last reporting period due to any of the reasons below:
+*live birth
+*stillbirth
+*miscarriage
+*abortion
+*woman died
+*lost to follow-up
+*moved away
+*/
+define Denominator:
+  </a:s>
+               <a:s r="58">
+                  <a:s>exists </a:s>
+                  <a:s r="57">
+                     <a:s>(
+    </a:s>
+                     <a:s r="57">
+                        <a:s>
+                           <a:s r="42">
+                              <a:s r="41">
+                                 <a:s>
+                                    <a:s>PatientData.&quot;Reason for closing ANC record&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> R</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      </a:s>
+                        <a:s r="56">
+                           <a:s>where </a:s>
+                           <a:s r="56">
+                              <a:s r="48">
+                                 <a:s r="46">
+                                    <a:s r="43">
+                                       <a:s>FC</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="46">
+                                       <a:s>ToInterval(</a:s>
+                                       <a:s r="45">
+                                          <a:s r="44">
+                                             <a:s>R</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="45">
+                                             <a:s>effective</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s r="48"> during </a:s>
+                                 <a:s r="47">
+                                    <a:s>&quot;Measurement Period&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+        and </a:s>
+                              <a:s r="55">
+                                 <a:s r="52">
+                                    <a:s r="50">
+                                       <a:s r="49">
+                                          <a:s>R</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="50">
+                                          <a:s>value</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> as </a:s>
+                                    <a:s r="51">
+                                       <a:s>FHIR.CodeableConcept</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="54">
+                                    <a:s r="53">
+                                       <a:s>Stratifiers</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="54">
+                                       <a:s>&quot;Qualifying Reason for closing ANC record Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="58" locator="75:3-79:3" xsi:type="Exists">
+            <operand localId="57" locator="75:10-79:3" xsi:type="Query">
+               <source localId="42" locator="76:5-76:49" alias="R">
+                  <expression localId="41" locator="76:5-76:47" name="Reason for closing ANC record" libraryName="PatientData" xsi:type="ExpressionRef"/>
+               </source>
+               <where localId="56" locator="77:7-78:109" xsi:type="And">
+                  <operand localId="48" locator="77:13-77:66" xsi:type="IncludedIn">
+                     <operand localId="46" locator="77:13-77:38" name="ToInterval" libraryName="FC" xsi:type="FunctionRef">
+                        <operand localId="45" locator="77:27-77:37" path="effective" scope="R" xsi:type="Property"/>
+                     </operand>
+                     <operand xsi:type="Interval">
+                        <low xsi:type="ToDateTime">
+                           <operand path="low" xsi:type="Property">
+                              <source localId="47" locator="77:47-77:66" name="Measurement Period" xsi:type="ParameterRef"/>
+                           </operand>
+                        </low>
+                        <lowClosedExpression path="lowClosed" xsi:type="Property">
+                           <source localId="47" locator="77:47-77:66" name="Measurement Period" xsi:type="ParameterRef"/>
+                        </lowClosedExpression>
+                        <high xsi:type="ToDateTime">
+                           <operand path="high" xsi:type="Property">
+                              <source localId="47" locator="77:47-77:66" name="Measurement Period" xsi:type="ParameterRef"/>
+                           </operand>
+                        </high>
+                        <highClosedExpression path="highClosed" xsi:type="Property">
+                           <source localId="47" locator="77:47-77:66" name="Measurement Period" xsi:type="ParameterRef"/>
+                        </highClosedExpression>
+                     </operand>
+                  </operand>
+                  <operand localId="55" locator="78:13-78:109" xsi:type="InValueSet">
+                     <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="52" locator="78:13-78:43" strict="false" xsi:type="As">
+                           <operand localId="50" locator="78:13-78:19" path="value" scope="R" xsi:type="Property"/>
+                           <asTypeSpecifier localId="51" locator="78:24-78:43" name="fhir:CodeableConcept" xsi:type="NamedTypeSpecifier"/>
+                        </operand>
+                     </code>
+                     <valueset localId="54" locator="78:48-78:109" name="Qualifying Reason for closing ANC record Choices" libraryName="Stratifiers"/>
+                  </operand>
+               </where>
+            </operand>
+         </expression>
+      </def>
+      <def localId="62" locator="84:1-85:22" name="Age  Stratifier" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="62">
+               <a:s>/*
+Disaggregation: Age (10-14, 15-19, 20+)
+*/
+define &quot;Age  Stratifier&quot;:
+  </a:s>
+               <a:s r="61">
+                  <a:s r="60">
+                     <a:s>Stratifiers</a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="61">
+                     <a:s>&quot;By Age&quot;</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="61" locator="85:3-85:22" name="By Age" libraryName="Stratifiers" xsi:type="ExpressionRef"/>
+      </def>
+      <def localId="65" locator="90:1-91:34" name="Education Level Stratifier" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="65">
+               <a:s>/*
+Disaggregation: Education Level (none, don't know, primary, secondary, higher)
+*/
+define &quot;Education Level Stratifier&quot;:
+  </a:s>
+               <a:s r="64">
+                  <a:s r="63">
+                     <a:s>Stratifiers</a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="64">
+                     <a:s>&quot;By Education Level&quot;</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="64" locator="91:3-91:34" name="By Education Level" libraryName="Stratifiers" xsi:type="ExpressionRef"/>
+      </def>
+   </statements>
+</library>

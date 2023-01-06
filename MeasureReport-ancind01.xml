@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MeasureReport xmlns="http://hl7.org/fhir">
+  <id value="ancind01"/>
+  <meta>
+    <profile value="http://fhir.org/guides/who/core/StructureDefinition/who-measurereport"/>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-measurereport"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: MeasureReport</b><a name="ancind01"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource MeasureReport &quot;ancind01&quot; </p><p style="margin-bottom: 0px">Profiles: <a href="StructureDefinition-who-measurereport.html">WHO MeasureReport</a>, <a href="StructureDefinition-anc-measurereport.html">ANC MeasureReport</a></p></div><p><b>WHO Reported Location</b>: <a href="Location-anc-location-example.html">Location/anc-location-example</a> &quot;123&quot;</p><p><b>status</b>: complete</p><p><b>type</b>: summary</p><p><b>measure</b>: <a href="http://fhir.org/guides/who/anc-cds/Measure/anc-ind-01">http://fhir.org/guides/who/anc-cds/Measure/anc-ind-01</a></p><p><b>date</b>: 2021-08-02</p><p><b>reporter</b>: <a href="Organization-anc-organization-example.html">Organization/anc-organization-example</a> &quot;ABC&quot;</p><p><b>period</b>: 2021-07-01 --&gt; 2021-07-31</p><blockquote><p><b>group</b></p><blockquote><p><b>population</b></p><p><b>code</b>: Initial Population <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-measure-population.html">MeasurePopulationType</a>#initial-population)</span></p><p><b>count</b>: 1</p></blockquote><blockquote><p><b>population</b></p><p><b>code</b>: Denominator <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-measure-population.html">MeasurePopulationType</a>#denominator)</span></p><p><b>count</b>: 1</p></blockquote><blockquote><p><b>population</b></p><p><b>code</b>: Numerator <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-measure-population.html">MeasurePopulationType</a>#numerator)</span></p><p><b>count</b>: 1</p></blockquote></blockquote></div>
+  </text>
+  <extension url="http://fhir.org/guides/who/core/StructureDefinition/who-reportedLocation">
+    <valueReference>
+      <reference value="Location/anc-location-example"/>
+    </valueReference>
+  </extension>
+  <status value="complete"/>
+  <type value="summary"/>
+  <measure value="http://fhir.org/guides/who/anc-cds/Measure/anc-ind-01"/>
+  <date value="2021-08-02"/>
+  <reporter>
+    <reference value="Organization/anc-organization-example"/>
+  </reporter>
+  <period>
+    <start value="2021-07-01"/>
+    <end value="2021-07-31"/>
+  </period>
+  <group id="group-1">
+    <population id="initial-population">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="initial-population"/>
+        </coding>
+      </code>
+      <count value="1"/>
+    </population>
+    <population id="denominator">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="denominator"/>
+        </coding>
+      </code>
+      <count value="1"/>
+    </population>
+    <population id="numerator">
+      <code>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/measure-population"/>
+          <code value="numerator"/>
+        </coding>
+      </code>
+      <count value="1"/>
+    </population>
+  </group>
+</MeasureReport>

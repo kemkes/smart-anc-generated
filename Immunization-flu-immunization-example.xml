@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Immunization xmlns="http://hl7.org/fhir">
+  <id value="flu-immunization-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/flu-immunization"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Immunization</b><a name="flu-immunization-example"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Immunization &quot;flu-immunization-example&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-flu-immunization.html">Flu Immunization</a></p></div><p><b>identifier</b>: id: flu-immunization-example (use: OFFICIAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: Flu immunization provided <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B10.DE195; <a href="http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html">ICD-10</a>#Z25.1 &quot;Need for immunization against influenza&quot;; mms#QC01.8 &quot;Need for immunization against influenza&quot;; <a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#1.181E+12 &quot;Vaccine product containing only influenza virus antigen (medicinal product)&quot;; ichi#DTB.DB.AE &quot;Percutaneous administration of immunological agent, not elsewhere classified&quot;)</span></p><p><b>patient</b>: <a href="Patient-anc-patient-example.html">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href="Encounter-anc-encounter-example.html">Encounter/anc-encounter-example</a></p><p><b>occurrence</b>: 2021-01-28 21:07:52-0700</p></div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://example.org/fhir/NamingSystem/identifiers"/>
+    <value value="flu-immunization-example"/>
+  </identifier>
+  <status value="completed"/>
+  <vaccineCode>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B10.DE195"/>
+      <display value="Flu immunization provided"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/sid/icd-10"/>
+      <code value="Z25.1"/>
+      <display value="Need for immunization against influenza"/>
+    </coding>
+    <coding>
+      <system value="http://id.who.int/icd11/mms"/>
+      <code value="QC01.8"/>
+      <display value="Need for immunization against influenza"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="1.181E+12"/>
+      <display value="Vaccine product containing only influenza virus antigen (medicinal product)"/>
+    </coding>
+    <coding>
+      <system value="https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi"/>
+      <code value="DTB.DB.AE"/>
+      <display value="Percutaneous administration of immunological agent, not elsewhere classified"/>
+    </coding>
+  </vaccineCode>
+  <patient>
+    <reference value="Patient/anc-patient-example"/>
+  </patient>
+  <encounter>
+    <reference value="Encounter/anc-encounter-example"/>
+  </encounter>
+  <occurrenceDateTime value="2021-01-28T21:07:52-07:00"/>
+</Immunization>

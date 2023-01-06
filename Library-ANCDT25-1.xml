@@ -1,0 +1,1777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="278">
+         <a:s>library ANCDT25</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCDT25" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="7:1-7:31" localIdentifier="Config" path="http://fhir.org/guides/who/anc-cds/ANCConfig">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConfig</a:s>
+               </a:s>
+               <a:s> called Config</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="8:1-8:29" localIdentifier="Cx" path="http://fhir.org/guides/who/anc-cds/ANCConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConcepts</a:s>
+               </a:s>
+               <a:s> called Cx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="9:1-9:42" localIdentifier="PatientData" path="http://fhir.org/guides/who/anc-cds/ANCDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCDataElements</a:s>
+               </a:s>
+               <a:s> called PatientData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="10:1-10:49" localIdentifier="ContactData" path="http://fhir.org/guides/who/anc-cds/ANCContactDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCContactDataElements</a:s>
+               </a:s>
+               <a:s> called ContactData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <statements>
+      <def locator="12:1-12:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="12:1-12:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="46" locator="24:1-40:3" name="Should Conduct REQUIRED anaemia counselling" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="46">
+               <a:s>/*
+((((&quot;Blood haemoglobin test result&quot; &lt; 110 g/L)
+  AND (&quot;Gestational age&quot; ≤ 12 weeks))
+  OR ((&quot;Blood haemoglobin test result&quot; &lt; 110 g/L)
+  AND (&quot;Gestational age&quot; ≥ 28 weeks)))
+  OR ((&quot;Blood haemoglobin test result&quot; &lt; 105 g/L)
+  AND (13 weeks ≤ &quot;Gestational age&quot; ≤ 27 weeks)))
+  OR ((&quot;Blood haemoglobin test conducted&quot; = FALSE)
+  AND (&quot;Pallor present&quot; = TRUE))
+*/
+define &quot;Should Conduct REQUIRED anaemia counselling&quot;:
+  </a:s>
+               <a:s r="45">
+                  <a:s r="37">
+                     <a:s r="25">
+                        <a:s r="15">
+                           <a:s>(
+    </a:s>
+                           <a:s r="15">
+                              <a:s r="10">
+                                 <a:s r="8">
+                                    <a:s r="7">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="8">
+                                       <a:s>&quot;Gestational age&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> &lt;= </a:s>
+                                 <a:s r="9">
+                                    <a:s>12 'weeks'</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="14">
+                                 <a:s r="12">
+                                    <a:s r="11">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="12">
+                                       <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> &lt; </a:s>
+                                 <a:s r="13">
+                                    <a:s>110 'g/L'</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                        <a:s> or
+  </a:s>
+                        <a:s r="24">
+                           <a:s>(
+    </a:s>
+                           <a:s r="24">
+                              <a:s r="19">
+                                 <a:s r="17">
+                                    <a:s r="16">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="17">
+                                       <a:s>&quot;Gestational age&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> >= </a:s>
+                                 <a:s r="18">
+                                    <a:s>28 'weeks'</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="23">
+                                 <a:s r="21">
+                                    <a:s r="20">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="21">
+                                       <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> &lt; </a:s>
+                                 <a:s r="22">
+                                    <a:s>110 'g/L'</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> or
+  </a:s>
+                     <a:s r="36">
+                        <a:s>(
+    </a:s>
+                        <a:s r="36">
+                           <a:s r="31">
+                              <a:s r="27">
+                                 <a:s r="26">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="27">
+                                    <a:s>&quot;Gestational age&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="30">
+                                 <a:s>Interval[</a:s>
+                                 <a:s r="28">
+                                    <a:s>13 'weeks'</a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="29">
+                                    <a:s>27 'weeks'</a:s>
+                                 </a:s>
+                                 <a:s>]</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="35">
+                              <a:s r="33">
+                                 <a:s r="32">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="33">
+                                    <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> &lt; </a:s>
+                              <a:s r="34">
+                                 <a:s>105 'g/L'</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> or
+  </a:s>
+                  <a:s r="44">
+                     <a:s>(
+    </a:s>
+                     <a:s r="44">
+                        <a:s r="40">
+                           <a:s r="39">
+                              <a:s r="38">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="39">
+                                 <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> is null</a:s>
+                        </a:s>
+                        <a:s>
+      and </a:s>
+                        <a:s r="43">
+                           <a:s r="42">
+                              <a:s r="41">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="42">
+                                 <a:s>&quot;Pallor present&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> is true</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="45" locator="25:3-40:3" xsi:type="Or">
+            <operand localId="37" locator="25:3-36:3" xsi:type="Or">
+               <operand localId="25" locator="25:3-32:3" xsi:type="Or">
+                  <operand localId="15" locator="25:3-28:3" xsi:type="And">
+                     <operand localId="10" locator="26:5-26:47" xsi:type="LessOrEqual">
+                        <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="8" locator="26:5-26:33" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand localId="9" locator="26:38-26:47" value="12" unit="weeks" xsi:type="Quantity"/>
+                     </operand>
+                     <operand localId="14" locator="27:11-27:65" xsi:type="Less">
+                        <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="12" locator="27:11-27:53" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand localId="13" locator="27:57-27:65" value="110" unit="g/L" xsi:type="Quantity"/>
+                     </operand>
+                  </operand>
+                  <operand localId="24" locator="29:3-32:3" xsi:type="And">
+                     <operand localId="19" locator="30:5-30:47" xsi:type="GreaterOrEqual">
+                        <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="17" locator="30:5-30:33" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand localId="18" locator="30:38-30:47" value="28" unit="weeks" xsi:type="Quantity"/>
+                     </operand>
+                     <operand localId="23" locator="31:11-31:65" xsi:type="Less">
+                        <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="21" locator="31:11-31:53" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand localId="22" locator="31:57-31:65" value="110" unit="g/L" xsi:type="Quantity"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="36" locator="33:3-36:3" xsi:type="And">
+                  <operand localId="31" locator="34:5-34:69" xsi:type="In">
+                     <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="27" locator="34:5-34:33" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </operand>
+                     <operand localId="30" locator="34:38-34:69" lowClosed="true" highClosed="true" xsi:type="Interval">
+                        <low localId="28" locator="34:47-34:56" value="13" unit="weeks" xsi:type="Quantity"/>
+                        <high localId="29" locator="34:59-34:68" value="27" unit="weeks" xsi:type="Quantity"/>
+                     </operand>
+                  </operand>
+                  <operand localId="35" locator="35:11-35:65" xsi:type="Less">
+                     <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="33" locator="35:11-35:53" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </operand>
+                     <operand localId="34" locator="35:57-35:65" value="105" unit="g/L" xsi:type="Quantity"/>
+                  </operand>
+               </operand>
+            </operand>
+            <operand localId="44" locator="37:3-40:3" xsi:type="And">
+               <operand localId="40" locator="38:5-38:55" xsi:type="IsNull">
+                  <operand localId="39" locator="38:5-38:47" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand localId="43" locator="39:11-39:46" xsi:type="IsTrue">
+                  <operand name="ToBoolean" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="42" locator="39:11-39:38" name="Pallor present" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="106" locator="56:1-76:3" name="Should &quot;Anaemia counselling conducted&quot; IS OPTIONAL" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="106">
+               <a:s>/*
+((((&quot;Blood haemoglobin test result&quot; ≥ 110 g/L)
+  AND (&quot;Gestational age&quot; ≤ 12 weeks)
+  AND (&quot;Population prevalence of anaemia&quot; ≥ 40%))
+  OR ((&quot;Blood haemoglobin test result&quot; ≥ 110 g/L)
+  AND (&quot;Gestational age&quot; ≥ 28 weeks)
+  AND (&quot;Population prevalence of anaemia&quot; ≥ 40%)))
+  OR ((&quot;Blood haemoglobin test result&quot; ≥ 105 g/L)
+  AND (13 weeks ≤ &quot;Gestational age&quot; ≤ 27 weeks)
+  AND (&quot;Population prevalence of anaemia&quot; ≥ 40%)))
+  OR ((&quot;Blood haemoglobin test conducted&quot; = FALSE)
+  AND (&quot;Pallor present&quot; = FALSE)
+  AND (&quot;Population prevalence of anaemia&quot; ≥ 40%))
+*/
+define &quot;Should \&quot;Anaemia counselling conducted\&quot; IS OPTIONAL&quot;:
+  </a:s>
+               <a:s r="105">
+                  <a:s r="92">
+                     <a:s r="75">
+                        <a:s r="60">
+                           <a:s>(
+    </a:s>
+                           <a:s r="60">
+                              <a:s r="55">
+                                 <a:s r="50">
+                                    <a:s r="48">
+                                       <a:s r="47">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="48">
+                                          <a:s>&quot;Gestational age&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> &lt;= </a:s>
+                                    <a:s r="49">
+                                       <a:s>12 'weeks'</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="54">
+                                    <a:s r="52">
+                                       <a:s r="51">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="52">
+                                          <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="53">
+                                       <a:s>110 'g/L'</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="59">
+                                 <a:s r="57">
+                                    <a:s r="56">
+                                       <a:s>Config</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="57">
+                                       <a:s>&quot;Population prevalence of anaemia&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> >= </a:s>
+                                 <a:s r="58">
+                                    <a:s>40 '%'</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                        <a:s> or
+  </a:s>
+                        <a:s r="74">
+                           <a:s>(
+    </a:s>
+                           <a:s r="74">
+                              <a:s r="69">
+                                 <a:s r="64">
+                                    <a:s r="62">
+                                       <a:s r="61">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="62">
+                                          <a:s>&quot;Gestational age&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="63">
+                                       <a:s>28 'weeks'</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="68">
+                                    <a:s r="66">
+                                       <a:s r="65">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="66">
+                                          <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="67">
+                                       <a:s>110 'g/L'</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="73">
+                                 <a:s r="71">
+                                    <a:s r="70">
+                                       <a:s>Config</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="71">
+                                       <a:s>&quot;Population prevalence of anaemia&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> >= </a:s>
+                                 <a:s r="72">
+                                    <a:s>40 '%'</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> or
+  </a:s>
+                     <a:s r="91">
+                        <a:s>(
+    </a:s>
+                        <a:s r="91">
+                           <a:s r="86">
+                              <a:s r="81">
+                                 <a:s r="77">
+                                    <a:s r="76">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="77">
+                                       <a:s>&quot;Gestational age&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="80">
+                                    <a:s>Interval[</a:s>
+                                    <a:s r="78">
+                                       <a:s>13 'weeks'</a:s>
+                                    </a:s>
+                                    <a:s>, </a:s>
+                                    <a:s r="79">
+                                       <a:s>27 'weeks'</a:s>
+                                    </a:s>
+                                    <a:s>]</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="85">
+                                 <a:s r="83">
+                                    <a:s r="82">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="83">
+                                       <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> >= </a:s>
+                                 <a:s r="84">
+                                    <a:s>105 'g/L'</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="90">
+                              <a:s r="88">
+                                 <a:s r="87">
+                                    <a:s>Config</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="88">
+                                    <a:s>&quot;Population prevalence of anaemia&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> >= </a:s>
+                              <a:s r="89">
+                                 <a:s>40 '%'</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> or
+  </a:s>
+                  <a:s r="104">
+                     <a:s>(
+    </a:s>
+                     <a:s r="104">
+                        <a:s r="99">
+                           <a:s r="95">
+                              <a:s r="94">
+                                 <a:s r="93">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="94">
+                                    <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> is null</a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="98">
+                              <a:s r="97">
+                                 <a:s r="96">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="97">
+                                    <a:s>&quot;Pallor present&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> is false</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      and </a:s>
+                        <a:s r="103">
+                           <a:s r="101">
+                              <a:s r="100">
+                                 <a:s>Config</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="101">
+                                 <a:s>&quot;Population prevalence of anaemia&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> >= </a:s>
+                           <a:s r="102">
+                              <a:s>40 '%'</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="105" locator="57:3-76:3" xsi:type="Or">
+            <operand localId="92" locator="57:3-71:3" xsi:type="Or">
+               <operand localId="75" locator="57:3-66:3" xsi:type="Or">
+                  <operand localId="60" locator="57:3-61:3" xsi:type="And">
+                     <operand localId="55" locator="58:5-59:66" xsi:type="And">
+                        <operand localId="50" locator="58:5-58:47" xsi:type="LessOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="48" locator="58:5-58:33" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="49" locator="58:38-58:47" value="12" unit="weeks" xsi:type="Quantity"/>
+                        </operand>
+                        <operand localId="54" locator="59:11-59:66" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="52" locator="59:11-59:53" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="53" locator="59:58-59:66" value="110" unit="g/L" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="59" locator="60:11-60:61" xsi:type="GreaterOrEqual">
+                        <operand localId="57" locator="60:11-60:51" name="Population prevalence of anaemia" libraryName="Config" xsi:type="ExpressionRef"/>
+                        <operand localId="58" locator="60:56-60:61" value="40" unit="%" xsi:type="Quantity"/>
+                     </operand>
+                  </operand>
+                  <operand localId="74" locator="62:3-66:3" xsi:type="And">
+                     <operand localId="69" locator="63:5-64:66" xsi:type="And">
+                        <operand localId="64" locator="63:5-63:47" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="62" locator="63:5-63:33" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="63" locator="63:38-63:47" value="28" unit="weeks" xsi:type="Quantity"/>
+                        </operand>
+                        <operand localId="68" locator="64:11-64:66" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="66" locator="64:11-64:53" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="67" locator="64:58-64:66" value="110" unit="g/L" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="73" locator="65:11-65:61" xsi:type="GreaterOrEqual">
+                        <operand localId="71" locator="65:11-65:51" name="Population prevalence of anaemia" libraryName="Config" xsi:type="ExpressionRef"/>
+                        <operand localId="72" locator="65:56-65:61" value="40" unit="%" xsi:type="Quantity"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="91" locator="67:3-71:3" xsi:type="And">
+                  <operand localId="86" locator="68:5-69:66" xsi:type="And">
+                     <operand localId="81" locator="68:5-68:69" xsi:type="In">
+                        <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="77" locator="68:5-68:33" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand localId="80" locator="68:38-68:69" lowClosed="true" highClosed="true" xsi:type="Interval">
+                           <low localId="78" locator="68:47-68:56" value="13" unit="weeks" xsi:type="Quantity"/>
+                           <high localId="79" locator="68:59-68:68" value="27" unit="weeks" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="85" locator="69:11-69:66" xsi:type="GreaterOrEqual">
+                        <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="83" locator="69:11-69:53" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                        <operand localId="84" locator="69:58-69:66" value="105" unit="g/L" xsi:type="Quantity"/>
+                     </operand>
+                  </operand>
+                  <operand localId="90" locator="70:11-70:61" xsi:type="GreaterOrEqual">
+                     <operand localId="88" locator="70:11-70:51" name="Population prevalence of anaemia" libraryName="Config" xsi:type="ExpressionRef"/>
+                     <operand localId="89" locator="70:56-70:61" value="40" unit="%" xsi:type="Quantity"/>
+                  </operand>
+               </operand>
+            </operand>
+            <operand localId="104" locator="72:3-76:3" xsi:type="And">
+               <operand localId="99" locator="73:5-74:47" xsi:type="And">
+                  <operand localId="95" locator="73:5-73:55" xsi:type="IsNull">
+                     <operand localId="94" locator="73:5-73:47" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </operand>
+                  <operand localId="98" locator="74:11-74:47" xsi:type="IsFalse">
+                     <operand name="ToBoolean" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="97" locator="74:11-74:38" name="Pallor present" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="103" locator="75:11-75:61" xsi:type="GreaterOrEqual">
+                  <operand localId="101" locator="75:11-75:51" name="Population prevalence of anaemia" libraryName="Config" xsi:type="ExpressionRef"/>
+                  <operand localId="102" locator="75:56-75:61" value="40" unit="%" xsi:type="Quantity"/>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="190" locator="96:1-120:3" name="Should &quot;Anaemia counselling conducted&quot; IS OPTIONAL 2" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="190">
+               <a:s>/*
+((((&quot;Blood haemoglobin test result&quot; ≥ 110 g/L)
+  AND (&quot;Gestational age&quot; ≤ 12 weeks)
+  AND (&quot;Population prevalence of anaemia&quot; ≤ 20%)
+  AND (&quot;Has side-effects from iron and folic acid supplements&quot; = TRUE))
+  OR ((&quot;Blood haemoglobin test result&quot; ≥ 110 g/L)
+  AND (&quot;Gestational age&quot; ≥ 28 weeks)
+  AND (&quot;Population prevalence of anaemia&quot; ≤ 20%)
+  AND (&quot;Has side-effects from iron and folic acid supplements&quot; = TRUE)))
+  OR ((&quot;Blood haemoglobin test result&quot; ≥ 105 g/L)
+  AND (13 weeks ≤ &quot;Gestational age&quot; ≤ 27 weeks)
+  AND (&quot;Population prevalence of anaemia&quot; ≤ 20%)
+  AND (&quot;Has side-effects from iron and folic acid supplements&quot; = TRUE)))
+  OR ((&quot;Blood haemoglobin test conducted&quot; = FALSE)
+  AND (&quot;Pallor present&quot; = FALSE)
+  AND (&quot;Population prevalence of anaemia&quot; ≤ 20%)
+  AND (&quot;Has side-effects from iron and folic acid supplements&quot; = TRUE))
+*/
+define &quot;Should \&quot;Anaemia counselling conducted\&quot; IS OPTIONAL 2&quot;:
+  </a:s>
+               <a:s r="189">
+                  <a:s r="170">
+                     <a:s r="147">
+                        <a:s r="126">
+                           <a:s>(
+    </a:s>
+                           <a:s r="126">
+                              <a:s r="120">
+                                 <a:s r="115">
+                                    <a:s r="110">
+                                       <a:s r="108">
+                                          <a:s r="107">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="108">
+                                             <a:s>&quot;Gestational age&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> &lt;= </a:s>
+                                       <a:s r="109">
+                                          <a:s>12 'weeks'</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+      and </a:s>
+                                    <a:s r="114">
+                                       <a:s r="112">
+                                          <a:s r="111">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="112">
+                                             <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> >= </a:s>
+                                       <a:s r="113">
+                                          <a:s>110 'g/L'</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="119">
+                                    <a:s r="117">
+                                       <a:s r="116">
+                                          <a:s>Config</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="117">
+                                          <a:s>&quot;Population prevalence of anaemia&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="118">
+                                       <a:s>20 '%'</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="125">
+                                 <a:s r="122">
+                                    <a:s r="121">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="122">
+                                       <a:s>&quot;Medication follow-up&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="124">
+                                    <a:s r="123">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="124">
+                                       <a:s>&quot;Medication follow-up - Has side-effects from iron and folic acid supplements Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                        <a:s> or
+  </a:s>
+                        <a:s r="146">
+                           <a:s>(
+    </a:s>
+                           <a:s r="146">
+                              <a:s r="140">
+                                 <a:s r="135">
+                                    <a:s r="130">
+                                       <a:s r="128">
+                                          <a:s r="127">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="128">
+                                             <a:s>&quot;Gestational age&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> >= </a:s>
+                                       <a:s r="129">
+                                          <a:s>28 'weeks'</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+      and </a:s>
+                                    <a:s r="134">
+                                       <a:s r="132">
+                                          <a:s r="131">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="132">
+                                             <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> >= </a:s>
+                                       <a:s r="133">
+                                          <a:s>110 'g/L'</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="139">
+                                    <a:s r="137">
+                                       <a:s r="136">
+                                          <a:s>Config</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="137">
+                                          <a:s>&quot;Population prevalence of anaemia&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="138">
+                                       <a:s>20 '%'</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="145">
+                                 <a:s r="142">
+                                    <a:s r="141">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="142">
+                                       <a:s>&quot;Medication follow-up&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="144">
+                                    <a:s r="143">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="144">
+                                       <a:s>&quot;Medication follow-up - Has side-effects from iron and folic acid supplements Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> or
+  </a:s>
+                     <a:s r="169">
+                        <a:s>(
+    </a:s>
+                        <a:s r="169">
+                           <a:s r="163">
+                              <a:s r="158">
+                                 <a:s r="153">
+                                    <a:s r="149">
+                                       <a:s r="148">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="149">
+                                          <a:s>&quot;Gestational age&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="152">
+                                       <a:s>Interval[</a:s>
+                                       <a:s r="150">
+                                          <a:s>13 'weeks'</a:s>
+                                       </a:s>
+                                       <a:s>, </a:s>
+                                       <a:s r="151">
+                                          <a:s>27 'weeks'</a:s>
+                                       </a:s>
+                                       <a:s>]</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="157">
+                                    <a:s r="155">
+                                       <a:s r="154">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="155">
+                                          <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="156">
+                                       <a:s>105 'g/L'</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="162">
+                                 <a:s r="160">
+                                    <a:s r="159">
+                                       <a:s>Config</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="160">
+                                       <a:s>&quot;Population prevalence of anaemia&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> >= </a:s>
+                                 <a:s r="161">
+                                    <a:s>20 '%'</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="168">
+                              <a:s r="165">
+                                 <a:s r="164">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="165">
+                                    <a:s>&quot;Medication follow-up&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="167">
+                                 <a:s r="166">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="167">
+                                    <a:s>&quot;Medication follow-up - Has side-effects from iron and folic acid supplements Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> or
+  </a:s>
+                  <a:s r="188">
+                     <a:s>(
+    </a:s>
+                     <a:s r="188">
+                        <a:s r="182">
+                           <a:s r="177">
+                              <a:s r="173">
+                                 <a:s r="172">
+                                    <a:s r="171">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="172">
+                                       <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> is null</a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="176">
+                                 <a:s r="175">
+                                    <a:s r="174">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="175">
+                                       <a:s>&quot;Pallor present&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> is false</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="181">
+                              <a:s r="179">
+                                 <a:s r="178">
+                                    <a:s>Config</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="179">
+                                    <a:s>&quot;Population prevalence of anaemia&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> >= </a:s>
+                              <a:s r="180">
+                                 <a:s>20 '%'</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      and </a:s>
+                        <a:s r="187">
+                           <a:s r="184">
+                              <a:s r="183">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="184">
+                                 <a:s>&quot;Medication follow-up&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="186">
+                              <a:s r="185">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="186">
+                                 <a:s>&quot;Medication follow-up - Has side-effects from iron and folic acid supplements Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="189" locator="97:3-120:3" xsi:type="Or">
+            <operand localId="170" locator="97:3-114:3" xsi:type="Or">
+               <operand localId="147" locator="97:3-108:3" xsi:type="Or">
+                  <operand localId="126" locator="97:3-102:3" xsi:type="And">
+                     <operand localId="120" locator="98:5-100:61" xsi:type="And">
+                        <operand localId="115" locator="98:5-99:66" xsi:type="And">
+                           <operand localId="110" locator="98:5-98:47" xsi:type="LessOrEqual">
+                              <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="108" locator="98:5-98:33" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </operand>
+                              <operand localId="109" locator="98:38-98:47" value="12" unit="weeks" xsi:type="Quantity"/>
+                           </operand>
+                           <operand localId="114" locator="99:11-99:66" xsi:type="GreaterOrEqual">
+                              <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="112" locator="99:11-99:53" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </operand>
+                              <operand localId="113" locator="99:58-99:66" value="110" unit="g/L" xsi:type="Quantity"/>
+                           </operand>
+                        </operand>
+                        <operand localId="119" locator="100:11-100:61" xsi:type="GreaterOrEqual">
+                           <operand localId="117" locator="100:11-100:51" name="Population prevalence of anaemia" libraryName="Config" xsi:type="ExpressionRef"/>
+                           <operand localId="118" locator="100:56-100:61" value="20" unit="%" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="125" locator="101:11-101:137" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="122" locator="101:11-101:44" name="Medication follow-up" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="124" locator="101:49-101:137" name="Medication follow-up - Has side-effects from iron and folic acid supplements Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="146" locator="103:3-108:3" xsi:type="And">
+                     <operand localId="140" locator="104:5-106:61" xsi:type="And">
+                        <operand localId="135" locator="104:5-105:66" xsi:type="And">
+                           <operand localId="130" locator="104:5-104:47" xsi:type="GreaterOrEqual">
+                              <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="128" locator="104:5-104:33" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </operand>
+                              <operand localId="129" locator="104:38-104:47" value="28" unit="weeks" xsi:type="Quantity"/>
+                           </operand>
+                           <operand localId="134" locator="105:11-105:66" xsi:type="GreaterOrEqual">
+                              <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="132" locator="105:11-105:53" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </operand>
+                              <operand localId="133" locator="105:58-105:66" value="110" unit="g/L" xsi:type="Quantity"/>
+                           </operand>
+                        </operand>
+                        <operand localId="139" locator="106:11-106:61" xsi:type="GreaterOrEqual">
+                           <operand localId="137" locator="106:11-106:51" name="Population prevalence of anaemia" libraryName="Config" xsi:type="ExpressionRef"/>
+                           <operand localId="138" locator="106:56-106:61" value="20" unit="%" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="145" locator="107:11-107:137" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="142" locator="107:11-107:44" name="Medication follow-up" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="144" locator="107:49-107:137" name="Medication follow-up - Has side-effects from iron and folic acid supplements Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="169" locator="109:3-114:3" xsi:type="And">
+                  <operand localId="163" locator="110:5-112:61" xsi:type="And">
+                     <operand localId="158" locator="110:5-111:66" xsi:type="And">
+                        <operand localId="153" locator="110:5-110:69" xsi:type="In">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="149" locator="110:5-110:33" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="152" locator="110:38-110:69" lowClosed="true" highClosed="true" xsi:type="Interval">
+                              <low localId="150" locator="110:47-110:56" value="13" unit="weeks" xsi:type="Quantity"/>
+                              <high localId="151" locator="110:59-110:68" value="27" unit="weeks" xsi:type="Quantity"/>
+                           </operand>
+                        </operand>
+                        <operand localId="157" locator="111:11-111:66" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="155" locator="111:11-111:53" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="156" locator="111:58-111:66" value="105" unit="g/L" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="162" locator="112:11-112:61" xsi:type="GreaterOrEqual">
+                        <operand localId="160" locator="112:11-112:51" name="Population prevalence of anaemia" libraryName="Config" xsi:type="ExpressionRef"/>
+                        <operand localId="161" locator="112:56-112:61" value="20" unit="%" xsi:type="Quantity"/>
+                     </operand>
+                  </operand>
+                  <operand localId="168" locator="113:11-113:137" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="165" locator="113:11-113:44" name="Medication follow-up" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="167" locator="113:49-113:137" name="Medication follow-up - Has side-effects from iron and folic acid supplements Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+            </operand>
+            <operand localId="188" locator="115:3-120:3" xsi:type="And">
+               <operand localId="182" locator="116:5-118:61" xsi:type="And">
+                  <operand localId="177" locator="116:5-117:47" xsi:type="And">
+                     <operand localId="173" locator="116:5-116:55" xsi:type="IsNull">
+                        <operand localId="172" locator="116:5-116:47" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </operand>
+                     <operand localId="176" locator="117:11-117:47" xsi:type="IsFalse">
+                        <operand name="ToBoolean" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="175" locator="117:11-117:38" name="Pallor present" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="181" locator="118:11-118:61" xsi:type="GreaterOrEqual">
+                     <operand localId="179" locator="118:11-118:51" name="Population prevalence of anaemia" libraryName="Config" xsi:type="ExpressionRef"/>
+                     <operand localId="180" locator="118:56-118:61" value="20" unit="%" xsi:type="Quantity"/>
+                  </operand>
+               </operand>
+               <operand localId="187" locator="119:11-119:137" xsi:type="AnyInValueSet">
+                  <codes xsi:type="Query">
+                     <source alias="X">
+                        <expression localId="184" locator="119:11-119:44" name="Medication follow-up" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </source>
+                     <return distinct="false">
+                        <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand name="X" xsi:type="AliasRef"/>
+                        </expression>
+                     </return>
+                  </codes>
+                  <valueset localId="186" locator="119:49-119:137" name="Medication follow-up - Has side-effects from iron and folic acid supplements Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="278" locator="140:1-164:3" name="Should &quot;Anaemia counselling conducted&quot; IS OPTIONAL 3" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="278">
+               <a:s>/*
+((((&quot;Blood haemoglobin test result&quot; ≥ 110 g/L)
+  AND (&quot;Gestational age&quot; ≤ 12 weeks)
+  AND (&quot;Population prevalence of anaemia&quot; ≤ 20%)
+  AND (&quot;Has side-effects from iron and folic acid supplements&quot; = FALSE))
+  OR ((&quot;Blood haemoglobin test result&quot; ≥ 110 g/L)
+  AND (&quot;Gestational age&quot; ≥ 28 weeks)
+  AND (&quot;Population prevalence of anaemia&quot; ≤ 20%)
+  AND (&quot;Has side-effects from iron and folic acid supplements&quot; = FALSE)))
+  OR ((&quot;Blood haemoglobin test result&quot; ≥ 105 g/L)
+  AND (13 weeks ≤ &quot;Gestational age&quot; ≤ 27 weeks)
+  AND (&quot;Population prevalence of anaemia&quot; ≤ 20%)
+  AND (&quot;Has side-effects from iron and folic acid supplements&quot; = FALSE)))
+  OR ((&quot;Blood haemoglobin test conducted&quot; = FALSE)
+  AND (&quot;Pallor present&quot; = FALSE)
+  AND (&quot;Population prevalence of anaemia&quot; ≤ 20%)
+  AND (&quot;Has side-effects from iron and folic acid supplements&quot; = FALSE))
+*/
+define &quot;Should \&quot;Anaemia counselling conducted\&quot; IS OPTIONAL 3&quot;:
+  </a:s>
+               <a:s r="277">
+                  <a:s r="257">
+                     <a:s r="233">
+                        <a:s r="211">
+                           <a:s>(
+    </a:s>
+                           <a:s r="211">
+                              <a:s r="204">
+                                 <a:s r="199">
+                                    <a:s r="194">
+                                       <a:s r="192">
+                                          <a:s r="191">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="192">
+                                             <a:s>&quot;Gestational age&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> &lt;= </a:s>
+                                       <a:s r="193">
+                                          <a:s>12 'weeks'</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+      and </a:s>
+                                    <a:s r="198">
+                                       <a:s r="196">
+                                          <a:s r="195">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="196">
+                                             <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> >= </a:s>
+                                       <a:s r="197">
+                                          <a:s>110 'g/L'</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="203">
+                                    <a:s r="201">
+                                       <a:s r="200">
+                                          <a:s>Config</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="201">
+                                          <a:s>&quot;Population prevalence of anaemia&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="202">
+                                       <a:s>20 '%'</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="210">
+                                 <a:s>not </a:s>
+                                 <a:s r="209">
+                                    <a:s>(</a:s>
+                                    <a:s r="209">
+                                       <a:s r="206">
+                                          <a:s r="205">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="206">
+                                             <a:s>&quot;Medication follow-up&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="208">
+                                          <a:s r="207">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="208">
+                                             <a:s>&quot;Medication follow-up - Has side-effects from iron and folic acid supplements Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                        <a:s> or
+  </a:s>
+                        <a:s r="232">
+                           <a:s>(
+    </a:s>
+                           <a:s r="232">
+                              <a:s r="225">
+                                 <a:s r="220">
+                                    <a:s r="215">
+                                       <a:s r="213">
+                                          <a:s r="212">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="213">
+                                             <a:s>&quot;Gestational age&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> >= </a:s>
+                                       <a:s r="214">
+                                          <a:s>28 'weeks'</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+      and </a:s>
+                                    <a:s r="219">
+                                       <a:s r="217">
+                                          <a:s r="216">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="217">
+                                             <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> >= </a:s>
+                                       <a:s r="218">
+                                          <a:s>110 'g/L'</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="224">
+                                    <a:s r="222">
+                                       <a:s r="221">
+                                          <a:s>Config</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="222">
+                                          <a:s>&quot;Population prevalence of anaemia&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="223">
+                                       <a:s>20 '%'</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="231">
+                                 <a:s>not </a:s>
+                                 <a:s r="230">
+                                    <a:s>(</a:s>
+                                    <a:s r="230">
+                                       <a:s r="227">
+                                          <a:s r="226">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="227">
+                                             <a:s>&quot;Medication follow-up&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="229">
+                                          <a:s r="228">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="229">
+                                             <a:s>&quot;Medication follow-up - Has side-effects from iron and folic acid supplements Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> or
+  </a:s>
+                     <a:s r="256">
+                        <a:s>(
+    </a:s>
+                        <a:s r="256">
+                           <a:s r="249">
+                              <a:s r="244">
+                                 <a:s r="239">
+                                    <a:s r="235">
+                                       <a:s r="234">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="235">
+                                          <a:s>&quot;Gestational age&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="238">
+                                       <a:s>Interval[</a:s>
+                                       <a:s r="236">
+                                          <a:s>13 'weeks'</a:s>
+                                       </a:s>
+                                       <a:s>, </a:s>
+                                       <a:s r="237">
+                                          <a:s>27 'weeks'</a:s>
+                                       </a:s>
+                                       <a:s>]</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="243">
+                                    <a:s r="241">
+                                       <a:s r="240">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="241">
+                                          <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> >= </a:s>
+                                    <a:s r="242">
+                                       <a:s>105 'g/L'</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="248">
+                                 <a:s r="246">
+                                    <a:s r="245">
+                                       <a:s>Config</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="246">
+                                       <a:s>&quot;Population prevalence of anaemia&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> >= </a:s>
+                                 <a:s r="247">
+                                    <a:s>20 '%'</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="255">
+                              <a:s>not </a:s>
+                              <a:s r="254">
+                                 <a:s>(</a:s>
+                                 <a:s r="254">
+                                    <a:s r="251">
+                                       <a:s r="250">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="251">
+                                          <a:s>&quot;Medication follow-up&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="253">
+                                       <a:s r="252">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="253">
+                                          <a:s>&quot;Medication follow-up - Has side-effects from iron and folic acid supplements Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> or
+  </a:s>
+                  <a:s r="276">
+                     <a:s>(
+    </a:s>
+                     <a:s r="276">
+                        <a:s r="269">
+                           <a:s r="264">
+                              <a:s r="260">
+                                 <a:s r="259">
+                                    <a:s r="258">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="259">
+                                       <a:s>&quot;Blood haemoglobin test result&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> is null</a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="263">
+                                 <a:s r="262">
+                                    <a:s r="261">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="262">
+                                       <a:s>&quot;Pallor present&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> is false</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="268">
+                              <a:s r="266">
+                                 <a:s r="265">
+                                    <a:s>Config</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="266">
+                                    <a:s>&quot;Population prevalence of anaemia&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> >= </a:s>
+                              <a:s r="267">
+                                 <a:s>20 '%'</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      and </a:s>
+                        <a:s r="275">
+                           <a:s>not </a:s>
+                           <a:s r="274">
+                              <a:s>(</a:s>
+                              <a:s r="274">
+                                 <a:s r="271">
+                                    <a:s r="270">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="271">
+                                       <a:s>&quot;Medication follow-up&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="273">
+                                    <a:s r="272">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="273">
+                                       <a:s>&quot;Medication follow-up - Has side-effects from iron and folic acid supplements Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="277" locator="141:3-164:3" xsi:type="Or">
+            <operand localId="257" locator="141:3-158:3" xsi:type="Or">
+               <operand localId="233" locator="141:3-152:3" xsi:type="Or">
+                  <operand localId="211" locator="141:3-146:3" xsi:type="And">
+                     <operand localId="204" locator="142:5-144:61" xsi:type="And">
+                        <operand localId="199" locator="142:5-143:66" xsi:type="And">
+                           <operand localId="194" locator="142:5-142:47" xsi:type="LessOrEqual">
+                              <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="192" locator="142:5-142:33" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </operand>
+                              <operand localId="193" locator="142:38-142:47" value="12" unit="weeks" xsi:type="Quantity"/>
+                           </operand>
+                           <operand localId="198" locator="143:11-143:66" xsi:type="GreaterOrEqual">
+                              <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="196" locator="143:11-143:53" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </operand>
+                              <operand localId="197" locator="143:58-143:66" value="110" unit="g/L" xsi:type="Quantity"/>
+                           </operand>
+                        </operand>
+                        <operand localId="203" locator="144:11-144:61" xsi:type="GreaterOrEqual">
+                           <operand localId="201" locator="144:11-144:51" name="Population prevalence of anaemia" libraryName="Config" xsi:type="ExpressionRef"/>
+                           <operand localId="202" locator="144:56-144:61" value="20" unit="%" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="210" locator="145:11-145:143" xsi:type="Not">
+                        <operand localId="209" locator="145:15-145:143" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="206" locator="145:16-145:49" name="Medication follow-up" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="208" locator="145:54-145:142" name="Medication follow-up - Has side-effects from iron and folic acid supplements Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="232" locator="147:3-152:3" xsi:type="And">
+                     <operand localId="225" locator="148:5-150:61" xsi:type="And">
+                        <operand localId="220" locator="148:5-149:66" xsi:type="And">
+                           <operand localId="215" locator="148:5-148:47" xsi:type="GreaterOrEqual">
+                              <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="213" locator="148:5-148:33" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </operand>
+                              <operand localId="214" locator="148:38-148:47" value="28" unit="weeks" xsi:type="Quantity"/>
+                           </operand>
+                           <operand localId="219" locator="149:11-149:66" xsi:type="GreaterOrEqual">
+                              <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="217" locator="149:11-149:53" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </operand>
+                              <operand localId="218" locator="149:58-149:66" value="110" unit="g/L" xsi:type="Quantity"/>
+                           </operand>
+                        </operand>
+                        <operand localId="224" locator="150:11-150:61" xsi:type="GreaterOrEqual">
+                           <operand localId="222" locator="150:11-150:51" name="Population prevalence of anaemia" libraryName="Config" xsi:type="ExpressionRef"/>
+                           <operand localId="223" locator="150:56-150:61" value="20" unit="%" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="231" locator="151:11-151:143" xsi:type="Not">
+                        <operand localId="230" locator="151:15-151:143" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="227" locator="151:16-151:49" name="Medication follow-up" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="229" locator="151:54-151:142" name="Medication follow-up - Has side-effects from iron and folic acid supplements Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="256" locator="153:3-158:3" xsi:type="And">
+                  <operand localId="249" locator="154:5-156:61" xsi:type="And">
+                     <operand localId="244" locator="154:5-155:66" xsi:type="And">
+                        <operand localId="239" locator="154:5-154:69" xsi:type="In">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="235" locator="154:5-154:33" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="238" locator="154:38-154:69" lowClosed="true" highClosed="true" xsi:type="Interval">
+                              <low localId="236" locator="154:47-154:56" value="13" unit="weeks" xsi:type="Quantity"/>
+                              <high localId="237" locator="154:59-154:68" value="27" unit="weeks" xsi:type="Quantity"/>
+                           </operand>
+                        </operand>
+                        <operand localId="243" locator="155:11-155:66" xsi:type="GreaterOrEqual">
+                           <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="241" locator="155:11-155:53" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </operand>
+                           <operand localId="242" locator="155:58-155:66" value="105" unit="g/L" xsi:type="Quantity"/>
+                        </operand>
+                     </operand>
+                     <operand localId="248" locator="156:11-156:61" xsi:type="GreaterOrEqual">
+                        <operand localId="246" locator="156:11-156:51" name="Population prevalence of anaemia" libraryName="Config" xsi:type="ExpressionRef"/>
+                        <operand localId="247" locator="156:56-156:61" value="20" unit="%" xsi:type="Quantity"/>
+                     </operand>
+                  </operand>
+                  <operand localId="255" locator="157:11-157:143" xsi:type="Not">
+                     <operand localId="254" locator="157:15-157:143" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="251" locator="157:16-157:49" name="Medication follow-up" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="253" locator="157:54-157:142" name="Medication follow-up - Has side-effects from iron and folic acid supplements Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+               </operand>
+            </operand>
+            <operand localId="276" locator="159:3-164:3" xsi:type="And">
+               <operand localId="269" locator="160:5-162:61" xsi:type="And">
+                  <operand localId="264" locator="160:5-161:47" xsi:type="And">
+                     <operand localId="260" locator="160:5-160:55" xsi:type="IsNull">
+                        <operand localId="259" locator="160:5-160:47" name="Blood haemoglobin test result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </operand>
+                     <operand localId="263" locator="161:11-161:47" xsi:type="IsFalse">
+                        <operand name="ToBoolean" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="262" locator="161:11-161:38" name="Pallor present" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="268" locator="162:11-162:61" xsi:type="GreaterOrEqual">
+                     <operand localId="266" locator="162:11-162:51" name="Population prevalence of anaemia" libraryName="Config" xsi:type="ExpressionRef"/>
+                     <operand localId="267" locator="162:56-162:61" value="20" unit="%" xsi:type="Quantity"/>
+                  </operand>
+               </operand>
+               <operand localId="275" locator="163:11-163:143" xsi:type="Not">
+                  <operand localId="274" locator="163:15-163:143" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="271" locator="163:16-163:49" name="Medication follow-up" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="273" locator="163:54-163:142" name="Medication follow-up - Has side-effects from iron and folic acid supplements Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+   </statements>
+</library>

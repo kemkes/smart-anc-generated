@@ -1,0 +1,33 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/AllergyIntolerance/anc-allergyintolerance-example> a fhir:AllergyIntolerance;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "anc-allergyintolerance-example"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-allergyintolerance";
+       fhir:index 0;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-allergyintolerance>
+     ], [
+       fhir:value "http://fhir.org/guides/who/core/StructureDefinition/who-allergyintolerance";
+       fhir:index 1;
+       fhir:link <http://fhir.org/guides/who/core/StructureDefinition/who-allergyintolerance>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"anc-allergyintolerance-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;anc-allergyintolerance-example&quot; </p><p style=\"margin-bottom: 0px\">Profiles: <a href=\"StructureDefinition-anc-allergyintolerance.html\">ANC AllergyIntolerance</a>, <a href=\"StructureDefinition-who-allergyintolerance.html\">WHO AllergyIntolerance</a></p></div></div>"
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/AllergyIntolerance/anc-allergyintolerance-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

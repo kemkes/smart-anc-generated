@@ -1,0 +1,40 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/CareTeam/second-contact> a fhir:CareTeam;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "second-contact"]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: CareTeam</b><a name=\"second-contact\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource CareTeam &quot;second-contact&quot; </p></div><h3>Participants</h3><table class=\"grid\"><tr><td>-</td><td><b>Role</b></td><td><b>Member</b></td></tr><tr><td>*</td><td>Midwifery professional <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-persona.html\">ANC Personas</a>#MV &quot;Midwife&quot;)</span></td><td><a href=\"Practitioner-midwife-amina-second-contact.html\">Practitioner/midwife-amina-second-contact: Amina Midwife</a> &quot; MIDWIFE&quot;</td></tr></table></div>"
+  ]; # 
+  fhir:CareTeam.participant [
+     fhir:index 0;
+     fhir:CareTeam.participant.role [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-persona" ];
+         fhir:Coding.code [ fhir:value "MV" ];
+         fhir:Coding.display [ fhir:value "Midwife" ]
+       ];
+       fhir:CodeableConcept.text [ fhir:value "Midwifery professional" ]
+     ];
+     fhir:CareTeam.participant.member [
+       fhir:link <http://fhir.org/guides/who/anc-cds/Practitioner/midwife-amina-second-contact>;
+       fhir:Reference.reference [ fhir:value "Practitioner/midwife-amina-second-contact" ];
+       fhir:Reference.display [ fhir:value "Amina Midwife" ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/CareTeam/second-contact.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

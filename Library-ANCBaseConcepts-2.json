@@ -1,0 +1,160 @@
+{
+  "library" : {
+    "type" : "Library",
+    "identifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "ANCBaseConcepts",
+      "system" : "http://fhir.org/guides/who/anc-cds"
+    },
+    "schemaIdentifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "urn:hl7-org:elm",
+      "version" : "r1"
+    },
+    "usings" : {
+      "type" : "Library$Usings",
+      "def" : [ {
+        "type" : "UsingDef",
+        "localIdentifier" : "System",
+        "uri" : "urn:hl7-org:elm-types:r1"
+      } ]
+    },
+    "valueSets" : {
+      "type" : "Library$ValueSets",
+      "def" : [ {
+        "type" : "ValueSetDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "valueset ", "\"Antenatal care case\"", ": ", "'http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-case'" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "1"
+          }
+        } ],
+        "localId" : "1",
+        "locator" : "6:1-6:97",
+        "name" : "Antenatal care case",
+        "id" : "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-case",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ValueSetDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "valueset ", "\"Antenatal care contact\"", ": ", "'http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-contact'" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "2"
+          }
+        } ],
+        "localId" : "2",
+        "locator" : "7:1-7:103",
+        "name" : "Antenatal care contact",
+        "id" : "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-contact",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ValueSetDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "//valueset \"Pregnancy expected delivery date method\": 'http://hl7.org/fhir/uv/ips/ValueSet/edd-method-uv-ips'\n//valueset \"Pregnancy status\": 'http://fhir.org/guides/who/anc-cds/ValueSet/pregnancy-status'\n//valueset \"Pregnancy status - pregnant\": 'http://fhir.org/guides/who/anc-cds/ValueSet/pregnancy-status-pregnant'\n", "valueset ", "\"Pregnancy condition\"", ": ", "'http://fhir.org/guides/who/anc-cds/ValueSet/pregnancy-condition'" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "3"
+          }
+        } ],
+        "localId" : "3",
+        "locator" : "11:1-11:97",
+        "name" : "Pregnancy condition",
+        "id" : "http://fhir.org/guides/who/anc-cds/ValueSet/pregnancy-condition",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ValueSetDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "//valueset \"Gestational age from ultrasound\": 'http://fhir.org/guides/who/anc-cds/ValueSet/gestational-age-from-ultrasound'\n\n// TODO: Add these to the dictionary to generate, shouldn't need to do these manually\n", "valueset ", "\"Iron supplement\"", ": ", "'http://fhir.org/guides/who/anc-cds/ValueSet/iron-supplement'" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "4"
+          }
+        } ],
+        "localId" : "4",
+        "locator" : "15:1-15:89",
+        "name" : "Iron supplement",
+        "id" : "http://fhir.org/guides/who/anc-cds/ValueSet/iron-supplement",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ValueSetDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "valueset ", "\"Folic acid supplement\"", ": ", "'http://fhir.org/guides/who/anc-cds/ValueSet/folic-acid-supplement'" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "5"
+          }
+        } ],
+        "localId" : "5",
+        "locator" : "16:1-16:101",
+        "name" : "Folic acid supplement",
+        "id" : "http://fhir.org/guides/who/anc-cds/ValueSet/folic-acid-supplement",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "annotation" : [ {
+      "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion"
+    }, {
+      "s" : {
+        "s" : [ {
+          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+          "value" : {
+            "s" : [ "/*\nAdditional required concepts that do not have elements in the data dictionary\n*/\n", "library ANCBaseConcepts" ]
+          },
+          "nil" : false,
+          "typeSubstituted" : false,
+          "globalScope" : true
+        } ],
+        "r" : "5"
+      }
+    } ]
+  }
+}

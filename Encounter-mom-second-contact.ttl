@@ -1,0 +1,81 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+#  TODO: account 
+#  TODO: location 
+#  TODO: serviceProvider 
+
+<http://fhir.org/guides/who/anc-cds/Encounter/mom-second-contact> a fhir:Encounter;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "mom-second-contact"]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Encounter</b><a name=\"mom-second-contact\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Encounter &quot;mom-second-contact&quot; </p></div><p><b>status</b>: in-progress</p><p><b>class</b>: ambulatory (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code AMB = 'ambulatory', stated as 'ambulatory')</p><p><b>type</b>: Antenatal care contact <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#Reason for coming to facility &quot;Reason for coming to facility&quot;)</span></p><p><b>subject</b>: <a href=\"Patient-mom-second-contact.html\">Patient/mom-second-contact</a> &quot; OTALA&quot;</p><p><b>episodeOfCare</b>: <a href=\"EpisodeOfCare-mom-pregnancy-episode-second-contact.html\">EpisodeOfCare/mom-pregnancy-episode-second-contact</a></p><h3>Participants</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Individual</b></td></tr><tr><td>*</td><td>primary performer <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ParticipationType.html\">ParticipationType</a>#PPRF)</span></td><td><a href=\"Practitioner-midwife-amina-second-contact.html\">Practitioner/midwife-amina-second-contact</a> &quot; MIDWIFE&quot;</td></tr></table><p><b>period</b>: 2019-06-06 --&gt; (ongoing)</p><p><b>reasonCode</b>: Prenatal finding (finding) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#118189007)</span></p></div>"
+  ]; # 
+  fhir:Encounter.status [ fhir:value "in-progress"]; # 
+  fhir:Encounter.class [
+     fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+     fhir:Coding.code [ fhir:value "AMB" ];
+     fhir:Coding.display [ fhir:value "ambulatory" ]
+  ]; # 
+  fhir:Encounter.type [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:Coding.code [ fhir:value "Reason for coming to facility" ];
+       fhir:Coding.display [ fhir:value "Reason for coming to facility" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Antenatal care contact" ]
+  ]; # 
+  fhir:Encounter.subject [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Patient/mom-second-contact>;
+     fhir:Reference.reference [ fhir:value "Patient/mom-second-contact" ]
+  ]; # 
+  fhir:Encounter.episodeOfCare [
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/who/anc-cds/EpisodeOfCare/mom-pregnancy-episode-second-contact>;
+     fhir:Reference.reference [ fhir:value "EpisodeOfCare/mom-pregnancy-episode-second-contact" ]
+  ]; # 
+  fhir:Encounter.participant [
+     fhir:index 0;
+     fhir:Encounter.participant.type [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+         fhir:Coding.code [ fhir:value "PPRF" ];
+         fhir:Coding.display [ fhir:value "primary performer" ]
+       ]
+     ];
+     fhir:Encounter.participant.individual [
+       fhir:link <http://fhir.org/guides/who/anc-cds/Practitioner/midwife-amina-second-contact>;
+       fhir:Reference.reference [ fhir:value "Practitioner/midwife-amina-second-contact" ]
+     ]
+  ]; # 
+  fhir:Encounter.period [
+     fhir:Period.start [ fhir:value "2019-06-06"^^xsd:date ]
+  ]; #  TODO: ServiceRequest 
+  fhir:Encounter.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a sct:118189007;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "118189007" ];
+       fhir:Coding.display [ fhir:value "Prenatal finding (finding)" ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Encounter/mom-second-contact.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="63">
+         <a:s>/*
+Library ANC.IND.10
+WHO Antenatal Care (ANC) Indicator 10
+Percentage of pregnant women with an ultrasound scan before 24 weeks 
+
+Numerator: Number of pregnant women who received ultrasound scan before 24 weeks 
+Numerator Computation: COUNT of all women who had an ultrasound scan done before 24 weeks gestational age 
+Denominator: Total number of antenatal clients with gestational age equal to 24 weeks
+Denominator Computation: COUNT of all pregnant women who reached 24 weeks gestational age in the past calendar month 
+
+Disaggregation:
+Age (10-14, 15-19, 20+)
+Education Level (none, don't know, primary, secondary, higher)
+
+Reference:
+WHO ANC monitoring framework (1) 
+*/
+library ANCIND10</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCIND10" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="20:1-20:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="22:1-22:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="23:1-23:28" localIdentifier="FC" path="http://fhir.org/guides/who/anc-cds/FHIRCommon">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRCommon</a:s>
+               </a:s>
+               <a:s> called FC</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="24:1-24:27" localIdentifier="AC" path="http://fhir.org/guides/who/anc-cds/ANCCommon">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCCommon</a:s>
+               </a:s>
+               <a:s> called AC</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="25:1-25:34" localIdentifier="BCx" path="http://fhir.org/guides/who/anc-cds/ANCBaseConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCBaseConcepts</a:s>
+               </a:s>
+               <a:s> called BCx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="26:1-26:29" localIdentifier="Cx" path="http://fhir.org/guides/who/anc-cds/ANCConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConcepts</a:s>
+               </a:s>
+               <a:s> called Cx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="7" locator="27:1-27:43" localIdentifier="BaseData" path="http://fhir.org/guides/who/anc-cds/ANCBaseDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="7">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCBaseDataElements</a:s>
+               </a:s>
+               <a:s> called BaseData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="8" locator="28:1-28:42" localIdentifier="PatientData" path="http://fhir.org/guides/who/anc-cds/ANCDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="8">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCDataElements</a:s>
+               </a:s>
+               <a:s> called PatientData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="9" locator="29:1-29:49" localIdentifier="ContactData" path="http://fhir.org/guides/who/anc-cds/ANCContactDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="9">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCContactDataElements</a:s>
+               </a:s>
+               <a:s> called ContactData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="10" locator="30:1-30:41" localIdentifier="Stratifiers" path="http://fhir.org/guides/who/anc-cds/ANCStratifiers">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="10">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCStratifiers</a:s>
+               </a:s>
+               <a:s> called Stratifiers</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <parameters>
+      <def localId="16" locator="32:1-32:88" name="Measurement Period" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="16">
+               <a:s>parameter &quot;Measurement Period&quot; </a:s>
+               <a:s r="15">
+                  <a:s>Interval&lt;</a:s>
+                  <a:s r="14">
+                     <a:s>Date</a:s>
+                  </a:s>
+                  <a:s>></a:s>
+               </a:s>
+               <a:s> default </a:s>
+               <a:s r="13">
+                  <a:s r="11">Interval[@2020-01-01, @2020-01-31]</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <default localId="13" locator="32:55-32:88" lowClosed="true" highClosed="true" xsi:type="Interval">
+            <low localId="11" locator="32:64-32:74" xsi:type="Date">
+               <year valueType="t:Integer" value="2020" xsi:type="Literal"/>
+               <month valueType="t:Integer" value="1" xsi:type="Literal"/>
+               <day valueType="t:Integer" value="1" xsi:type="Literal"/>
+            </low>
+            <high localId="12" locator="32:77-32:87" xsi:type="Date">
+               <year valueType="t:Integer" value="2020" xsi:type="Literal"/>
+               <month valueType="t:Integer" value="1" xsi:type="Literal"/>
+               <day valueType="t:Integer" value="31" xsi:type="Literal"/>
+            </high>
+         </default>
+         <parameterTypeSpecifier localId="15" locator="32:32-32:45" xsi:type="IntervalTypeSpecifier">
+            <pointType localId="14" locator="32:41-32:44" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+         </parameterTypeSpecifier>
+      </def>
+   </parameters>
+   <statements>
+      <def locator="34:1-34:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="34:1-34:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="20" locator="39:1-40:41" name="Initial Population" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="20">
+               <a:s>/*
+Initial population: Antenatal clients
+*/
+define &quot;Initial Population&quot;:
+  </a:s>
+               <a:s r="19">
+                  <a:s>exists </a:s>
+                  <a:s r="18">
+                     <a:s>(</a:s>
+                     <a:s r="18">
+                        <a:s r="17">
+                           <a:s>BaseData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="18">
+                           <a:s>&quot;Antenatal care case&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="19" locator="40:3-40:41" xsi:type="Exists">
+            <operand localId="18" locator="40:10-40:41" name="Antenatal care case" libraryName="BaseData" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def localId="41" locator="46:1-50:5" name="Numerator" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="41">
+               <a:s>/*
+Numerator: Number of pregnant women who received ultrasound scan before 24 weeks 
+Numerator Computation: COUNT of all women who had an ultrasound scan done before 24 weeks gestational age 
+*/
+define Numerator:
+  </a:s>
+               <a:s r="40">
+                  <a:s>exists </a:s>
+                  <a:s r="39">
+                     <a:s>(
+    </a:s>
+                     <a:s r="39">
+                        <a:s>
+                           <a:s r="22">
+                              <a:s r="21">
+                                 <a:s>
+                                    <a:s>PatientData.&quot;Ultrasound scan conducted&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> P</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      </a:s>
+                        <a:s r="38">
+                           <a:s>where </a:s>
+                           <a:s r="38">
+                              <a:s r="26">
+                                 <a:s r="23">
+                                    <a:s>FC</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="26">
+                                    <a:s>ToInterval(</a:s>
+                                    <a:s r="25">
+                                       <a:s r="24">
+                                          <a:s>P</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="25">
+                                          <a:s>performed</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s r="38"> during </a:s>
+                              <a:s r="37">
+                                 <a:s>Interval[</a:s>
+                                 <a:s r="30">
+                                    <a:s>start of </a:s>
+                                    <a:s r="29">
+                                       <a:s r="28">
+                                          <a:s r="27">
+                                             <a:s>BaseData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="28">
+                                             <a:s>&quot;Pregnancy&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="29">
+                                          <a:s>period</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="36">
+                                    <a:s r="34">
+                                       <a:s>start of </a:s>
+                                       <a:s r="33">
+                                          <a:s r="32">
+                                             <a:s r="31">
+                                                <a:s>BaseData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="32">
+                                                <a:s>&quot;Pregnancy&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="33">
+                                             <a:s>period</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> + </a:s>
+                                    <a:s r="35">
+                                       <a:s>24 weeks</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>]</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="40" locator="47:3-50:5" xsi:type="Exists">
+            <operand localId="39" locator="47:10-50:5" xsi:type="Query">
+               <source localId="22" locator="48:5-48:45" alias="P">
+                  <expression localId="21" locator="48:5-48:43" name="Ultrasound scan conducted" libraryName="PatientData" xsi:type="ExpressionRef"/>
+               </source>
+               <where localId="38" locator="49:7-49:141" xsi:type="IncludedIn">
+                  <operand localId="26" locator="49:13-49:38" name="ToInterval" libraryName="FC" xsi:type="FunctionRef">
+                     <operand localId="25" locator="49:27-49:37" path="performed" scope="P" xsi:type="Property"/>
+                  </operand>
+                  <operand localId="37" locator="49:47-49:141" lowClosed="true" highClosed="true" xsi:type="Interval">
+                     <low localId="30" locator="49:56-49:91" xsi:type="Start">
+                        <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="29" locator="49:65-49:91" path="period" xsi:type="Property">
+                              <source localId="28" locator="49:65-49:84" name="Pregnancy" libraryName="BaseData" xsi:type="ExpressionRef"/>
+                           </operand>
+                        </operand>
+                     </low>
+                     <high localId="36" locator="49:94-49:140" xsi:type="Add">
+                        <operand localId="34" locator="49:94-49:129" xsi:type="Start">
+                           <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="33" locator="49:103-49:129" path="period" xsi:type="Property">
+                                 <source localId="32" locator="49:103-49:122" name="Pregnancy" libraryName="BaseData" xsi:type="ExpressionRef"/>
+                              </operand>
+                           </operand>
+                        </operand>
+                        <operand localId="35" locator="49:133-49:140" value="24" unit="weeks" xsi:type="Quantity"/>
+                     </high>
+                  </operand>
+               </where>
+            </operand>
+         </expression>
+      </def>
+      <def localId="57" locator="56:1-61:3" name="Denominator" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="57">
+               <a:s>/*
+Denominator: Total number of antenatal clients with gestational age equal to 24 weeks
+Denominator Computation: COUNT of all pregnant women who reached 24 weeks gestational age in the past calendar month 
+*/
+define Denominator:
+  </a:s>
+               <a:s r="56">
+                  <a:s>exists </a:s>
+                  <a:s r="55">
+                     <a:s>(
+    </a:s>
+                     <a:s r="55">
+                        <a:s>
+                           <a:s r="43">
+                              <a:s r="42">
+                                 <a:s>
+                                    <a:s>PatientData.&quot;Gestational age&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> GA</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      </a:s>
+                        <a:s r="54">
+                           <a:s>where </a:s>
+                           <a:s r="54">
+                              <a:s r="49">
+                                 <a:s r="47">
+                                    <a:s r="44">
+                                       <a:s>FC</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="47">
+                                       <a:s>ToInterval(</a:s>
+                                       <a:s r="46">
+                                          <a:s r="45">
+                                             <a:s>GA</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="46">
+                                             <a:s>effective</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s r="49"> during </a:s>
+                                 <a:s r="48">
+                                    <a:s>&quot;Measurement Period&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+        and </a:s>
+                              <a:s r="53">
+                                 <a:s r="51">
+                                    <a:s r="50">
+                                       <a:s>GA</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="51">
+                                       <a:s>value</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> = </a:s>
+                                 <a:s r="52">
+                                    <a:s>24 weeks</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="56" locator="57:3-61:3" xsi:type="Exists">
+            <operand localId="55" locator="57:10-61:3" xsi:type="Query">
+               <source localId="43" locator="58:5-58:36" alias="GA">
+                  <expression localId="42" locator="58:5-58:33" name="Gestational age" libraryName="PatientData" xsi:type="ExpressionRef"/>
+               </source>
+               <where localId="54" locator="59:7-60:31" xsi:type="And">
+                  <operand localId="49" locator="59:13-59:67" xsi:type="IncludedIn">
+                     <operand localId="47" locator="59:13-59:39" name="ToInterval" libraryName="FC" xsi:type="FunctionRef">
+                        <operand localId="46" locator="59:27-59:38" path="effective" scope="GA" xsi:type="Property"/>
+                     </operand>
+                     <operand xsi:type="Interval">
+                        <low xsi:type="ToDateTime">
+                           <operand path="low" xsi:type="Property">
+                              <source localId="48" locator="59:48-59:67" name="Measurement Period" xsi:type="ParameterRef"/>
+                           </operand>
+                        </low>
+                        <lowClosedExpression path="lowClosed" xsi:type="Property">
+                           <source localId="48" locator="59:48-59:67" name="Measurement Period" xsi:type="ParameterRef"/>
+                        </lowClosedExpression>
+                        <high xsi:type="ToDateTime">
+                           <operand path="high" xsi:type="Property">
+                              <source localId="48" locator="59:48-59:67" name="Measurement Period" xsi:type="ParameterRef"/>
+                           </operand>
+                        </high>
+                        <highClosedExpression path="highClosed" xsi:type="Property">
+                           <source localId="48" locator="59:48-59:67" name="Measurement Period" xsi:type="ParameterRef"/>
+                        </highClosedExpression>
+                     </operand>
+                  </operand>
+                  <operand localId="53" locator="60:13-60:31" xsi:type="Equal">
+                     <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand asType="fhir:Quantity" xsi:type="As">
+                           <operand localId="51" locator="60:13-60:20" path="value" scope="GA" xsi:type="Property"/>
+                        </operand>
+                     </operand>
+                     <operand localId="52" locator="60:24-60:31" value="24" unit="weeks" xsi:type="Quantity"/>
+                  </operand>
+               </where>
+            </operand>
+         </expression>
+      </def>
+      <def localId="60" locator="66:1-67:22" name="Age Stratifier" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="60">
+               <a:s>/*
+Disaggregation: Age (10-14, 15-19, 20+)
+*/
+define &quot;Age Stratifier&quot;:
+  </a:s>
+               <a:s r="59">
+                  <a:s r="58">
+                     <a:s>Stratifiers</a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="59">
+                     <a:s>&quot;By Age&quot;</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="59" locator="67:3-67:22" name="By Age" libraryName="Stratifiers" xsi:type="ExpressionRef"/>
+      </def>
+      <def localId="63" locator="72:1-73:34" name="Education Level Stratifier" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="63">
+               <a:s>/*
+Disaggregation: Education Level (none, don't know, primary, secondary, higher)
+*/
+define &quot;Education Level Stratifier&quot;:
+  </a:s>
+               <a:s r="62">
+                  <a:s r="61">
+                     <a:s>Stratifiers</a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="62">
+                     <a:s>&quot;By Education Level&quot;</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="62" locator="73:3-73:34" name="By Education Level" libraryName="Stratifiers" xsi:type="ExpressionRef"/>
+      </def>
+   </statements>
+</library>

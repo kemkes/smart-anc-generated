@@ -1,0 +1,60 @@
+{
+  "resourceType" : "Observation",
+  "id" : "anc-b8-de117-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de117"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"anc-b8-de117-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;anc-b8-de117-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b8-de117.html\">Presenting signs/conditions for IPV</a></p></div><p><b>identifier</b>: id: anc-b8-de117-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Presenting signs/conditions for IPV <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B8.DE117)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: Injury to abdomen <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B8.DE118; <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html\">ICD-10</a>#S39.9 &quot;Unspecified injury of abdomen, lower back and pelvis&quot;; mms#NB9Z &quot;Injuries to the abdomen, lower back, lumbar spine or pelvis, unspecified&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#417746004 &quot;Traumatic injury (disorder)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#28125-3 &quot;Injury risk [CCC]&quot;)</span></p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-b8-de117-example"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B8.DE117",
+      "display" : "Presenting signs/conditions for IPV"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "performer" : [{
+    "reference" : "PractitionerRole/anc-practitionerrole-example"
+  }],
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B8.DE118",
+      "display" : "Injury to abdomen"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-10",
+      "code" : "S39.9",
+      "display" : "Unspecified injury of abdomen, lower back and pelvis"
+    },
+    {
+      "system" : "http://id.who.int/icd11/mms",
+      "code" : "NB9Z",
+      "display" : "Injuries to the abdomen, lower back, lumbar spine or pelvis, unspecified"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "417746004",
+      "display" : "Traumatic injury (disorder)"
+    },
+    {
+      "system" : "http://loinc.org",
+      "code" : "28125-3",
+      "display" : "Injury risk [CCC]"
+    }]
+  }
+}

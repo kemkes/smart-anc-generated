@@ -1,0 +1,289 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT06> a fhir:PlanDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ANCDT06"]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <table class=\"grid dict\">\r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Id: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT06</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Url: </b></th>\r\n            <td style=\"padding-left: 4px;\"><a href=\"http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT06\">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT06</a></td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Version: </b></th>\r\n            <td style=\"padding-left: 4px;\">0.3.0</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Identifier: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                \r\n                <p style=\"margin-bottom: 5px;\">\r\n                    <b>value: </b> <span>ANC.DT.06</span>\r\n                </p>\r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Name: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT06</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Title: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANC.DT.06 Physical symptoms and exam results requiring referral</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Status: </b></th>\r\n            <td style=\"padding-left: 4px;\">active</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Experimental: </b></th>\r\n            <td style=\"padding-left: 4px;\">false</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Type: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                    \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/CodeSystem/plan-definition-type\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\r\n                        </p>\r\n                        \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>code: </b> <span>eca-rule</span>\r\n                        </p>\r\n                        \r\n                        \r\n                    \r\n                \r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Date: </b></th>\r\n            <td style=\"padding-left: 4px;\">2021-06-11 22:32:40-0600</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Publisher: </b></th>\r\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Description: </b></th>\r\n            <td style=\"padding-left: 4px;\">If the woman has any of the following physical exam results, refer to the hospital</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Use Context: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                <table class=\"grid-dict\">\r\n                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>\r\n                    \r\n                      <tr>\r\n                        <td>task</td>\r\n                        <td>ANC.B8.</td>\r\n                        <td>Conduct physical exam</td>\r\n                      </tr>\r\n                    \r\n                </table>\r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\r\n            <td style=\"padding-left: 4px;\">001</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Libraries: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr><td><a href=\"http://fhir.org/guides/who/anc-cds/Library/ANCDT06\">http://fhir.org/guides/who/anc-cds/Library/ANCDT06</a></td></tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Actions: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr>\r\n                  <td>\r\n                    <b> ANC.DT.06 Physical symptoms and exam results requiring referral:</b> <br/>\r\n                    <b>When:</b> <i>named-event:</i> ANC.B8. Conduct physical exam<br/>\r\n                    \r\n                    \r\n                      <b>Then:</b>\r\n                      <table class=\"grid-dict\">\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Woman has a fever – provide treatment and refer urgently to hospital!\nProcedure:\n– Insert an IV line\n– Give fluids slowly<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (&amp;quot;Body temperature&amp;quot; ≥ 38°C)\n  AND (&amp;quot;Second body temperature&amp;quot; ≥ 38°C) <i>(Should Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility )</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Abnormal pulse rate – refer for further investigation\nProcedure:\n– Check for fever, infection, respiratory distress, arrhythmia\n– Refer for further investigation<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> 60 bpm &amp;gt; &amp;quot;Second pulse rate&amp;quot; &amp;gt; 100 bpm <i>(Should Refer to a hospital)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Woman has respiratory distress – refer urgently to the hospital!<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> ((((((&amp;quot;Respiratory exam result&amp;quot; = &amp;quot;Dyspnoea&amp;quot;)\n  OR (&amp;quot;Respiratory exam result&amp;quot; = &amp;quot;Cough&amp;quot;))\n  OR (&amp;quot;Respiratory exam result&amp;quot; = &amp;quot;Rapid breathing&amp;quot;))\n  OR (&amp;quot;Respiratory exam result&amp;quot; = &amp;quot;Slow breathing&amp;quot;))\n  OR (&amp;quot;Respiratory exam result&amp;quot; = &amp;quot;Wheezing&amp;quot;))\n  OR (&amp;quot;Respiratory exam result&amp;quot; = &amp;quot;Rales&amp;quot;))\n  OR (&amp;quot;Respiratory exam result&amp;quot; = &amp;quot;Other abnormal respiratory exam result (specify)&amp;quot;) <i>(Should Refer urgently to a hospital)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Woman has low oximetry (&amp;lt;92%) – she should be referred urgently to the hospital<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Oximetry&amp;quot; &amp;lt; 92% <i>(Should Refer urgently to a hospital 2)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Woman's cardiac condition is abnormal and she should be referred urgently to the hospital<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (((((((&amp;quot;Cardiac exam result&amp;quot; = &amp;quot;Heart murmur&amp;quot;)\n  OR (&amp;quot;Cardiac exam result&amp;quot; = &amp;quot;Weak pulse&amp;quot;))\n  OR (&amp;quot;Cardiac exam result&amp;quot; = &amp;quot;Tachycardia&amp;quot;))\n  OR (&amp;quot;Cardiac exam result&amp;quot; = &amp;quot;Bradycardia&amp;quot;))\n  OR (&amp;quot;Cardiac exam result&amp;quot; = &amp;quot;Arrhythmia&amp;quot;))\n  OR (&amp;quot;Cardiac exam result&amp;quot; = &amp;quot;Cyanosis&amp;quot;))\n  OR (&amp;quot;Cardiac exam result&amp;quot; = &amp;quot;Cold sweats&amp;quot;))\n  OR (&amp;quot;Cardiac exam result&amp;quot; = &amp;quot;Other abnormal cardiac exam result (specify)&amp;quot;) <i>(Should Refer urgently to a hospital 3)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Woman's breast exam was abnormal and she should be referred to hospital for further investigation<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> ((((((&amp;quot;Breast exam result&amp;quot; = &amp;quot;Nodule&amp;quot;)\n  OR (&amp;quot;Breast exam result&amp;quot; = &amp;quot;Discharge&amp;quot;))\n  OR (&amp;quot;Breast exam result&amp;quot; = &amp;quot;Flushing&amp;quot;))\n  OR (&amp;quot;Breast exam result&amp;quot; = &amp;quot;Local pain&amp;quot;))\n  OR (&amp;quot;Breast exam result&amp;quot; = &amp;quot;Bleeding&amp;quot;))\n  OR (&amp;quot;Breast exam result&amp;quot; = &amp;quot;Increased temperature&amp;quot;))\n  OR (&amp;quot;Breast exam result&amp;quot; = &amp;quot;Other breast exam result (specify)&amp;quot;) <i>(Should Conduct further investigation and, if necessary, refer urgently to a hospital)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Woman's abdominal exam was abnormal and she should be referred or further evaluated<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (((((((((((((((((&amp;quot;Abdominal exam result&amp;quot; = &amp;quot;Mass/tumour&amp;quot;)\n  OR (&amp;quot;Abdominal exam result&amp;quot; = &amp;quot;Pain on superficial palpation&amp;quot;))\n  OR (&amp;quot;Abdominal exam result&amp;quot; = &amp;quot;Pain on deep palpation&amp;quot;))\n  OR (&amp;quot;Abdominal exam result&amp;quot; = &amp;quot;Painful decompression&amp;quot;))\n  OR (&amp;quot;Abdominal exam result&amp;quot; = &amp;quot;Other abnormal abdominal exam result (specify)&amp;quot;))\n  OR (&amp;quot;Pelvic exam result (visual)&amp;quot; = &amp;quot;Abnormal vaginal discharge&amp;quot;))\n  OR (&amp;quot;Pelvic exam result (visual)&amp;quot; = &amp;quot;Evidence of amniotic fluid&amp;quot;))\n  OR (&amp;quot;Pelvic exam result (visual)&amp;quot; = &amp;quot;Foul-smelling vaginal discharge&amp;quot;))\n  OR (&amp;quot;Pelvic exam result (visual)&amp;quot; = &amp;quot;Clusters of erythematous papules&amp;quot;))\n  OR (&amp;quot;Pelvic exam result (visual)&amp;quot; = &amp;quot;Vesicles&amp;quot;))\n  OR (&amp;quot;Pelvic exam result (visual)&amp;quot; = &amp;quot;Genital ulcer&amp;quot;))\n  OR (&amp;quot;Pelvic exam result (visual)&amp;quot; = &amp;quot;Genital pain&amp;quot;))\n  OR (&amp;quot;Pelvic exam result (visual)&amp;quot; = &amp;quot;Tender bilateral inguinal and femoral lymphadenopathy&amp;quot;))\n  OR (&amp;quot;Pelvic exam result (visual)&amp;quot; = &amp;quot;Cervical friability&amp;quot;))\n  OR (&amp;quot;Pelvic exam result (visual)&amp;quot; = &amp;quot;Mucopurulent cervicitis&amp;quot;))\n  OR (&amp;quot;Pelvic exam result (visual)&amp;quot; = &amp;quot;Tender unilateral lymphadenopathy&amp;quot;))\n  OR (&amp;quot;Pelvic exam result (visual)&amp;quot; = &amp;quot;Curd-like vaginal discharge&amp;quot;))\n  OR (&amp;quot;Pelvic exam result (visual)&amp;quot; = &amp;quot;Other abnormal pelvic exam (visual) result (specify)&amp;quot;) <i>(Should Refer to a hospital 2)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Woman should be referred urgently if there is evidence of amniotic fluid, which could indicate the start of labour<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (&amp;quot;Pelvic exam result (visual)&amp;quot; = &amp;quot;Evidence of amniotic fluid&amp;quot;)\n  AND (&amp;quot;Gestational age&amp;quot; &amp;lt; 37 weeks) <i>(Should Refer urgently to a hospital 4)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              If no fetal heartbeat is observed, inform the woman that there might be a problem and that she needs to be referred to the hospital for further examination and next steps.\n\nProcedure:\n– Inform the woman that you cannot find the heartbeat and need to refer her to check if there's a problem\n– Refer to hospital<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (&amp;quot;Fetal heartbeat present&amp;quot; = FALSE)\n  AND (&amp;quot;Gestational age&amp;quot; ≥ 20 weeks) <i>(Should Refer to a hospital 3)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Fetal heart rate is abnormal after two readings: the woman should be referred to hospital<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (100 bpm &amp;gt; &amp;quot;Second fetal heart rate&amp;quot; &amp;gt; 180 bpm)\n  AND (&amp;quot;Gestational age&amp;quot; ≥ 20 weeks) <i>(Should Refer to a hospital 4)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                      </table>\r\n                    \r\n                  </td>\r\n                </tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n    </table>\r\n</div>"
+  ]; # 
+  fhir:PlanDefinition.url [ fhir:value "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT06"]; # 
+  fhir:PlanDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.value [ fhir:value "ANC.DT.06" ]
+  ]; # 
+  fhir:PlanDefinition.version [ fhir:value "0.3.0"]; # 
+  fhir:PlanDefinition.name [ fhir:value "ANCDT06"]; # 
+  fhir:PlanDefinition.title [ fhir:value "ANC.DT.06 Physical symptoms and exam results requiring referral"]; # 
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ];
+       fhir:Coding.code [ fhir:value "eca-rule" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.status [ fhir:value "active"]; # 
+  fhir:PlanDefinition.experimental [ fhir:value "false"^^xsd:boolean]; # 
+  fhir:PlanDefinition.date [ fhir:value "2021-06-11T22:32:40-06:00"^^xsd:dateTime]; # 
+  fhir:PlanDefinition.publisher [ fhir:value "World Health Organization (WHO)"]; # 
+  fhir:PlanDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.description [ fhir:value "If the woman has any of the following physical exam results, refer to the hospital"]; # 
+  fhir:PlanDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "task" ];
+       fhir:Coding.display [ fhir:value "Workflow Task" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes" ];
+         fhir:Coding.code [ fhir:value "ANC.B8." ];
+         fhir:Coding.display [ fhir:value "Conduct physical exam" ]
+       ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.library [
+     fhir:value "http://fhir.org/guides/who/anc-cds/Library/ANCDT06";
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/who/anc-cds/Library/ANCDT06>
+  ]; # 
+  fhir:PlanDefinition.action [
+     fhir:index 0;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC.DT.06 Physical symptoms and exam results requiring referral" ];
+     fhir:PlanDefinition.action.trigger [
+       fhir:index 0;
+       fhir:TriggerDefinition.type [ fhir:value "named-event" ];
+       fhir:TriggerDefinition.name [ fhir:value "ANC.B8. Conduct physical exam" ]
+     ];
+     fhir:PlanDefinition.action.action [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value "1" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility " ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility " ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Woman has a fever – provide treatment and refer urgently to hospital!\nProcedure:\n– Insert an IV line\n– Give fluids slowly" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications guide (IMPAC) (2017): Section S-113 (5)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(\"Body temperature\" ≥ 38°C)\n  AND (\"Second body temperature\" ≥ 38°C)" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility " ]
+         ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value "2" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Refer to a hospital" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Refer to a hospital" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Abnormal pulse rate – refer for further investigation\nProcedure:\n– Check for fever, infection, respiratory distress, arrhythmia\n– Refer for further investigation" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications guide (IMPAC) (2017): Section S-1 (5)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "60 bpm > \"Second pulse rate\" > 100 bpm" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Refer to a hospital" ]
+         ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value "3" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Refer urgently to a hospital" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Refer urgently to a hospital" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Woman has respiratory distress – refer urgently to the hospital!" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-149 (5)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "((((((\"Respiratory exam result\" = \"Dyspnoea\")\n  OR (\"Respiratory exam result\" = \"Cough\"))\n  OR (\"Respiratory exam result\" = \"Rapid breathing\"))\n  OR (\"Respiratory exam result\" = \"Slow breathing\"))\n  OR (\"Respiratory exam result\" = \"Wheezing\"))\n  OR (\"Respiratory exam result\" = \"Rales\"))\n  OR (\"Respiratory exam result\" = \"Other abnormal respiratory exam result (specify)\")" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Refer urgently to a hospital" ]
+         ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Element.id [ fhir:value "4" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Refer urgently to a hospital" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Refer urgently to a hospital 2" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Woman has low oximetry (<92%) – she should be referred urgently to the hospital" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-58 (5)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Oximetry\" < 92%" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Refer urgently to a hospital 2" ]
+         ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:Element.id [ fhir:value "5" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Refer urgently to a hospital" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Refer urgently to a hospital 3" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Woman's cardiac condition is abnormal and she should be referred urgently to the hospital" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-150 (5)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(((((((\"Cardiac exam result\" = \"Heart murmur\")\n  OR (\"Cardiac exam result\" = \"Weak pulse\"))\n  OR (\"Cardiac exam result\" = \"Tachycardia\"))\n  OR (\"Cardiac exam result\" = \"Bradycardia\"))\n  OR (\"Cardiac exam result\" = \"Arrhythmia\"))\n  OR (\"Cardiac exam result\" = \"Cyanosis\"))\n  OR (\"Cardiac exam result\" = \"Cold sweats\"))\n  OR (\"Cardiac exam result\" = \"Other abnormal cardiac exam result (specify)\")" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Refer urgently to a hospital 3" ]
+         ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:Element.id [ fhir:value "6" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct further investigation and, if necessary, refer urgently to a hospital" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct further investigation and, if necessary, refer urgently to a hospital" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Woman's breast exam was abnormal and she should be referred to hospital for further investigation" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "((((((\"Breast exam result\" = \"Nodule\")\n  OR (\"Breast exam result\" = \"Discharge\"))\n  OR (\"Breast exam result\" = \"Flushing\"))\n  OR (\"Breast exam result\" = \"Local pain\"))\n  OR (\"Breast exam result\" = \"Bleeding\"))\n  OR (\"Breast exam result\" = \"Increased temperature\"))\n  OR (\"Breast exam result\" = \"Other breast exam result (specify)\")" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct further investigation and, if necessary, refer urgently to a hospital" ]
+         ]
+       ]
+     ], [
+       fhir:index 6;
+       fhir:Element.id [ fhir:value "7" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Refer to a hospital" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Refer to a hospital 2" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Woman's abdominal exam was abnormal and she should be referred or further evaluated" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): B2.2 (2)\nManaging complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-139 (5)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(((((((((((((((((\"Abdominal exam result\" = \"Mass/tumour\")\n  OR (\"Abdominal exam result\" = \"Pain on superficial palpation\"))\n  OR (\"Abdominal exam result\" = \"Pain on deep palpation\"))\n  OR (\"Abdominal exam result\" = \"Painful decompression\"))\n  OR (\"Abdominal exam result\" = \"Other abnormal abdominal exam result (specify)\"))\n  OR (\"Pelvic exam result (visual)\" = \"Abnormal vaginal discharge\"))\n  OR (\"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\"))\n  OR (\"Pelvic exam result (visual)\" = \"Foul-smelling vaginal discharge\"))\n  OR (\"Pelvic exam result (visual)\" = \"Clusters of erythematous papules\"))\n  OR (\"Pelvic exam result (visual)\" = \"Vesicles\"))\n  OR (\"Pelvic exam result (visual)\" = \"Genital ulcer\"))\n  OR (\"Pelvic exam result (visual)\" = \"Genital pain\"))\n  OR (\"Pelvic exam result (visual)\" = \"Tender bilateral inguinal and femoral lymphadenopathy\"))\n  OR (\"Pelvic exam result (visual)\" = \"Cervical friability\"))\n  OR (\"Pelvic exam result (visual)\" = \"Mucopurulent cervicitis\"))\n  OR (\"Pelvic exam result (visual)\" = \"Tender unilateral lymphadenopathy\"))\n  OR (\"Pelvic exam result (visual)\" = \"Curd-like vaginal discharge\"))\n  OR (\"Pelvic exam result (visual)\" = \"Other abnormal pelvic exam (visual) result (specify)\")" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Refer to a hospital 2" ]
+         ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:Element.id [ fhir:value "8" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Refer urgently to a hospital" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Refer urgently to a hospital 4" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Woman should be referred urgently if there is evidence of amniotic fluid, which could indicate the start of labour" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Sections S-51, C-91 (5)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(\"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\")\n  AND (\"Gestational age\" < 37 weeks)" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Refer urgently to a hospital 4" ]
+         ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:Element.id [ fhir:value "9" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Refer to a hospital" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Refer to a hospital 3" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "If no fetal heartbeat is observed, inform the woman that there might be a problem and that she needs to be referred to the hospital for further examination and next steps.\n\nProcedure:\n– Inform the woman that you cannot find the heartbeat and need to refer her to check if there's a problem\n– Refer to hospital" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015): C7 (1)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(\"Fetal heartbeat present\" = FALSE)\n  AND (\"Gestational age\" ≥ 20 weeks)" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Refer to a hospital 3" ]
+         ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.id [ fhir:value "10" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Refer to a hospital" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Refer to a hospital 4" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Fetal heart rate is abnormal after two readings: the woman should be referred to hospital" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015): C7 (1)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(100 bpm > \"Second fetal heart rate\" > 180 bpm)\n  AND (\"Gestational age\" ≥ 20 weeks)" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Refer to a hospital 4" ]
+         ]
+       ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT06.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

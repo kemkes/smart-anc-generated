@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <!--  TODO: account  -->
+  <!--  TODO: location  -->
+  <!--  TODO: serviceProvider  -->
+<Encounter xmlns="http://hl7.org/fhir">
+  <id value="anc-encounter-charity-otala-1"/>
+  <meta>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter"/>
+    <profile value="http://fhir.org/guides/who/core/StructureDefinition/who-encounter"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Encounter</b><a name="anc-encounter-charity-otala-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Encounter &quot;anc-encounter-charity-otala-1&quot; </p><p style="margin-bottom: 0px">Profiles: <a href="StructureDefinition-anc-encounter.html">ANC Encounter</a>, <a href="StructureDefinition-who-encounter.html">WHO Encounter</a></p></div><p><b>status</b>: in-progress</p><p><b>class</b>: ambulatory (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code AMB = 'ambulatory', stated as 'ambulatory')</p><p><b>type</b>: Antenatal care contact <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B5.DE2 &quot;First antenatal care contact&quot;)</span></p><p><b>subject</b>: <a href="Patient-charity-otala-1.html">Patient/charity-otala-1</a> &quot; OTALA&quot;</p><p><b>episodeOfCare</b>: <a href="EpisodeOfCare-charity-otala-1-pregnancy-episode.html">EpisodeOfCare/charity-otala-1-pregnancy-episode</a></p><h3>Participants</h3><table class="grid"><tr><td>-</td><td><b>Type</b></td><td><b>Individual</b></td></tr><tr><td>*</td><td>primary performer <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-v3-ParticipationType.html">ParticipationType</a>#PPRF)</span></td><td><a href="Practitioner-jane.html">Practitioner/jane</a> &quot; NURSE&quot;</td></tr></table><p><b>period</b>: 2021-03-24 --&gt; (ongoing)</p><p><b>reasonCode</b>: First antenatal care contact <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B5.DE2; <a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#424441002 &quot;Prenatal initial visit (regime/therapy)&quot;)</span></p><h3>Diagnoses</h3><table class="grid"><tr><td>-</td><td><b>Condition</b></td><td><b>Rank</b></td></tr><tr><td>*</td><td><a href="Condition-charity-otala-1-pregnancy.html">Condition/charity-otala-1-pregnancy</a></td><td>1</td></tr></table></div>
+  </text>
+  <status value="in-progress"/>
+  <class>
+    <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+    <code value="AMB"/>
+    <display value="ambulatory"/>
+  </class>
+  <type>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B5.DE2"/>
+      <display value="First antenatal care contact"/>
+    </coding>
+    <text value="Antenatal care contact"/>
+  </type>
+  <subject>
+    <reference value="Patient/charity-otala-1"/>
+  </subject>
+  <episodeOfCare>
+    <reference value="EpisodeOfCare/charity-otala-1-pregnancy-episode"/>
+  </episodeOfCare>
+  <participant>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+        <code value="PPRF"/>
+        <display value="primary performer"/>
+      </coding>
+    </type>
+    <individual>
+      <reference value="Practitioner/jane"/>
+    </individual>
+  </participant>
+  <!--  TODO: ServiceRequest  -->
+  <period>
+    <start value="2021-03-24"/>
+  </period>
+  <reasonCode>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B5.DE2"/>
+      <display value="First antenatal care contact"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="424441002"/>
+      <display value="Prenatal initial visit (regime/therapy)"/>
+    </coding>
+  </reasonCode>
+  <diagnosis>
+    <condition>
+      <reference value="Condition/charity-otala-1-pregnancy"/>
+    </condition>
+    <rank value="1"/>
+  </diagnosis>
+</Encounter>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ServiceRequest xmlns="http://hl7.org/fhir">
+  <id value="anc-b10-de223-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de223"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: ServiceRequest</b><a name="anc-b10-de223-example"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource ServiceRequest &quot;anc-b10-de223-example&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-anc-b10-de223.html">Referrals made as part of first-line support and care</a></p></div><p><b>identifier</b>: id: anc-b10-de223-example (use: OFFICIAL)</p><p><b>status</b>: active</p><p><b>code</b>: Referrals made as part of first-line support and care <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B10.DE223)</span></p><p><b>subject</b>: <a href="Patient-anc-patient-example.html">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href="Encounter-anc-encounter-example.html">Encounter/anc-encounter-example</a></p><p><b>locationReference</b>: <a href="Location-anc-location-example.html">Location/anc-location-example</a> &quot;123&quot;</p></div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://example.org/fhir/NamingSystem/identifiers"/>
+    <value value="anc-b10-de223-example"/>
+  </identifier>
+  <status value="active"/>
+  <code>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B10.DE223"/>
+      <display value="Referrals made as part of first-line support and care"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/anc-patient-example"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/anc-encounter-example"/>
+  </encounter>
+  <locationReference>
+    <reference value="Location/anc-location-example"/>
+  </locationReference>
+</ServiceRequest>

@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/MedicationRequest/anc-b10-de115-example> a fhir:MedicationRequest;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "anc-b10-de115-example"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de115";
+       fhir:index 0;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de115>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: MedicationRequest</b><a name=\"anc-b10-de115-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource MedicationRequest &quot;anc-b10-de115-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b10-de115.html\">Amount of daily aspirin prescribed until delivery</a></p></div><p><b>identifier</b>: id: anc-b10-de115-example (use: OFFICIAL)</p><p><b>status</b>: active</p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>requester</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><blockquote><p><b>dosageInstruction</b></p></blockquote></div>"
+  ]; # 
+  fhir:MedicationRequest.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "http://example.org/fhir/NamingSystem/identifiers" ];
+     fhir:Identifier.value [ fhir:value "anc-b10-de115-example" ]
+  ]; # 
+  fhir:MedicationRequest.status [ fhir:value "active"]; # 
+  fhir:MedicationRequest.subject [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Patient/anc-patient-example>;
+     fhir:Reference.reference [ fhir:value "Patient/anc-patient-example" ]
+  ]; # 
+  fhir:MedicationRequest.encounter [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Encounter/anc-encounter-example>;
+     fhir:Reference.reference [ fhir:value "Encounter/anc-encounter-example" ]
+  ]; # 
+  fhir:MedicationRequest.requester [
+     fhir:link <http://fhir.org/guides/who/anc-cds/PractitionerRole/anc-practitionerrole-example>;
+     fhir:Reference.reference [ fhir:value "PractitionerRole/anc-practitionerrole-example" ]
+  ]; # 
+  fhir:MedicationRequest.dosageInstruction [
+     fhir:index 0;
+     fhir:Dosage.doseAndRate [
+       fhir:index 0;
+       fhir:Dosage.doseAndRate.doseQuantity [
+         fhir:Quantity.value [ fhir:value "74.915199999999998681232682429254055023193359375"^^xsd:decimal ];
+         fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+         fhir:Quantity.code [ fhir:value "g" ]
+       ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/MedicationRequest/anc-b10-de115-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

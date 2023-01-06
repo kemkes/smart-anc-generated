@@ -1,0 +1,30 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Goal/charity-otala-1-pregnancy-goal> a fhir:Goal;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "charity-otala-1-pregnancy-goal"]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Goal</b><a name=\"charity-otala-1-pregnancy-goal\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Goal &quot;charity-otala-1-pregnancy-goal&quot; </p></div><p><b>lifecycleStatus</b>: active</p><p><b>subject</b>: <a href=\"Patient-charity-otala-1.html\">Patient/charity-otala-1: Charity Otala</a> &quot; OTALA&quot;</p></div>"
+  ]; # 
+  fhir:Goal.lifecycleStatus [ fhir:value "active"]; # 
+  fhir:Goal.subject [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Patient/charity-otala-1>;
+     fhir:Reference.reference [ fhir:value "Patient/charity-otala-1" ];
+     fhir:Reference.display [ fhir:value "Charity Otala" ]
+  ] . #  TODO: Category? ,  TODO: Temporarily commented description due to bug in publisher ,  <description>
+    <text value="Maintain patient&#39;s health throughout pregnancy and ensure a healthy child"/>
+  </description> 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Goal/charity-otala-1-pregnancy-goal.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

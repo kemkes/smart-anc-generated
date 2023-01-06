@@ -1,0 +1,88 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Procedure/anc-b9-de196-example> a fhir:Procedure;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "anc-b9-de196-example"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de196";
+       fhir:index 0;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de196>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Procedure</b><a name=\"anc-b9-de196-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Procedure &quot;anc-b9-de196-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b9-de196.html\">Reason TB screening not done</a></p></div><p><b>identifier</b>: id: anc-b9-de196-example (use: OFFICIAL)</p><p><b>status</b>: completed</p><p><b>statusReason</b>: Sputum smear not available <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B9.DE197; <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html\">ICD-10</a>#Z75.3 &quot;Unavailability or inaccessibility of health-care facilities&quot;; mms#QB14 &quot;Unavailability or inaccessibility of health-care facilities&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#397807004 &quot;Equipment not available (finding)&quot;)</span></p><p><b>code</b>: Reason TB screening not done <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B9.DE196)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><h3>Performers</h3><table class=\"grid\"><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></td></tr></table><p><b>location</b>: <a href=\"Location-anc-location-example.html\">Location/anc-location-example</a> &quot;123&quot;</p></div>"
+  ]; # 
+  fhir:Procedure.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "http://example.org/fhir/NamingSystem/identifiers" ];
+     fhir:Identifier.value [ fhir:value "anc-b9-de196-example" ]
+  ]; # 
+  fhir:Procedure.status [ fhir:value "completed"]; # 
+  fhir:Procedure.statusReason [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:Coding.code [ fhir:value "ANC.B9.DE197" ];
+       fhir:Coding.display [ fhir:value "Sputum smear not available" ]
+     ], [
+       fhir:index 1;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:Coding.code [ fhir:value "Z75.3" ];
+       fhir:Coding.display [ fhir:value "Unavailability or inaccessibility of health-care facilities" ]
+     ], [
+       fhir:index 2;
+       fhir:Coding.system [ fhir:value "http://id.who.int/icd11/mms" ];
+       fhir:Coding.code [ fhir:value "QB14" ];
+       fhir:Coding.display [ fhir:value "Unavailability or inaccessibility of health-care facilities" ]
+     ], [
+       fhir:index 3;
+       a sct:397807004;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "397807004" ];
+       fhir:Coding.display [ fhir:value "Equipment not available (finding)" ]
+     ]
+  ]; # 
+  fhir:Procedure.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:Coding.code [ fhir:value "ANC.B9.DE196" ];
+       fhir:Coding.display [ fhir:value "Reason TB screening not done" ]
+     ]
+  ]; # 
+  fhir:Procedure.subject [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Patient/anc-patient-example>;
+     fhir:Reference.reference [ fhir:value "Patient/anc-patient-example" ]
+  ]; # 
+  fhir:Procedure.encounter [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Encounter/anc-encounter-example>;
+     fhir:Reference.reference [ fhir:value "Encounter/anc-encounter-example" ]
+  ]; # 
+  fhir:Procedure.performer [
+     fhir:index 0;
+     fhir:Procedure.performer.actor [
+       fhir:link <http://fhir.org/guides/who/anc-cds/PractitionerRole/anc-practitionerrole-example>;
+       fhir:Reference.reference [ fhir:value "PractitionerRole/anc-practitionerrole-example" ]
+     ]
+  ]; # 
+  fhir:Procedure.location [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Location/anc-location-example>;
+     fhir:Reference.reference [ fhir:value "Location/anc-location-example" ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Procedure/anc-b9-de196-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

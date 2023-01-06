@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="35">
+         <a:s>library ANCDT37</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCDT37" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="7:1-7:31" localIdentifier="Config" path="http://fhir.org/guides/who/anc-cds/ANCConfig">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConfig</a:s>
+               </a:s>
+               <a:s> called Config</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="8:1-8:29" localIdentifier="Cx" path="http://fhir.org/guides/who/anc-cds/ANCConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConcepts</a:s>
+               </a:s>
+               <a:s> called Cx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="9:1-9:42" localIdentifier="PatientData" path="http://fhir.org/guides/who/anc-cds/ANCDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCDataElements</a:s>
+               </a:s>
+               <a:s> called PatientData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="10:1-10:49" localIdentifier="ContactData" path="http://fhir.org/guides/who/anc-cds/ANCContactDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCContactDataElements</a:s>
+               </a:s>
+               <a:s> called ContactData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <statements>
+      <def locator="12:1-12:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="12:1-12:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="10" locator="17:1-18:82" name="Should Provide first-line support. Four (4) kinds of needs deserve attention:– Immediate emotional/psychological health needs– Immediate physical health needs– Ongoing safety needs– Ongoing support and mental health needs." context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="10">
+               <a:s>/*
+&quot;Has the woman been subjected to intimate partner violence&quot;=TRUE
+*/
+define &quot;Should Provide first-line support. Four (4) kinds of needs deserve attention:– Immediate emotional/psychological health needs– Immediate physical health needs– Ongoing safety needs– Ongoing support and mental health needs.&quot;:
+  </a:s>
+               <a:s r="9">
+                  <a:s r="8">
+                     <a:s r="7">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="8">
+                        <a:s>&quot;Has the woman  been subjected to intimate partner violence&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> is true</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="9" locator="18:3-18:82" xsi:type="IsTrue">
+            <operand name="ToBoolean" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="8" locator="18:3-18:74" name="Has the woman  been subjected to intimate partner violence" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="14" locator="23:1-24:42" name="Should Ask the following questions:  -Has the physical violence happened more often or gotten worse over the past 6 months? - Has he ever used a weapon or threatened you with a weapon? - Has he ever tried to strangle you? - Do you believe he could kill you? - Has he ever beaten you when you were pregnant? - Is he violently and constantly jealous of you? " context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="14">
+               <a:s>/*
+&quot;Safety assessement conducted&quot;=TRUE
+*/
+define &quot;Should Ask the following questions:  -Has the physical violence happened more often or gotten worse over the past 6 months? - Has he ever used a weapon or threatened you with a weapon? - Has he ever tried to strangle you? - Do you believe he could kill you? - Has he ever beaten you when you were pregnant? - Is he violently and constantly jealous of you? &quot;:
+  </a:s>
+               <a:s r="13">
+                  <a:s r="12">
+                     <a:s r="11">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="12">
+                        <a:s>&quot;Safety assessement&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> is true</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="13" locator="24:3-24:42" xsi:type="IsTrue">
+            <operand name="ToBoolean" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="12" locator="24:3-24:34" name="Safety assessement" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="35" locator="31:1-39:28" name="Should If it is not safe for the woman to return home, make appropriate referrals for shelter or safe housing, or work with her to identify a safe place she can go to (such as a friend’s home or church)." context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="35">
+               <a:s>/*
+(&quot;Has the physical violence happened more often or gotten worse over the past 6 months?&quot;  = TRUE )
+  AND (&quot;Has he ever used a weapon or threatened you with a weapon?&quot;  = TRUE )
+  AND (&quot;Has he ever tried to strangle you?&quot;  = TRUE )
+*/
+define &quot;Should If it is not safe for the woman to return home, make appropriate referrals for shelter or safe housing, or work with her to identify a safe place she can go to (such as a friend’s home or church).&quot;:
+  </a:s>
+               <a:s r="34">
+                  <a:s r="32">
+                     <a:s>Count(</a:s>
+                     <a:s r="31">
+                        <a:s>
+                           <a:s r="28">
+                              <a:s r="27">
+                                 <a:s>(</a:s>
+                                 <a:s r="27">
+                                    <a:s>{
+    </a:s>
+                                    <a:s r="16">
+                                       <a:s r="15">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="16">
+                                          <a:s>&quot;Has the physical violence happened more often or gotten worse over the past 6 months&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>,
+    </a:s>
+                                    <a:s r="18">
+                                       <a:s r="17">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="18">
+                                          <a:s>&quot;Has he ever used a weapon or threatened you with a weapon&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>,
+    </a:s>
+                                    <a:s r="20">
+                                       <a:s r="19">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="20">
+                                          <a:s>&quot;Has he ever tried to strangle you&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>,
+    </a:s>
+                                    <a:s r="22">
+                                       <a:s r="21">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="22">
+                                          <a:s>&quot;Do you believe he could kill you&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>,
+    </a:s>
+                                    <a:s r="24">
+                                       <a:s r="23">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="24">
+                                          <a:s>&quot;Has he ever beaten you when you were pregnant&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>,
+    </a:s>
+                                    <a:s r="26">
+                                       <a:s r="25">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="26">
+                                          <a:s>&quot;Is he violently and constantly jealous of you&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+  }</a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                              <a:s> O</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> </a:s>
+                        <a:s r="30">
+                           <a:s>where </a:s>
+                           <a:s r="30">
+                              <a:s r="29">
+                                 <a:s>O</a:s>
+                              </a:s>
+                              <a:s> is true</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+                  <a:s r="33"> >= 3</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="34" locator="32:3-39:28" xsi:type="GreaterOrEqual">
+            <operand localId="32" locator="32:3-39:23" xsi:type="Count">
+               <source localId="31" locator="32:9-39:22" xsi:type="Query">
+                  <source localId="28" locator="32:9-39:6" alias="O">
+                     <expression localId="27" locator="32:9-39:4" xsi:type="List">
+                        <element localId="16" locator="33:5-33:102" name="Has the physical violence happened more often or gotten worse over the past 6 months" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        <element localId="18" locator="34:5-34:75" name="Has he ever used a weapon or threatened you with a weapon" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        <element localId="20" locator="35:5-35:51" name="Has he ever tried to strangle you" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        <element localId="22" locator="36:5-36:50" name="Do you believe he could kill you" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        <element localId="24" locator="37:5-37:63" name="Has he ever beaten you when you were pregnant" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        <element localId="26" locator="38:5-38:63" name="Is he violently and constantly jealous of you" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </expression>
+                  </source>
+                  <where localId="30" locator="39:8-39:22" xsi:type="IsTrue">
+                     <operand name="ToBoolean" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="29" locator="39:14" name="O" xsi:type="AliasRef"/>
+                     </operand>
+                  </where>
+               </source>
+            </operand>
+            <operand localId="33" locator="39:28" valueType="t:Integer" value="3" xsi:type="Literal"/>
+         </expression>
+      </def>
+   </statements>
+</library>

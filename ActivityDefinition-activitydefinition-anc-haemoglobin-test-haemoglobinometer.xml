@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ActivityDefinition xmlns="http://hl7.org/fhir">
+  <id value="activitydefinition-anc-haemoglobin-test-haemoglobinometer"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-activitydefinition"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">activitydefinition-anc-haemoglobin-test-haemoglobinometer</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://fhir.org/guides/who/anc-cds/ActivityDefinition/ANCHaemoglobinTestHaemoglobinometer">http://fhir.org/guides/who/anc-cds/ActivityDefinition/ANCHaemoglobinTestHaemoglobinometer</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.3.0</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">ANCHaemoglobinTestHaemoglobinometer</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">ActivityDefinition - ANC Haemoglobin Test Complete Blood Count</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">active</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">true</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2020-02-01</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">World Health Organization (WHO)</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;">Haemoglobin Test Haemoglobinometer</td>
+        </tr>
+        
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">001</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Purpose: </b></th>
+            <td style="padding-left: 4px;">Defines a guideline supported request for a Haemoglobinometer Haemoglobin test.</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Copyright: </b></th>
+            <td style="padding-left: 4px;">© WHO 2020+.</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Kind: </b></th>
+            <td style="padding-left: 4px;">ServiceRequest</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </table>
+</div>
+  </text>
+  <url value="http://fhir.org/guides/who/anc-cds/ActivityDefinition/ANCHaemoglobinTestHaemoglobinometer"/>
+  <version value="0.3.0"/>
+  <name value="ANCHaemoglobinTestHaemoglobinometer"/>
+  <title value="ActivityDefinition - ANC Haemoglobin Test Complete Blood Count"/>
+  <status value="active"/>
+  <experimental value="true"/>
+  <date value="2020-02-01"/>
+  <publisher value="World Health Organization (WHO)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.who.int"/>
+    </telecom>
+  </contact>
+  <description value="Haemoglobin Test Haemoglobinometer"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="Defines a guideline supported request for a Haemoglobinometer Haemoglobin test."/>
+  <copyright value="© WHO 2020+."/>
+  <kind value="ServiceRequest"/>
+</ActivityDefinition>

@@ -1,0 +1,74 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Observation/anc-b6-de17-charity-otala-1> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "anc-b6-de17-charity-otala-1"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de17";
+       fhir:index 0;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de17>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"anc-b6-de17-charity-otala-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;anc-b6-de17-charity-otala-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b6-de17.html\">Gestational age</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Gestational age <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B6.DE17; icd-11#XT3X &quot;Agreed that Back end to map answer to these codes??Duration of pregnancy less than 5 completed weeks&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#57036006 &quot;Fetal gestational age (observable entity)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#18185-9)</span></p><p><b>subject</b>: <a href=\"Patient-charity-otala-1.html\">Patient/charity-otala-1</a> &quot; OTALA&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-charity-otala-1.html\">Encounter/anc-encounter-charity-otala-1</a></p><p><b>performer</b>: <a href=\"PractitionerRole-jane.html\">PractitionerRole/jane</a></p><p><b>value</b>: 15 wk<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code wk = 'wk')</span></p></div>"
+  ]; # 
+  fhir:Observation.status [ fhir:value "final"]; # 
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:Coding.code [ fhir:value "ANC.B6.DE17" ];
+       fhir:Coding.display [ fhir:value "Gestational age" ]
+     ], [
+       fhir:index 1;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/sid/icd-11" ];
+       fhir:Coding.code [ fhir:value "XT3X" ];
+       fhir:Coding.display [ fhir:value "Agreed that Back end to map answer to these codes??Duration of pregnancy less than 5 completed weeks" ]
+     ], [
+       fhir:index 2;
+       a sct:57036006;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "57036006" ];
+       fhir:Coding.display [ fhir:value "Fetal gestational age (observable entity)" ]
+     ], [
+       fhir:index 3;
+       a loinc:18185-9;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "18185-9" ]
+     ]
+  ]; # 
+  fhir:Observation.subject [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Patient/charity-otala-1>;
+     fhir:Reference.reference [ fhir:value "Patient/charity-otala-1" ]
+  ]; # 
+  fhir:Observation.encounter [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Encounter/anc-encounter-charity-otala-1>;
+     fhir:Reference.reference [ fhir:value "Encounter/anc-encounter-charity-otala-1" ]
+  ]; # 
+  fhir:Observation.performer [
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/who/anc-cds/PractitionerRole/jane>;
+     fhir:Reference.reference [ fhir:value "PractitionerRole/jane" ]
+  ]; # 
+  fhir:Observation.valueQuantity [
+     fhir:Quantity.value [ fhir:value "15"^^xsd:decimal ];
+     fhir:Quantity.system [ fhir:value "http://unitsofmeasure.org" ];
+     fhir:Quantity.code [ fhir:value "wk" ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Observation/anc-b6-de17-charity-otala-1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

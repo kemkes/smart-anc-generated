@@ -1,0 +1,38 @@
+{
+  "resourceType" : "ServiceRequest",
+  "id" : "anc-b9-de160-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de160"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ServiceRequest</b><a name=\"anc-b9-de160-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ServiceRequest &quot;anc-b9-de160-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b9-de160.html\">Blood glucose test ordered</a></p></div><p><b>identifier</b>: id: anc-b9-de160-example (use: OFFICIAL)</p><p><b>status</b>: active</p><p><b>code</b>: Blood glucose test ordered <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B9.DE160; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#413672003 &quot;Blood test requested (situation)&quot;)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>locationReference</b>: <a href=\"Location-anc-location-example.html\">Location/anc-location-example</a> &quot;123&quot;</p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-b9-de160-example"
+  }],
+  "status" : "active",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B9.DE160",
+      "display" : "Blood glucose test ordered"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "413672003",
+      "display" : "Blood test requested (situation)"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "locationReference" : [{
+    "reference" : "Location/anc-location-example"
+  }]
+}

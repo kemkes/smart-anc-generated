@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="ANCDT23"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">ANCDT23</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT23">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT23</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.3.0</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Identifier: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                <p style="margin-bottom: 5px;">
+                    <b>value: </b> <span>ANC.DT.23</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">ANCDT23</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">ANC.DT.23 Gestational diabetes mellitus (GDM) and diabetes mellitus (DM) during pregnancy diagnosis</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">active</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">false</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/CodeSystem/plan-definition-type">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2021-06-11 23:25:04-0600</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">World Health Organization (WHO)</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;">If the woman's blood glucose test results are as follows, provide the necessary counselling and treatment</td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Use Context: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>
+                    
+                      <tr>
+                        <td>task</td>
+                        <td>ANC.B10.4.</td>
+                        <td>Diagnosis and treatment</td>
+                      </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">001</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        <tr>
+          <th scope="row"><b>Libraries: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              
+                <tr><td><a href="http://fhir.org/guides/who/anc-cds/Library/ANCDT23">http://fhir.org/guides/who/anc-cds/Library/ANCDT23</a></td></tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+
+        
+        <tr>
+          <th scope="row"><b>Actions: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              
+                <tr>
+                  <td>
+                    <b> ANC.DT.23 Gestational diabetes mellitus (GDM) and diabetes mellitus (DM) during pregnancy diagnosis:</b> <br/>
+                    <b>When:</b> <i>named-event:</i> ANC.B10.4. Diagnosis and treatment<br/>
+                    
+                    
+                      <b>Then:</b>
+                      <table class="grid-dict">
+                        
+                          <tr>
+                            <td>
+                              – The woman has gestational diabetes mellitus (GDM) if her fasting plasma glucose is 92–125 mg/dL
+– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care
+&amp;quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&amp;quot; (2)<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> 92 mg/dL ≤ &amp;quot;Fasting plasma glucose results&amp;quot; &amp;lt; 126 mg/dL <i>(Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              – The woman has gestational diabetes mellitus (GDM) if her 75 g OGTT – fasting glucose is 92–125 mg/dL
+– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care
+&amp;quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&amp;quot; (2)<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> 92 mg/dL ≤ &amp;quot;75 g OGTT – fasting glucose results&amp;quot; &amp;lt; 126 mg/dL <i>(Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 2)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              – The woman has gestational diabetes mellitus (GDM) if her 75g OGTT – 1 hour is 180–199 mg/dL
+– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care
+&amp;quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&amp;quot; (2)<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> 180 mg/dL ≤ &amp;quot;75 g OGTT – 1 hour results&amp;quot; &amp;lt; 200 mg/dL <i>(Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 3)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              – The woman has gestational diabetes mellitus (GDM) if her 75 g OGTT – 2 hours is 153–199 mg/dL
+– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care
+&amp;quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&amp;quot; (2)<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> 153 mg/dL ≤ &amp;quot;75 g OGTT – 2 hours results&amp;quot; &amp;lt; 200 mg/dL <i>(Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 4)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              – The woman has diabetes mellitus (DM) in pregnancy if her fasting plasma glucose is 126 mg/dL or higher
+– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care
+&amp;quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&amp;quot; (2)<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> &amp;quot;Fasting plasma glucose results&amp;quot; ≥ 126 mg/dL <i>(Should Conduct REQUIRED diabetes mellitus (DM) counselling)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              – The woman has diabetes mellitus (DM) in pregnancy if her 75 g OGTT – fasting glucose is 126 mg/dL or higher
+– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care
+&amp;quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&amp;quot; (2)<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> &amp;quot;75 g OGTT – fasting glucose results&amp;quot; ≥ 126 mg/dL <i>(Should Conduct REQUIRED diabetes mellitus (DM) counselling 2)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              – The woman has diabetes mellitus (DM) in pregnancy if her 75 g OGTT – 1 hour is 200 mg/dL or higher
+– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care
+&amp;quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&amp;quot; (2)<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> &amp;quot;75 g OGTT – 1 hour results&amp;quot; ≥ 200 mg/dL <i>(Should Conduct REQUIRED diabetes mellitus (DM) counselling 3)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              – The woman has diabetes mellitus (DM) in pregnancy if her fasting 75 g OGTT – 2 hours is 200 mg/dL or higher
+– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care
+&amp;quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&amp;quot; (2)<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> &amp;quot;75 g OGTT – 2 hours results&amp;quot; ≥ 200 mg/dL <i>(Should Conduct REQUIRED diabetes mellitus (DM) counselling 4)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              – The woman has diabetes mellitus (DM) in pregnancy if her random plasma glucose level is 200 mg/dL or higher
+– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care
+&amp;quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&amp;quot; (2)<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> &amp;quot;Random plasma glucose test results&amp;quot; ≥ 200 mg/dL <i>(Should Conduct REQUIRED diabetes mellitus (DM) counselling 5)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                      </table>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+    </table>
+</div>
+  </text>
+  <url value="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT23"/>
+  <identifier>
+    <use value="official"/>
+    <value value="ANC.DT.23"/>
+  </identifier>
+  <version value="0.3.0"/>
+  <name value="ANCDT23"/>
+  <title value="ANC.DT.23 Gestational diabetes mellitus (GDM) and diabetes mellitus (DM) during pregnancy diagnosis"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2021-06-11T23:25:04-06:00"/>
+  <publisher value="World Health Organization (WHO)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.who.int"/>
+    </telecom>
+  </contact>
+  <description value="If the woman's blood glucose test results are as follows, provide the necessary counselling and treatment"/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="task"/>
+      <display value="Workflow Task"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes"/>
+        <code value="ANC.B10.4."/>
+        <display value="Diagnosis and treatment"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <library value="http://fhir.org/guides/who/anc-cds/Library/ANCDT23"/>
+  <action>
+    <title value="ANC.DT.23 Gestational diabetes mellitus (GDM) and diabetes mellitus (DM) during pregnancy diagnosis"/>
+    <trigger>
+      <type value="named-event"/>
+      <name value="ANC.B10.4. Diagnosis and treatment"/>
+    </trigger>
+    <action id="1">
+      <title value="Conduct REQUIRED gestational diabetes mellitus (GDM) counselling"/>
+      <description value="Conduct REQUIRED gestational diabetes mellitus (GDM) counselling"/>
+      <textEquivalent value="– The woman has gestational diabetes mellitus (GDM) if her fasting plasma glucose is 92–125 mg/dL&#xA;– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care&#xA;&quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&quot; (2)"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B.1.4. Gestational diabetes mellitus (GDM) (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="92 mg/dL ≤ &quot;Fasting plasma glucose results&quot; &lt; 126 mg/dL"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="2">
+      <title value="Conduct REQUIRED gestational diabetes mellitus (GDM) counselling"/>
+      <description value="Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 2"/>
+      <textEquivalent value="– The woman has gestational diabetes mellitus (GDM) if her 75 g OGTT – fasting glucose is 92–125 mg/dL&#xA;– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care&#xA;&quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&quot; (2)"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B.1.4. Gestational diabetes mellitus (GDM) (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="92 mg/dL ≤ &quot;75 g OGTT – fasting glucose results&quot; &lt; 126 mg/dL"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 2"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="3">
+      <title value="Conduct REQUIRED gestational diabetes mellitus (GDM) counselling"/>
+      <description value="Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 3"/>
+      <textEquivalent value="– The woman has gestational diabetes mellitus (GDM) if her 75g OGTT – 1 hour is 180–199 mg/dL&#xA;– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care&#xA;&quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&quot; (2)"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B.1.4. Gestational diabetes mellitus (GDM) (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="180 mg/dL ≤ &quot;75 g OGTT – 1 hour results&quot; &lt; 200 mg/dL"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 3"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="4">
+      <title value="Conduct REQUIRED gestational diabetes mellitus (GDM) counselling"/>
+      <description value="Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 4"/>
+      <textEquivalent value="– The woman has gestational diabetes mellitus (GDM) if her 75 g OGTT – 2 hours is 153–199 mg/dL&#xA;– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care&#xA;&quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&quot; (2)"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B.1.4. Gestational diabetes mellitus (GDM) (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="153 mg/dL ≤ &quot;75 g OGTT – 2 hours results&quot; &lt; 200 mg/dL"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 4"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="5">
+      <title value="Conduct REQUIRED diabetes mellitus (DM) counselling"/>
+      <description value="Conduct REQUIRED diabetes mellitus (DM) counselling"/>
+      <textEquivalent value="– The woman has diabetes mellitus (DM) in pregnancy if her fasting plasma glucose is 126 mg/dL or higher&#xA;– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care&#xA;&quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&quot; (2)"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B.1.4. Gestational diabetes mellitus (GDM) (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="&quot;Fasting plasma glucose results&quot; ≥ 126 mg/dL"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct REQUIRED diabetes mellitus (DM) counselling"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="6">
+      <title value="Conduct REQUIRED diabetes mellitus (DM) counselling"/>
+      <description value="Conduct REQUIRED diabetes mellitus (DM) counselling 2"/>
+      <textEquivalent value="– The woman has diabetes mellitus (DM) in pregnancy if her 75 g OGTT – fasting glucose is 126 mg/dL or higher&#xA;– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care&#xA;&quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&quot; (2)"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B.1.4. Gestational diabetes mellitus (GDM) (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="&quot;75 g OGTT – fasting glucose results&quot; ≥ 126 mg/dL"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct REQUIRED diabetes mellitus (DM) counselling 2"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="7">
+      <title value="Conduct REQUIRED diabetes mellitus (DM) counselling"/>
+      <description value="Conduct REQUIRED diabetes mellitus (DM) counselling 3"/>
+      <textEquivalent value="– The woman has diabetes mellitus (DM) in pregnancy if her 75 g OGTT – 1 hour is 200 mg/dL or higher&#xA;– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care&#xA;&quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&quot; (2)"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B.1.4. Gestational diabetes mellitus (GDM) (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="&quot;75 g OGTT – 1 hour results&quot; ≥ 200 mg/dL"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct REQUIRED diabetes mellitus (DM) counselling 3"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="8">
+      <title value="Conduct REQUIRED diabetes mellitus (DM) counselling"/>
+      <description value="Conduct REQUIRED diabetes mellitus (DM) counselling 4"/>
+      <textEquivalent value="– The woman has diabetes mellitus (DM) in pregnancy if her fasting 75 g OGTT – 2 hours is 200 mg/dL or higher&#xA;– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care&#xA;&quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&quot; (2)"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B.1.4. Gestational diabetes mellitus (GDM) (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="&quot;75 g OGTT – 2 hours results&quot; ≥ 200 mg/dL"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct REQUIRED diabetes mellitus (DM) counselling 4"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="9">
+      <title value="Conduct REQUIRED diabetes mellitus (DM) counselling"/>
+      <description value="Conduct REQUIRED diabetes mellitus (DM) counselling 5"/>
+      <textEquivalent value="– The woman has diabetes mellitus (DM) in pregnancy if her random plasma glucose level is 200 mg/dL or higher&#xA;– Woman with hyperglycemia, reassert dietary intervention and refer to high-level care&#xA;&quot;Hyperglycaemia first detected at any time during pregnancy should be classified as either gestational diabetes mellitus (GDM) or diabetes mellitus in pregnancy, according to WHO criteria&quot; (2)"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B.1.4. Gestational diabetes mellitus (GDM) (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="&quot;Random plasma glucose test results&quot; ≥ 200 mg/dL"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct REQUIRED diabetes mellitus (DM) counselling 5"/>
+        </expression>
+      </condition>
+    </action>
+  </action>
+</PlanDefinition>

@@ -1,0 +1,398 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT03> a fhir:PlanDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ANCDT03"]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <table class=\"grid dict\">\r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Id: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT03</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Url: </b></th>\r\n            <td style=\"padding-left: 4px;\"><a href=\"http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT03\">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT03</a></td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Version: </b></th>\r\n            <td style=\"padding-left: 4px;\">0.3.0</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Identifier: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                \r\n                <p style=\"margin-bottom: 5px;\">\r\n                    <b>value: </b> <span>ANC.DT.03</span>\r\n                </p>\r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Name: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT03</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Title: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANC.DT.03 Check symptoms and follow up</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Status: </b></th>\r\n            <td style=\"padding-left: 4px;\">active</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Experimental: </b></th>\r\n            <td style=\"padding-left: 4px;\">false</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Type: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                    \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/CodeSystem/plan-definition-type\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\r\n                        </p>\r\n                        \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>code: </b> <span>eca-rule</span>\r\n                        </p>\r\n                        \r\n                        \r\n                    \r\n                \r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Date: </b></th>\r\n            <td style=\"padding-left: 4px;\">2021-06-11 22:04:04-0600</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Publisher: </b></th>\r\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Description: </b></th>\r\n            <td style=\"padding-left: 4px;\">Depending on current and/or persistant symptoms, physiological symptoms counselling may be required</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Use Context: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                <table class=\"grid-dict\">\r\n                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>\r\n                    \r\n                      <tr>\r\n                        <td>task</td>\r\n                        <td>ANC.B7</td>\r\n                        <td>Check symptoms and follow up</td>\r\n                      </tr>\r\n                    \r\n                </table>\r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\r\n            <td style=\"padding-left: 4px;\">001</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Libraries: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr><td><a href=\"http://fhir.org/guides/who/anc-cds/Library/ANCDT03\">http://fhir.org/guides/who/anc-cds/Library/ANCDT03</a></td></tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Actions: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr>\r\n                  <td>\r\n                    <b> ANC.DT.03 Check symptoms and follow up:</b> <br/>\r\n                    <b>When:</b> <i>named-event:</i> ANC.B7 Check symptoms and follow up<br/>\r\n                    \r\n                    \r\n                      <b>Then:</b>\r\n                      <table class=\"grid-dict\">\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Ginger, chamomile, vitamin B6 and/or acupuncture are recommended for the relief of nausea in early pregnancy, depending on a woman’s preferences and available options. Women should be informed that symptoms of nausea and vomiting usually resolve in the second half of pregnancy.<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Nausea and vomiting&amp;quot; <i>(Should Conduct counselling on physiological symptoms (see Annotations for pop-up message))</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Pharmacological treatments for nausea and vomiting, such as doxylamine and metoclopramide, should be reserved for those pregnant women experiencing distressing symptoms that are not relieved by non-pharmacological options, under the supervision of a medical doctor<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Nausea and vomiting&amp;quot; <i>(Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 2)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Advice on diet and lifestyle is recommended to prevent and relieve heartburn in pregnancy. Antacid preparations can be offered to women with troublesome symptoms that are not relieved by lifestyle modification.<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Heartburn&amp;quot; <i>(Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 3)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Antacid preparations can be offered to women with troublesome symptoms that are not relieved by lifestyle modification. Magnesium carbonate and aluminium hydroxide preparations are probably unlikely to cause harm in recommended dosages.<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Heartburn&amp;quot; <i>(Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 4)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Non-pharmacological therapies, including muscle stretching, relaxation, heat therapy, dorsiflexion of the foot, and massage can be used for the relief of leg cramps in pregnancy<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Leg cramps&amp;quot; <i>(Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 5)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              If leg cramps are not relieved with non-pharmacological measures, then give 300–360 mg magnesium per day in two or three divided doses; give calcium 1 g twice daily for two weeks<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Leg cramps&amp;quot; <i>(Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 6)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Regular exercise throughout pregnancy is recommended to prevent low back and pelvic pain. There are a number of different treatment options that can be used, such as physiotherapy, support belts and acupuncture, depending and based on a woman’s preferences and available options.<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> ((((&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Low back pain&amp;quot;)\n  AND (Current physiological symptoms&amp;quot; ≠ &amp;quot;Contractions&amp;quot; OR &amp;quot;Pain during urination (dysuria)&amp;quot; OR &amp;quot;Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)&amp;quot;))\n  OR ((&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Pelvic pain&amp;quot;)\n  AND (Current physiological symptoms&amp;quot; ≠ &amp;quot;Contractions&amp;quot; OR &amp;quot;Pain during urination (dysuria)&amp;quot; OR &amp;quot;Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)&amp;quot;)))\n  OR ((&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Low back pain&amp;quot;)\n  AND (Current physiological symptoms&amp;quot; ≠ &amp;quot;Contractions&amp;quot; OR &amp;quot;Pain during urination (dysuria)&amp;quot; OR &amp;quot;Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)&amp;quot;)))\n  OR ((&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Pelvic pain&amp;quot;)\n  AND (Current physiological symptoms&amp;quot; ≠ &amp;quot;Contractions&amp;quot; OR &amp;quot;Pain during urination (dysuria)&amp;quot; OR &amp;quot;Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)&amp;quot;)) <i>(Should Conduct counselling on physiological symptoms)</i><br/>\r\n                              \r\n                                <b>Then:</b>\r\n                                <table class=\"grid-dict\">\r\n                                  \r\n                                    <tr>\r\n                                      <td>\r\n                                        <b> Conduct counselling on physiological symptoms:</b> <br/>\r\n                                        \r\n                                        \r\n                                        \r\n                                          \r\n                                        \r\n                                      </td>\r\n                                    </tr>\r\n                                  \r\n                                    <tr>\r\n                                      <td>\r\n                                        <b> Counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain:</b> <br/>\r\n                                        \r\n                                        \r\n                                        \r\n                                          \r\n                                        \r\n                                      </td>\r\n                                    </tr>\r\n                                  \r\n                                </table>\r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Dietary modifications to relieve constipation include promoting adequate intake of water and dietary fibre (found in vegetables, nuts, fruits and whole grains)<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Constipation&amp;quot; <i>(Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 7)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Wheat bran or other fibre supplements can be used to relieve constipation, if dietary modifications are not enough, and if they are available and appropriate<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Constipation&amp;quot; <i>(Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 8)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Non-pharmacological options, such as compression stockings, leg elevation and water immersion, can be used for the management of varicose veins and oedema in pregnancy, depending and based on a woman’s preferences and available options<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> ((((&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Varicose veins&amp;quot;)\n  AND (Current physiological symptoms&amp;quot; ≠ &amp;quot;Leg pain&amp;quot; OR &amp;quot;Leg redness&amp;quot;))\n  OR ((&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Oedema&amp;quot;)\n  AND (Current physiological symptoms&amp;quot; ≠ &amp;quot;Leg pain&amp;quot; OR &amp;quot;Leg redness&amp;quot;)))\n  OR ((&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Varicose veins&amp;quot;)\n  AND (Current physiological symptoms&amp;quot; ≠ &amp;quot;Leg pain&amp;quot; OR &amp;quot;Leg redness&amp;quot;)))\n  OR ((&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Oedema&amp;quot;)\n  AND (Current physiological symptoms&amp;quot; ≠ &amp;quot;Leg pain&amp;quot; OR &amp;quot;Leg redness&amp;quot;)) <i>(Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 9)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Please investigate any possible complications or onset of labour, related to low back and pelvic pain<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (((&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Contractions&amp;quot;)\n  OR (Current physiological symptoms&amp;quot; = &amp;quot;Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)&amp;quot;))\n  OR (&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Contractions&amp;quot;))\n  OR (Persistent physiological symptoms&amp;quot; = &amp;quot;Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)&amp;quot;) <i>(Should Conduct counselling on physiological symptoms 2)</i><br/>\r\n                              \r\n                                <b>Then:</b>\r\n                                <table class=\"grid-dict\">\r\n                                  \r\n                                    <tr>\r\n                                      <td>\r\n                                        <b> Conduct counselling on physiological symptoms:</b> <br/>\r\n                                        \r\n                                        \r\n                                        \r\n                                          \r\n                                        \r\n                                      </td>\r\n                                    </tr>\r\n                                  \r\n                                    <tr>\r\n                                      <td>\r\n                                        <b> Investigate any possible complications or onset of labour:</b> <br/>\r\n                                        \r\n                                        \r\n                                        \r\n                                          \r\n                                        \r\n                                      </td>\r\n                                    </tr>\r\n                                  \r\n                                </table>\r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Woman has dysuria – please investigate urinary tract infection and treat if positive<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Pain during urination (dysuria)&amp;quot;)\n  OR (&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Pain during urination (dysuria)&amp;quot;) <i>(Should Conduct laboratory tests and imaging)</i><br/>\r\n                              \r\n                                <b>Then:</b>\r\n                                <table class=\"grid-dict\">\r\n                                  \r\n                                    <tr>\r\n                                      <td>\r\n                                        <b> Conduct laboratory tests and imaging:</b> <br/>\r\n                                        \r\n                                        \r\n                                        \r\n                                          \r\n                                        \r\n                                      </td>\r\n                                    </tr>\r\n                                  \r\n                                    <tr>\r\n                                      <td>\r\n                                        <b> Urine test required:</b> <br/>\r\n                                        \r\n                                        \r\n                                        \r\n                                          \r\n                                        \r\n                                      </td>\r\n                                    </tr>\r\n                                  \r\n                                </table>\r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Please investigate any possible complications, including thrombosis, related to varicose veins and oedema<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (((&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Leg pain&amp;quot;)\n  OR (&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Leg redness&amp;quot;))\n  OR (&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Leg pain&amp;quot;))\n  OR (&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Leg redness&amp;quot;) <i>(Should Conduct counselling on physiological symptoms 3)</i><br/>\r\n                              \r\n                                <b>Then:</b>\r\n                                <table class=\"grid-dict\">\r\n                                  \r\n                                    <tr>\r\n                                      <td>\r\n                                        <b> Conduct counselling on physiological symptoms:</b> <br/>\r\n                                        \r\n                                        \r\n                                        \r\n                                          \r\n                                        \r\n                                      </td>\r\n                                    </tr>\r\n                                  \r\n                                    <tr>\r\n                                      <td>\r\n                                        <b> Investigate any possible complications, including thrombosis, related to varicose veins and oedema:</b> <br/>\r\n                                        \r\n                                        \r\n                                        \r\n                                          \r\n                                        \r\n                                      </td>\r\n                                    </tr>\r\n                                  \r\n                                </table>\r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Please investigate any possible complications, including thrombosis, related to varicose veins and oedema<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (((((((((((((((((((&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Abnormal vaginal discharge&amp;quot;)\n  OR (&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Breathing difficulty&amp;quot;))\n  OR (&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Breathless during routine activities&amp;quot;))\n  OR (&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Cough lasting more than 3 weeks&amp;quot;))\n  OR (&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Fever&amp;quot;))\n  OR (&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Gets tired easily&amp;quot;))\n  OR (&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Headache&amp;quot;))\n  OR (&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Vaginal bleeding&amp;quot;))\n  OR (&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Vaginal discharge&amp;quot;))\n  OR (&amp;quot;Current physiological symptoms&amp;quot; = &amp;quot;Visual disturbance&amp;quot;))\n  OR (&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Abnormal vaginal discharge&amp;quot;))\n  OR (&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Breathing difficulty&amp;quot;))\n  OR (&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Breathless during routine activities&amp;quot;))\n  OR (&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Cough lasting more than 3 weeks&amp;quot;))\n  OR (&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Fever&amp;quot;))\n  OR (&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Gets tired easily&amp;quot;))\n  OR (&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Headache&amp;quot;))\n  OR (&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Vaginal bleeding&amp;quot;))\n  OR (&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Vaginal discharge&amp;quot;))\n  OR (&amp;quot;Persistent physiological symptoms&amp;quot; = &amp;quot;Visual disturbance&amp;quot;) <i>(Should Follow-up steps/investigations: clinician's discretion)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                      </table>\r\n                    \r\n                  </td>\r\n                </tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n    </table>\r\n</div>"
+  ]; # 
+  fhir:PlanDefinition.url [ fhir:value "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT03"]; # 
+  fhir:PlanDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.value [ fhir:value "ANC.DT.03" ]
+  ]; # 
+  fhir:PlanDefinition.version [ fhir:value "0.3.0"]; # 
+  fhir:PlanDefinition.name [ fhir:value "ANCDT03"]; # 
+  fhir:PlanDefinition.title [ fhir:value "ANC.DT.03 Check symptoms and follow up"]; # 
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ];
+       fhir:Coding.code [ fhir:value "eca-rule" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.status [ fhir:value "active"]; # 
+  fhir:PlanDefinition.experimental [ fhir:value "false"^^xsd:boolean]; # 
+  fhir:PlanDefinition.date [ fhir:value "2021-06-11T22:04:04-06:00"^^xsd:dateTime]; # 
+  fhir:PlanDefinition.publisher [ fhir:value "World Health Organization (WHO)"]; # 
+  fhir:PlanDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.description [ fhir:value "Depending on current and/or persistant symptoms, physiological symptoms counselling may be required"]; # 
+  fhir:PlanDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "task" ];
+       fhir:Coding.display [ fhir:value "Workflow Task" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes" ];
+         fhir:Coding.code [ fhir:value "ANC.B7" ];
+         fhir:Coding.display [ fhir:value "Check symptoms and follow up" ]
+       ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.library [
+     fhir:value "http://fhir.org/guides/who/anc-cds/Library/ANCDT03";
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/who/anc-cds/Library/ANCDT03>
+  ]; # 
+  fhir:PlanDefinition.action [
+     fhir:index 0;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC.DT.03 Check symptoms and follow up" ];
+     fhir:PlanDefinition.action.trigger [
+       fhir:index 0;
+       fhir:TriggerDefinition.type [ fhir:value "named-event" ];
+       fhir:TriggerDefinition.name [ fhir:value "ANC.B7 Check symptoms and follow up" ]
+     ];
+     fhir:PlanDefinition.action.action [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value "1" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message)" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message)" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Ginger, chamomile, vitamin B6 and/or acupuncture are recommended for the relief of nausea in early pregnancy, depending on a woman’s preferences and available options. Women should be informed that symptoms of nausea and vomiting usually resolve in the second half of pregnancy." ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): D.1. Nausea and vomiting (3)\nWHO consolidated self-care interventions guidelines (2019) (4)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Current physiological symptoms\" = \"Nausea and vomiting\"" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message)" ]
+         ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value "2" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message)" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 2" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Pharmacological treatments for nausea and vomiting, such as doxylamine and metoclopramide, should be reserved for those pregnant women experiencing distressing symptoms that are not relieved by non-pharmacological options, under the supervision of a medical doctor" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): D.1. Nausea and vomiting (3)\nWHO consolidated self-care interventions guidelines (2019) (4)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Persistent physiological symptoms\" = \"Nausea and vomiting\"" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 2" ]
+         ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value "3" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message)" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 3" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Advice on diet and lifestyle is recommended to prevent and relieve heartburn in pregnancy. Antacid preparations can be offered to women with troublesome symptoms that are not relieved by lifestyle modification." ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): D.2. Heartburn (3)\nWHO consolidated self-care interventions guidelines (2019) (4)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Current physiological symptoms\" = \"Heartburn\"" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 3" ]
+         ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Element.id [ fhir:value "4" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message)" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 4" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Antacid preparations can be offered to women with troublesome symptoms that are not relieved by lifestyle modification. Magnesium carbonate and aluminium hydroxide preparations are probably unlikely to cause harm in recommended dosages." ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): D.2. Heartburn (3)\nWHO consolidated self-care interventions guidelines (2019) (4)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Persistent physiological symptoms\" = \"Heartburn\"" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 4" ]
+         ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:Element.id [ fhir:value "5" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message)" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 5" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Non-pharmacological therapies, including muscle stretching, relaxation, heat therapy, dorsiflexion of the foot, and massage can be used for the relief of leg cramps in pregnancy" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): D.3. Leg cramps (3)\nWHO consolidated self-care interventions guidelines (2019) (4)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Current physiological symptoms\" = \"Leg cramps\"" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 5" ]
+         ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:Element.id [ fhir:value "6" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message)" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 6" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "If leg cramps are not relieved with non-pharmacological measures, then give 300–360 mg magnesium per day in two or three divided doses; give calcium 1 g twice daily for two weeks" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): D.3. Leg cramps (3)\nWHO consolidated self-care interventions guidelines (2019) (4)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Persistent physiological symptoms\" = \"Leg cramps\"" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 6" ]
+         ]
+       ]
+     ], [
+       fhir:index 6;
+       fhir:Element.id [ fhir:value "7" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct counselling on physiological symptoms" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Regular exercise throughout pregnancy is recommended to prevent low back and pelvic pain. There are a number of different treatment options that can be used, such as physiotherapy, support belts and acupuncture, depending and based on a woman’s preferences and available options." ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): D.4. Low back and pelvic pain (3)\nWHO consolidated self-care interventions guidelines (2019) (4)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "((((\"Current physiological symptoms\" = \"Low back pain\")\n  AND (Current physiological symptoms\" ≠ \"Contractions\" OR \"Pain during urination (dysuria)\" OR \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\"))\n  OR ((\"Current physiological symptoms\" = \"Pelvic pain\")\n  AND (Current physiological symptoms\" ≠ \"Contractions\" OR \"Pain during urination (dysuria)\" OR \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\")))\n  OR ((\"Persistent physiological symptoms\" = \"Low back pain\")\n  AND (Current physiological symptoms\" ≠ \"Contractions\" OR \"Pain during urination (dysuria)\" OR \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\")))\n  OR ((\"Persistent physiological symptoms\" = \"Pelvic pain\")\n  AND (Current physiological symptoms\" ≠ \"Contractions\" OR \"Pain during urination (dysuria)\" OR \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\"))" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct counselling on physiological symptoms" ]
+         ]
+       ];
+       fhir:PlanDefinition.action.action [
+         fhir:index 0;
+         fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms" ]
+       ], [
+         fhir:index 1;
+         fhir:PlanDefinition.action.title [ fhir:value "Counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain" ]
+       ]
+     ], [
+       fhir:index 7;
+       fhir:Element.id [ fhir:value "8" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message)" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 7" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Dietary modifications to relieve constipation include promoting adequate intake of water and dietary fibre (found in vegetables, nuts, fruits and whole grains)" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): D.5. Constipation (3)\nWHO consolidated self-care interventions guidelines (2019) (4)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Current physiological symptoms\" = \"Constipation\"" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 7" ]
+         ]
+       ]
+     ], [
+       fhir:index 8;
+       fhir:Element.id [ fhir:value "9" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message)" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 8" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Wheat bran or other fibre supplements can be used to relieve constipation, if dietary modifications are not enough, and if they are available and appropriate" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): D.5. Constipation (3)\nWHO consolidated self-care interventions guidelines (2019) (4)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Persistent physiological symptoms\" = \"Constipation\"" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 8" ]
+         ]
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.id [ fhir:value "10" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message)" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 9" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Non-pharmacological options, such as compression stockings, leg elevation and water immersion, can be used for the management of varicose veins and oedema in pregnancy, depending and based on a woman’s preferences and available options" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): D.6. Varicose veins and oedema (3)\nWHO consolidated self-care interventions guidelines (2019) (4)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "((((\"Current physiological symptoms\" = \"Varicose veins\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\"))\n  OR ((\"Current physiological symptoms\" = \"Oedema\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\")))\n  OR ((\"Persistent physiological symptoms\" = \"Varicose veins\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\")))\n  OR ((\"Persistent physiological symptoms\" = \"Oedema\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\"))" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 9" ]
+         ]
+       ]
+     ], [
+       fhir:index 10;
+       fhir:Element.id [ fhir:value "11" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct counselling on physiological symptoms 2" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Please investigate any possible complications or onset of labour, related to low back and pelvic pain" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications guide (IMPAC) (2017): C-3 (3)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(((\"Current physiological symptoms\" = \"Contractions\")\n  OR (Current physiological symptoms\" = \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\"))\n  OR (\"Persistent physiological symptoms\" = \"Contractions\"))\n  OR (Persistent physiological symptoms\" = \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\")" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct counselling on physiological symptoms 2" ]
+         ]
+       ];
+       fhir:PlanDefinition.action.action [
+         fhir:index 0;
+         fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms" ]
+       ], [
+         fhir:index 1;
+         fhir:PlanDefinition.action.title [ fhir:value "Investigate any possible complications or onset of labour" ]
+       ]
+     ], [
+       fhir:index 11;
+       fhir:Element.id [ fhir:value "12" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct laboratory tests and imaging" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct laboratory tests and imaging" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Woman has dysuria – please investigate urinary tract infection and treat if positive" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications guide (IMPAC) (2017): S-114 (5)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(\"Current physiological symptoms\" = \"Pain during urination (dysuria)\")\n  OR (\"Persistent physiological symptoms\" = \"Pain during urination (dysuria)\")" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct laboratory tests and imaging" ]
+         ]
+       ];
+       fhir:PlanDefinition.action.action [
+         fhir:index 0;
+         fhir:PlanDefinition.action.title [ fhir:value "Conduct laboratory tests and imaging" ]
+       ], [
+         fhir:index 1;
+         fhir:PlanDefinition.action.title [ fhir:value "Urine test required" ]
+       ]
+     ], [
+       fhir:index 12;
+       fhir:Element.id [ fhir:value "13" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct counselling on physiological symptoms 3" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications guide (IMPAC) (2017): S-128 (5)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(((\"Current physiological symptoms\" = \"Leg pain\")\n  OR (\"Current physiological symptoms\" = \"Leg redness\"))\n  OR (\"Persistent physiological symptoms\" = \"Leg pain\"))\n  OR (\"Persistent physiological symptoms\" = \"Leg redness\")" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct counselling on physiological symptoms 3" ]
+         ]
+       ];
+       fhir:PlanDefinition.action.action [
+         fhir:index 0;
+         fhir:PlanDefinition.action.title [ fhir:value "Conduct counselling on physiological symptoms" ]
+       ], [
+         fhir:index 1;
+         fhir:PlanDefinition.action.title [ fhir:value "Investigate any possible complications, including thrombosis, related to varicose veins and oedema" ]
+       ]
+     ], [
+       fhir:index 13;
+       fhir:Element.id [ fhir:value "14" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Follow-up steps/investigations: clinician's discretion" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Follow-up steps/investigations: clinician's discretion" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications guide (IMPAC) (2017): S-9 (5)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(((((((((((((((((((\"Current physiological symptoms\" = \"Abnormal vaginal discharge\")\n  OR (\"Current physiological symptoms\" = \"Breathing difficulty\"))\n  OR (\"Current physiological symptoms\" = \"Breathless during routine activities\"))\n  OR (\"Current physiological symptoms\" = \"Cough lasting more than 3 weeks\"))\n  OR (\"Current physiological symptoms\" = \"Fever\"))\n  OR (\"Current physiological symptoms\" = \"Gets tired easily\"))\n  OR (\"Current physiological symptoms\" = \"Headache\"))\n  OR (\"Current physiological symptoms\" = \"Vaginal bleeding\"))\n  OR (\"Current physiological symptoms\" = \"Vaginal discharge\"))\n  OR (\"Current physiological symptoms\" = \"Visual disturbance\"))\n  OR (\"Persistent physiological symptoms\" = \"Abnormal vaginal discharge\"))\n  OR (\"Persistent physiological symptoms\" = \"Breathing difficulty\"))\n  OR (\"Persistent physiological symptoms\" = \"Breathless during routine activities\"))\n  OR (\"Persistent physiological symptoms\" = \"Cough lasting more than 3 weeks\"))\n  OR (\"Persistent physiological symptoms\" = \"Fever\"))\n  OR (\"Persistent physiological symptoms\" = \"Gets tired easily\"))\n  OR (\"Persistent physiological symptoms\" = \"Headache\"))\n  OR (\"Persistent physiological symptoms\" = \"Vaginal bleeding\"))\n  OR (\"Persistent physiological symptoms\" = \"Vaginal discharge\"))\n  OR (\"Persistent physiological symptoms\" = \"Visual disturbance\")" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Follow-up steps/investigations: clinician's discretion" ]
+         ]
+       ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT03.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

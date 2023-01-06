@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="anc-b7-de18-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b7-de18"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Observation</b><a name="anc-b7-de18-example"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Observation &quot;anc-b7-de18-example&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-anc-b7-de18.html">Persistent physiological symptoms</a></p></div><p><b>identifier</b>: id: anc-b7-de18-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Persistent physiological symptoms <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B7.DE18)</span></p><p><b>subject</b>: <a href="Patient-anc-patient-example.html">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href="Encounter-anc-encounter-example.html">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href="PractitionerRole-anc-practitionerrole-example.html">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: Visual disturbance <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B7.DE41; <a href="http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html">ICD-10</a>#H53.9 &quot;Visual disturbance, unspecified&quot;; mms#MC1Y &quot;Other specified symptoms or signs involving the visual system&quot;; <a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#63102001 &quot;Visual disturbance (disorder)&quot;; <a href="https://loinc.org/">LOINC</a>#65727-0 &quot;Visual disturbance description [PhenX]&quot;; <a href="http://terminology.hl7.org/5.0.0/CodeSystem-ICFDut.html">International Classification of Functioning, Disability and Health, Dutch Translation</a>#b21009 &quot;Visual acuity functions, unspecified&quot;)</span></p></div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://example.org/fhir/NamingSystem/identifiers"/>
+    <value value="anc-b7-de18-example"/>
+  </identifier>
+  <status value="final"/>
+  <code>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B7.DE18"/>
+      <display value="Persistent physiological symptoms"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/anc-patient-example"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/anc-encounter-example"/>
+  </encounter>
+  <performer>
+    <reference value="PractitionerRole/anc-practitionerrole-example"/>
+  </performer>
+  <valueCodeableConcept>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B7.DE41"/>
+      <display value="Visual disturbance"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/sid/icd-10"/>
+      <code value="H53.9"/>
+      <display value="Visual disturbance, unspecified"/>
+    </coding>
+    <coding>
+      <system value="http://id.who.int/icd11/mms"/>
+      <code value="MC1Y"/>
+      <display value="Other specified symptoms or signs involving the visual system"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="63102001"/>
+      <display value="Visual disturbance (disorder)"/>
+    </coding>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="65727-0"/>
+      <display value="Visual disturbance description [PhenX]"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/sid/icf-nl"/>
+      <code value="b21009"/>
+      <display value="Visual acuity functions, unspecified"/>
+    </coding>
+  </valueCodeableConcept>
+</Observation>

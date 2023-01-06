@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="anc-b6-de73"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>This value set contains 10 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE73"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE73">ANC.B6.DE73</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>No known past surgeries</td><td><div><p>Past surgeries - No known past surgeries</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE74"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE74">ANC.B6.DE74</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Does not know of any past surgeries</td><td><div><p>Past surgeries - Does not know of any past surgeries</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE75"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE75">ANC.B6.DE75</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Dilation and curettage</td><td><div><p>Past surgeries - Dilation and curettage</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE76"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE76">ANC.B6.DE76</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Myomectomy</td><td><div><p>Past surgeries - Myomectomy</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE77"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE77">ANC.B6.DE77</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Removal of ovarian cysts</td><td><div><p>Past surgeries - Removal of ovarian cysts</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE78"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE78">ANC.B6.DE78</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Oophorectomy</td><td><div><p>Past surgeries - Oophorectomy</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE79"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE79">ANC.B6.DE79</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Salpingectomy</td><td><div><p>Past surgeries - Salpingectomy</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE80"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE80">ANC.B6.DE80</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Cervical cone</td><td><div><p>Past surgeries - Cervical cone</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE81"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE81">ANC.B6.DE81</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Other gynecological procedures (specify)</td><td><div><p>Past surgeries - Other gynecological procedures (specify)</p>
+</div></td></tr><tr><td style="white-space:nowrap"><a name="http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE82"> </a>  <a href="CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE82">ANC.B6.DE82</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Other surgeries (specify)</td><td><div><p>Past surgeries - Other surgeries (specify)</p>
+</div></td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability">
+    <valueString value="executable"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel">
+    <valueString value="executable"/>
+  </extension>
+  <url value="http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de73"/>
+  <version value="0.3.0"/>
+  <name value="PastsurgeriesChoices"/>
+  <title value="Past surgeries Choices"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2023-01-04T17:07:42+07:00"/>
+  <publisher value="World Health Organization (WHO)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.who.int"/>
+    </telecom>
+  </contact>
+  <description value="Codes representing possible values for the Past surgeries Choices element"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <immutable value="true"/>
+  <compose>
+    <include>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <concept>
+        <code value="ANC.B6.DE73"/>
+        <display value="No known past surgeries"/>
+      </concept>
+      <concept>
+        <code value="ANC.B6.DE74"/>
+        <display value="Does not know of any past surgeries"/>
+      </concept>
+      <concept>
+        <code value="ANC.B6.DE75"/>
+        <display value="Dilation and curettage"/>
+      </concept>
+      <concept>
+        <code value="ANC.B6.DE76"/>
+        <display value="Myomectomy"/>
+      </concept>
+      <concept>
+        <code value="ANC.B6.DE77"/>
+        <display value="Removal of ovarian cysts"/>
+      </concept>
+      <concept>
+        <code value="ANC.B6.DE78"/>
+        <display value="Oophorectomy"/>
+      </concept>
+      <concept>
+        <code value="ANC.B6.DE79"/>
+        <display value="Salpingectomy"/>
+      </concept>
+      <concept>
+        <code value="ANC.B6.DE80"/>
+        <display value="Cervical cone"/>
+      </concept>
+      <concept>
+        <code value="ANC.B6.DE81"/>
+        <display value="Other gynecological procedures (specify)"/>
+      </concept>
+      <concept>
+        <code value="ANC.B6.DE82"/>
+        <display value="Other surgeries (specify)"/>
+      </concept>
+    </include>
+  </compose>
+  <expansion>
+    <timestamp value="2021-11-30T07:11:23-07:00"/>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B6.DE73"/>
+      <display value="No known past surgeries"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B6.DE74"/>
+      <display value="Does not know of any past surgeries"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B6.DE75"/>
+      <display value="Dilation and curettage"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B6.DE76"/>
+      <display value="Myomectomy"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B6.DE77"/>
+      <display value="Removal of ovarian cysts"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B6.DE78"/>
+      <display value="Oophorectomy"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B6.DE79"/>
+      <display value="Salpingectomy"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B6.DE80"/>
+      <display value="Cervical cone"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B6.DE81"/>
+      <display value="Other gynecological procedures (specify)"/>
+    </contains>
+    <contains>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B6.DE82"/>
+      <display value="Other surgeries (specify)"/>
+    </contains>
+  </expansion>
+</ValueSet>

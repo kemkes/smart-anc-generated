@@ -1,0 +1,55 @@
+{
+  "resourceType" : "Observation",
+  "id" : "anc-b8-de100-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de100"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"anc-b8-de100-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;anc-b8-de100-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b8-de100.html\">Oedema severity</a></p></div><p><b>identifier</b>: id: anc-b8-de100-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Oedema severity <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B8.DE100)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: + <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B8.DE101; mms#XS5W &quot;Mild&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#255604002 &quot;Mild (qualifier value)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#55407-1 &quot;Pitting oedema severity of ankle&quot;)</span></p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-b8-de100-example"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B8.DE100",
+      "display" : "Oedema severity"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "performer" : [{
+    "reference" : "PractitionerRole/anc-practitionerrole-example"
+  }],
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B8.DE101",
+      "display" : "+"
+    },
+    {
+      "system" : "http://id.who.int/icd11/mms",
+      "code" : "XS5W",
+      "display" : "Mild"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "255604002",
+      "display" : "Mild (qualifier value)"
+    },
+    {
+      "system" : "http://loinc.org",
+      "code" : "55407-1",
+      "display" : "Pitting oedema severity of ankle"
+    }]
+  }
+}

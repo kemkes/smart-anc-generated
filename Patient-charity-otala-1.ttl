@@ -1,0 +1,85 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Patient/charity-otala-1> a fhir:Patient;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "charity-otala-1"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient";
+       fhir:index 0;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>Charity Otala(OFFICIAL)</b> (no stated gender), DoB: 1994-07-01 ( id: charity-otala-1 (use: OFFICIAL))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Details:</td><td colspan=\"3\"><ul><li>ph: 555-555-2003(MOBILE)</li><li>2222 Home Street(HOME)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Patient Links\">Links:</td><td colspan=\"3\"><ul><li>General Practitioner: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The woman's occupation (select all that apply)\"><a href=\"StructureDefinition-occupation.html\">Occupation:</a></td><td colspan=\"3\"><ul><li><span title=\"Codes: {http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes ANC.B6.DE12}\">Informal employment (other)</span></li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The highest level of schooling the woman has reached\"><a href=\"StructureDefinition-educationlevel.html\">Highest level of education achieved:</a></td><td colspan=\"3\"><ul><li><span title=\"Codes: {http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes ANC.B6.DE4}\">Primary school</span></li></ul></td></tr></table></div>"
+  ]; # 
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/educationlevel" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+         fhir:Coding.code [ fhir:value "ANC.B6.DE4" ];
+         fhir:Coding.display [ fhir:value "Primary school" ]
+       ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/occupation" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+         fhir:Coding.code [ fhir:value "ANC.B6.DE12" ];
+         fhir:Coding.display [ fhir:value "Informal employment (other)" ]
+       ]
+     ]
+  ]; # 
+  fhir:Patient.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "http://example.org/identifier" ];
+     fhir:Identifier.value [ fhir:value "charity-otala-1" ]
+  ]; # 
+  fhir:Patient.name [
+     fhir:index 0;
+     fhir:HumanName.use [ fhir:value "official" ];
+     fhir:HumanName.text [ fhir:value "Charity Otala" ];
+     fhir:HumanName.family [ fhir:value "Otala" ];
+     fhir:HumanName.given [
+       fhir:value "Charity";
+       fhir:index 0
+     ]
+  ]; # 
+  fhir:Patient.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "555-555-2003" ];
+     fhir:ContactPoint.use [ fhir:value "mobile" ]
+  ]; # 
+  fhir:Patient.birthDate [ fhir:value "1994-07-01"^^xsd:date]; # 
+  fhir:Patient.address [
+     fhir:index 0;
+     fhir:Address.use [ fhir:value "home" ];
+     fhir:Address.text [ fhir:value "2222 Home Street" ]
+  ]; # 
+  fhir:Patient.generalPractitioner [
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/who/anc-cds/PractitionerRole/anc-practitionerrole-example>;
+     fhir:Reference.reference [ fhir:value "PractitionerRole/anc-practitionerrole-example" ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Patient/charity-otala-1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

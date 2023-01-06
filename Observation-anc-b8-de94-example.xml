@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="anc-b8-de94-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de94"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Observation</b><a name="anc-b8-de94-example"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Observation &quot;anc-b8-de94-example&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-anc-b8-de94.html">Oedema present</a></p></div><p><b>identifier</b>: id: anc-b8-de94-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Oedema present <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B8.DE94; <a href="http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html">ICD-10</a>#R60.0 &quot;Localized oedema&quot;; mms#MG29.0Y &quot;Other specified localized oedema&quot;; <a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#267038008 &quot;Oedema (finding)&quot;; <a href="https://loinc.org/">LOINC</a>#45700-2 &quot;Oedema [Minimum Data Set]??Note: Multiple options in LOINC&quot;)</span></p><p><b>subject</b>: <a href="Patient-anc-patient-example.html">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href="Encounter-anc-encounter-example.html">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href="PractitionerRole-anc-practitionerrole-example.html">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: true</p></div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://example.org/fhir/NamingSystem/identifiers"/>
+    <value value="anc-b8-de94-example"/>
+  </identifier>
+  <status value="final"/>
+  <code>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B8.DE94"/>
+      <display value="Oedema present"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/sid/icd-10"/>
+      <code value="R60.0"/>
+      <display value="Localized oedema"/>
+    </coding>
+    <coding>
+      <system value="http://id.who.int/icd11/mms"/>
+      <code value="MG29.0Y"/>
+      <display value="Other specified localized oedema"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="267038008"/>
+      <display value="Oedema (finding)"/>
+    </coding>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="45700-2"/>
+      <display value="Oedema [Minimum Data Set]??Note: Multiple options in LOINC"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/anc-patient-example"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/anc-encounter-example"/>
+  </encounter>
+  <performer>
+    <reference value="PractitionerRole/anc-practitionerrole-example"/>
+  </performer>
+  <valueBoolean value="true"/>
+</Observation>

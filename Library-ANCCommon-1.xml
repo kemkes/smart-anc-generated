@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="86">
+         <a:s>library ANCCommon</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCCommon" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <statements>
+      <def locator="7:1-7:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="7:1-7:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="16" locator="15:1-18:10" name="Extensions" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="16">
+               <a:s>/*
+@description: Returns any ANC extensions defined on the given resource with the specified id.
+@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access
+content that is defined by extensions but not yet surfaced in the
+CQL model info.
+*/
+define function Extensions(domainResource </a:s>
+               <a:s r="3">
+                  <a:s>DomainResource</a:s>
+               </a:s>
+               <a:s>, id </a:s>
+               <a:s r="4">
+                  <a:s>String</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="15">
+                  <a:s r="15">
+                     <a:s>
+                        <a:s r="6">
+                           <a:s r="5">
+                              <a:s>
+                                 <a:s>domainResource.extension</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> E</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+	  </a:s>
+                     <a:s r="12">
+                        <a:s>where </a:s>
+                        <a:s r="12">
+                           <a:s r="8">
+                              <a:s r="7">
+                                 <a:s>E</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="8">
+                                 <a:s>url</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> = </a:s>
+                           <a:s r="11">
+                              <a:s>(</a:s>
+                              <a:s r="11">
+                                 <a:s r="9">
+                                    <a:s>'http://fhir.org/guides/who/anc-cds/StructureDefinition/'</a:s>
+                                 </a:s>
+                                 <a:s> + </a:s>
+                                 <a:s r="10">
+                                    <a:s>id</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+		</a:s>
+                     <a:s r="14">
+                        <a:s>return </a:s>
+                        <a:s r="13">
+                           <a:s>E</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="15" locator="16:3-18:10" xsi:type="Query">
+            <source localId="6" locator="16:3-16:28" alias="E">
+               <expression localId="5" locator="16:3-16:26" path="extension" xsi:type="Property">
+                  <source name="domainResource" xsi:type="OperandRef"/>
+               </expression>
+            </source>
+            <where localId="12" locator="17:4-17:81" xsi:type="Equal">
+               <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="8" locator="17:10-17:14" path="url" scope="E" xsi:type="Property"/>
+               </operand>
+               <operand localId="11" locator="17:18-17:81" xsi:type="Concatenate">
+                  <operand localId="9" locator="17:19-17:75" valueType="t:String" value="http://fhir.org/guides/who/anc-cds/StructureDefinition/" xsi:type="Literal"/>
+                  <operand localId="10" locator="17:79-17:80" name="id" xsi:type="OperandRef"/>
+               </operand>
+            </where>
+            <return localId="14" locator="18:3-18:10">
+               <expression localId="13" locator="18:10" name="E" xsi:type="AliasRef"/>
+            </return>
+         </expression>
+         <operand name="domainResource">
+            <operandTypeSpecifier localId="3" locator="15:43-15:56" name="fhir:DomainResource" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand name="id">
+            <operandTypeSpecifier localId="4" locator="15:62-15:67" name="t:String" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="23" locator="25:1-26:49" name="Extension" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="23">
+               <a:s>/*
+@description: Returns the single ANC extension (if present) on the given resource with the specified id.
+@comment: This function uses singleton from to ensure that a run-time exception is thrown if there
+is more than one extension on the given resource with the specified id.
+*/
+define function Extension(domainResource </a:s>
+               <a:s r="17">
+                  <a:s>DomainResource</a:s>
+               </a:s>
+               <a:s>, id </a:s>
+               <a:s r="18">
+                  <a:s>String</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="22">
+                  <a:s r="22">
+                     <a:s>singleton from </a:s>
+                     <a:s r="21">
+                        <a:s>&quot;Extensions&quot;(</a:s>
+                        <a:s r="19">
+                           <a:s>domainResource</a:s>
+                        </a:s>
+                        <a:s>, </a:s>
+                        <a:s r="20">
+                           <a:s>id</a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="22" locator="26:3-26:49" xsi:type="SingletonFrom">
+            <operand localId="21" locator="26:18-26:49" name="Extensions" xsi:type="FunctionRef">
+               <operand localId="19" locator="26:31-26:44" name="domainResource" xsi:type="OperandRef"/>
+               <operand localId="20" locator="26:47-26:48" name="id" xsi:type="OperandRef"/>
+            </operand>
+         </expression>
+         <operand name="domainResource">
+            <operandTypeSpecifier localId="17" locator="25:42-25:55" name="fhir:DomainResource" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand name="id">
+            <operandTypeSpecifier localId="18" locator="25:61-25:66" name="t:String" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="37" locator="33:1-36:10" name="Extensions" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="37">
+               <a:s>/*
+@description: Returns any ANC extensions defined on the given element with the specified id.
+@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access
+content that is defined by extensions but not yet surfaced in the CQL model info.
+*/
+define function Extensions(element </a:s>
+               <a:s r="24">
+                  <a:s>Element</a:s>
+               </a:s>
+               <a:s>, id </a:s>
+               <a:s r="25">
+                  <a:s>String</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="36">
+                  <a:s r="36">
+                     <a:s>
+                        <a:s r="27">
+                           <a:s r="26">
+                              <a:s>
+                                 <a:s>element.extension</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> E</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+	  </a:s>
+                     <a:s r="33">
+                        <a:s>where </a:s>
+                        <a:s r="33">
+                           <a:s r="29">
+                              <a:s r="28">
+                                 <a:s>E</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="29">
+                                 <a:s>url</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> = </a:s>
+                           <a:s r="32">
+                              <a:s>(</a:s>
+                              <a:s r="32">
+                                 <a:s r="30">
+                                    <a:s>'http://fhir.org/guides/who/anc-cds/StructureDefinition/'</a:s>
+                                 </a:s>
+                                 <a:s> + </a:s>
+                                 <a:s r="31">
+                                    <a:s>id</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+		</a:s>
+                     <a:s r="35">
+                        <a:s>return </a:s>
+                        <a:s r="34">
+                           <a:s>E</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="36" locator="34:3-36:10" xsi:type="Query">
+            <source localId="27" locator="34:3-34:21" alias="E">
+               <expression localId="26" locator="34:3-34:19" path="extension" xsi:type="Property">
+                  <source name="element" xsi:type="OperandRef"/>
+               </expression>
+            </source>
+            <where localId="33" locator="35:4-35:81" xsi:type="Equal">
+               <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="29" locator="35:10-35:14" path="url" scope="E" xsi:type="Property"/>
+               </operand>
+               <operand localId="32" locator="35:18-35:81" xsi:type="Concatenate">
+                  <operand localId="30" locator="35:19-35:75" valueType="t:String" value="http://fhir.org/guides/who/anc-cds/StructureDefinition/" xsi:type="Literal"/>
+                  <operand localId="31" locator="35:79-35:80" name="id" xsi:type="OperandRef"/>
+               </operand>
+            </where>
+            <return localId="35" locator="36:3-36:10">
+               <expression localId="34" locator="36:10" name="E" xsi:type="AliasRef"/>
+            </return>
+         </expression>
+         <operand name="element">
+            <operandTypeSpecifier localId="24" locator="33:36-33:42" name="fhir:Element" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand name="id">
+            <operandTypeSpecifier localId="25" locator="33:48-33:53" name="t:String" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="44" locator="43:1-44:40" name="Extension" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="44">
+               <a:s>/*
+@description: Returns the single ANC extension (if present) on the given element with the specified id.
+@comment: This function uses singleton from to ensure that a run-time exception is thrown if there
+is more than one extension on the given resource with the specified url.
+*/
+define function Extension(element </a:s>
+               <a:s r="38">
+                  <a:s>Element</a:s>
+               </a:s>
+               <a:s>, id </a:s>
+               <a:s r="39">
+                  <a:s>String</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="43">
+                  <a:s r="43">
+                     <a:s>singleton from </a:s>
+                     <a:s r="42">
+                        <a:s>Extensions(</a:s>
+                        <a:s r="40">
+                           <a:s>element</a:s>
+                        </a:s>
+                        <a:s>, </a:s>
+                        <a:s r="41">
+                           <a:s>id</a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="43" locator="44:3-44:40" xsi:type="SingletonFrom">
+            <operand localId="42" locator="44:18-44:40" name="Extensions" xsi:type="FunctionRef">
+               <operand localId="40" locator="44:29-44:35" name="element" xsi:type="OperandRef"/>
+               <operand localId="41" locator="44:38-44:39" name="id" xsi:type="OperandRef"/>
+            </operand>
+         </expression>
+         <operand name="element">
+            <operandTypeSpecifier localId="38" locator="43:35-43:41" name="fhir:Element" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand name="id">
+            <operandTypeSpecifier localId="39" locator="43:47-43:52" name="t:String" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="58" locator="52:1-55:10" name="ModifierExtensions" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="58">
+               <a:s>/*
+@description: Returns any ANC modifier extensions defined on the given resource with the specified id.
+@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access
+content that is defined by extensions but not yet surfaced in the
+CQL model info.
+*/
+define function ModifierExtensions(domainResource </a:s>
+               <a:s r="45">
+                  <a:s>DomainResource</a:s>
+               </a:s>
+               <a:s>, id </a:s>
+               <a:s r="46">
+                  <a:s>String</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="57">
+                  <a:s r="57">
+                     <a:s>
+                        <a:s r="48">
+                           <a:s r="47">
+                              <a:s>
+                                 <a:s>domainResource.modifierExtension</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> E</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+	  </a:s>
+                     <a:s r="54">
+                        <a:s>where </a:s>
+                        <a:s r="54">
+                           <a:s r="50">
+                              <a:s r="49">
+                                 <a:s>E</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="50">
+                                 <a:s>url</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> = </a:s>
+                           <a:s r="53">
+                              <a:s>(</a:s>
+                              <a:s r="53">
+                                 <a:s r="51">
+                                    <a:s>'http://fhir.org/guides/who/anc-cds/StructureDefinition/'</a:s>
+                                 </a:s>
+                                 <a:s> + </a:s>
+                                 <a:s r="52">
+                                    <a:s>id</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+		</a:s>
+                     <a:s r="56">
+                        <a:s>return </a:s>
+                        <a:s r="55">
+                           <a:s>E</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="57" locator="53:3-55:10" xsi:type="Query">
+            <source localId="48" locator="53:3-53:36" alias="E">
+               <expression localId="47" locator="53:3-53:34" path="modifierExtension" xsi:type="Property">
+                  <source name="domainResource" xsi:type="OperandRef"/>
+               </expression>
+            </source>
+            <where localId="54" locator="54:4-54:81" xsi:type="Equal">
+               <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="50" locator="54:10-54:14" path="url" scope="E" xsi:type="Property"/>
+               </operand>
+               <operand localId="53" locator="54:18-54:81" xsi:type="Concatenate">
+                  <operand localId="51" locator="54:19-54:75" valueType="t:String" value="http://fhir.org/guides/who/anc-cds/StructureDefinition/" xsi:type="Literal"/>
+                  <operand localId="52" locator="54:79-54:80" name="id" xsi:type="OperandRef"/>
+               </operand>
+            </where>
+            <return localId="56" locator="55:3-55:10">
+               <expression localId="55" locator="55:10" name="E" xsi:type="AliasRef"/>
+            </return>
+         </expression>
+         <operand name="domainResource">
+            <operandTypeSpecifier localId="45" locator="52:51-52:64" name="fhir:DomainResource" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand name="id">
+            <operandTypeSpecifier localId="46" locator="52:70-52:75" name="t:String" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="65" locator="62:1-63:55" name="ModifierExtension" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="65">
+               <a:s>/*
+@description: Returns the single ANC modifier extension (if present) on the given resource with the specified id.
+@comment: This function uses singleton from to ensure that a run-time exception is thrown if there
+is more than one extension on the given resource with the specified url.
+*/
+define function ModifierExtension(domainResource </a:s>
+               <a:s r="59">
+                  <a:s>DomainResource</a:s>
+               </a:s>
+               <a:s>, id </a:s>
+               <a:s r="60">
+                  <a:s>String</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="64">
+                  <a:s r="64">
+                     <a:s>singleton from </a:s>
+                     <a:s r="63">
+                        <a:s>ModifierExtensions(</a:s>
+                        <a:s r="61">
+                           <a:s>domainResource</a:s>
+                        </a:s>
+                        <a:s>, </a:s>
+                        <a:s r="62">
+                           <a:s>id</a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="64" locator="63:3-63:55" xsi:type="SingletonFrom">
+            <operand localId="63" locator="63:18-63:55" name="ModifierExtensions" xsi:type="FunctionRef">
+               <operand localId="61" locator="63:37-63:50" name="domainResource" xsi:type="OperandRef"/>
+               <operand localId="62" locator="63:53-63:54" name="id" xsi:type="OperandRef"/>
+            </operand>
+         </expression>
+         <operand name="domainResource">
+            <operandTypeSpecifier localId="59" locator="62:50-62:63" name="fhir:DomainResource" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand name="id">
+            <operandTypeSpecifier localId="60" locator="62:69-62:74" name="t:String" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="79" locator="70:1-73:10" name="ModifierExtensions" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="79">
+               <a:s>/*
+@description: Returns any ANC modifier extensions defined on the given element with the specified id.
+@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access
+content that is defined by extensions but not yet surfaced in the CQL model info.
+*/
+define function ModifierExtensions(element </a:s>
+               <a:s r="66">
+                  <a:s>BackboneElement</a:s>
+               </a:s>
+               <a:s>, id </a:s>
+               <a:s r="67">
+                  <a:s>String</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="78">
+                  <a:s r="78">
+                     <a:s>
+                        <a:s r="69">
+                           <a:s r="68">
+                              <a:s>
+                                 <a:s>element.modifierExtension</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> E</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+	  </a:s>
+                     <a:s r="75">
+                        <a:s>where </a:s>
+                        <a:s r="75">
+                           <a:s r="71">
+                              <a:s r="70">
+                                 <a:s>E</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="71">
+                                 <a:s>url</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> = </a:s>
+                           <a:s r="74">
+                              <a:s>(</a:s>
+                              <a:s r="74">
+                                 <a:s r="72">
+                                    <a:s>'http://fhir.org/guides/who/anc-cds/StructureDefinition/'</a:s>
+                                 </a:s>
+                                 <a:s> + </a:s>
+                                 <a:s r="73">
+                                    <a:s>id</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+		</a:s>
+                     <a:s r="77">
+                        <a:s>return </a:s>
+                        <a:s r="76">
+                           <a:s>E</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="78" locator="71:3-73:10" xsi:type="Query">
+            <source localId="69" locator="71:3-71:29" alias="E">
+               <expression localId="68" locator="71:3-71:27" path="modifierExtension" xsi:type="Property">
+                  <source name="element" xsi:type="OperandRef"/>
+               </expression>
+            </source>
+            <where localId="75" locator="72:4-72:81" xsi:type="Equal">
+               <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="71" locator="72:10-72:14" path="url" scope="E" xsi:type="Property"/>
+               </operand>
+               <operand localId="74" locator="72:18-72:81" xsi:type="Concatenate">
+                  <operand localId="72" locator="72:19-72:75" valueType="t:String" value="http://fhir.org/guides/who/anc-cds/StructureDefinition/" xsi:type="Literal"/>
+                  <operand localId="73" locator="72:79-72:80" name="id" xsi:type="OperandRef"/>
+               </operand>
+            </where>
+            <return localId="77" locator="73:3-73:10">
+               <expression localId="76" locator="73:10" name="E" xsi:type="AliasRef"/>
+            </return>
+         </expression>
+         <operand name="element">
+            <operandTypeSpecifier localId="66" locator="70:44-70:58" name="fhir:BackboneElement" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand name="id">
+            <operandTypeSpecifier localId="67" locator="70:64-70:69" name="t:String" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def localId="86" locator="80:1-81:48" name="ModifierExtension" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="86">
+               <a:s>/*
+@description: Returns the single ANC modifier extension (if present) on the given element with the specified id.
+@comment: This function uses singleton from to ensure that a run-time exception is thrown if there
+is more than one extension on the given resource with the specified url.
+*/
+define function ModifierExtension(element </a:s>
+               <a:s r="80">
+                  <a:s>BackboneElement</a:s>
+               </a:s>
+               <a:s>, id </a:s>
+               <a:s r="81">
+                  <a:s>String</a:s>
+               </a:s>
+               <a:s>):
+  </a:s>
+               <a:s r="85">
+                  <a:s r="85">
+                     <a:s>singleton from </a:s>
+                     <a:s r="84">
+                        <a:s>ModifierExtensions(</a:s>
+                        <a:s r="82">
+                           <a:s>element</a:s>
+                        </a:s>
+                        <a:s>, </a:s>
+                        <a:s r="83">
+                           <a:s>id</a:s>
+                        </a:s>
+                        <a:s>)</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="85" locator="81:3-81:48" xsi:type="SingletonFrom">
+            <operand localId="84" locator="81:18-81:48" name="ModifierExtensions" xsi:type="FunctionRef">
+               <operand localId="82" locator="81:37-81:43" name="element" xsi:type="OperandRef"/>
+               <operand localId="83" locator="81:46-81:47" name="id" xsi:type="OperandRef"/>
+            </operand>
+         </expression>
+         <operand name="element">
+            <operandTypeSpecifier localId="80" locator="80:43-80:57" name="fhir:BackboneElement" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+         <operand name="id">
+            <operandTypeSpecifier localId="81" locator="80:63-80:68" name="t:String" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+   </statements>
+</library>

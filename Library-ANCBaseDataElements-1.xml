@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="88">
+         <a:s>/*
+Additional required data elements that do not have a data dictionary entry
+*/
+library ANCBaseDataElements</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCBaseDataElements" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="6:1-6:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="8:1-8:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="9:1-9:27" localIdentifier="AC" path="http://fhir.org/guides/who/anc-cds/ANCCommon">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCCommon</a:s>
+               </a:s>
+               <a:s> called AC</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="10:1-10:28" localIdentifier="FC" path="http://fhir.org/guides/who/anc-cds/FHIRCommon">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRCommon</a:s>
+               </a:s>
+               <a:s> called FC</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="11:1-11:34" localIdentifier="BCx" path="http://fhir.org/guides/who/anc-cds/ANCBaseConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCBaseConcepts</a:s>
+               </a:s>
+               <a:s> called BCx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <statements>
+      <def locator="13:1-13:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="13:1-13:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="7" locator="30:1-31:54" name="Antenatal care case" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="7">
+               <a:s>/*
+define &quot;Pregnant&quot;:
+  &quot;Pregnancy&quot; is not null
+    or &quot;Pregnancy status&quot; in BCx.&quot;Pregnancy status - pregnant&quot;
+
+define &quot;Pregnancy status&quot;:
+  FHIRHelpers.ToConcept(
+    Last(
+      [Observation: BCx.&quot;Pregnancy status&quot;] O
+        where O.status = 'final'
+        sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime)
+    ).value
+  )
+*/
+define &quot;Antenatal care case&quot;:
+  </a:s>
+               <a:s r="6">
+                  <a:s>[&quot;EpisodeOfCare&quot;: </a:s>
+                  <a:s>
+                     <a:s>type</a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s>
+                     <a:s>BCx.&quot;Antenatal care case&quot;</a:s>
+                  </a:s>
+                  <a:s>]</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="6" locator="31:3-31:54" dataType="fhir:EpisodeOfCare" templateId="http://hl7.org/fhir/StructureDefinition/EpisodeOfCare" codeProperty="type" codeComparator="in" xsi:type="Retrieve">
+            <codes locator="31:29-31:53" name="Antenatal care case" libraryName="BCx" xsi:type="ValueSetRef"/>
+         </expression>
+      </def>
+      <def localId="9" locator="33:1-34:53" name="Antenatal care contact" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="9">
+               <a:s>define &quot;Antenatal care contact&quot;:
+  </a:s>
+               <a:s r="8">
+                  <a:s>[&quot;Encounter&quot;: </a:s>
+                  <a:s>
+                     <a:s>type</a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s>
+                     <a:s>BCx.&quot;Antenatal care contact&quot;</a:s>
+                  </a:s>
+                  <a:s>]</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="8" locator="34:3-34:53" dataType="fhir:Encounter" templateId="http://hl7.org/fhir/StructureDefinition/Encounter" codeProperty="type" codeComparator="in" xsi:type="Retrieve">
+            <codes locator="34:25-34:52" name="Antenatal care contact" libraryName="BCx" xsi:type="ValueSetRef"/>
+         </expression>
+      </def>
+      <def localId="18" locator="39:1-43:2" name="Pregnancy" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="18">
+               <a:s>/*
+@description: Most recent antenatal care case
+*/
+define &quot;Pregnancy&quot;:
+  </a:s>
+               <a:s r="17">
+                  <a:s>First(
+    </a:s>
+                  <a:s r="16">
+                     <a:s>
+                        <a:s r="11">
+                           <a:s r="10">
+                              <a:s>
+                                 <a:s>&quot;Antenatal care case&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> E</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+		  </a:s>
+                     <a:s r="15">
+                        <a:s>sort by </a:s>
+                        <a:s r="14">
+                           <a:s r="13">
+                              <a:s>start of </a:s>
+                              <a:s r="12">
+                                 <a:s>period</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> descending</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+	)</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="17" locator="40:3-43:2" xsi:type="First">
+            <source localId="16" locator="41:5-42:38" xsi:type="Query">
+               <source localId="11" locator="41:5-41:27" alias="E">
+                  <expression localId="10" locator="41:5-41:25" name="Antenatal care case" xsi:type="ExpressionRef"/>
+               </source>
+               <sort localId="15" locator="42:5-42:38">
+                  <by localId="14" locator="42:13-42:38" direction="descending" xsi:type="ByExpression">
+                     <expression localId="13" locator="42:13-42:27" xsi:type="Start">
+                        <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="12" locator="42:22-42:27" name="period" xsi:type="IdentifierRef"/>
+                        </operand>
+                     </expression>
+                  </by>
+               </sort>
+            </source>
+         </expression>
+      </def>
+      <def localId="28" locator="45:1-46:79" name="First trimester" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="28">
+               <a:s>define &quot;First trimester&quot;:
+  </a:s>
+               <a:s r="27">
+                  <a:s>Interval[</a:s>
+                  <a:s r="21">
+                     <a:s>start of </a:s>
+                     <a:s r="20">
+                        <a:s r="19">
+                           <a:s>&quot;Pregnancy&quot;</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="20">
+                           <a:s>period</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>, </a:s>
+                  <a:s r="26">
+                     <a:s r="24">
+                        <a:s>start of </a:s>
+                        <a:s r="23">
+                           <a:s r="22">
+                              <a:s>&quot;Pregnancy&quot;</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="23">
+                              <a:s>period</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="25">
+                        <a:s>12 weeks</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>]</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="27" locator="46:3-46:79" lowClosed="true" highClosed="true" xsi:type="Interval">
+            <low localId="21" locator="46:12-46:38" xsi:type="Start">
+               <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="20" locator="46:21-46:38" path="period" xsi:type="Property">
+                     <source localId="19" locator="46:21-46:31" name="Pregnancy" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+            </low>
+            <high localId="26" locator="46:41-46:78" xsi:type="Add">
+               <operand localId="24" locator="46:41-46:67" xsi:type="Start">
+                  <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="23" locator="46:50-46:67" path="period" xsi:type="Property">
+                        <source localId="22" locator="46:50-46:60" name="Pregnancy" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="25" locator="46:71-46:78" value="12" unit="weeks" xsi:type="Quantity"/>
+            </high>
+         </expression>
+      </def>
+      <def localId="40" locator="48:1-49:90" name="Second trimester" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="40">
+               <a:s>define &quot;Second trimester&quot;:
+  </a:s>
+               <a:s r="39">
+                  <a:s>Interval[</a:s>
+                  <a:s r="33">
+                     <a:s r="31">
+                        <a:s>start of </a:s>
+                        <a:s r="30">
+                           <a:s r="29">
+                              <a:s>&quot;Pregnancy&quot;</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="30">
+                              <a:s>period</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="32">
+                        <a:s>13 weeks</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>, </a:s>
+                  <a:s r="38">
+                     <a:s r="36">
+                        <a:s>start of </a:s>
+                        <a:s r="35">
+                           <a:s r="34">
+                              <a:s>&quot;Pregnancy&quot;</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="35">
+                              <a:s>period</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="37">
+                        <a:s>24 weeks</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>]</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="39" locator="49:3-49:90" lowClosed="true" highClosed="true" xsi:type="Interval">
+            <low localId="33" locator="49:12-49:49" xsi:type="Add">
+               <operand localId="31" locator="49:12-49:38" xsi:type="Start">
+                  <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="30" locator="49:21-49:38" path="period" xsi:type="Property">
+                        <source localId="29" locator="49:21-49:31" name="Pregnancy" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="32" locator="49:42-49:49" value="13" unit="weeks" xsi:type="Quantity"/>
+            </low>
+            <high localId="38" locator="49:52-49:89" xsi:type="Add">
+               <operand localId="36" locator="49:52-49:78" xsi:type="Start">
+                  <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="35" locator="49:61-49:78" path="period" xsi:type="Property">
+                        <source localId="34" locator="49:61-49:71" name="Pregnancy" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="37" locator="49:82-49:89" value="24" unit="weeks" xsi:type="Quantity"/>
+            </high>
+         </expression>
+      </def>
+      <def localId="50" locator="54:1-55:77" name="Third trimester" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="50">
+               <a:s>/*
+@description: Third trimester (assuming GA 25+ weeks)
+*/
+define &quot;Third trimester&quot;:
+  </a:s>
+               <a:s r="49">
+                  <a:s>Interval[</a:s>
+                  <a:s r="45">
+                     <a:s r="43">
+                        <a:s>start of </a:s>
+                        <a:s r="42">
+                           <a:s r="41">
+                              <a:s>&quot;Pregnancy&quot;</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="42">
+                              <a:s>period</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> + </a:s>
+                     <a:s r="44">
+                        <a:s>25 weeks</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>, </a:s>
+                  <a:s r="48">
+                     <a:s>end of </a:s>
+                     <a:s r="47">
+                        <a:s r="46">
+                           <a:s>&quot;Pregnancy&quot;</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="47">
+                           <a:s>period</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>]</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="49" locator="55:3-55:77" lowClosed="true" highClosed="true" xsi:type="Interval">
+            <low localId="45" locator="55:12-55:49" xsi:type="Add">
+               <operand localId="43" locator="55:12-55:38" xsi:type="Start">
+                  <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="42" locator="55:21-55:38" path="period" xsi:type="Property">
+                        <source localId="41" locator="55:21-55:31" name="Pregnancy" xsi:type="ExpressionRef"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="44" locator="55:42-55:49" value="25" unit="weeks" xsi:type="Quantity"/>
+            </low>
+            <high localId="48" locator="55:52-55:76" xsi:type="End">
+               <operand name="ToInterval" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="47" locator="55:59-55:76" path="period" xsi:type="Property">
+                     <source localId="46" locator="55:59-55:69" name="Pregnancy" xsi:type="ExpressionRef"/>
+                  </operand>
+               </operand>
+            </high>
+         </expression>
+      </def>
+      <def localId="72" locator="60:1-64:59" name="Pregnancy condition" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="72">
+               <a:s>/*
+@description: The diagnosis of pregnancy listed as the chief-complaint diagnosis on the most recent antenatal care case
+*/
+define &quot;Pregnancy condition&quot;:
+  </a:s>
+               <a:s r="71">
+                  <a:s>
+                     <a:s r="52">
+                        <a:s r="51">
+                           <a:s r="51">
+                              <a:s>[&quot;Condition&quot;: </a:s>
+                              <a:s>
+                                 <a:s>code</a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s>
+                                 <a:s>BCx.&quot;Pregnancy condition&quot;</a:s>
+                              </a:s>
+                              <a:s>]</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> C</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="70">
+                     <a:s>with </a:s>
+                     <a:s r="54">
+                        <a:s r="53">
+                           <a:s>
+                              <a:s>&quot;Pregnancy&quot;.diagnosis</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> Dx</a:s>
+                     </a:s>
+                     <a:s>
+      such that </a:s>
+                     <a:s r="69">
+                        <a:s r="59">
+                           <a:s r="56">
+                              <a:s r="55">
+                                 <a:s>Dx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="56">
+                                 <a:s>role</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> = </a:s>
+                           <a:s r="58">
+                              <a:s r="57">
+                                 <a:s>FC</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="58">
+                                 <a:s>&quot;CC&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+        and </a:s>
+                        <a:s r="68">
+                           <a:s r="61">
+                              <a:s r="60">
+                                 <a:s>C</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="61">
+                                 <a:s>id</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> = </a:s>
+                           <a:s r="67">
+                              <a:s>Last(</a:s>
+                              <a:s r="66">
+                                 <a:s>Split(</a:s>
+                                 <a:s r="64">
+                                    <a:s r="63">
+                                       <a:s r="62">
+                                          <a:s>Dx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="63">
+                                          <a:s>condition</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="64">
+                                       <a:s>reference</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>, </a:s>
+                                 <a:s r="65">
+                                    <a:s>'/'</a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="71" locator="61:3-64:59" xsi:type="Query">
+            <source localId="52" locator="61:3-61:52" alias="C">
+               <expression localId="51" locator="61:3-61:50" dataType="fhir:Condition" templateId="http://hl7.org/fhir/StructureDefinition/Condition" codeProperty="code" codeComparator="in" xsi:type="Retrieve">
+                  <codes locator="61:25-61:49" name="Pregnancy condition" libraryName="BCx" xsi:type="ValueSetRef"/>
+               </expression>
+            </source>
+            <relationship localId="70" locator="62:5-64:59" alias="Dx" xsi:type="With">
+               <expression localId="53" locator="62:10-62:30" path="diagnosis" xsi:type="Property">
+                  <source name="Pregnancy" xsi:type="ExpressionRef"/>
+               </expression>
+               <suchThat localId="69" locator="63:17-64:59" xsi:type="And">
+                  <operand localId="59" locator="63:17-63:33" xsi:type="Equal">
+                     <operand name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="56" locator="63:17-63:23" path="role" scope="Dx" xsi:type="Property"/>
+                     </operand>
+                     <operand xsi:type="ToConcept">
+                        <operand localId="58" locator="63:27-63:33" name="CC" libraryName="FC" xsi:type="CodeRef"/>
+                     </operand>
+                  </operand>
+                  <operand localId="68" locator="64:13-64:59" xsi:type="Equal">
+                     <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="61" locator="64:13-64:16" path="id" scope="C" xsi:type="Property"/>
+                     </operand>
+                     <operand localId="67" locator="64:20-64:59" xsi:type="Last">
+                        <source localId="66" locator="64:25-64:58" xsi:type="Split">
+                           <stringToSplit name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="64" locator="64:31-64:52" path="reference" xsi:type="Property">
+                                 <source localId="63" locator="64:31-64:42" path="condition" scope="Dx" xsi:type="Property"/>
+                              </operand>
+                           </stringToSplit>
+                           <separator localId="65" locator="64:55-64:57" valueType="t:String" value="/" xsi:type="Literal"/>
+                        </source>
+                     </operand>
+                  </operand>
+               </suchThat>
+            </relationship>
+         </expression>
+      </def>
+      <def localId="84" locator="69:1-71:67" name="Patient Occupation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="84">
+               <a:s>/*
+@description: The patient's occupation
+*/
+define &quot;Patient Occupation&quot;:
+  </a:s>
+               <a:s r="83">
+                  <a:s>
+                     <a:s r="74">
+                        <a:s r="73">
+                           <a:s r="73">
+                              <a:s>[Patient]</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> P</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="82">
+                     <a:s>return </a:s>
+                     <a:s r="81">
+                        <a:s r="79">
+                           <a:s r="78">
+                              <a:s>(</a:s>
+                              <a:s r="78">
+                                 <a:s r="75">
+                                    <a:s>AC</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="78">
+                                    <a:s>Extension(</a:s>
+                                    <a:s r="76">
+                                       <a:s>P</a:s>
+                                    </a:s>
+                                    <a:s>, </a:s>
+                                    <a:s r="77">
+                                       <a:s>'occupation'</a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="79">
+                              <a:s>value</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> as </a:s>
+                        <a:s r="80">
+                           <a:s>CodeableConcept</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="83" locator="70:3-71:67" xsi:type="Query">
+            <source localId="74" locator="70:3-70:13" alias="P">
+               <expression localId="73" locator="70:3-70:11" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+            </source>
+            <return localId="82" locator="71:5-71:67">
+               <expression localId="81" locator="71:12-71:67" strict="false" xsi:type="As">
+                  <operand localId="79" locator="71:12-71:48" path="value" xsi:type="Property">
+                     <source localId="78" locator="71:12-71:42" name="Extension" libraryName="AC" xsi:type="FunctionRef">
+                        <operand localId="76" locator="71:26" name="P" xsi:type="AliasRef"/>
+                        <operand localId="77" locator="71:29-71:40" valueType="t:String" value="occupation" xsi:type="Literal"/>
+                     </source>
+                  </operand>
+                  <asTypeSpecifier localId="80" locator="71:53-71:67" name="fhir:CodeableConcept" xsi:type="NamedTypeSpecifier"/>
+               </expression>
+            </return>
+         </expression>
+      </def>
+      <def localId="88" locator="85:1-86:19" name="Next contact date" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="88">
+               <a:s>/*
+@description: The expected next contact date based on current visits and the next expected visit date
+Next contact date logic:
+1. If GA &lt; 20 weeks, contacts should be every 8 weeks
+2. If GA >= 20 weeks, contacts should be every 6 weeks
+3. If GA >= 26 weeks, contacts should be every 4 weeks
+4. If GA >= 34 weeks, contacts should be every 2 weeks
+5. If GA would be 40 weeks prior to next contact date, schedule next contact for 40 weeks
+6. Women with a first contact between 22 and 23 weeks have visits every 2 weeks after 30 weeks
+7. Women with a first contact between 28 and 29 weeks have visits every 2 weeks after 32 weeks
+8. Women with a first contact after 30 weeks have all visits every 2 weeks
+*/
+define &quot;Next contact date&quot;:
+  </a:s>
+               <a:s r="87">
+                  <a:s r="85">
+                     <a:s>Today()</a:s>
+                  </a:s>
+                  <a:s> + </a:s>
+                  <a:s r="86">
+                     <a:s>2 weeks</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="87" locator="86:3-86:19" xsi:type="Add">
+            <operand localId="85" locator="86:3-86:9" xsi:type="Today"/>
+            <operand localId="86" locator="86:13-86:19" value="2" unit="weeks" xsi:type="Quantity"/>
+         </expression>
+      </def>
+   </statements>
+</library>

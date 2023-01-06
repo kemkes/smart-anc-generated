@@ -1,0 +1,1566 @@
+{
+  "library" : {
+    "type" : "Library",
+    "identifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "ANCDT32",
+      "system" : "http://fhir.org/guides/who/anc-cds"
+    },
+    "schemaIdentifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "urn:hl7-org:elm",
+      "version" : "r1"
+    },
+    "usings" : {
+      "type" : "Library$Usings",
+      "def" : [ {
+        "type" : "UsingDef",
+        "localIdentifier" : "System",
+        "uri" : "urn:hl7-org:elm-types:r1"
+      }, {
+        "type" : "UsingDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "using " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ "FHIR" ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ " version ", "'4.0.1'" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "1"
+          }
+        } ],
+        "localId" : "1",
+        "locator" : "3:1-3:26",
+        "localIdentifier" : "FHIR",
+        "uri" : "http://hl7.org/fhir",
+        "version" : "4.0.1"
+      } ]
+    },
+    "includes" : {
+      "type" : "Library$Includes",
+      "def" : [ {
+        "type" : "IncludeDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "include " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ "FHIRHelpers" ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ " version ", "'4.0.1'" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "2"
+          }
+        } ],
+        "localId" : "2",
+        "locator" : "5:1-5:35",
+        "localIdentifier" : "FHIRHelpers",
+        "path" : "http://fhir.org/guides/who/anc-cds/FHIRHelpers",
+        "version" : "4.0.1"
+      }, {
+        "type" : "IncludeDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "include " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ "ANCConfig" ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ " called ", "Config" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "3"
+          }
+        } ],
+        "localId" : "3",
+        "locator" : "7:1-7:31",
+        "localIdentifier" : "Config",
+        "path" : "http://fhir.org/guides/who/anc-cds/ANCConfig"
+      }, {
+        "type" : "IncludeDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "include " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ "ANCConcepts" ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ " called ", "Cx" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "4"
+          }
+        } ],
+        "localId" : "4",
+        "locator" : "8:1-8:29",
+        "localIdentifier" : "Cx",
+        "path" : "http://fhir.org/guides/who/anc-cds/ANCConcepts"
+      }, {
+        "type" : "IncludeDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "include " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ "ANCDataElements" ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ " called ", "PatientData" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "5"
+          }
+        } ],
+        "localId" : "5",
+        "locator" : "9:1-9:42",
+        "localIdentifier" : "PatientData",
+        "path" : "http://fhir.org/guides/who/anc-cds/ANCDataElements"
+      }, {
+        "type" : "IncludeDef",
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "", "include " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ "ANCContactDataElements" ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ " called ", "ContactData" ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "6"
+          }
+        } ],
+        "localId" : "6",
+        "locator" : "10:1-10:49",
+        "localIdentifier" : "ContactData",
+        "path" : "http://fhir.org/guides/who/anc-cds/ANCContactDataElements"
+      } ]
+    },
+    "statements" : {
+      "type" : "Library$Statements",
+      "def" : [ {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "SingletonFrom",
+          "operand" : {
+            "type" : "Retrieve",
+            "locator" : "12:1-12:15",
+            "dataType" : "{http://hl7.org/fhir}Patient",
+            "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient"
+          }
+        },
+        "locator" : "12:1-12:15",
+        "name" : "Patient",
+        "context" : "Patient"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Or",
+          "operand" : [ {
+            "type" : "Or",
+            "operand" : [ {
+              "type" : "InValueSet",
+              "code" : {
+                "type" : "FunctionRef",
+                "operand" : [ {
+                  "type" : "ExpressionRef",
+                  "localId" : "8",
+                  "locator" : "20:3-20:77",
+                  "name" : "Tetanus toxoid-containing vaccine (TTCV) immunization history",
+                  "libraryName" : "ContactData"
+                } ],
+                "name" : "ToConcept",
+                "libraryName" : "FHIRHelpers"
+              },
+              "valueset" : {
+                "type" : "ValueSetRef",
+                "localId" : "10",
+                "locator" : "20:82-20:173",
+                "name" : "Tetanus toxoid-containing vaccine (TTCV) immunization history - Under Immunized Choices",
+                "libraryName" : "Cx"
+              },
+              "localId" : "11",
+              "locator" : "20:3-20:173"
+            }, {
+              "type" : "InValueSet",
+              "code" : {
+                "type" : "FunctionRef",
+                "operand" : [ {
+                  "type" : "ExpressionRef",
+                  "localId" : "13",
+                  "locator" : "21:8-21:82",
+                  "name" : "Tetanus toxoid-containing vaccine (TTCV) immunization history",
+                  "libraryName" : "ContactData"
+                } ],
+                "name" : "ToConcept",
+                "libraryName" : "FHIRHelpers"
+              },
+              "valueset" : {
+                "type" : "ValueSetRef",
+                "localId" : "15",
+                "locator" : "21:87-21:171",
+                "name" : "Tetanus toxoid-containing vaccine (TTCV) immunization history - No Doses Choices",
+                "libraryName" : "Cx"
+              },
+              "localId" : "16",
+              "locator" : "21:8-21:171"
+            } ],
+            "localId" : "17",
+            "locator" : "20:3-21:171"
+          }, {
+            "type" : "InValueSet",
+            "code" : {
+              "type" : "FunctionRef",
+              "operand" : [ {
+                "type" : "ExpressionRef",
+                "localId" : "19",
+                "locator" : "22:8-22:82",
+                "name" : "Tetanus toxoid-containing vaccine (TTCV) immunization history",
+                "libraryName" : "ContactData"
+              } ],
+              "name" : "ToConcept",
+              "libraryName" : "FHIRHelpers"
+            },
+            "valueset" : {
+              "type" : "ValueSetRef",
+              "localId" : "21",
+              "locator" : "22:87-22:170",
+              "name" : "Tetanus toxoid-containing vaccine (TTCV) immunization history - Unknown Choices",
+              "libraryName" : "Cx"
+            },
+            "localId" : "22",
+            "locator" : "22:8-22:170"
+          } ],
+          "localId" : "23",
+          "locator" : "20:3-22:170"
+        },
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "/*\n((\"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Under-immunized\")\n  OR (\"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"No doses\"))\n  OR (\"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Unknown\")\n*/\n", "define ", "\"Should Provide tetanus toxoid immunizations – using the \\\"Tetanus toxoid-containing vaccine (TTCV) immunization – NO PREVIOUS\\\" schedule (3 dose scheme)\"", ":\n  " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ "ContactData" ]
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                } ],
+                                "r" : "7"
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            }, {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ "." ]
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            }, {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ "\"Tetanus toxoid-containing vaccine (TTCV) immunization history\"" ]
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                } ],
+                                "r" : "8"
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            } ],
+                            "r" : "8"
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        }, {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ " in " ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        }, {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ "Cx" ]
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                } ],
+                                "r" : "9"
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            }, {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ "." ]
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            }, {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ "\"Tetanus toxoid-containing vaccine (TTCV) immunization history - Under Immunized Choices\"" ]
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                } ],
+                                "r" : "10"
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            } ],
+                            "r" : "10"
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "11"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "\n    or " ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ "ContactData" ]
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                } ],
+                                "r" : "12"
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            }, {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ "." ]
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            }, {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ "\"Tetanus toxoid-containing vaccine (TTCV) immunization history\"" ]
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                } ],
+                                "r" : "13"
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            } ],
+                            "r" : "13"
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        }, {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ " in " ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        }, {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ "Cx" ]
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                } ],
+                                "r" : "14"
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            }, {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ "." ]
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            }, {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ "\"Tetanus toxoid-containing vaccine (TTCV) immunization history - No Doses Choices\"" ]
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                } ],
+                                "r" : "15"
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            } ],
+                            "r" : "15"
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "16"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "17"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ "\n    or " ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ "ContactData" ]
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            } ],
+                            "r" : "18"
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        }, {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "." ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        }, {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ "\"Tetanus toxoid-containing vaccine (TTCV) immunization history\"" ]
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            } ],
+                            "r" : "19"
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "19"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ " in " ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ "Cx" ]
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            } ],
+                            "r" : "20"
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        }, {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "." ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        }, {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ "\"Tetanus toxoid-containing vaccine (TTCV) immunization history - Unknown Choices\"" ]
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            } ],
+                            "r" : "21"
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "21"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "22"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ],
+                "r" : "23"
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "24"
+          }
+        } ],
+        "localId" : "24",
+        "locator" : "19:1-22:170",
+        "name" : "Should Provide tetanus toxoid immunizations – using the \"Tetanus toxoid-containing vaccine (TTCV) immunization – NO PREVIOUS\" schedule (3 dose scheme)",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Or",
+          "operand" : [ {
+            "type" : "Or",
+            "operand" : [ {
+              "type" : "Or",
+              "operand" : [ {
+                "type" : "Or",
+                "operand" : [ {
+                  "type" : "IsNull",
+                  "operand" : {
+                    "type" : "ExpressionRef",
+                    "localId" : "26",
+                    "locator" : "37:3-37:59",
+                    "name" : "Tetanus toxoid (TT) 5 immunization provided",
+                    "libraryName" : "ContactData"
+                  },
+                  "localId" : "27",
+                  "locator" : "37:3-37:67"
+                }, {
+                  "type" : "IsNull",
+                  "operand" : {
+                    "type" : "ExpressionRef",
+                    "localId" : "29",
+                    "locator" : "38:8-38:64",
+                    "name" : "Tetanus toxoid (TT) 4 immunization provided",
+                    "libraryName" : "ContactData"
+                  },
+                  "localId" : "30",
+                  "locator" : "38:8-38:72"
+                } ],
+                "localId" : "31",
+                "locator" : "37:3-38:72"
+              }, {
+                "type" : "IsNull",
+                "operand" : {
+                  "type" : "ExpressionRef",
+                  "localId" : "33",
+                  "locator" : "39:8-39:64",
+                  "name" : "Tetanus toxoid (TT) 3 immunization provided",
+                  "libraryName" : "ContactData"
+                },
+                "localId" : "34",
+                "locator" : "39:8-39:72"
+              } ],
+              "localId" : "35",
+              "locator" : "37:3-39:72"
+            }, {
+              "type" : "IsNull",
+              "operand" : {
+                "type" : "ExpressionRef",
+                "localId" : "37",
+                "locator" : "40:8-40:64",
+                "name" : "Tetanus toxoid (TT) 2 immunization provided",
+                "libraryName" : "ContactData"
+              },
+              "localId" : "38",
+              "locator" : "40:8-40:72"
+            } ],
+            "localId" : "39",
+            "locator" : "37:3-40:72"
+          }, {
+            "type" : "IsNull",
+            "operand" : {
+              "type" : "ExpressionRef",
+              "localId" : "41",
+              "locator" : "41:8-41:64",
+              "name" : "Tetanus toxoid (TT) 1 immunization provided",
+              "libraryName" : "ContactData"
+            },
+            "localId" : "42",
+            "locator" : "41:8-41:72"
+          } ],
+          "localId" : "43",
+          "locator" : "37:3-41:72"
+        },
+        "annotation" : [ {
+          "s" : {
+            "s" : [ {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ "/*\n((((\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 3 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 4 immunization provided\" =  TRUE))\n  OR ((\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 3 immunization provided\" = TRUE)))\n  OR ((\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided\" = TRUE)))\n  OR (\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)\n*/\n", "define ", "\"Should Provide tetanus toxoid immunizations – using the \\\"Tetanus toxoid-containing vaccine (TTCV) immunization – WITH PREVIOUS\\\" schedule (1 dose scheme)\"", ":\n  " ]
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            }, {
+              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+              "value" : {
+                "s" : [ {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ {
+                                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                      "value" : {
+                                        "s" : [ {
+                                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                          "value" : {
+                                            "s" : [ "ContactData" ]
+                                          },
+                                          "nil" : false,
+                                          "typeSubstituted" : false,
+                                          "globalScope" : true
+                                        } ],
+                                        "r" : "25"
+                                      },
+                                      "nil" : false,
+                                      "typeSubstituted" : false,
+                                      "globalScope" : true
+                                    }, {
+                                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                      "value" : {
+                                        "s" : [ "." ]
+                                      },
+                                      "nil" : false,
+                                      "typeSubstituted" : false,
+                                      "globalScope" : true
+                                    }, {
+                                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                      "value" : {
+                                        "s" : [ {
+                                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                          "value" : {
+                                            "s" : [ "\"Tetanus toxoid (TT) 5 immunization provided\"" ]
+                                          },
+                                          "nil" : false,
+                                          "typeSubstituted" : false,
+                                          "globalScope" : true
+                                        } ],
+                                        "r" : "26"
+                                      },
+                                      "nil" : false,
+                                      "typeSubstituted" : false,
+                                      "globalScope" : true
+                                    } ],
+                                    "r" : "26"
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                }, {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ " is null" ]
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                } ],
+                                "r" : "27"
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            }, {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ "\n    or " ]
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            }, {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ {
+                                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                      "value" : {
+                                        "s" : [ {
+                                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                          "value" : {
+                                            "s" : [ "ContactData" ]
+                                          },
+                                          "nil" : false,
+                                          "typeSubstituted" : false,
+                                          "globalScope" : true
+                                        } ],
+                                        "r" : "28"
+                                      },
+                                      "nil" : false,
+                                      "typeSubstituted" : false,
+                                      "globalScope" : true
+                                    }, {
+                                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                      "value" : {
+                                        "s" : [ "." ]
+                                      },
+                                      "nil" : false,
+                                      "typeSubstituted" : false,
+                                      "globalScope" : true
+                                    }, {
+                                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                      "value" : {
+                                        "s" : [ {
+                                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                          "value" : {
+                                            "s" : [ "\"Tetanus toxoid (TT) 4 immunization provided\"" ]
+                                          },
+                                          "nil" : false,
+                                          "typeSubstituted" : false,
+                                          "globalScope" : true
+                                        } ],
+                                        "r" : "29"
+                                      },
+                                      "nil" : false,
+                                      "typeSubstituted" : false,
+                                      "globalScope" : true
+                                    } ],
+                                    "r" : "29"
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                }, {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ " is null" ]
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                } ],
+                                "r" : "30"
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            } ],
+                            "r" : "31"
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        }, {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "\n    or " ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        }, {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ {
+                                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                      "value" : {
+                                        "s" : [ "ContactData" ]
+                                      },
+                                      "nil" : false,
+                                      "typeSubstituted" : false,
+                                      "globalScope" : true
+                                    } ],
+                                    "r" : "32"
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                }, {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ "." ]
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                }, {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ {
+                                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                      "value" : {
+                                        "s" : [ "\"Tetanus toxoid (TT) 3 immunization provided\"" ]
+                                      },
+                                      "nil" : false,
+                                      "typeSubstituted" : false,
+                                      "globalScope" : true
+                                    } ],
+                                    "r" : "33"
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                } ],
+                                "r" : "33"
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            }, {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ " is null" ]
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            } ],
+                            "r" : "34"
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "35"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ "\n    or " ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ "ContactData" ]
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                } ],
+                                "r" : "36"
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            }, {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ "." ]
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            }, {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ {
+                                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                                  "value" : {
+                                    "s" : [ "\"Tetanus toxoid (TT) 2 immunization provided\"" ]
+                                  },
+                                  "nil" : false,
+                                  "typeSubstituted" : false,
+                                  "globalScope" : true
+                                } ],
+                                "r" : "37"
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            } ],
+                            "r" : "37"
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        }, {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ " is null" ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "38"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "39"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ "\n    or " ]
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                }, {
+                  "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                  "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                  "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                  "value" : {
+                    "s" : [ {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ "ContactData" ]
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            } ],
+                            "r" : "40"
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        }, {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ "." ]
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        }, {
+                          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                          "value" : {
+                            "s" : [ {
+                              "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                              "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                              "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                              "value" : {
+                                "s" : [ "\"Tetanus toxoid (TT) 1 immunization provided\"" ]
+                              },
+                              "nil" : false,
+                              "typeSubstituted" : false,
+                              "globalScope" : true
+                            } ],
+                            "r" : "41"
+                          },
+                          "nil" : false,
+                          "typeSubstituted" : false,
+                          "globalScope" : true
+                        } ],
+                        "r" : "41"
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    }, {
+                      "name" : "{urn:hl7-org:cql-annotations:r1}s",
+                      "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+                      "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+                      "value" : {
+                        "s" : [ " is null" ]
+                      },
+                      "nil" : false,
+                      "typeSubstituted" : false,
+                      "globalScope" : true
+                    } ],
+                    "r" : "42"
+                  },
+                  "nil" : false,
+                  "typeSubstituted" : false,
+                  "globalScope" : true
+                } ],
+                "r" : "43"
+              },
+              "nil" : false,
+              "typeSubstituted" : false,
+              "globalScope" : true
+            } ],
+            "r" : "44"
+          }
+        } ],
+        "localId" : "44",
+        "locator" : "36:1-41:72",
+        "name" : "Should Provide tetanus toxoid immunizations – using the \"Tetanus toxoid-containing vaccine (TTCV) immunization – WITH PREVIOUS\" schedule (1 dose scheme)",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "annotation" : [ {
+      "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion"
+    }, {
+      "s" : {
+        "s" : [ {
+          "name" : "{urn:hl7-org:cql-annotations:r1}s",
+          "declaredType" : "org.hl7.cql_annotations.r1.Narrative",
+          "scope" : "javax.xml.bind.JAXBElement$GlobalScope",
+          "value" : {
+            "s" : [ "", "library ANCDT32" ]
+          },
+          "nil" : false,
+          "typeSubstituted" : false,
+          "globalScope" : true
+        } ],
+        "r" : "44"
+      }
+    } ]
+  }
+}

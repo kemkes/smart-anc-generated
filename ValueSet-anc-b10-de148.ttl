@@ -1,0 +1,210 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/ValueSet/anc-b10-de148> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "anc-b10-de148"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 15 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE148\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE148\">ANC.B10.DE148</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Etonogestrel (ETG) one-rod implant</td><td><div><p>Family planning method selected - Etonogestrel (ETG) one-rod implant</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE149\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE149\">ANC.B10.DE149</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Levonorgestrel (LNG) two-rod implant</td><td><div><p>Family planning method selected - Levonorgestrel (LNG) two-rod implant</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE150\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE150\">ANC.B10.DE150</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>DMPA-IM</td><td><div><p>Family planning method selected - DMPA-IM</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE151\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE151\">ANC.B10.DE151</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>DMPA-SC</td><td><div><p>Family planning method selected - DMPA-SC</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE152\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE152\">ANC.B10.DE152</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>NET-EN norethisterone enanthate</td><td><div><p>Family planning method selected - NET-EN norethisterone enanthate</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE153\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE153\">ANC.B10.DE153</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Progestogen-only pills (POP)</td><td><div><p>Family planning method selected - Progestogen-only pills (POP)</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE154\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE154\">ANC.B10.DE154</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Combined oral contraceptives (COCs)</td><td><div><p>Family planning method selected - Combined oral contraceptives (COCs)</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE155\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE155\">ANC.B10.DE155</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Combined contraceptive patch</td><td><div><p>Family planning method selected - Combined contraceptive patch</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE156\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE156\">ANC.B10.DE156</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Combined contraceptive vaginal ring (CVR)</td><td><div><p>Family planning method selected - Combined contraceptive vaginal ring (CVR)</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE157\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE157\">ANC.B10.DE157</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Progesterone-releasing vaginal ring (PVR)</td><td><div><p>Family planning method selected - Progesterone-releasing vaginal ring (PVR)</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE158\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE158\">ANC.B10.DE158</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Lactational amenorrhea method (LAM)</td><td><div><p>Family planning method selected - Lactational amenorrhea method (LAM)</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE159\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE159\">ANC.B10.DE159</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Male condoms</td><td><div><p>Family planning method selected - Male condoms</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE160\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE160\">ANC.B10.DE160</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Female condoms</td><td><div><p>Family planning method selected - Female condoms</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE161\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE161\">ANC.B10.DE161</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Male sterilization</td><td><div><p>Family planning method selected - Male sterilization</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B10.DE163\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE163\">ANC.B10.DE163</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>No method provided</td><td><div><p>Family planning method selected - No method provided</p>\n</div></td></tr></table></div>"
+  ]; # 
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel" ];
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ]; # 
+  fhir:ValueSet.url [ fhir:value "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b10-de148"]; # 
+  fhir:ValueSet.version [ fhir:value "0.3.0"]; # 
+  fhir:ValueSet.name [ fhir:value "FamilyplanningmethodselectedChoices"]; # 
+  fhir:ValueSet.title [ fhir:value "Family planning method selected Choices"]; # 
+  fhir:ValueSet.status [ fhir:value "draft"]; # 
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean]; # 
+  fhir:ValueSet.date [ fhir:value "2023-01-04T17:07:42+07:00"^^xsd:dateTime]; # 
+  fhir:ValueSet.publisher [ fhir:value "World Health Organization (WHO)"]; # 
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ]; # 
+  fhir:ValueSet.description [ fhir:value "Codes representing possible values for the Family planning method selected Choices element"]; # 
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ]; # 
+  fhir:ValueSet.immutable [ fhir:value "true"^^xsd:boolean]; # 
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE148" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Etonogestrel (ETG) one-rod implant" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE149" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Levonorgestrel (LNG) two-rod implant" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE150" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "DMPA-IM" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE151" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "DMPA-SC" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE152" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "NET-EN norethisterone enanthate" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE153" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Progestogen-only pills (POP)" ]
+       ], [
+         fhir:index 6;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE154" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Combined oral contraceptives (COCs)" ]
+       ], [
+         fhir:index 7;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE155" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Combined contraceptive patch" ]
+       ], [
+         fhir:index 8;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE156" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Combined contraceptive vaginal ring (CVR)" ]
+       ], [
+         fhir:index 9;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE157" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Progesterone-releasing vaginal ring (PVR)" ]
+       ], [
+         fhir:index 10;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE158" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Lactational amenorrhea method (LAM)" ]
+       ], [
+         fhir:index 11;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE159" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Male condoms" ]
+       ], [
+         fhir:index 12;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE160" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Female condoms" ]
+       ], [
+         fhir:index 13;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE161" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Male sterilization" ]
+       ], [
+         fhir:index 14;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B10.DE163" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "No method provided" ]
+       ]
+     ]
+  ]; # 
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2021-11-30T07:11:22-07:00"^^xsd:dateTime ];
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE148" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Etonogestrel (ETG) one-rod implant" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE149" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Levonorgestrel (LNG) two-rod implant" ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE150" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "DMPA-IM" ]
+     ], [
+       fhir:index 3;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE151" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "DMPA-SC" ]
+     ], [
+       fhir:index 4;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE152" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "NET-EN norethisterone enanthate" ]
+     ], [
+       fhir:index 5;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE153" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Progestogen-only pills (POP)" ]
+     ], [
+       fhir:index 6;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE154" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Combined oral contraceptives (COCs)" ]
+     ], [
+       fhir:index 7;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE155" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Combined contraceptive patch" ]
+     ], [
+       fhir:index 8;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE156" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Combined contraceptive vaginal ring (CVR)" ]
+     ], [
+       fhir:index 9;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE157" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Progesterone-releasing vaginal ring (PVR)" ]
+     ], [
+       fhir:index 10;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE158" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Lactational amenorrhea method (LAM)" ]
+     ], [
+       fhir:index 11;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE159" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Male condoms" ]
+     ], [
+       fhir:index 12;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE160" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Female condoms" ]
+     ], [
+       fhir:index 13;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE161" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Male sterilization" ]
+     ], [
+       fhir:index 14;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B10.DE163" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "No method provided" ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/ValueSet/anc-b10-de148.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

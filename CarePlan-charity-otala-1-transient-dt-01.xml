@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CarePlan xmlns="http://hl7.org/fhir">
+  <id value="charity-otala-1-transient-dt-01"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: CarePlan</b><a name="charity-otala-1-transient-dt-01"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource CarePlan &quot;charity-otala-1-transient-dt-01&quot; </p></div><p><b>instantiatesCanonical</b>: <a href="http://fhir.org/guides/who/anc-cds/PlanDefinition/DT01">http://fhir.org/guides/who/anc-cds/PlanDefinition/DT01</a></p><p><b>status</b>: active</p><p><b>intent</b>: plan</p><p><b>subject</b>: <a href="Patient-charity-otala-1.html">Patient/charity-otala-1: Charity Otala</a> &quot; OTALA&quot;</p></div>
+  </text>
+  <instantiatesCanonical value="http://fhir.org/guides/who/anc-cds/PlanDefinition/DT01"/>
+  <status value="active"/>
+  <intent value="plan"/>
+  <subject>
+    <reference value="Patient/charity-otala-1"/>
+    <display value="Charity Otala"/>
+  </subject>
+  <activity/>
+</CarePlan>

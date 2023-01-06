@@ -1,0 +1,1825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="306">
+         <a:s>library ANCDT06</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCDT06" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="7:1-7:31" localIdentifier="Config" path="http://fhir.org/guides/who/anc-cds/ANCConfig">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConfig</a:s>
+               </a:s>
+               <a:s> called Config</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="8:1-8:29" localIdentifier="Cx" path="http://fhir.org/guides/who/anc-cds/ANCConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConcepts</a:s>
+               </a:s>
+               <a:s> called Cx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="9:1-9:42" localIdentifier="PatientData" path="http://fhir.org/guides/who/anc-cds/ANCDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCDataElements</a:s>
+               </a:s>
+               <a:s> called PatientData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="10:1-10:49" localIdentifier="ContactData" path="http://fhir.org/guides/who/anc-cds/ANCContactDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCContactDataElements</a:s>
+               </a:s>
+               <a:s> called ContactData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <statements>
+      <def locator="12:1-12:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="12:1-12:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="16" locator="18:1-20:57" name="Should Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility " context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="16">
+               <a:s>/*
+(&quot;Body temperature&quot; ≥ 38°C)
+  AND (&quot;Second body temperature&quot; ≥ 38°C)
+*/
+define &quot;Should Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility &quot;:
+  </a:s>
+               <a:s r="15">
+                  <a:s r="10">
+                     <a:s r="8">
+                        <a:s r="7">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="8">
+                           <a:s>&quot;Body temperature&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> >= </a:s>
+                     <a:s r="9">
+                        <a:s>38 'Cel'</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    and </a:s>
+                  <a:s r="14">
+                     <a:s r="12">
+                        <a:s r="11">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="12">
+                           <a:s>&quot;Second body temperature&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> >= </a:s>
+                     <a:s r="13">
+                        <a:s>38 'Cel'</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="15" locator="19:3-20:57" xsi:type="And">
+            <operand localId="10" locator="19:3-19:44" xsi:type="GreaterOrEqual">
+               <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="8" locator="19:3-19:32" name="Body temperature" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand localId="9" locator="19:37-19:44" value="38" unit="Cel" xsi:type="Quantity"/>
+            </operand>
+            <operand localId="14" locator="20:9-20:57" xsi:type="GreaterOrEqual">
+               <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="12" locator="20:9-20:45" name="Second body temperature" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand localId="13" locator="20:50-20:57" value="38" unit="Cel" xsi:type="Quantity"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="26" locator="25:1-27:44" name="Should Refer to a hospital" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="26">
+               <a:s>/*
+60 bpm > &quot;Second pulse rate&quot; > 100 bpm
+*/
+define &quot;Should Refer to a hospital&quot;:
+  </a:s>
+               <a:s r="25">
+                  <a:s r="20">
+                     <a:s r="18">
+                        <a:s r="17">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="18">
+                           <a:s>&quot;Second pulse rate&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s r="19"> &lt; 60</a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="24">
+                     <a:s r="22">
+                        <a:s r="21">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="22">
+                           <a:s>&quot;Second pulse rate&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s r="23"> > 100</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="25" locator="26:3-27:44" xsi:type="Or">
+            <operand localId="20" locator="26:3-26:38" xsi:type="Less">
+               <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="18" locator="26:3-26:33" name="Second pulse rate" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand xsi:type="ToQuantity">
+                  <operand localId="19" locator="26:37-26:38" valueType="t:Integer" value="60" xsi:type="Literal"/>
+               </operand>
+            </operand>
+            <operand localId="24" locator="27:8-27:44" xsi:type="Greater">
+               <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="22" locator="27:8-27:38" name="Second pulse rate" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand xsi:type="ToQuantity">
+                  <operand localId="23" locator="27:42-27:44" valueType="t:Integer" value="100" xsi:type="Literal"/>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="68" locator="39:1-46:119" name="Should Refer urgently to a hospital" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="68">
+               <a:s>/*
+((((((&quot;Respiratory exam result&quot; = &quot;Dyspnoea&quot;)
+  OR (&quot;Respiratory exam result&quot; = &quot;Cough&quot;))
+  OR (&quot;Respiratory exam result&quot; = &quot;Rapid breathing&quot;))
+  OR (&quot;Respiratory exam result&quot; = &quot;Slow breathing&quot;))
+  OR (&quot;Respiratory exam result&quot; = &quot;Wheezing&quot;))
+  OR (&quot;Respiratory exam result&quot; = &quot;Rales&quot;))
+  OR (&quot;Respiratory exam result&quot; = &quot;Other abnormal respiratory exam result (specify)&quot;)
+*/
+define &quot;Should Refer urgently to a hospital&quot;:
+   </a:s>
+               <a:s r="67">
+                  <a:s r="61">
+                     <a:s r="55">
+                        <a:s r="49">
+                           <a:s r="43">
+                              <a:s r="37">
+                                 <a:s r="31">
+                                    <a:s r="28">
+                                       <a:s r="27">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="28">
+                                          <a:s>&quot;Respiratory exam result&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="30">
+                                       <a:s r="29">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="30">
+                                          <a:s>&quot;Respiratory exam result - Dyspnoea Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+     or </a:s>
+                                 <a:s r="36">
+                                    <a:s r="33">
+                                       <a:s r="32">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="33">
+                                          <a:s>&quot;Respiratory exam result&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="35">
+                                       <a:s r="34">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="35">
+                                          <a:s>&quot;Respiratory exam result - Cough Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+     or </a:s>
+                              <a:s r="42">
+                                 <a:s r="39">
+                                    <a:s r="38">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="39">
+                                       <a:s>&quot;Respiratory exam result&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="41">
+                                    <a:s r="40">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="41">
+                                       <a:s>&quot;Respiratory exam result - Rapid breathing Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+     or </a:s>
+                           <a:s r="48">
+                              <a:s r="45">
+                                 <a:s r="44">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="45">
+                                    <a:s>&quot;Respiratory exam result&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="47">
+                                 <a:s r="46">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="47">
+                                    <a:s>&quot;Respiratory exam result - Slow breathing Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+     or </a:s>
+                        <a:s r="54">
+                           <a:s r="51">
+                              <a:s r="50">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="51">
+                                 <a:s>&quot;Respiratory exam result&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="53">
+                              <a:s r="52">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="53">
+                                 <a:s>&quot;Respiratory exam result - Wheezing Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+     or </a:s>
+                     <a:s r="60">
+                        <a:s r="57">
+                           <a:s r="56">
+                              <a:s>ContactData</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="57">
+                              <a:s>&quot;Respiratory exam result&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="59">
+                           <a:s r="58">
+                              <a:s>Cx</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="59">
+                              <a:s>&quot;Respiratory exam result - Rales Choices&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+     or </a:s>
+                  <a:s r="66">
+                     <a:s r="63">
+                        <a:s r="62">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="63">
+                           <a:s>&quot;Respiratory exam result&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="65">
+                        <a:s r="64">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="65">
+                           <a:s>&quot;Respiratory exam result - Other abnormal result (specify) Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="67" locator="40:4-46:119" xsi:type="Or">
+            <operand localId="61" locator="40:4-45:93" xsi:type="Or">
+               <operand localId="55" locator="40:4-44:96" xsi:type="Or">
+                  <operand localId="49" locator="40:4-43:102" xsi:type="Or">
+                     <operand localId="43" locator="40:4-42:103" xsi:type="Or">
+                        <operand localId="37" locator="40:4-41:93" xsi:type="Or">
+                           <operand localId="31" locator="40:4-40:91" xsi:type="InValueSet">
+                              <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="28" locator="40:4-40:40" name="Respiratory exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </code>
+                              <valueset localId="30" locator="40:45-40:91" name="Respiratory exam result - Dyspnoea Choices" libraryName="Cx"/>
+                           </operand>
+                           <operand localId="36" locator="41:9-41:93" xsi:type="InValueSet">
+                              <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="33" locator="41:9-41:45" name="Respiratory exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </code>
+                              <valueset localId="35" locator="41:50-41:93" name="Respiratory exam result - Cough Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                        <operand localId="42" locator="42:9-42:103" xsi:type="InValueSet">
+                           <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="39" locator="42:9-42:45" name="Respiratory exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </code>
+                           <valueset localId="41" locator="42:50-42:103" name="Respiratory exam result - Rapid breathing Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                     <operand localId="48" locator="43:9-43:102" xsi:type="InValueSet">
+                        <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="45" locator="43:9-43:45" name="Respiratory exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </code>
+                        <valueset localId="47" locator="43:50-43:102" name="Respiratory exam result - Slow breathing Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="54" locator="44:9-44:96" xsi:type="InValueSet">
+                     <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="51" locator="44:9-44:45" name="Respiratory exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </code>
+                     <valueset localId="53" locator="44:50-44:96" name="Respiratory exam result - Wheezing Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+               <operand localId="60" locator="45:9-45:93" xsi:type="InValueSet">
+                  <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="57" locator="45:9-45:45" name="Respiratory exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </code>
+                  <valueset localId="59" locator="45:50-45:93" name="Respiratory exam result - Rales Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+            <operand localId="66" locator="46:9-46:119" xsi:type="InValueSet">
+               <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="63" locator="46:9-46:45" name="Respiratory exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </code>
+               <valueset localId="65" locator="46:50-46:119" name="Respiratory exam result - Other abnormal result (specify) Choices" libraryName="Cx"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="73" locator="51:1-52:33" name="Should Refer urgently to a hospital 2" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="73">
+               <a:s>/*
+&quot;Oximetry&quot; &lt; 92%
+*/
+define &quot;Should Refer urgently to a hospital 2&quot;:
+  </a:s>
+               <a:s r="72">
+                  <a:s r="70">
+                     <a:s r="69">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="70">
+                        <a:s>&quot;Oximetry&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> &lt; </a:s>
+                  <a:s r="71">
+                     <a:s>92 '%'</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="72" locator="52:3-52:33" xsi:type="Less">
+            <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="70" locator="52:3-52:24" name="Oximetry" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="71" locator="52:28-52:33" value="92" unit="%" xsi:type="Quantity"/>
+         </expression>
+      </def>
+      <def localId="121" locator="64:1-72:123" name="Should Refer urgently to a hospital 3" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="121">
+               <a:s>/*
+(((((((&quot;Cardiac exam result&quot; = &quot;Heart murmur&quot;)
+  OR (&quot;Cardiac exam result&quot; = &quot;Weak pulse&quot;))
+  OR (&quot;Cardiac exam result&quot; = &quot;Tachycardia&quot;))
+  OR (&quot;Cardiac exam result&quot; = &quot;Bradycardia&quot;))
+  OR (&quot;Cardiac exam result&quot; = &quot;Arrhythmia&quot;))
+  OR (&quot;Cardiac exam result&quot; = &quot;Cyanosis&quot;))
+  OR (&quot;Cardiac exam result&quot; = &quot;Cold sweats&quot;))
+  OR (&quot;Cardiac exam result&quot; = &quot;Other abnormal cardiac exam result (specify)&quot;)
+*/
+define &quot;Should Refer urgently to a hospital 3&quot;:
+  </a:s>
+               <a:s r="120">
+                  <a:s r="114">
+                     <a:s r="108">
+                        <a:s r="102">
+                           <a:s r="96">
+                              <a:s r="90">
+                                 <a:s r="84">
+                                    <a:s r="78">
+                                       <a:s r="75">
+                                          <a:s r="74">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="75">
+                                             <a:s>&quot;Cardiac exam result&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="77">
+                                          <a:s r="76">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="77">
+                                             <a:s>&quot;Cardiac exam result - Heart murmur Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+    or </a:s>
+                                    <a:s r="83">
+                                       <a:s r="80">
+                                          <a:s r="79">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="80">
+                                             <a:s>&quot;Cardiac exam result&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="82">
+                                          <a:s r="81">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="82">
+                                             <a:s>&quot;Cardiac exam result - Weak pulse Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+    or </a:s>
+                                 <a:s r="89">
+                                    <a:s r="86">
+                                       <a:s r="85">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="86">
+                                          <a:s>&quot;Cardiac exam result&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="88">
+                                       <a:s r="87">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="88">
+                                          <a:s>&quot;Cardiac exam result - Tachycardia Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+    or </a:s>
+                              <a:s r="95">
+                                 <a:s r="92">
+                                    <a:s r="91">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="92">
+                                       <a:s>&quot;Cardiac exam result&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="94">
+                                    <a:s r="93">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="94">
+                                       <a:s>&quot;Cardiac exam result - Bradycardia Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+    or </a:s>
+                           <a:s r="101">
+                              <a:s r="98">
+                                 <a:s r="97">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="98">
+                                    <a:s>&quot;Cardiac exam result&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="100">
+                                 <a:s r="99">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="100">
+                                    <a:s>&quot;Cardiac exam result - Arrhythmia Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    or </a:s>
+                        <a:s r="107">
+                           <a:s r="104">
+                              <a:s r="103">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="104">
+                                 <a:s>&quot;Cardiac exam result&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="106">
+                              <a:s r="105">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="106">
+                                 <a:s>&quot;Cardiac exam result - Peripheral cyanosis Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    or </a:s>
+                     <a:s r="113">
+                        <a:s r="110">
+                           <a:s r="109">
+                              <a:s>ContactData</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="110">
+                              <a:s>&quot;Cardiac exam result&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="112">
+                           <a:s r="111">
+                              <a:s>Cx</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="112">
+                              <a:s>&quot;Cardiac exam result - Cold sweats Choices&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="119">
+                     <a:s r="116">
+                        <a:s r="115">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="116">
+                           <a:s>&quot;Cardiac exam result&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="118">
+                        <a:s r="117">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="118">
+                           <a:s>&quot;Cardiac exam result - Other abnormal cardiac exam result (specify) Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="120" locator="65:3-72:123" xsi:type="Or">
+            <operand localId="114" locator="65:3-71:90" xsi:type="Or">
+               <operand localId="108" locator="65:3-70:98" xsi:type="Or">
+                  <operand localId="102" locator="65:3-69:89" xsi:type="Or">
+                     <operand localId="96" locator="65:3-68:90" xsi:type="Or">
+                        <operand localId="90" locator="65:3-67:90" xsi:type="Or">
+                           <operand localId="84" locator="65:3-66:89" xsi:type="Or">
+                              <operand localId="78" locator="65:3-65:86" xsi:type="InValueSet">
+                                 <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand localId="75" locator="65:3-65:35" name="Cardiac exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </code>
+                                 <valueset localId="77" locator="65:40-65:86" name="Cardiac exam result - Heart murmur Choices" libraryName="Cx"/>
+                              </operand>
+                              <operand localId="83" locator="66:8-66:89" xsi:type="InValueSet">
+                                 <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand localId="80" locator="66:8-66:40" name="Cardiac exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </code>
+                                 <valueset localId="82" locator="66:45-66:89" name="Cardiac exam result - Weak pulse Choices" libraryName="Cx"/>
+                              </operand>
+                           </operand>
+                           <operand localId="89" locator="67:8-67:90" xsi:type="InValueSet">
+                              <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="86" locator="67:8-67:40" name="Cardiac exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </code>
+                              <valueset localId="88" locator="67:45-67:90" name="Cardiac exam result - Tachycardia Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                        <operand localId="95" locator="68:8-68:90" xsi:type="InValueSet">
+                           <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="92" locator="68:8-68:40" name="Cardiac exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </code>
+                           <valueset localId="94" locator="68:45-68:90" name="Cardiac exam result - Bradycardia Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                     <operand localId="101" locator="69:8-69:89" xsi:type="InValueSet">
+                        <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="98" locator="69:8-69:40" name="Cardiac exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </code>
+                        <valueset localId="100" locator="69:45-69:89" name="Cardiac exam result - Arrhythmia Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="107" locator="70:8-70:98" xsi:type="InValueSet">
+                     <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="104" locator="70:8-70:40" name="Cardiac exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </code>
+                     <valueset localId="106" locator="70:45-70:98" name="Cardiac exam result - Peripheral cyanosis Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+               <operand localId="113" locator="71:8-71:90" xsi:type="InValueSet">
+                  <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="110" locator="71:8-71:40" name="Cardiac exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </code>
+                  <valueset localId="112" locator="71:45-71:90" name="Cardiac exam result - Cold sweats Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+            <operand localId="119" locator="72:8-72:123" xsi:type="InValueSet">
+               <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="116" locator="72:8-72:40" name="Cardiac exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </code>
+               <valueset localId="118" locator="72:45-72:123" name="Cardiac exam result - Other abnormal cardiac exam result (specify) Choices" libraryName="Cx"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="163" locator="83:1-90:111" name="Should Conduct further investigation and, if necessary, refer urgently to a hospital" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="163">
+               <a:s>/*
+((((((&quot;Breast exam result&quot; = &quot;Nodule&quot;)
+  OR (&quot;Breast exam result&quot; = &quot;Discharge&quot;))
+  OR (&quot;Breast exam result&quot; = &quot;Flushing&quot;))
+  OR (&quot;Breast exam result&quot; = &quot;Local pain&quot;))
+  OR (&quot;Breast exam result&quot; = &quot;Bleeding&quot;))
+  OR (&quot;Breast exam result&quot; = &quot;Increased temperature&quot;))
+  OR (&quot;Breast exam result&quot; = &quot;Other breast exam result (specify)&quot;)
+*/
+define &quot;Should Conduct further investigation and, if necessary, refer urgently to a hospital&quot;:
+  </a:s>
+               <a:s r="162">
+                  <a:s r="156">
+                     <a:s r="150">
+                        <a:s r="144">
+                           <a:s r="138">
+                              <a:s r="132">
+                                 <a:s r="126">
+                                    <a:s r="123">
+                                       <a:s r="122">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="123">
+                                          <a:s>&quot;Breast exam result&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="125">
+                                       <a:s r="124">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="125">
+                                          <a:s>&quot;Breast exam result - Nodule Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+    or </a:s>
+                                 <a:s r="131">
+                                    <a:s r="128">
+                                       <a:s r="127">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="128">
+                                          <a:s>&quot;Breast exam result&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="130">
+                                       <a:s r="129">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="130">
+                                          <a:s>&quot;Breast exam result - Discharge Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+    or </a:s>
+                              <a:s r="137">
+                                 <a:s r="134">
+                                    <a:s r="133">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="134">
+                                       <a:s>&quot;Breast exam result&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="136">
+                                    <a:s r="135">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="136">
+                                       <a:s>&quot;Breast exam result - Flushing Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+    or </a:s>
+                           <a:s r="143">
+                              <a:s r="140">
+                                 <a:s r="139">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="140">
+                                    <a:s>&quot;Breast exam result&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="142">
+                                 <a:s r="141">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="142">
+                                    <a:s>&quot;Breast exam result - Local pain Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    or </a:s>
+                        <a:s r="149">
+                           <a:s r="146">
+                              <a:s r="145">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="146">
+                                 <a:s>&quot;Breast exam result&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="148">
+                              <a:s r="147">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="148">
+                                 <a:s>&quot;Breast exam result - Bleeding Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    or </a:s>
+                     <a:s r="155">
+                        <a:s r="152">
+                           <a:s r="151">
+                              <a:s>ContactData</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="152">
+                              <a:s>&quot;Breast exam result&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="154">
+                           <a:s r="153">
+                              <a:s>Cx</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="154">
+                              <a:s>&quot;Breast exam result - Increased temperature Choices&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="161">
+                     <a:s r="158">
+                        <a:s r="157">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="158">
+                           <a:s>&quot;Breast exam result&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="160">
+                        <a:s r="159">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="160">
+                           <a:s>&quot;Breast exam result - Other breast exam result (specify) Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="162" locator="84:3-90:111" xsi:type="Or">
+            <operand localId="156" locator="84:3-89:98" xsi:type="Or">
+               <operand localId="150" locator="84:3-88:85" xsi:type="Or">
+                  <operand localId="144" locator="84:3-87:87" xsi:type="Or">
+                     <operand localId="138" locator="84:3-86:85" xsi:type="Or">
+                        <operand localId="132" locator="84:3-85:86" xsi:type="Or">
+                           <operand localId="126" locator="84:3-84:78" xsi:type="InValueSet">
+                              <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="123" locator="84:3-84:34" name="Breast exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </code>
+                              <valueset localId="125" locator="84:39-84:78" name="Breast exam result - Nodule Choices" libraryName="Cx"/>
+                           </operand>
+                           <operand localId="131" locator="85:8-85:86" xsi:type="InValueSet">
+                              <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="128" locator="85:8-85:39" name="Breast exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </code>
+                              <valueset localId="130" locator="85:44-85:86" name="Breast exam result - Discharge Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                        <operand localId="137" locator="86:8-86:85" xsi:type="InValueSet">
+                           <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="134" locator="86:8-86:39" name="Breast exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </code>
+                           <valueset localId="136" locator="86:44-86:85" name="Breast exam result - Flushing Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                     <operand localId="143" locator="87:8-87:87" xsi:type="InValueSet">
+                        <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="140" locator="87:8-87:39" name="Breast exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </code>
+                        <valueset localId="142" locator="87:44-87:87" name="Breast exam result - Local pain Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="149" locator="88:8-88:85" xsi:type="InValueSet">
+                     <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="146" locator="88:8-88:39" name="Breast exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </code>
+                     <valueset localId="148" locator="88:44-88:85" name="Breast exam result - Bleeding Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+               <operand localId="155" locator="89:8-89:98" xsi:type="InValueSet">
+                  <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="152" locator="89:8-89:39" name="Breast exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </code>
+                  <valueset localId="154" locator="89:44-89:98" name="Breast exam result - Increased temperature Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+            <operand localId="161" locator="90:8-90:111" xsi:type="InValueSet">
+               <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="158" locator="90:8-90:39" name="Breast exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </code>
+               <valueset localId="160" locator="90:44-90:111" name="Breast exam result - Other breast exam result (specify) Choices" libraryName="Cx"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="271" locator="112:1-130:147" name="Should Refer to a hospital 2" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="271">
+               <a:s>/*
+(((((((((((((((((&quot;Abdominal exam result&quot; = &quot;Mass/tumour&quot;)
+  OR (&quot;Abdominal exam result&quot; = &quot;Pain on superficial palpation&quot;))
+  OR (&quot;Abdominal exam result&quot; = &quot;Pain on deep palpation&quot;))
+  OR (&quot;Abdominal exam result&quot; = &quot;Painful decompression&quot;))
+  OR (&quot;Abdominal exam result&quot; = &quot;Other abnormal abdominal exam result (specify)&quot;))
+  OR (&quot;Pelvic exam result (visual)&quot; = &quot;Abnormal vaginal discharge&quot;))
+  OR (&quot;Pelvic exam result (visual)&quot; = &quot;Evidence of amniotic fluid&quot;))
+  OR (&quot;Pelvic exam result (visual)&quot; = &quot;Foul-smelling vaginal discharge&quot;))
+  OR (&quot;Pelvic exam result (visual)&quot; = &quot;Clusters of erythematous papules&quot;))
+  OR (&quot;Pelvic exam result (visual)&quot; = &quot;Vesicles&quot;))
+  OR (&quot;Pelvic exam result (visual)&quot; = &quot;Genital ulcer&quot;))
+  OR (&quot;Pelvic exam result (visual)&quot; = &quot;Genital pain&quot;))
+  OR (&quot;Pelvic exam result (visual)&quot; = &quot;Tender bilateral inguinal and femoral lymphadenopathy&quot;))
+  OR (&quot;Pelvic exam result (visual)&quot; = &quot;Cervical friability&quot;))
+  OR (&quot;Pelvic exam result (visual)&quot; = &quot;Mucopurulent cervicitis&quot;))
+  OR (&quot;Pelvic exam result (visual)&quot; = &quot;Tender unilateral lymphadenopathy&quot;))
+  OR (&quot;Pelvic exam result (visual)&quot; = &quot;Curd-like vaginal discharge&quot;))
+  OR (&quot;Pelvic exam result (visual)&quot; = &quot;Other abnormal pelvic exam (visual) result (specify)&quot;)
+*/
+define &quot;Should Refer to a hospital 2&quot;:
+  </a:s>
+               <a:s r="270">
+                  <a:s r="264">
+                     <a:s r="258">
+                        <a:s r="252">
+                           <a:s r="246">
+                              <a:s r="240">
+                                 <a:s r="234">
+                                    <a:s r="228">
+                                       <a:s r="222">
+                                          <a:s r="216">
+                                             <a:s r="210">
+                                                <a:s r="204">
+                                                   <a:s r="198">
+                                                      <a:s r="192">
+                                                         <a:s r="186">
+                                                            <a:s r="180">
+                                                               <a:s r="174">
+                                                                  <a:s r="168">
+                                                                     <a:s r="165">
+                                                                        <a:s r="164">
+                                                                           <a:s>ContactData</a:s>
+                                                                        </a:s>
+                                                                        <a:s>.</a:s>
+                                                                        <a:s r="165">
+                                                                           <a:s>&quot;Abdominal exam result&quot;</a:s>
+                                                                        </a:s>
+                                                                     </a:s>
+                                                                     <a:s> in </a:s>
+                                                                     <a:s r="167">
+                                                                        <a:s r="166">
+                                                                           <a:s>Cx</a:s>
+                                                                        </a:s>
+                                                                        <a:s>.</a:s>
+                                                                        <a:s r="167">
+                                                                           <a:s>&quot;Abdominal exam result - Mass/tumour Choices&quot;</a:s>
+                                                                        </a:s>
+                                                                     </a:s>
+                                                                  </a:s>
+                                                                  <a:s>
+    or </a:s>
+                                                                  <a:s r="173">
+                                                                     <a:s r="170">
+                                                                        <a:s r="169">
+                                                                           <a:s>ContactData</a:s>
+                                                                        </a:s>
+                                                                        <a:s>.</a:s>
+                                                                        <a:s r="170">
+                                                                           <a:s>&quot;Abdominal exam result&quot;</a:s>
+                                                                        </a:s>
+                                                                     </a:s>
+                                                                     <a:s> in </a:s>
+                                                                     <a:s r="172">
+                                                                        <a:s r="171">
+                                                                           <a:s>Cx</a:s>
+                                                                        </a:s>
+                                                                        <a:s>.</a:s>
+                                                                        <a:s r="172">
+                                                                           <a:s>&quot;Abdominal exam result - Pain on superficial palpation Choices&quot;</a:s>
+                                                                        </a:s>
+                                                                     </a:s>
+                                                                  </a:s>
+                                                               </a:s>
+                                                               <a:s>
+    or </a:s>
+                                                               <a:s r="179">
+                                                                  <a:s r="176">
+                                                                     <a:s r="175">
+                                                                        <a:s>ContactData</a:s>
+                                                                     </a:s>
+                                                                     <a:s>.</a:s>
+                                                                     <a:s r="176">
+                                                                        <a:s>&quot;Abdominal exam result&quot;</a:s>
+                                                                     </a:s>
+                                                                  </a:s>
+                                                                  <a:s> in </a:s>
+                                                                  <a:s r="178">
+                                                                     <a:s r="177">
+                                                                        <a:s>Cx</a:s>
+                                                                     </a:s>
+                                                                     <a:s>.</a:s>
+                                                                     <a:s r="178">
+                                                                        <a:s>&quot;Abdominal exam result - Pain on deep palpation Choices&quot;</a:s>
+                                                                     </a:s>
+                                                                  </a:s>
+                                                               </a:s>
+                                                            </a:s>
+                                                            <a:s>
+    or </a:s>
+                                                            <a:s r="185">
+                                                               <a:s r="182">
+                                                                  <a:s r="181">
+                                                                     <a:s>ContactData</a:s>
+                                                                  </a:s>
+                                                                  <a:s>.</a:s>
+                                                                  <a:s r="182">
+                                                                     <a:s>&quot;Abdominal exam result&quot;</a:s>
+                                                                  </a:s>
+                                                               </a:s>
+                                                               <a:s> in </a:s>
+                                                               <a:s r="184">
+                                                                  <a:s r="183">
+                                                                     <a:s>Cx</a:s>
+                                                                  </a:s>
+                                                                  <a:s>.</a:s>
+                                                                  <a:s r="184">
+                                                                     <a:s>&quot;Abdominal exam result - Painful decompression Choices&quot;</a:s>
+                                                                  </a:s>
+                                                               </a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                         <a:s>
+    or </a:s>
+                                                         <a:s r="191">
+                                                            <a:s r="188">
+                                                               <a:s r="187">
+                                                                  <a:s>ContactData</a:s>
+                                                               </a:s>
+                                                               <a:s>.</a:s>
+                                                               <a:s r="188">
+                                                                  <a:s>&quot;Abdominal exam result&quot;</a:s>
+                                                               </a:s>
+                                                            </a:s>
+                                                            <a:s> in </a:s>
+                                                            <a:s r="190">
+                                                               <a:s r="189">
+                                                                  <a:s>Cx</a:s>
+                                                               </a:s>
+                                                               <a:s>.</a:s>
+                                                               <a:s r="190">
+                                                                  <a:s>&quot;Abdominal exam result - Other abnormal abdominal exam result (specify) Choices&quot;</a:s>
+                                                               </a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                      <a:s>
+    or </a:s>
+                                                      <a:s r="197">
+                                                         <a:s r="194">
+                                                            <a:s r="193">
+                                                               <a:s>ContactData</a:s>
+                                                            </a:s>
+                                                            <a:s>.</a:s>
+                                                            <a:s r="194">
+                                                               <a:s>&quot;Pelvic exam result (visual)&quot;</a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                         <a:s> in </a:s>
+                                                         <a:s r="196">
+                                                            <a:s r="195">
+                                                               <a:s>Cx</a:s>
+                                                            </a:s>
+                                                            <a:s>.</a:s>
+                                                            <a:s r="196">
+                                                               <a:s>&quot;Pelvic exam result (visual) - Abnormal vaginal discharge Choices&quot;</a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s>
+    or </a:s>
+                                                   <a:s r="203">
+                                                      <a:s r="200">
+                                                         <a:s r="199">
+                                                            <a:s>ContactData</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="200">
+                                                            <a:s>&quot;Pelvic exam result (visual)&quot;</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                      <a:s> in </a:s>
+                                                      <a:s r="202">
+                                                         <a:s r="201">
+                                                            <a:s>Cx</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="202">
+                                                            <a:s>&quot;Pelvic exam result (visual) - Evidence of amniotic fluid Choices&quot;</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s>
+    or </a:s>
+                                                <a:s r="209">
+                                                   <a:s r="206">
+                                                      <a:s r="205">
+                                                         <a:s>ContactData</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="206">
+                                                         <a:s>&quot;Pelvic exam result (visual)&quot;</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s> in </a:s>
+                                                   <a:s r="208">
+                                                      <a:s r="207">
+                                                         <a:s>Cx</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="208">
+                                                         <a:s>&quot;Pelvic exam result (visual) - Abnormal vaginal discharge Choices&quot;</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>
+    or </a:s>
+                                             <a:s r="215">
+                                                <a:s r="212">
+                                                   <a:s r="211">
+                                                      <a:s>ContactData</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="212">
+                                                      <a:s>&quot;Pelvic exam result (visual)&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s> in </a:s>
+                                                <a:s r="214">
+                                                   <a:s r="213">
+                                                      <a:s>Cx</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="214">
+                                                      <a:s>&quot;Pelvic exam result (visual) - Clusters of erythematous papules Choices&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>
+    or </a:s>
+                                          <a:s r="221">
+                                             <a:s r="218">
+                                                <a:s r="217">
+                                                   <a:s>ContactData</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="218">
+                                                   <a:s>&quot;Pelvic exam result (visual)&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s> in </a:s>
+                                             <a:s r="220">
+                                                <a:s r="219">
+                                                   <a:s>Cx</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="220">
+                                                   <a:s>&quot;Pelvic exam result (visual) - Vesicles Choices&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>
+    or </a:s>
+                                       <a:s r="227">
+                                          <a:s r="224">
+                                             <a:s r="223">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="224">
+                                                <a:s>&quot;Pelvic exam result (visual)&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="226">
+                                             <a:s r="225">
+                                                <a:s>Cx</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="226">
+                                                <a:s>&quot;Pelvic exam result (visual) - Genital ulcer Choices&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+    or </a:s>
+                                    <a:s r="233">
+                                       <a:s r="230">
+                                          <a:s r="229">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="230">
+                                             <a:s>&quot;Pelvic exam result (visual)&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="232">
+                                          <a:s r="231">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="232">
+                                             <a:s>&quot;Pelvic exam result (visual) - Genital pain Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+    or </a:s>
+                                 <a:s r="239">
+                                    <a:s r="236">
+                                       <a:s r="235">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="236">
+                                          <a:s>&quot;Pelvic exam result (visual)&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="238">
+                                       <a:s r="237">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="238">
+                                          <a:s>&quot;Pelvic exam result (visual) - Lymphadenopathy (pelvic - unilateral or bilateral) Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+    or </a:s>
+                              <a:s r="245">
+                                 <a:s r="242">
+                                    <a:s r="241">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="242">
+                                       <a:s>&quot;Pelvic exam result (visual)&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="244">
+                                    <a:s r="243">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="244">
+                                       <a:s>&quot;Pelvic exam result (visual) - Cervical friability Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+    or </a:s>
+                           <a:s r="251">
+                              <a:s r="248">
+                                 <a:s r="247">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="248">
+                                    <a:s>&quot;Pelvic exam result (visual)&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="250">
+                                 <a:s r="249">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="250">
+                                    <a:s>&quot;Pelvic exam result (visual) - Mucopurulent cervicitis Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    or </a:s>
+                        <a:s r="257">
+                           <a:s r="254">
+                              <a:s r="253">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="254">
+                                 <a:s>&quot;Pelvic exam result (visual)&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="256">
+                              <a:s r="255">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="256">
+                                 <a:s>&quot;Pelvic exam result (visual) - Lymphadenopathy (pelvic - unilateral or bilateral) Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    or </a:s>
+                     <a:s r="263">
+                        <a:s r="260">
+                           <a:s r="259">
+                              <a:s>ContactData</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="260">
+                              <a:s>&quot;Pelvic exam result (visual)&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="262">
+                           <a:s r="261">
+                              <a:s>Cx</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="262">
+                              <a:s>&quot;Pelvic exam result (visual) - Abnormal vaginal discharge Choices&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="269">
+                     <a:s r="266">
+                        <a:s r="265">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="266">
+                           <a:s>&quot;Pelvic exam result (visual)&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="268">
+                        <a:s r="267">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="268">
+                           <a:s>&quot;Pelvic exam result (visual) - Other abnormal pelvic exam (visual) result (specify) Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="270" locator="113:3-130:147" xsi:type="Or">
+            <operand localId="264" locator="113:3-129:121" xsi:type="Or">
+               <operand localId="258" locator="113:3-128:145" xsi:type="Or">
+                  <operand localId="252" locator="113:3-127:118" xsi:type="Or">
+                     <operand localId="246" locator="113:3-126:114" xsi:type="Or">
+                        <operand localId="240" locator="113:3-125:145" xsi:type="Or">
+                           <operand localId="234" locator="113:3-124:107" xsi:type="Or">
+                              <operand localId="228" locator="113:3-123:108" xsi:type="Or">
+                                 <operand localId="222" locator="113:3-122:103" xsi:type="Or">
+                                    <operand localId="216" locator="113:3-121:127" xsi:type="Or">
+                                       <operand localId="210" locator="113:3-120:121" xsi:type="Or">
+                                          <operand localId="204" locator="113:3-119:121" xsi:type="Or">
+                                             <operand localId="198" locator="113:3-118:121" xsi:type="Or">
+                                                <operand localId="192" locator="113:3-117:129" xsi:type="Or">
+                                                   <operand localId="186" locator="113:3-116:104" xsi:type="Or">
+                                                      <operand localId="180" locator="113:3-115:105" xsi:type="Or">
+                                                         <operand localId="174" locator="113:3-114:112" xsi:type="Or">
+                                                            <operand localId="168" locator="113:3-113:89" xsi:type="InValueSet">
+                                                               <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                                  <operand localId="165" locator="113:3-113:37" name="Abdominal exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                               </code>
+                                                               <valueset localId="167" locator="113:42-113:89" name="Abdominal exam result - Mass/tumour Choices" libraryName="Cx"/>
+                                                            </operand>
+                                                            <operand localId="173" locator="114:8-114:112" xsi:type="InValueSet">
+                                                               <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                                  <operand localId="170" locator="114:8-114:42" name="Abdominal exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                               </code>
+                                                               <valueset localId="172" locator="114:47-114:112" name="Abdominal exam result - Pain on superficial palpation Choices" libraryName="Cx"/>
+                                                            </operand>
+                                                         </operand>
+                                                         <operand localId="179" locator="115:8-115:105" xsi:type="InValueSet">
+                                                            <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                               <operand localId="176" locator="115:8-115:42" name="Abdominal exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                            </code>
+                                                            <valueset localId="178" locator="115:47-115:105" name="Abdominal exam result - Pain on deep palpation Choices" libraryName="Cx"/>
+                                                         </operand>
+                                                      </operand>
+                                                      <operand localId="185" locator="116:8-116:104" xsi:type="InValueSet">
+                                                         <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                            <operand localId="182" locator="116:8-116:42" name="Abdominal exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                         </code>
+                                                         <valueset localId="184" locator="116:47-116:104" name="Abdominal exam result - Painful decompression Choices" libraryName="Cx"/>
+                                                      </operand>
+                                                   </operand>
+                                                   <operand localId="191" locator="117:8-117:129" xsi:type="InValueSet">
+                                                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                         <operand localId="188" locator="117:8-117:42" name="Abdominal exam result" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                      </code>
+                                                      <valueset localId="190" locator="117:47-117:129" name="Abdominal exam result - Other abnormal abdominal exam result (specify) Choices" libraryName="Cx"/>
+                                                   </operand>
+                                                </operand>
+                                                <operand localId="197" locator="118:8-118:121" xsi:type="InValueSet">
+                                                   <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                      <operand localId="194" locator="118:8-118:48" name="Pelvic exam result (visual)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                   </code>
+                                                   <valueset localId="196" locator="118:53-118:121" name="Pelvic exam result (visual) - Abnormal vaginal discharge Choices" libraryName="Cx"/>
+                                                </operand>
+                                             </operand>
+                                             <operand localId="203" locator="119:8-119:121" xsi:type="InValueSet">
+                                                <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                   <operand localId="200" locator="119:8-119:48" name="Pelvic exam result (visual)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                </code>
+                                                <valueset localId="202" locator="119:53-119:121" name="Pelvic exam result (visual) - Evidence of amniotic fluid Choices" libraryName="Cx"/>
+                                             </operand>
+                                          </operand>
+                                          <operand localId="209" locator="120:8-120:121" xsi:type="InValueSet">
+                                             <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                <operand localId="206" locator="120:8-120:48" name="Pelvic exam result (visual)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                             </code>
+                                             <valueset localId="208" locator="120:53-120:121" name="Pelvic exam result (visual) - Abnormal vaginal discharge Choices" libraryName="Cx"/>
+                                          </operand>
+                                       </operand>
+                                       <operand localId="215" locator="121:8-121:127" xsi:type="InValueSet">
+                                          <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                             <operand localId="212" locator="121:8-121:48" name="Pelvic exam result (visual)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                          </code>
+                                          <valueset localId="214" locator="121:53-121:127" name="Pelvic exam result (visual) - Clusters of erythematous papules Choices" libraryName="Cx"/>
+                                       </operand>
+                                    </operand>
+                                    <operand localId="221" locator="122:8-122:103" xsi:type="InValueSet">
+                                       <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                          <operand localId="218" locator="122:8-122:48" name="Pelvic exam result (visual)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                       </code>
+                                       <valueset localId="220" locator="122:53-122:103" name="Pelvic exam result (visual) - Vesicles Choices" libraryName="Cx"/>
+                                    </operand>
+                                 </operand>
+                                 <operand localId="227" locator="123:8-123:108" xsi:type="InValueSet">
+                                    <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand localId="224" locator="123:8-123:48" name="Pelvic exam result (visual)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                    </code>
+                                    <valueset localId="226" locator="123:53-123:108" name="Pelvic exam result (visual) - Genital ulcer Choices" libraryName="Cx"/>
+                                 </operand>
+                              </operand>
+                              <operand localId="233" locator="124:8-124:107" xsi:type="InValueSet">
+                                 <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand localId="230" locator="124:8-124:48" name="Pelvic exam result (visual)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </code>
+                                 <valueset localId="232" locator="124:53-124:107" name="Pelvic exam result (visual) - Genital pain Choices" libraryName="Cx"/>
+                              </operand>
+                           </operand>
+                           <operand localId="239" locator="125:8-125:145" xsi:type="InValueSet">
+                              <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand localId="236" locator="125:8-125:48" name="Pelvic exam result (visual)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </code>
+                              <valueset localId="238" locator="125:53-125:145" name="Pelvic exam result (visual) - Lymphadenopathy (pelvic - unilateral or bilateral) Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                        <operand localId="245" locator="126:8-126:114" xsi:type="InValueSet">
+                           <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand localId="242" locator="126:8-126:48" name="Pelvic exam result (visual)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </code>
+                           <valueset localId="244" locator="126:53-126:114" name="Pelvic exam result (visual) - Cervical friability Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                     <operand localId="251" locator="127:8-127:118" xsi:type="InValueSet">
+                        <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand localId="248" locator="127:8-127:48" name="Pelvic exam result (visual)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </code>
+                        <valueset localId="250" locator="127:53-127:118" name="Pelvic exam result (visual) - Mucopurulent cervicitis Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="257" locator="128:8-128:145" xsi:type="InValueSet">
+                     <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="254" locator="128:8-128:48" name="Pelvic exam result (visual)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </code>
+                     <valueset localId="256" locator="128:53-128:145" name="Pelvic exam result (visual) - Lymphadenopathy (pelvic - unilateral or bilateral) Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+               <operand localId="263" locator="129:8-129:121" xsi:type="InValueSet">
+                  <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="260" locator="129:8-129:48" name="Pelvic exam result (visual)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </code>
+                  <valueset localId="262" locator="129:53-129:121" name="Pelvic exam result (visual) - Abnormal vaginal discharge Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+            <operand localId="269" locator="130:8-130:147" xsi:type="InValueSet">
+               <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="266" locator="130:8-130:48" name="Pelvic exam result (visual)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </code>
+               <valueset localId="268" locator="130:53-130:147" name="Pelvic exam result (visual) - Other abnormal pelvic exam (visual) result (specify) Choices" libraryName="Cx"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="282" locator="136:1-138:50" name="Should Refer urgently to a hospital 4" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="282">
+               <a:s>/*
+(&quot;Pelvic exam result (visual)&quot; = &quot;Evidence of amniotic fluid&quot;)
+  AND (&quot;Gestational age&quot; &lt; 37 weeks)
+*/
+define &quot;Should Refer urgently to a hospital 4&quot;:
+  </a:s>
+               <a:s r="281">
+                  <a:s r="276">
+                     <a:s r="273">
+                        <a:s r="272">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="273">
+                           <a:s>&quot;Pelvic exam result (visual)&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="275">
+                        <a:s r="274">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="275">
+                           <a:s>&quot;Pelvic exam result (visual) - Evidence of amniotic fluid Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    and </a:s>
+                  <a:s r="280">
+                     <a:s r="278">
+                        <a:s r="277">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="278">
+                           <a:s>&quot;Gestational age&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> &lt; </a:s>
+                     <a:s r="279">
+                        <a:s>37 'weeks'</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="281" locator="137:3-138:50" xsi:type="And">
+            <operand localId="276" locator="137:3-137:116" xsi:type="InValueSet">
+               <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="273" locator="137:3-137:43" name="Pelvic exam result (visual)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </code>
+               <valueset localId="275" locator="137:48-137:116" name="Pelvic exam result (visual) - Evidence of amniotic fluid Choices" libraryName="Cx"/>
+            </operand>
+            <operand localId="280" locator="138:9-138:50" xsi:type="Less">
+               <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="278" locator="138:9-138:37" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand localId="279" locator="138:41-138:50" value="37" unit="weeks" xsi:type="Quantity"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="291" locator="145:1-147:51" name="Should Refer to a hospital 3" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="291">
+               <a:s>/*
+(&quot;Fetal heartbeat present&quot; = FALSE)
+  AND (&quot;Gestational age&quot; ≥ 20 weeks)
+*/
+define &quot;Should Refer to a hospital 3&quot;:
+  </a:s>
+               <a:s r="290">
+                  <a:s r="285">
+                     <a:s r="284">
+                        <a:s r="283">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="284">
+                           <a:s>&quot;Fetal heartbeat present&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> is false</a:s>
+                  </a:s>
+                  <a:s>
+    and </a:s>
+                  <a:s r="289">
+                     <a:s r="287">
+                        <a:s r="286">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="287">
+                           <a:s>&quot;Gestational age&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> >= </a:s>
+                     <a:s r="288">
+                        <a:s>20 'weeks'</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="290" locator="146:3-147:51" xsi:type="And">
+            <operand localId="285" locator="146:3-146:48" xsi:type="IsFalse">
+               <operand name="ToBoolean" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="284" locator="146:3-146:39" name="Fetal heartbeat present" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+            <operand localId="289" locator="147:9-147:51" xsi:type="GreaterOrEqual">
+               <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="287" locator="147:9-147:37" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand localId="288" locator="147:42-147:51" value="20" unit="weeks" xsi:type="Quantity"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="306" locator="153:1-156:51" name="Should Refer to a hospital 4" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="306">
+               <a:s>/*
+(100 bpm > &quot;Second fetal heart rate&quot; > 180 bpm)
+  AND (&quot;Gestational age&quot; ≥ 20 weeks)
+*/
+define &quot;Should Refer to a hospital 4&quot;:
+  </a:s>
+               <a:s r="305">
+                  <a:s r="300">
+                     <a:s>(</a:s>
+                     <a:s r="300">
+                        <a:s r="295">
+                           <a:s r="293">
+                              <a:s r="292">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="293">
+                                 <a:s>&quot;Second fetal heart rate&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s r="294"> &lt; 100</a:s>
+                        </a:s>
+                        <a:s>
+    or </a:s>
+                        <a:s r="299">
+                           <a:s r="297">
+                              <a:s r="296">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="297">
+                                 <a:s>&quot;Second fetal heart rate&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s r="298"> > 180</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+                  <a:s>
+    and </a:s>
+                  <a:s r="304">
+                     <a:s r="302">
+                        <a:s r="301">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="302">
+                           <a:s>&quot;Gestational age&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> >= </a:s>
+                     <a:s r="303">
+                        <a:s>20 'weeks'</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="305" locator="154:3-156:51" xsi:type="And">
+            <operand localId="300" locator="154:3-155:51" xsi:type="Or">
+               <operand localId="295" locator="154:4-154:46" xsi:type="Less">
+                  <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="293" locator="154:4-154:40" name="Second fetal heart rate" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </operand>
+                  <operand xsi:type="ToQuantity">
+                     <operand localId="294" locator="154:44-154:46" valueType="t:Integer" value="100" xsi:type="Literal"/>
+                  </operand>
+               </operand>
+               <operand localId="299" locator="155:8-155:50" xsi:type="Greater">
+                  <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="297" locator="155:8-155:44" name="Second fetal heart rate" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </operand>
+                  <operand xsi:type="ToQuantity">
+                     <operand localId="298" locator="155:48-155:50" valueType="t:Integer" value="180" xsi:type="Literal"/>
+                  </operand>
+               </operand>
+            </operand>
+            <operand localId="304" locator="156:9-156:51" xsi:type="GreaterOrEqual">
+               <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="302" locator="156:9-156:37" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand localId="303" locator="156:42-156:51" value="20" unit="weeks" xsi:type="Quantity"/>
+            </operand>
+         </expression>
+      </def>
+   </statements>
+</library>

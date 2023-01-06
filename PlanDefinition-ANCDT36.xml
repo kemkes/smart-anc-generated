@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="ANCDT36"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">ANCDT36</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT36">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT36</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.3.0</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Identifier: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                <p style="margin-bottom: 5px;">
+                    <b>value: </b> <span>ANC.DT.36</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">ANCDT36</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">ANC.DT.36 Intimate partner violence (IPV) clinical inquiry</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">active</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">false</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/CodeSystem/plan-definition-type">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2021-06-11 23:49:11-0600</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">World Health Organization (WHO)</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;">You may suspect that a woman has been subjected to intimiate partner violence if she has any of the following risk factors</td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Use Context: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>
+                    
+                      <tr>
+                        <td>task</td>
+                        <td>ANC.B10.8.</td>
+                        <td>Intimate partner violence counselling</td>
+                      </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">001</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        <tr>
+          <th scope="row"><b>Libraries: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              
+                <tr><td><a href="http://fhir.org/guides/who/anc-cds/Library/ANCDT36">http://fhir.org/guides/who/anc-cds/Library/ANCDT36</a></td></tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+
+        
+        <tr>
+          <th scope="row"><b>Actions: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              
+                <tr>
+                  <td>
+                    <b> ANC.DT.36 Intimate partner violence (IPV) clinical inquiry:</b> <br/>
+                    <b>When:</b> <i>named-event:</i> ANC.B10.8. Intimate partner violence counselling<br/>
+                    
+                    
+                      <b>Then:</b>
+                      <table class="grid-dict">
+                        
+                          <tr>
+                            <td>
+                              Cultures and communities have ways of referring to the problem with other words. It is important to use the words that women themselves use.<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> (Minimum requirements for IPV assessment = TRUE
+)
+  AND (Woman discloses or is suspected to be subjected to intimate partner violence = TRUE) <i>(Should Conduct clinical enquiry)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.
+
+Never raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.
+
+If you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> (Minimum requirements for IPV assessment = TRUE)
+  AND (&amp;quot;Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry&amp;quot; = &amp;quot;Ongoing stress&amp;quot;) <i>(Should Conduct clinical enquiry and provide first-line support and care if IPV confirmed)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                      </table>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+    </table>
+</div>
+  </text>
+  <url value="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT36"/>
+  <identifier>
+    <use value="official"/>
+    <value value="ANC.DT.36"/>
+  </identifier>
+  <version value="0.3.0"/>
+  <name value="ANCDT36"/>
+  <title value="ANC.DT.36 Intimate partner violence (IPV) clinical inquiry"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2021-06-11T23:49:11-06:00"/>
+  <publisher value="World Health Organization (WHO)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.who.int"/>
+    </telecom>
+  </contact>
+  <description value="You may suspect that a woman has been subjected to intimiate partner violence if she has any of the following risk factors"/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="task"/>
+      <display value="Workflow Task"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes"/>
+        <code value="ANC.B10.8."/>
+        <display value="Intimate partner violence counselling"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <library value="http://fhir.org/guides/who/anc-cds/Library/ANCDT36"/>
+  <action>
+    <title value="ANC.DT.36 Intimate partner violence (IPV) clinical inquiry"/>
+    <trigger>
+      <type value="named-event"/>
+      <name value="ANC.B10.8. Intimate partner violence counselling"/>
+    </trigger>
+    <action id="1">
+      <title value="Conduct clinical enquiry"/>
+      <description value="Conduct clinical enquiry"/>
+      <textEquivalent value="Cultures and communities have ways of referring to the problem with other words. It is important to use the words that women themselves use."/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B1.3 (2) &#xA;&#xA;IPV handbook (2014) (12)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="(Minimum requirements for IPV assessment = TRUE&#xA;)&#xA;  AND (Woman discloses or is suspected to be subjected to intimate partner violence = TRUE)"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct clinical enquiry"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="2">
+      <title value="Conduct clinical enquiry and provide first-line support and care if IPV confirmed"/>
+      <description value="Conduct clinical enquiry and provide first-line support and care if IPV confirmed"/>
+      <textEquivalent value="WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.&#xA;&#xA;Never raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.&#xA;&#xA;If you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="IPV handbook (2014) (15)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="(Minimum requirements for IPV assessment = TRUE)&#xA;  AND (&quot;Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry&quot; = &quot;Ongoing stress&quot;)"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct clinical enquiry and provide first-line support and care if IPV confirmed"/>
+        </expression>
+      </condition>
+    </action>
+  </action>
+</PlanDefinition>

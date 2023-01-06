@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="103">
+         <a:s>library ANCDT34</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCDT34" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="7:1-7:31" localIdentifier="Config" path="http://fhir.org/guides/who/anc-cds/ANCConfig">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConfig</a:s>
+               </a:s>
+               <a:s> called Config</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="8:1-8:29" localIdentifier="Cx" path="http://fhir.org/guides/who/anc-cds/ANCConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConcepts</a:s>
+               </a:s>
+               <a:s> called Cx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="9:1-9:42" localIdentifier="PatientData" path="http://fhir.org/guides/who/anc-cds/ANCDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCDataElements</a:s>
+               </a:s>
+               <a:s> called PatientData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="10:1-10:49" localIdentifier="ContactData" path="http://fhir.org/guides/who/anc-cds/ANCContactDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCContactDataElements</a:s>
+               </a:s>
+               <a:s> called ContactData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <statements>
+      <def locator="12:1-12:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="12:1-12:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="97" locator="32:1-48:73" name="Should Conduct counselling on birth preparedness and complications readiness" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="97">
+               <a:s>/*
+(((((((((((((((Age&quot; ≤ 17 years)
+  OR (&quot;Fetal presentation&quot; = &quot;Transverse fetal presentation&quot;))
+  OR (&quot;Fetal presentation&quot; = &quot;Other fetal presentation (specify)&quot;))
+  OR (Number of caesarian sections&quot; > 0))
+  OR (&quot;Number of fetuses&quot; > 1))
+  OR (&quot;Family planning method provided&quot; = &quot;Copper-bearing intrauterine device (Cu-IUD)&quot;))
+  OR (&quot;Family planning method provided&quot; = &quot;Levonorgestrel intrauterine device (LNG-IUD)&quot;))
+  OR (&quot;Family planning method provided&quot; = &quot;Female sterilization&quot;))
+  OR (&quot;Past pregnancy complications&quot; = &quot;Convulsions&quot;))
+  OR (&quot;Past pregnancy complications&quot; = &quot;Heavy bleeding (during or after delivery)&quot;))
+  OR (&quot;Past pregnancy complications&quot; = &quot;Forceps or vacuum delivery&quot;))
+  OR (&quot;Past pregnancy complications&quot; = &quot;3rd or 4th degree tear&quot;))
+  OR (&quot;Current physiological symptoms&quot; = &quot;Vaginal bleeding&quot;))
+  OR (&quot;Number of pregnancies (gravida)&quot; = 1))
+  OR (&quot;Parity&quot; > 5))
+  OR (&quot;HIV status&quot; = &quot;HIV positive&quot;)
+*/
+define &quot;Should Conduct counselling on birth preparedness and complications readiness&quot;:
+  </a:s>
+               <a:s r="96">
+                  <a:s r="90">
+                     <a:s r="85">
+                        <a:s r="80">
+                           <a:s r="74">
+                              <a:s r="68">
+                                 <a:s r="62">
+                                    <a:s r="56">
+                                       <a:s r="50">
+                                          <a:s r="44">
+                                             <a:s r="38">
+                                                <a:s r="32">
+                                                   <a:s r="27">
+                                                      <a:s r="22">
+                                                         <a:s r="16">
+                                                            <a:s r="10">
+                                                               <a:s>(</a:s>
+                                                               <a:s r="10">
+                                                                  <a:s r="8">
+                                                                     <a:s>AgeInYearsAt(</a:s>
+                                                                     <a:s r="7">
+                                                                        <a:s>Today()</a:s>
+                                                                     </a:s>
+                                                                     <a:s>)</a:s>
+                                                                  </a:s>
+                                                                  <a:s r="9"> &lt;= 17</a:s>
+                                                               </a:s>
+                                                               <a:s>)</a:s>
+                                                            </a:s>
+                                                            <a:s>
+    or </a:s>
+                                                            <a:s r="15">
+                                                               <a:s r="12">
+                                                                  <a:s r="11">
+                                                                     <a:s>ContactData</a:s>
+                                                                  </a:s>
+                                                                  <a:s>.</a:s>
+                                                                  <a:s r="12">
+                                                                     <a:s>&quot;Fetal presentation&quot;</a:s>
+                                                                  </a:s>
+                                                               </a:s>
+                                                               <a:s> in </a:s>
+                                                               <a:s r="14">
+                                                                  <a:s r="13">
+                                                                     <a:s>Cx</a:s>
+                                                                  </a:s>
+                                                                  <a:s>.</a:s>
+                                                                  <a:s r="14">
+                                                                     <a:s>&quot;Fetal presentation - Transverse fetal presentation Choices&quot;</a:s>
+                                                                  </a:s>
+                                                               </a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                         <a:s>
+    or </a:s>
+                                                         <a:s r="21">
+                                                            <a:s r="18">
+                                                               <a:s r="17">
+                                                                  <a:s>ContactData</a:s>
+                                                               </a:s>
+                                                               <a:s>.</a:s>
+                                                               <a:s r="18">
+                                                                  <a:s>&quot;Fetal presentation&quot;</a:s>
+                                                               </a:s>
+                                                            </a:s>
+                                                            <a:s> in </a:s>
+                                                            <a:s r="20">
+                                                               <a:s r="19">
+                                                                  <a:s>Cx</a:s>
+                                                               </a:s>
+                                                               <a:s>.</a:s>
+                                                               <a:s r="20">
+                                                                  <a:s>&quot;Fetal presentation - Other fetal presentation (specify) Choices&quot;</a:s>
+                                                               </a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                      <a:s>
+    or </a:s>
+                                                      <a:s r="26">
+                                                         <a:s r="24">
+                                                            <a:s r="23">
+                                                               <a:s>ContactData</a:s>
+                                                            </a:s>
+                                                            <a:s>.</a:s>
+                                                            <a:s r="24">
+                                                               <a:s>&quot;Number of caesarian sections&quot;</a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                         <a:s r="25"> > 0</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s>
+    or </a:s>
+                                                   <a:s r="31">
+                                                      <a:s r="29">
+                                                         <a:s r="28">
+                                                            <a:s>ContactData</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="29">
+                                                            <a:s>&quot;Number of fetuses&quot;</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                      <a:s r="30"> > 1</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s>
+    or </a:s>
+                                                <a:s r="37">
+                                                   <a:s>(</a:s>
+                                                   <a:s r="37">
+                                                      <a:s r="34">
+                                                         <a:s r="33">
+                                                            <a:s>ContactData</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="34">
+                                                            <a:s>&quot;Family planning method selected&quot;</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                      <a:s> in </a:s>
+                                                      <a:s r="36">
+                                                         <a:s r="35">
+                                                            <a:s>Cx</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="36">
+                                                            <a:s>&quot;Family planning method selected - Copper-bearing intrauterine device (Cu-IUD) Choices&quot;</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s>)</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>
+    or </a:s>
+                                             <a:s r="43">
+                                                <a:s>(</a:s>
+                                                <a:s r="43">
+                                                   <a:s r="40">
+                                                      <a:s r="39">
+                                                         <a:s>ContactData</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="40">
+                                                         <a:s>&quot;Family planning method selected&quot;</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s> in </a:s>
+                                                   <a:s r="42">
+                                                      <a:s r="41">
+                                                         <a:s>Cx</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="42">
+                                                         <a:s>&quot;Family planning method selected - Levonorgestrel intrauterine device (LNG-IUD) Choices&quot;</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s>)</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>
+    or </a:s>
+                                          <a:s r="49">
+                                             <a:s>(</a:s>
+                                             <a:s r="49">
+                                                <a:s r="46">
+                                                   <a:s r="45">
+                                                      <a:s>ContactData</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="46">
+                                                      <a:s>&quot;Family planning method selected&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s> in </a:s>
+                                                <a:s r="48">
+                                                   <a:s r="47">
+                                                      <a:s>Cx</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="48">
+                                                      <a:s>&quot;Family planning method selected - Female sterilization Choices&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>)</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>
+    or </a:s>
+                                       <a:s r="55">
+                                          <a:s>(</a:s>
+                                          <a:s r="55">
+                                             <a:s r="52">
+                                                <a:s r="51">
+                                                   <a:s>ContactData</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="52">
+                                                   <a:s>&quot;Past pregnancy complications&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s> in </a:s>
+                                             <a:s r="54">
+                                                <a:s r="53">
+                                                   <a:s>Cx</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="54">
+                                                   <a:s>&quot;Past pregnancy complications - Convulsions Choices&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>)</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+    or </a:s>
+                                    <a:s r="61">
+                                       <a:s>(</a:s>
+                                       <a:s r="61">
+                                          <a:s r="58">
+                                             <a:s r="57">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="58">
+                                                <a:s>&quot;Past pregnancy complications&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="60">
+                                             <a:s r="59">
+                                                <a:s>Cx</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="60">
+                                                <a:s>&quot;Past pregnancy complications - Heavy bleeding (during or after delivery) Choices&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+    or </a:s>
+                                 <a:s r="67">
+                                    <a:s>(</a:s>
+                                    <a:s r="67">
+                                       <a:s r="64">
+                                          <a:s r="63">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="64">
+                                             <a:s>&quot;Past pregnancy complications&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="66">
+                                          <a:s r="65">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="66">
+                                             <a:s>&quot;Past pregnancy complications - Forceps Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+    or </a:s>
+                              <a:s r="73">
+                                 <a:s>(</a:s>
+                                 <a:s r="73">
+                                    <a:s r="70">
+                                       <a:s r="69">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="70">
+                                          <a:s>&quot;Past pregnancy complications&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="72">
+                                       <a:s r="71">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="72">
+                                          <a:s>&quot;Past pregnancy complications - Perineal tear (3rd or 4th degree) Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+    or </a:s>
+                           <a:s r="79">
+                              <a:s>(</a:s>
+                              <a:s r="79">
+                                 <a:s r="76">
+                                    <a:s r="75">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="76">
+                                       <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="78">
+                                    <a:s r="77">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="78">
+                                       <a:s>&quot;Current physiological symptoms - Vaginal bleeding Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    or </a:s>
+                        <a:s r="84">
+                           <a:s r="82">
+                              <a:s r="81">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="82">
+                                 <a:s>&quot;Number of pregnancies (gravida)&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s r="83"> = 1</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    or </a:s>
+                     <a:s r="89">
+                        <a:s r="87">
+                           <a:s r="86">
+                              <a:s>ContactData</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="87">
+                              <a:s>&quot;Parity&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="88"> > 5</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="95">
+                     <a:s r="92">
+                        <a:s r="91">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="92">
+                           <a:s>&quot;HIV status&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="94">
+                        <a:s r="93">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="94">
+                           <a:s>&quot;HIV status - HIV positive Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="96" locator="33:3-48:73" xsi:type="Or">
+            <operand localId="90" locator="33:3-47:31" xsi:type="Or">
+               <operand localId="85" locator="33:3-46:56" xsi:type="Or">
+                  <operand localId="80" locator="33:3-45:119" xsi:type="Or">
+                     <operand localId="74" locator="33:3-44:132" xsi:type="Or">
+                        <operand localId="68" locator="33:3-43:106" xsi:type="Or">
+                           <operand localId="62" locator="33:3-42:140" xsi:type="Or">
+                              <operand localId="56" locator="33:3-41:110" xsi:type="Or">
+                                 <operand localId="50" locator="33:3-40:125" xsi:type="Or">
+                                    <operand localId="44" locator="33:3-39:149" xsi:type="Or">
+                                       <operand localId="38" locator="33:3-38:148" xsi:type="Or">
+                                          <operand localId="32" locator="33:3-37:42" xsi:type="Or">
+                                             <operand localId="27" locator="33:3-36:53" xsi:type="Or">
+                                                <operand localId="22" locator="33:3-35:111" xsi:type="Or">
+                                                   <operand localId="16" locator="33:3-34:106" xsi:type="Or">
+                                                      <operand localId="10" locator="33:3-33:31" xsi:type="LessOrEqual">
+                                                         <operand localId="8" locator="33:4-33:24" precision="Year" xsi:type="CalculateAgeAt">
+                                                            <operand path="birthDate.value" xsi:type="Property">
+                                                               <source name="Patient" xsi:type="ExpressionRef"/>
+                                                            </operand>
+                                                            <operand localId="7" locator="33:17-33:23" xsi:type="Today"/>
+                                                         </operand>
+                                                         <operand localId="9" locator="33:29-33:30" valueType="t:Integer" value="17" xsi:type="Literal"/>
+                                                      </operand>
+                                                      <operand localId="15" locator="34:8-34:106" xsi:type="InValueSet">
+                                                         <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                            <operand localId="12" locator="34:8-34:39" name="Fetal presentation" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                         </code>
+                                                         <valueset localId="14" locator="34:44-34:106" name="Fetal presentation - Transverse fetal presentation Choices" libraryName="Cx"/>
+                                                      </operand>
+                                                   </operand>
+                                                   <operand localId="21" locator="35:8-35:111" xsi:type="InValueSet">
+                                                      <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                         <operand localId="18" locator="35:8-35:39" name="Fetal presentation" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                      </code>
+                                                      <valueset localId="20" locator="35:44-35:111" name="Fetal presentation - Other fetal presentation (specify) Choices" libraryName="Cx"/>
+                                                   </operand>
+                                                </operand>
+                                                <operand localId="26" locator="36:8-36:53" xsi:type="Greater">
+                                                   <operand name="ToInteger" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                      <operand localId="24" locator="36:8-36:49" name="Number of caesarian sections" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                   </operand>
+                                                   <operand localId="25" locator="36:53" valueType="t:Integer" value="0" xsi:type="Literal"/>
+                                                </operand>
+                                             </operand>
+                                             <operand localId="31" locator="37:8-37:42" xsi:type="Greater">
+                                                <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                   <operand localId="29" locator="37:8-37:38" name="Number of fetuses" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                </operand>
+                                                <operand xsi:type="ToQuantity">
+                                                   <operand localId="30" locator="37:42" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                                                </operand>
+                                             </operand>
+                                          </operand>
+                                          <operand localId="37" locator="38:8-38:148" xsi:type="InValueSet">
+                                             <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                <operand localId="34" locator="38:9-38:53" name="Family planning method selected" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                             </code>
+                                             <valueset localId="36" locator="38:58-38:147" name="Family planning method selected - Copper-bearing intrauterine device (Cu-IUD) Choices" libraryName="Cx"/>
+                                          </operand>
+                                       </operand>
+                                       <operand localId="43" locator="39:8-39:149" xsi:type="InValueSet">
+                                          <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                             <operand localId="40" locator="39:9-39:53" name="Family planning method selected" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                          </code>
+                                          <valueset localId="42" locator="39:58-39:148" name="Family planning method selected - Levonorgestrel intrauterine device (LNG-IUD) Choices" libraryName="Cx"/>
+                                       </operand>
+                                    </operand>
+                                    <operand localId="49" locator="40:8-40:125" xsi:type="InValueSet">
+                                       <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                          <operand localId="46" locator="40:9-40:53" name="Family planning method selected" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                       </code>
+                                       <valueset localId="48" locator="40:58-40:124" name="Family planning method selected - Female sterilization Choices" libraryName="Cx"/>
+                                    </operand>
+                                 </operand>
+                                 <operand localId="55" locator="41:8-41:110" xsi:type="AnyInValueSet">
+                                    <codes xsi:type="Query">
+                                       <source alias="X">
+                                          <expression localId="52" locator="41:9-41:50" name="Past pregnancy complications" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                       </source>
+                                       <return distinct="false">
+                                          <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                             <operand name="X" xsi:type="AliasRef"/>
+                                          </expression>
+                                       </return>
+                                    </codes>
+                                    <valueset localId="54" locator="41:55-41:109" name="Past pregnancy complications - Convulsions Choices" libraryName="Cx"/>
+                                 </operand>
+                              </operand>
+                              <operand localId="61" locator="42:8-42:140" xsi:type="AnyInValueSet">
+                                 <codes xsi:type="Query">
+                                    <source alias="X">
+                                       <expression localId="58" locator="42:9-42:50" name="Past pregnancy complications" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                    </source>
+                                    <return distinct="false">
+                                       <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                          <operand name="X" xsi:type="AliasRef"/>
+                                       </expression>
+                                    </return>
+                                 </codes>
+                                 <valueset localId="60" locator="42:55-42:139" name="Past pregnancy complications - Heavy bleeding (during or after delivery) Choices" libraryName="Cx"/>
+                              </operand>
+                           </operand>
+                           <operand localId="67" locator="43:8-43:106" xsi:type="AnyInValueSet">
+                              <codes xsi:type="Query">
+                                 <source alias="X">
+                                    <expression localId="64" locator="43:9-43:50" name="Past pregnancy complications" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </source>
+                                 <return distinct="false">
+                                    <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand name="X" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </codes>
+                              <valueset localId="66" locator="43:55-43:105" name="Past pregnancy complications - Forceps Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                        <operand localId="73" locator="44:8-44:132" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="70" locator="44:9-44:50" name="Past pregnancy complications" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="72" locator="44:55-44:131" name="Past pregnancy complications - Perineal tear (3rd or 4th degree) Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                     <operand localId="79" locator="45:8-45:119" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="76" locator="45:9-45:52" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="78" locator="45:57-45:118" name="Current physiological symptoms - Vaginal bleeding Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="84" locator="46:8-46:56" xsi:type="Equal">
+                     <operand name="ToInteger" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand localId="82" locator="46:8-46:52" name="Number of pregnancies (gravida)" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </operand>
+                     <operand localId="83" locator="46:56" valueType="t:Integer" value="1" xsi:type="Literal"/>
+                  </operand>
+               </operand>
+               <operand localId="89" locator="47:8-47:31" xsi:type="Greater">
+                  <operand name="ToInteger" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="87" locator="47:8-47:27" name="Parity" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </operand>
+                  <operand localId="88" locator="47:31" valueType="t:Integer" value="5" xsi:type="Literal"/>
+               </operand>
+            </operand>
+            <operand localId="95" locator="48:8-48:73" xsi:type="InValueSet">
+               <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="92" locator="48:8-48:31" name="HIV status" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </code>
+               <valueset localId="94" locator="48:36-48:73" name="HIV status - HIV positive Choices" libraryName="Cx"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="103" locator="53:1-54:78" name="Should Conduct counselling on birth preparedness and complications readiness 2" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="103">
+               <a:s>/*
+&quot;Planned birth place&quot; = &quot;Home&quot;
+*/
+define &quot;Should Conduct counselling on birth preparedness and complications readiness 2&quot;:
+  </a:s>
+               <a:s r="102">
+                  <a:s r="99">
+                     <a:s r="98">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="99">
+                        <a:s>&quot;Planned birth place&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="101">
+                     <a:s r="100">
+                        <a:s>Cx</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="101">
+                        <a:s>&quot;Planned birth place - Home Choices&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="102" locator="54:3-54:78" xsi:type="InValueSet">
+            <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="99" locator="54:3-54:35" name="Planned birth place" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </code>
+            <valueset localId="101" locator="54:40-54:78" name="Planned birth place - Home Choices" libraryName="Cx"/>
+         </expression>
+      </def>
+   </statements>
+</library>

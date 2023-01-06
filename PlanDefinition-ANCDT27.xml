@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="ANCDT27"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">ANCDT27</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT27">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT27</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.3.0</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Identifier: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                <p style="margin-bottom: 5px;">
+                    <b>value: </b> <span>ANC.DT.27</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">ANCDT27</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">ANC.DT.27 Pre-eclampsia risk counselling</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">active</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">false</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/CodeSystem/plan-definition-type">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2021-06-11 23:42:28-0600</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">World Health Organization (WHO)</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;">If the woman has risk factors for developing pre-eclampsia, provide counselling to reduce risk of developing pre-eclampsia</td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Use Context: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>
+                    
+                      <tr>
+                        <td>task</td>
+                        <td>ANC.B6.</td>
+                        <td>Collect woman's profile &amp;amp; history</td>
+                      </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">001</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        <tr>
+          <th scope="row"><b>Libraries: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              
+                <tr><td><a href="http://fhir.org/guides/who/anc-cds/Library/ANCDT27">http://fhir.org/guides/who/anc-cds/Library/ANCDT27</a></td></tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+
+        
+        <tr>
+          <th scope="row"><b>Actions: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              
+                <tr>
+                  <td>
+                    <b> ANC.DT.27 Pre-eclampsia risk counselling:</b> <br/>
+                    <b>When:</b> <i>named-event:</i> ANC.B6. Collect woman's profile &amp;amp; history<br/>
+                    
+                    
+                      <b>Then:</b>
+                      <table class="grid-dict">
+                        
+                          <tr>
+                            <td>
+                              The woman is at risk of developing pre-eclampsia – provide counselling<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> (((((((&amp;quot;Number of fetuses&amp;quot; ≥ 2 )
+  OR (&amp;quot;Past pregnancy complications&amp;quot; = &amp;quot;Pre-eclampsia&amp;quot;))
+  OR (&amp;quot;Past pregnancy complications&amp;quot; = &amp;quot;Eclampsia&amp;quot;))
+  OR (&amp;quot;Past pregnancy complications&amp;quot; = &amp;quot;Convulsions&amp;quot;))
+  OR (&amp;quot;Existing chronic health conditions&amp;quot; = &amp;quot;Autoimmune disease&amp;quot;))
+  OR (&amp;quot;Existing chronic health conditions&amp;quot; = &amp;quot;Diabetes&amp;quot;))
+  OR (&amp;quot;Existing chronic health conditions&amp;quot; = &amp;quot;Hypertension&amp;quot;))
+  OR (&amp;quot;Existing chronic health conditions&amp;quot; = &amp;quot;Kidney disease&amp;quot;) <i>(Should Provide counselling on pre-eclampsia risk)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              The woman is at risk of developing pre-eclampsia: provide counselling; prescribe aspirin 75 mg daily until delivery (starting at 12 weeks gestation) for pre-eclampsia risk<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> ((((((((&amp;quot;Number of fetuses&amp;quot; ≥ 2 )
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks))
+  OR ((&amp;quot;Past pregnancy complications&amp;quot; = &amp;quot;Pre-eclampsia&amp;quot;)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)))
+  OR ((&amp;quot;Past pregnancy complications&amp;quot; = &amp;quot;Eclampsia&amp;quot;)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)))
+  OR ((&amp;quot;Past pregnancy complications&amp;quot; = &amp;quot;Convulsions&amp;quot;)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)))
+  OR ((&amp;quot;Existing chronic health conditions&amp;quot; = &amp;quot;Autoimmune disease&amp;quot;)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)))
+  OR ((&amp;quot;Existing chronic health conditions&amp;quot; = &amp;quot;Diabetes&amp;quot;)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)))
+  OR ((&amp;quot;Existing chronic health conditions&amp;quot; = &amp;quot;Hypertension&amp;quot;)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)))
+  OR ((&amp;quot;Existing chronic health conditions&amp;quot; = &amp;quot;Kidney disease&amp;quot;)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)) <i>(Should Provide counselling on pre-eclampsia risk 2)</i><br/>
+                              
+                                <b>Then:</b>
+                                <table class="grid-dict">
+                                  
+                                    <tr>
+                                      <td>
+                                        <b> Provide counselling on pre-eclampsia risk:</b> <br/>
+                                        
+                                        
+                                        
+                                          
+                                        
+                                      </td>
+                                    </tr>
+                                  
+                                    <tr>
+                                      <td>
+                                        <b> &amp;quot;Amount of daily aspirin prescribed until delivery&amp;quot; = 75 mg:</b> <br/>
+                                        
+                                        
+                                        
+                                          
+                                        
+                                      </td>
+                                    </tr>
+                                  
+                                </table>
+                              
+                            </td>
+                          </tr>
+                        
+                          <tr>
+                            <td>
+                              The woman is at risk of developing pre-eclampsia: provide counselling; prescribe aspirin 75 mg daily until delivery (starting at 12 weeks gestation) and ensure that she continues to take her daily calcium supplement of 1.5–2 g until delivery for pre-eclampsia risk <br/>
+                              
+                              <b>If:</b> <i>applicability:</i> ((((((((&amp;quot;Number of fetuses&amp;quot; ≥ 2)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)
+  AND (&amp;quot;Population with low dietary calcium intake&amp;quot; = TRUE))
+  OR ((&amp;quot;Past pregnancy complications&amp;quot; = &amp;quot;Pre-eclampsia&amp;quot;)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)
+  AND (&amp;quot;Population with low dietary calcium intake&amp;quot; = TRUE)))
+  OR ((&amp;quot;Past pregnancy complications&amp;quot; = &amp;quot;Eclampsia&amp;quot;)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)
+  AND (&amp;quot;Population with low dietary calcium intake&amp;quot; = TRUE)))
+  OR ((&amp;quot;Past pregnancy complications&amp;quot; = &amp;quot;Convulsions&amp;quot;)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)
+  AND (&amp;quot;Population with low dietary calcium intake&amp;quot; = TRUE)))
+  OR ((&amp;quot;Existing chronic health conditions&amp;quot; = &amp;quot;Autoimmune disease&amp;quot;)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)
+  AND (&amp;quot;Population with low dietary calcium intake&amp;quot; = TRUE)))
+  OR ((&amp;quot;Existing chronic health conditions&amp;quot; = &amp;quot;Diabetes&amp;quot;)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)
+  AND (&amp;quot;Population with low dietary calcium intake&amp;quot; = TRUE)))
+  OR ((&amp;quot;Existing chronic health conditions&amp;quot; = &amp;quot;Hypertension&amp;quot;)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)
+  AND (&amp;quot;Population with low dietary calcium intake&amp;quot; = TRUE)))
+  OR ((&amp;quot;Existing chronic health conditions&amp;quot; = &amp;quot;Kidney disease&amp;quot;)
+  AND (&amp;quot;Gestational age&amp;quot; ≥ 12 weeks)
+  AND (&amp;quot;Population with low dietary calcium intake&amp;quot; = TRUE)) <i>(Should Provide counselling on pre-eclampsia risk 3)</i><br/>
+                              
+                                <b>Then:</b>
+                                <table class="grid-dict">
+                                  
+                                    <tr>
+                                      <td>
+                                        <b> Provide counselling on pre-eclampsia risk:</b> <br/>
+                                        
+                                        
+                                        
+                                          
+                                        
+                                      </td>
+                                    </tr>
+                                  
+                                    <tr>
+                                      <td>
+                                        <b> &amp;quot;Amount of daily aspirin prescribed until delivery&amp;quot; = 75 mg:</b> <br/>
+                                        
+                                        
+                                        
+                                          
+                                        
+                                      </td>
+                                    </tr>
+                                  
+                                    <tr>
+                                      <td>
+                                        <b> 1.5 g ≤ &amp;quot;Amount of calcium supplements provided&amp;quot; ≤ 2 g:</b> <br/>
+                                        
+                                        
+                                        
+                                          
+                                        
+                                      </td>
+                                    </tr>
+                                  
+                                </table>
+                              
+                            </td>
+                          </tr>
+                        
+                      </table>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+    </table>
+</div>
+  </text>
+  <url value="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT27"/>
+  <identifier>
+    <use value="official"/>
+    <value value="ANC.DT.27"/>
+  </identifier>
+  <version value="0.3.0"/>
+  <name value="ANCDT27"/>
+  <title value="ANC.DT.27 Pre-eclampsia risk counselling"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2021-06-11T23:42:28-06:00"/>
+  <publisher value="World Health Organization (WHO)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.who.int"/>
+    </telecom>
+  </contact>
+  <description value="If the woman has risk factors for developing pre-eclampsia, provide counselling to reduce risk of developing pre-eclampsia"/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="task"/>
+      <display value="Workflow Task"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes"/>
+        <code value="ANC.B6."/>
+        <display value="Collect woman's profile &amp; history"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <library value="http://fhir.org/guides/who/anc-cds/Library/ANCDT27"/>
+  <action>
+    <title value="ANC.DT.27 Pre-eclampsia risk counselling"/>
+    <trigger>
+      <type value="named-event"/>
+      <name value="ANC.B6. Collect woman's profile &amp; history"/>
+    </trigger>
+    <action id="1">
+      <title value="Provide counselling on pre-eclampsia risk"/>
+      <description value="Provide counselling on pre-eclampsia risk"/>
+      <textEquivalent value="The woman is at risk of developing pre-eclampsia – provide counselling"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="Pregnancy, childbirth, postpartum and newborn care guide (2015): C3 (1)&#xA;WHO pre-eclampsia and eclampsia recommendations (2011): 1, 2 (5)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="(((((((&quot;Number of fetuses&quot; ≥ 2 )&#xA;  OR (&quot;Past pregnancy complications&quot; = &quot;Pre-eclampsia&quot;))&#xA;  OR (&quot;Past pregnancy complications&quot; = &quot;Eclampsia&quot;))&#xA;  OR (&quot;Past pregnancy complications&quot; = &quot;Convulsions&quot;))&#xA;  OR (&quot;Existing chronic health conditions&quot; = &quot;Autoimmune disease&quot;))&#xA;  OR (&quot;Existing chronic health conditions&quot; = &quot;Diabetes&quot;))&#xA;  OR (&quot;Existing chronic health conditions&quot; = &quot;Hypertension&quot;))&#xA;  OR (&quot;Existing chronic health conditions&quot; = &quot;Kidney disease&quot;)"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Provide counselling on pre-eclampsia risk"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="2">
+      <title value="Provide counselling on pre-eclampsia risk"/>
+      <description value="Provide counselling on pre-eclampsia risk 2"/>
+      <textEquivalent value="The woman is at risk of developing pre-eclampsia: provide counselling; prescribe aspirin 75 mg daily until delivery (starting at 12 weeks gestation) for pre-eclampsia risk"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="Pregnancy, childbirth, postpartum and newborn care guide (2015): C3 (1)&#xA;WHO pre-eclampsia and eclampsia recommendations (2011): 1, 10 (5)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="((((((((&quot;Number of fetuses&quot; ≥ 2 )&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks))&#xA;  OR ((&quot;Past pregnancy complications&quot; = &quot;Pre-eclampsia&quot;)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks)))&#xA;  OR ((&quot;Past pregnancy complications&quot; = &quot;Eclampsia&quot;)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks)))&#xA;  OR ((&quot;Past pregnancy complications&quot; = &quot;Convulsions&quot;)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks)))&#xA;  OR ((&quot;Existing chronic health conditions&quot; = &quot;Autoimmune disease&quot;)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks)))&#xA;  OR ((&quot;Existing chronic health conditions&quot; = &quot;Diabetes&quot;)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks)))&#xA;  OR ((&quot;Existing chronic health conditions&quot; = &quot;Hypertension&quot;)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks)))&#xA;  OR ((&quot;Existing chronic health conditions&quot; = &quot;Kidney disease&quot;)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks))"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Provide counselling on pre-eclampsia risk 2"/>
+        </expression>
+      </condition>
+      <action>
+        <title value="Provide counselling on pre-eclampsia risk"/>
+      </action>
+      <action>
+        <title value="&quot;Amount of daily aspirin prescribed until delivery&quot; = 75 mg"/>
+      </action>
+    </action>
+    <action id="3">
+      <title value="Provide counselling on pre-eclampsia risk"/>
+      <description value="Provide counselling on pre-eclampsia risk 3"/>
+      <textEquivalent value="The woman is at risk of developing pre-eclampsia: provide counselling; prescribe aspirin 75 mg daily until delivery (starting at 12 weeks gestation) and ensure that she continues to take her daily calcium supplement of 1.5–2 g until delivery for pre-eclampsia risk "/>
+      <documentation>
+        <type value="citation"/>
+        <label value="Pregnancy, childbirth, postpartum and newborn care guide (2015): C3 (1)&#xA;WHO pre-eclampsia and eclampsia recommendations (2011): 1, 18 (5)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="((((((((&quot;Number of fetuses&quot; ≥ 2)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks)&#xA;  AND (&quot;Population with low dietary calcium intake&quot; = TRUE))&#xA;  OR ((&quot;Past pregnancy complications&quot; = &quot;Pre-eclampsia&quot;)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks)&#xA;  AND (&quot;Population with low dietary calcium intake&quot; = TRUE)))&#xA;  OR ((&quot;Past pregnancy complications&quot; = &quot;Eclampsia&quot;)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks)&#xA;  AND (&quot;Population with low dietary calcium intake&quot; = TRUE)))&#xA;  OR ((&quot;Past pregnancy complications&quot; = &quot;Convulsions&quot;)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks)&#xA;  AND (&quot;Population with low dietary calcium intake&quot; = TRUE)))&#xA;  OR ((&quot;Existing chronic health conditions&quot; = &quot;Autoimmune disease&quot;)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks)&#xA;  AND (&quot;Population with low dietary calcium intake&quot; = TRUE)))&#xA;  OR ((&quot;Existing chronic health conditions&quot; = &quot;Diabetes&quot;)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks)&#xA;  AND (&quot;Population with low dietary calcium intake&quot; = TRUE)))&#xA;  OR ((&quot;Existing chronic health conditions&quot; = &quot;Hypertension&quot;)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks)&#xA;  AND (&quot;Population with low dietary calcium intake&quot; = TRUE)))&#xA;  OR ((&quot;Existing chronic health conditions&quot; = &quot;Kidney disease&quot;)&#xA;  AND (&quot;Gestational age&quot; ≥ 12 weeks)&#xA;  AND (&quot;Population with low dietary calcium intake&quot; = TRUE))"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Provide counselling on pre-eclampsia risk 3"/>
+        </expression>
+      </condition>
+      <action>
+        <title value="Provide counselling on pre-eclampsia risk"/>
+      </action>
+      <action>
+        <title value="&quot;Amount of daily aspirin prescribed until delivery&quot; = 75 mg"/>
+      </action>
+      <action>
+        <title value="1.5 g ≤ &quot;Amount of calcium supplements provided&quot; ≤ 2 g"/>
+      </action>
+    </action>
+  </action>
+</PlanDefinition>

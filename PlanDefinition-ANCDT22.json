@@ -1,0 +1,97 @@
+{
+  "resourceType" : "PlanDefinition",
+  "id" : "ANCDT22",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <table class=\"grid dict\">\r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Id: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT22</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Url: </b></th>\r\n            <td style=\"padding-left: 4px;\"><a href=\"http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT22\">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT22</a></td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Version: </b></th>\r\n            <td style=\"padding-left: 4px;\">0.3.0</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Identifier: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                \r\n                <p style=\"margin-bottom: 5px;\">\r\n                    <b>value: </b> <span>ANC.DT.22</span>\r\n                </p>\r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Name: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT22</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Title: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANC.DT.22 Asymptomatic bacteriuria (ASB) diagnosis</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Status: </b></th>\r\n            <td style=\"padding-left: 4px;\">active</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Experimental: </b></th>\r\n            <td style=\"padding-left: 4px;\">false</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Type: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                    \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/CodeSystem/plan-definition-type\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\r\n                        </p>\r\n                        \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>code: </b> <span>eca-rule</span>\r\n                        </p>\r\n                        \r\n                        \r\n                    \r\n                \r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Date: </b></th>\r\n            <td style=\"padding-left: 4px;\">2021-06-11 23:25:04-0600</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Publisher: </b></th>\r\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Description: </b></th>\r\n            <td style=\"padding-left: 4px;\">If the woman tests positive for ASB, provide counselling and treatment as needed.</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Use Context: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                <table class=\"grid-dict\">\r\n                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>\r\n                    \r\n                      <tr>\r\n                        <td>task</td>\r\n                        <td>ANC.B10.4</td>\r\n                        <td>Diagnosis and treatment</td>\r\n                      </tr>\r\n                    \r\n                </table>\r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\r\n            <td style=\"padding-left: 4px;\">001</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Libraries: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr><td><a href=\"http://fhir.org/guides/who/anc-cds/Library/ANCDT22\">http://fhir.org/guides/who/anc-cds/Library/ANCDT22</a></td></tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Actions: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr>\r\n                  <td>\r\n                    <b> ANC.DT.22 Asymptomatic bacteriuria (ASB) diagnosis:</b> <br/>\r\n                    <b>When:</b> <i>named-event:</i> ANC.B10.4 Diagnosis and treatment<br/>\r\n                    \r\n                    \r\n                      <b>Then:</b>\r\n                      <table class=\"grid-dict\">\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              A woman is considered to have ASB if she has one of the following test results:\n– Positive culture (&amp;gt; 100,000 bacteria/ml)\n– Gram-staining positive\n– Urine dipstick test positive (nitrites or leukocytes)\n\nSeven-day antibiotic regimen is recommended for all pregnant women with asymptomatic bacteriuria (ASB) to prevent persistent bacteriuria, preterm birth and low birth weight.\n&amp;quot;Midstream urine culture is the recommended method for diagnosing asymptomatic bacteriuria (ASB) in pregnancy. In settings where urine culture is not available, on-site midstream urine Gramstaining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy&amp;quot; (2)<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> ((((((((((&amp;quot;Midstream urine culture (recommended)&amp;quot; = &amp;quot;Positive – any agent&amp;quot;)\n  OR (&amp;quot;Midstream urine culture (recommended)&amp;quot; = &amp;quot;Positive – Group B Streptococcus (GBS)&amp;quot;))\n  OR (&amp;quot;Midstream urine Gram-staining&amp;quot; = &amp;quot;Positive&amp;quot;))\n  OR (&amp;quot;Urine dipstick result – nitrites&amp;quot; = &amp;quot;+&amp;quot;))\n  OR (&amp;quot;Urine dipstick result – nitrites&amp;quot; = &amp;quot;++&amp;quot;))\n  OR (&amp;quot;Urine dipstick result – nitrites&amp;quot; = &amp;quot;+++&amp;quot;))\n  OR (&amp;quot;Urine dipstick result – nitrites&amp;quot; = &amp;quot;++++&amp;quot;))\n  OR (&amp;quot;Urine dipstick result – leukocytes&amp;quot; = &amp;quot;+&amp;quot;))\n  OR (&amp;quot;Urine dipstick result – leukocytes&amp;quot; = &amp;quot;++&amp;quot;))\n  OR (&amp;quot;Urine dipstick result – leukocytes&amp;quot; = &amp;quot;+++&amp;quot;))\n  OR (&amp;quot;Urine dipstick result – leukocytes&amp;quot; = &amp;quot;++++&amp;quot;) <i>(Should Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB))</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              Pregnant women with Group B Streptococcus (GBS) colonization should receive intrapartum antibiotic administration to prevent early neonatal GBS infection.\n&amp;quot;Midstream urine culture is the recommended method for diagnosing asymptomatic bacteriuria (ASB) in pregnancy. In settings where urine culture is not available, on-site midstream urine Gramstaining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy&amp;quot; (2)<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Midstream urine culture (recommended)&amp;quot; = &amp;quot;Positive – Group B Streptococcus (GBS)&amp;quot; <i>(Should Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                      </table>\r\n                    \r\n                  </td>\r\n                </tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n    </table>\r\n</div>"
+  },
+  "url" : "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT22",
+  "identifier" : [{
+    "use" : "official",
+    "value" : "ANC.DT.22"
+  }],
+  "version" : "0.3.0",
+  "name" : "ANCDT22",
+  "title" : "ANC.DT.22 Asymptomatic bacteriuria (ASB) diagnosis",
+  "type" : {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code" : "eca-rule"
+    }]
+  },
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2021-06-11T23:25:04-06:00",
+  "publisher" : "World Health Organization (WHO)",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.who.int"
+    }]
+  }],
+  "description" : "If the woman tests positive for ASB, provide counselling and treatment as needed.",
+  "useContext" : [{
+    "code" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code" : "task",
+      "display" : "Workflow Task"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code" : "ANC.B10.4",
+        "display" : "Diagnosis and treatment"
+      }]
+    }
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001"
+    }]
+  }],
+  "library" : ["http://fhir.org/guides/who/anc-cds/Library/ANCDT22"],
+  "action" : [{
+    "title" : "ANC.DT.22 Asymptomatic bacteriuria (ASB) diagnosis",
+    "trigger" : [{
+      "type" : "named-event",
+      "name" : "ANC.B10.4 Diagnosis and treatment"
+    }],
+    "action" : [{
+      "id" : "1",
+      "title" : "Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)",
+      "description" : "Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)",
+      "textEquivalent" : "A woman is considered to have ASB if she has one of the following test results:\n– Positive culture (> 100,000 bacteria/ml)\n– Gram-staining positive\n– Urine dipstick test positive (nitrites or leukocytes)\n\nSeven-day antibiotic regimen is recommended for all pregnant women with asymptomatic bacteriuria (ASB) to prevent persistent bacteriuria, preterm birth and low birth weight.\n\"Midstream urine culture is the recommended method for diagnosing asymptomatic bacteriuria (ASB) in pregnancy. In settings where urine culture is not available, on-site midstream urine Gramstaining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy\" (2)",
+      "documentation" : [{
+        "type" : "citation",
+        "label" : "WHO ANC recommendations (2016): B.1.2. Asymptomatic bacteriuria (ASB) (3)"
+      }],
+      "condition" : [{
+        "kind" : "applicability",
+        "expression" : {
+          "description" : "((((((((((\"Midstream urine culture (recommended)\" = \"Positive – any agent\")\n  OR (\"Midstream urine culture (recommended)\" = \"Positive – Group B Streptococcus (GBS)\"))\n  OR (\"Midstream urine Gram-staining\" = \"Positive\"))\n  OR (\"Urine dipstick result – nitrites\" = \"+\"))\n  OR (\"Urine dipstick result – nitrites\" = \"++\"))\n  OR (\"Urine dipstick result – nitrites\" = \"+++\"))\n  OR (\"Urine dipstick result – nitrites\" = \"++++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"+\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"+++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"++++\")",
+          "language" : "text/cql-identifier",
+          "expression" : "Should Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)"
+        }
+      }]
+    },
+    {
+      "id" : "2",
+      "title" : "Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling",
+      "description" : "Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling",
+      "textEquivalent" : "Pregnant women with Group B Streptococcus (GBS) colonization should receive intrapartum antibiotic administration to prevent early neonatal GBS infection.\n\"Midstream urine culture is the recommended method for diagnosing asymptomatic bacteriuria (ASB) in pregnancy. In settings where urine culture is not available, on-site midstream urine Gramstaining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy\" (2)",
+      "documentation" : [{
+        "type" : "citation",
+        "label" : "WHO ANC recommendations (2016): B.1.2. Asymptomatic bacteriuria (ASB) (3)"
+      }],
+      "condition" : [{
+        "kind" : "applicability",
+        "expression" : {
+          "description" : "\"Midstream urine culture (recommended)\" = \"Positive – Group B Streptococcus (GBS)\"",
+          "language" : "text/cql-identifier",
+          "expression" : "Should Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling"
+        }
+      }]
+    }]
+  }]
+}

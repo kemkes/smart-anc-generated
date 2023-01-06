@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="anc-b9-de55-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de55"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Observation</b><a name="anc-b9-de55-example"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Observation &quot;anc-b9-de55-example&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-anc-b9-de55.html">Partner HIV status (confirmed)</a></p></div><p><b>identifier</b>: id: anc-b9-de55-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Partner HIV status (confirmed) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B9.DE55)</span></p><p><b>subject</b>: <a href="Patient-anc-patient-example.html">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href="Encounter-anc-encounter-example.html">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href="PractitionerRole-anc-practitionerrole-example.html">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: HIV negative <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B9.DE57; <a href="http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html">ICD-10</a>#Z03.8 &quot;Observation for other suspected diseases and conditions&quot;; mms#QA02.Y Medical observation or evaluation for other suspected diseases or conditions, ruled out &quot;Medical observation or evaluation for other suspected diseases or conditions, ruled out&quot;; <a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#165815009 &quot;Human immunodeficiency virus negative (finding)&quot;; <a href="https://loinc.org/">LOINC</a>#72182-9 &quot;Tested for HIV significant other [RHEA]&quot;)</span></p></div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://example.org/fhir/NamingSystem/identifiers"/>
+    <value value="anc-b9-de55-example"/>
+  </identifier>
+  <status value="final"/>
+  <code>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B9.DE55"/>
+      <display value="Partner HIV status (confirmed)"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/anc-patient-example"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/anc-encounter-example"/>
+  </encounter>
+  <performer>
+    <reference value="PractitionerRole/anc-practitionerrole-example"/>
+  </performer>
+  <valueCodeableConcept>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B9.DE57"/>
+      <display value="HIV negative"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/sid/icd-10"/>
+      <code value="Z03.8"/>
+      <display value="Observation for other suspected diseases and conditions"/>
+    </coding>
+    <coding>
+      <system value="http://id.who.int/icd11/mms"/>
+      <code value="QA02.Y Medical observation or evaluation for other suspected diseases or conditions, ruled out"/>
+      <display value="Medical observation or evaluation for other suspected diseases or conditions, ruled out"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="165815009"/>
+      <display value="Human immunodeficiency virus negative (finding)"/>
+    </coding>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="72182-9"/>
+      <display value="Tested for HIV significant other [RHEA]"/>
+    </coding>
+  </valueCodeableConcept>
+</Observation>

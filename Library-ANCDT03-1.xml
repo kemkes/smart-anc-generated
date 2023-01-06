@@ -1,0 +1,3003 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="410">
+         <a:s>library ANCDT03</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCDT03" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="7:1-7:31" localIdentifier="Config" path="http://fhir.org/guides/who/anc-cds/ANCConfig">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConfig</a:s>
+               </a:s>
+               <a:s> called Config</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="8:1-8:29" localIdentifier="Cx" path="http://fhir.org/guides/who/anc-cds/ANCConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConcepts</a:s>
+               </a:s>
+               <a:s> called Cx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="9:1-9:42" localIdentifier="PatientData" path="http://fhir.org/guides/who/anc-cds/ANCDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCDataElements</a:s>
+               </a:s>
+               <a:s> called PatientData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="10:1-10:49" localIdentifier="ContactData" path="http://fhir.org/guides/who/anc-cds/ANCContactDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCContactDataElements</a:s>
+               </a:s>
+               <a:s> called ContactData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <statements>
+      <def locator="12:1-12:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="12:1-12:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="12" locator="17:1-18:115" name="Should Conduct counselling on physiological symptoms (see Annotations for pop-up message)" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="12">
+               <a:s>/*
+&quot;Current physiological symptoms&quot; = &quot;Nausea and vomiting&quot;
+*/
+define &quot;Should Conduct counselling on physiological symptoms (see Annotations for pop-up message)&quot;:
+  </a:s>
+               <a:s r="11">
+                  <a:s r="8">
+                     <a:s r="7">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="8">
+                        <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="10">
+                     <a:s r="9">
+                        <a:s>Cx</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="10">
+                        <a:s>&quot;Current physiological symptoms - Nausea and Vomiting Choices&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="11" locator="18:3-18:115" xsi:type="AnyInValueSet">
+            <codes xsi:type="Query">
+               <source alias="X">
+                  <expression localId="8" locator="18:3-18:46" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </source>
+               <return distinct="false">
+                  <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand name="X" xsi:type="AliasRef"/>
+                  </expression>
+               </return>
+            </codes>
+            <valueset localId="10" locator="18:51-18:115" name="Current physiological symptoms - Nausea and Vomiting Choices" libraryName="Cx"/>
+         </expression>
+      </def>
+      <def localId="18" locator="23:1-24:121" name="Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 2" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="18">
+               <a:s>/*
+&quot;Persistent physiological symptoms&quot; = &quot;Nausea and vomiting&quot;
+*/
+define &quot;Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 2&quot;:
+  </a:s>
+               <a:s r="17">
+                  <a:s r="14">
+                     <a:s r="13">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="14">
+                        <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="16">
+                     <a:s r="15">
+                        <a:s>Cx</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="16">
+                        <a:s>&quot;Persistent physiological symptoms - Nausea and Vomiting Choices&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="17" locator="24:3-24:121" xsi:type="AnyInValueSet">
+            <codes xsi:type="Query">
+               <source alias="X">
+                  <expression localId="14" locator="24:3-24:49" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </source>
+               <return distinct="false">
+                  <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand name="X" xsi:type="AliasRef"/>
+                  </expression>
+               </return>
+            </codes>
+            <valueset localId="16" locator="24:54-24:121" name="Persistent physiological symptoms - Nausea and Vomiting Choices" libraryName="Cx"/>
+         </expression>
+      </def>
+      <def localId="24" locator="29:1-30:108" name="Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 3" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="24">
+               <a:s>/*
+&quot;Current physiological symptoms&quot; = &quot;Heartburn&quot;
+*/
+define &quot;Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 3&quot;:
+  </a:s>
+               <a:s r="23">
+                  <a:s r="20">
+                     <a:s r="19">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="20">
+                        <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="22">
+                     <a:s r="21">
+                        <a:s>Cx</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="22">
+                        <a:s>&quot;Current physiological symptoms - Heartburn Choices&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="23" locator="30:3-30:108" xsi:type="AnyInValueSet">
+            <codes xsi:type="Query">
+               <source alias="X">
+                  <expression localId="20" locator="30:3-30:49" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </source>
+               <return distinct="false">
+                  <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand name="X" xsi:type="AliasRef"/>
+                  </expression>
+               </return>
+            </codes>
+            <valueset localId="22" locator="30:54-30:108" name="Current physiological symptoms - Heartburn Choices" libraryName="Cx"/>
+         </expression>
+      </def>
+      <def localId="30" locator="35:1-36:111" name="Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 4" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="30">
+               <a:s>/*
+&quot;Persistent physiological symptoms&quot; = &quot;Heartburn&quot;
+*/
+define &quot;Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 4&quot;:
+  </a:s>
+               <a:s r="29">
+                  <a:s r="26">
+                     <a:s r="25">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="26">
+                        <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="28">
+                     <a:s r="27">
+                        <a:s>Cx</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="28">
+                        <a:s>&quot;Persistent physiological symptoms - Heartburn Choices&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="29" locator="36:3-36:111" xsi:type="AnyInValueSet">
+            <codes xsi:type="Query">
+               <source alias="X">
+                  <expression localId="26" locator="36:3-36:49" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </source>
+               <return distinct="false">
+                  <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand name="X" xsi:type="AliasRef"/>
+                  </expression>
+               </return>
+            </codes>
+            <valueset localId="28" locator="36:54-36:111" name="Persistent physiological symptoms - Heartburn Choices" libraryName="Cx"/>
+         </expression>
+      </def>
+      <def localId="36" locator="41:1-42:106" name="Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 5" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="36">
+               <a:s>/*
+&quot;Current physiological symptoms&quot; = &quot;Leg cramps&quot;
+*/
+define &quot;Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 5&quot;:
+  </a:s>
+               <a:s r="35">
+                  <a:s r="32">
+                     <a:s r="31">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="32">
+                        <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="34">
+                     <a:s r="33">
+                        <a:s>Cx</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="34">
+                        <a:s>&quot;Current physiological symptoms - Leg cramps Choices&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="35" locator="42:3-42:106" xsi:type="AnyInValueSet">
+            <codes xsi:type="Query">
+               <source alias="X">
+                  <expression localId="32" locator="42:3-42:46" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </source>
+               <return distinct="false">
+                  <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand name="X" xsi:type="AliasRef"/>
+                  </expression>
+               </return>
+            </codes>
+            <valueset localId="34" locator="42:51-42:106" name="Current physiological symptoms - Leg cramps Choices" libraryName="Cx"/>
+         </expression>
+      </def>
+      <def localId="42" locator="47:1-48:112" name="Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 6" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="42">
+               <a:s>/*
+&quot;Persistent physiological symptoms&quot; = &quot;Leg cramps&quot;
+*/
+define &quot;Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 6&quot;:
+  </a:s>
+               <a:s r="41">
+                  <a:s r="38">
+                     <a:s r="37">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="38">
+                        <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="40">
+                     <a:s r="39">
+                        <a:s>Cx</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="40">
+                        <a:s>&quot;Persistent physiological symptoms - Leg cramps Choices&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="41" locator="48:3-48:112" xsi:type="AnyInValueSet">
+            <codes xsi:type="Query">
+               <source alias="X">
+                  <expression localId="38" locator="48:3-48:49" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </source>
+               <return distinct="false">
+                  <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand name="X" xsi:type="AliasRef"/>
+                  </expression>
+               </return>
+            </codes>
+            <valueset localId="40" locator="48:54-48:112" name="Persistent physiological symptoms - Leg cramps Choices" libraryName="Cx"/>
+         </expression>
+      </def>
+      <def localId="150" locator="60:1-84:3" name="Should Conduct counselling on physiological symptoms" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="150">
+               <a:s>/*
+(((&quot;Current physiological symptoms&quot; = &quot;Low back pain&quot;)
+  AND (Current physiological symptoms&quot; ≠ &quot;Contractions&quot; OR &quot;Pain during urination (dysuria)&quot; OR &quot;Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)&quot;))
+  OR ((&quot;Current physiological symptoms&quot; = &quot;Pelvic pain&quot;)
+  AND (Current physiological symptoms&quot; ≠ &quot;Contractions&quot; OR &quot;Pain during urination (dysuria)&quot; OR &quot;Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)&quot;))
+  OR ((&quot;Persistent physiological symptoms&quot; = &quot;Low back pain&quot;)
+  AND (Current physiological symptoms&quot; ≠ &quot;Contractions&quot; OR &quot;Pain during urination (dysuria)&quot; OR &quot;Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)&quot;)))
+  OR ((&quot;Persistent physiological symptoms&quot; = &quot;Pelvic pain&quot;)
+  AND (Current physiological symptoms&quot; ≠ &quot;Contractions&quot; OR &quot;Pain during urination (dysuria)&quot; OR &quot;Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)&quot;))
+*/
+define &quot;Should Conduct counselling on physiological symptoms&quot;:
+  </a:s>
+               <a:s r="149">
+                  <a:s r="122">
+                     <a:s r="95">
+                        <a:s r="68">
+                           <a:s>(
+    </a:s>
+                           <a:s r="68">
+                              <a:s r="61">
+                                 <a:s r="54">
+                                    <a:s r="47">
+                                       <a:s r="44">
+                                          <a:s r="43">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="44">
+                                             <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="46">
+                                          <a:s r="45">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="46">
+                                             <a:s>&quot;Current physiological symptoms - Pain - Low back Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+      and </a:s>
+                                    <a:s r="53">
+                                       <a:s>not </a:s>
+                                       <a:s r="52">
+                                          <a:s>(</a:s>
+                                          <a:s r="52">
+                                             <a:s r="49">
+                                                <a:s r="48">
+                                                   <a:s>ContactData</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="49">
+                                                   <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s> in </a:s>
+                                             <a:s r="51">
+                                                <a:s r="50">
+                                                   <a:s>Cx</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="51">
+                                                   <a:s>&quot;Current physiological symptoms - Contractions Choices&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>)</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="60">
+                                    <a:s>not </a:s>
+                                    <a:s r="59">
+                                       <a:s>(</a:s>
+                                       <a:s r="59">
+                                          <a:s r="56">
+                                             <a:s r="55">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="56">
+                                                <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="58">
+                                             <a:s r="57">
+                                                <a:s>Cx</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="58">
+                                                <a:s>&quot;Current physiological symptoms - Pain - during urination (dysuria) Choices&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="67">
+                                 <a:s>not </a:s>
+                                 <a:s r="66">
+                                    <a:s>(</a:s>
+                                    <a:s r="66">
+                                       <a:s r="63">
+                                          <a:s r="62">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="63">
+                                             <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="65">
+                                          <a:s r="64">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="65">
+                                             <a:s>&quot;Current physiological symptoms - Pain - Extreme pelvic pain Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                        <a:s> or
+  </a:s>
+                        <a:s r="94">
+                           <a:s>(
+    </a:s>
+                           <a:s r="94">
+                              <a:s r="87">
+                                 <a:s r="80">
+                                    <a:s r="73">
+                                       <a:s r="70">
+                                          <a:s r="69">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="70">
+                                             <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="72">
+                                          <a:s r="71">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="72">
+                                             <a:s>&quot;Current physiological symptoms - Pain - Pelvic Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+      and </a:s>
+                                    <a:s r="79">
+                                       <a:s>not </a:s>
+                                       <a:s r="78">
+                                          <a:s>(</a:s>
+                                          <a:s r="78">
+                                             <a:s r="75">
+                                                <a:s r="74">
+                                                   <a:s>ContactData</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="75">
+                                                   <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s> in </a:s>
+                                             <a:s r="77">
+                                                <a:s r="76">
+                                                   <a:s>Cx</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="77">
+                                                   <a:s>&quot;Current physiological symptoms - Contractions Choices&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>)</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="86">
+                                    <a:s>not </a:s>
+                                    <a:s r="85">
+                                       <a:s>(</a:s>
+                                       <a:s r="85">
+                                          <a:s r="82">
+                                             <a:s r="81">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="82">
+                                                <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="84">
+                                             <a:s r="83">
+                                                <a:s>Cx</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="84">
+                                                <a:s>&quot;Current physiological symptoms - Pain - during urination (dysuria) Choices&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="93">
+                                 <a:s>not </a:s>
+                                 <a:s r="92">
+                                    <a:s>(</a:s>
+                                    <a:s r="92">
+                                       <a:s r="89">
+                                          <a:s r="88">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="89">
+                                             <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="91">
+                                          <a:s r="90">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="91">
+                                             <a:s>&quot;Current physiological symptoms - Pain - Extreme pelvic pain Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> or
+  </a:s>
+                     <a:s r="121">
+                        <a:s>(
+    </a:s>
+                        <a:s r="121">
+                           <a:s r="114">
+                              <a:s r="107">
+                                 <a:s r="100">
+                                    <a:s r="97">
+                                       <a:s r="96">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="97">
+                                          <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="99">
+                                       <a:s r="98">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="99">
+                                          <a:s>&quot;Persistent physiological symptoms - Pain - Low back Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="106">
+                                    <a:s>not </a:s>
+                                    <a:s r="105">
+                                       <a:s>(</a:s>
+                                       <a:s r="105">
+                                          <a:s r="102">
+                                             <a:s r="101">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="102">
+                                                <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="104">
+                                             <a:s r="103">
+                                                <a:s>Cx</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="104">
+                                                <a:s>&quot;Current physiological symptoms - Contractions Choices&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="113">
+                                 <a:s>not </a:s>
+                                 <a:s r="112">
+                                    <a:s>(</a:s>
+                                    <a:s r="112">
+                                       <a:s r="109">
+                                          <a:s r="108">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="109">
+                                             <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="111">
+                                          <a:s r="110">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="111">
+                                             <a:s>&quot;Current physiological symptoms - Pain - during urination (dysuria) Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="120">
+                              <a:s>not </a:s>
+                              <a:s r="119">
+                                 <a:s>(</a:s>
+                                 <a:s r="119">
+                                    <a:s r="116">
+                                       <a:s r="115">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="116">
+                                          <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="118">
+                                       <a:s r="117">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="118">
+                                          <a:s>&quot;Current physiological symptoms - Pain - Extreme pelvic pain Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> or
+  </a:s>
+                  <a:s r="148">
+                     <a:s>(
+    </a:s>
+                     <a:s r="148">
+                        <a:s r="141">
+                           <a:s r="134">
+                              <a:s r="127">
+                                 <a:s r="124">
+                                    <a:s r="123">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="124">
+                                       <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="126">
+                                    <a:s r="125">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="126">
+                                       <a:s>&quot;Persistent physiological symptoms - Pain - Pelvic Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="133">
+                                 <a:s>not </a:s>
+                                 <a:s r="132">
+                                    <a:s>(</a:s>
+                                    <a:s r="132">
+                                       <a:s r="129">
+                                          <a:s r="128">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="129">
+                                             <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="131">
+                                          <a:s r="130">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="131">
+                                             <a:s>&quot;Current physiological symptoms - Contractions Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="140">
+                              <a:s>not </a:s>
+                              <a:s r="139">
+                                 <a:s>(</a:s>
+                                 <a:s r="139">
+                                    <a:s r="136">
+                                       <a:s r="135">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="136">
+                                          <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="138">
+                                       <a:s r="137">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="138">
+                                          <a:s>&quot;Current physiological symptoms - Pain - during urination (dysuria) Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      and </a:s>
+                        <a:s r="147">
+                           <a:s>not </a:s>
+                           <a:s r="146">
+                              <a:s>(</a:s>
+                              <a:s r="146">
+                                 <a:s r="143">
+                                    <a:s r="142">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="143">
+                                       <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="145">
+                                    <a:s r="144">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="145">
+                                       <a:s>&quot;Current physiological symptoms - Pain - Extreme pelvic pain Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="149" locator="61:3-84:3" xsi:type="Or">
+            <operand localId="122" locator="61:3-78:3" xsi:type="Or">
+               <operand localId="95" locator="61:3-72:3" xsi:type="Or">
+                  <operand localId="68" locator="61:3-66:3" xsi:type="And">
+                     <operand localId="61" locator="62:5-64:143" xsi:type="And">
+                        <operand localId="54" locator="62:5-63:122" xsi:type="And">
+                           <operand localId="47" locator="62:5-62:113" xsi:type="AnyInValueSet">
+                              <codes xsi:type="Query">
+                                 <source alias="X">
+                                    <expression localId="44" locator="62:5-62:48" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </source>
+                                 <return distinct="false">
+                                    <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand name="X" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </codes>
+                              <valueset localId="46" locator="62:53-62:113" name="Current physiological symptoms - Pain - Low back Choices" libraryName="Cx"/>
+                           </operand>
+                           <operand localId="53" locator="63:11-63:122" xsi:type="Not">
+                              <operand localId="52" locator="63:15-63:122" xsi:type="AnyInValueSet">
+                                 <codes xsi:type="Query">
+                                    <source alias="X">
+                                       <expression localId="49" locator="63:16-63:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                    </source>
+                                    <return distinct="false">
+                                       <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                          <operand name="X" xsi:type="AliasRef"/>
+                                       </expression>
+                                    </return>
+                                 </codes>
+                                 <valueset localId="51" locator="63:64-63:121" name="Current physiological symptoms - Contractions Choices" libraryName="Cx"/>
+                              </operand>
+                           </operand>
+                        </operand>
+                        <operand localId="60" locator="64:11-64:143" xsi:type="Not">
+                           <operand localId="59" locator="64:15-64:143" xsi:type="AnyInValueSet">
+                              <codes xsi:type="Query">
+                                 <source alias="X">
+                                    <expression localId="56" locator="64:16-64:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </source>
+                                 <return distinct="false">
+                                    <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand name="X" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </codes>
+                              <valueset localId="58" locator="64:64-64:142" name="Current physiological symptoms - Pain - during urination (dysuria) Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                     </operand>
+                     <operand localId="67" locator="65:11-65:136" xsi:type="Not">
+                        <operand localId="66" locator="65:15-65:136" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="63" locator="65:16-65:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="65" locator="65:64-65:135" name="Current physiological symptoms - Pain - Extreme pelvic pain Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="94" locator="67:3-72:3" xsi:type="And">
+                     <operand localId="87" locator="68:5-70:143" xsi:type="And">
+                        <operand localId="80" locator="68:5-69:122" xsi:type="And">
+                           <operand localId="73" locator="68:5-68:111" xsi:type="AnyInValueSet">
+                              <codes xsi:type="Query">
+                                 <source alias="X">
+                                    <expression localId="70" locator="68:5-68:48" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </source>
+                                 <return distinct="false">
+                                    <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand name="X" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </codes>
+                              <valueset localId="72" locator="68:53-68:111" name="Current physiological symptoms - Pain - Pelvic Choices" libraryName="Cx"/>
+                           </operand>
+                           <operand localId="79" locator="69:11-69:122" xsi:type="Not">
+                              <operand localId="78" locator="69:15-69:122" xsi:type="AnyInValueSet">
+                                 <codes xsi:type="Query">
+                                    <source alias="X">
+                                       <expression localId="75" locator="69:16-69:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                    </source>
+                                    <return distinct="false">
+                                       <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                          <operand name="X" xsi:type="AliasRef"/>
+                                       </expression>
+                                    </return>
+                                 </codes>
+                                 <valueset localId="77" locator="69:64-69:121" name="Current physiological symptoms - Contractions Choices" libraryName="Cx"/>
+                              </operand>
+                           </operand>
+                        </operand>
+                        <operand localId="86" locator="70:11-70:143" xsi:type="Not">
+                           <operand localId="85" locator="70:15-70:143" xsi:type="AnyInValueSet">
+                              <codes xsi:type="Query">
+                                 <source alias="X">
+                                    <expression localId="82" locator="70:16-70:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </source>
+                                 <return distinct="false">
+                                    <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand name="X" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </codes>
+                              <valueset localId="84" locator="70:64-70:142" name="Current physiological symptoms - Pain - during urination (dysuria) Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                     </operand>
+                     <operand localId="93" locator="71:11-71:136" xsi:type="Not">
+                        <operand localId="92" locator="71:15-71:136" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="89" locator="71:16-71:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="91" locator="71:64-71:135" name="Current physiological symptoms - Pain - Extreme pelvic pain Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="121" locator="73:3-78:3" xsi:type="And">
+                  <operand localId="114" locator="74:5-76:143" xsi:type="And">
+                     <operand localId="107" locator="74:5-75:122" xsi:type="And">
+                        <operand localId="100" locator="74:5-74:119" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="97" locator="74:5-74:51" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="99" locator="74:56-74:119" name="Persistent physiological symptoms - Pain - Low back Choices" libraryName="Cx"/>
+                        </operand>
+                        <operand localId="106" locator="75:11-75:122" xsi:type="Not">
+                           <operand localId="105" locator="75:15-75:122" xsi:type="AnyInValueSet">
+                              <codes xsi:type="Query">
+                                 <source alias="X">
+                                    <expression localId="102" locator="75:16-75:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </source>
+                                 <return distinct="false">
+                                    <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand name="X" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </codes>
+                              <valueset localId="104" locator="75:64-75:121" name="Current physiological symptoms - Contractions Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                     </operand>
+                     <operand localId="113" locator="76:11-76:143" xsi:type="Not">
+                        <operand localId="112" locator="76:15-76:143" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="109" locator="76:16-76:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="111" locator="76:64-76:142" name="Current physiological symptoms - Pain - during urination (dysuria) Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="120" locator="77:11-77:136" xsi:type="Not">
+                     <operand localId="119" locator="77:15-77:136" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="116" locator="77:16-77:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="118" locator="77:64-77:135" name="Current physiological symptoms - Pain - Extreme pelvic pain Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+               </operand>
+            </operand>
+            <operand localId="148" locator="79:3-84:3" xsi:type="And">
+               <operand localId="141" locator="80:5-82:143" xsi:type="And">
+                  <operand localId="134" locator="80:5-81:122" xsi:type="And">
+                     <operand localId="127" locator="80:5-80:117" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="124" locator="80:5-80:51" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="126" locator="80:56-80:117" name="Persistent physiological symptoms - Pain - Pelvic Choices" libraryName="Cx"/>
+                     </operand>
+                     <operand localId="133" locator="81:11-81:122" xsi:type="Not">
+                        <operand localId="132" locator="81:15-81:122" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="129" locator="81:16-81:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="131" locator="81:64-81:121" name="Current physiological symptoms - Contractions Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="140" locator="82:11-82:143" xsi:type="Not">
+                     <operand localId="139" locator="82:15-82:143" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="136" locator="82:16-82:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="138" locator="82:64-82:142" name="Current physiological symptoms - Pain - during urination (dysuria) Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="147" locator="83:11-83:136" xsi:type="Not">
+                  <operand localId="146" locator="83:15-83:136" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="143" locator="83:16-83:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="145" locator="83:64-83:135" name="Current physiological symptoms - Pain - Extreme pelvic pain Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="156" locator="89:1-90:108" name="Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 7" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="156">
+               <a:s>/*
+&quot;Current physiological symptoms&quot; = &quot;Constipation&quot;
+*/
+define &quot;Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 7&quot;:
+  </a:s>
+               <a:s r="155">
+                  <a:s r="152">
+                     <a:s r="151">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="152">
+                        <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="154">
+                     <a:s r="153">
+                        <a:s>Cx</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="154">
+                        <a:s>&quot;Current physiological symptoms - Constipation Choices&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="155" locator="90:3-90:108" xsi:type="AnyInValueSet">
+            <codes xsi:type="Query">
+               <source alias="X">
+                  <expression localId="152" locator="90:3-90:46" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </source>
+               <return distinct="false">
+                  <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand name="X" xsi:type="AliasRef"/>
+                  </expression>
+               </return>
+            </codes>
+            <valueset localId="154" locator="90:51-90:108" name="Current physiological symptoms - Constipation Choices" libraryName="Cx"/>
+         </expression>
+      </def>
+      <def localId="162" locator="95:1-96:114" name="Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 8" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="162">
+               <a:s>/*
+&quot;Persistent physiological symptoms&quot; = &quot;Constipation&quot;
+*/
+define &quot;Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 8&quot;:
+  </a:s>
+               <a:s r="161">
+                  <a:s r="158">
+                     <a:s r="157">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="158">
+                        <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="160">
+                     <a:s r="159">
+                        <a:s>Cx</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="160">
+                        <a:s>&quot;Persistent physiological symptoms - Constipation Choices&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="161" locator="96:3-96:114" xsi:type="AnyInValueSet">
+            <codes xsi:type="Query">
+               <source alias="X">
+                  <expression localId="158" locator="96:3-96:49" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </source>
+               <return distinct="false">
+                  <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand name="X" xsi:type="AliasRef"/>
+                  </expression>
+               </return>
+            </codes>
+            <valueset localId="160" locator="96:54-96:114" name="Persistent physiological symptoms - Constipation Choices" libraryName="Cx"/>
+         </expression>
+      </def>
+      <def localId="242" locator="108:1-128:3" name="Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 9" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="242">
+               <a:s>/*
+((((&quot;Current physiological symptoms&quot; = &quot;Varicose veins&quot;)
+    AND (Current physiological symptoms&quot; ≠ &quot;Leg pain&quot; OR &quot;Leg redness&quot;))
+  OR ((&quot;Current physiological symptoms&quot; = &quot;Oedema&quot;)
+  AND (Current physiological symptoms&quot; ≠ &quot;Leg pain&quot; OR &quot;Leg redness&quot;)))
+  OR ((&quot;Persistent physiological symptoms&quot; = &quot;Varicose veins&quot;)
+  AND (Current physiological symptoms&quot; ≠ &quot;Leg pain&quot; OR &quot;Leg redness&quot;)))
+  OR ((&quot;Persistent physiological symptoms&quot; = &quot;Oedema&quot;)
+  AND (Current physiological symptoms&quot; ≠ &quot;Leg pain&quot; OR &quot;Leg redness&quot;))
+*/
+define &quot;Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 9&quot;:
+  </a:s>
+               <a:s r="241">
+                  <a:s r="221">
+                     <a:s r="201">
+                        <a:s r="181">
+                           <a:s>(
+    </a:s>
+                           <a:s r="181">
+                              <a:s r="174">
+                                 <a:s r="167">
+                                    <a:s>(</a:s>
+                                    <a:s r="167">
+                                       <a:s r="164">
+                                          <a:s r="163">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="164">
+                                             <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="166">
+                                          <a:s r="165">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="166">
+                                             <a:s>&quot;Current physiological symptoms - Varicose veins Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="173">
+                                    <a:s>not </a:s>
+                                    <a:s r="172">
+                                       <a:s>(</a:s>
+                                       <a:s r="172">
+                                          <a:s r="169">
+                                             <a:s r="168">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="169">
+                                                <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="171">
+                                             <a:s r="170">
+                                                <a:s>Cx</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="171">
+                                                <a:s>&quot;Current physiological symptoms - Pain - Leg Choices&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="180">
+                                 <a:s>not </a:s>
+                                 <a:s r="179">
+                                    <a:s>(</a:s>
+                                    <a:s r="179">
+                                       <a:s r="176">
+                                          <a:s r="175">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="176">
+                                             <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="178">
+                                          <a:s r="177">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="178">
+                                             <a:s>&quot;Current physiological symptoms - Leg redness Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                        <a:s>
+  or </a:s>
+                        <a:s r="200">
+                           <a:s>(
+    </a:s>
+                           <a:s r="200">
+                              <a:s r="193">
+                                 <a:s r="186">
+                                    <a:s>(</a:s>
+                                    <a:s r="186">
+                                       <a:s r="183">
+                                          <a:s r="182">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="183">
+                                             <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="185">
+                                          <a:s r="184">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="185">
+                                             <a:s>&quot;Current physiological symptoms - Oedema Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                                 <a:s>
+      and </a:s>
+                                 <a:s r="192">
+                                    <a:s>not </a:s>
+                                    <a:s r="191">
+                                       <a:s>(</a:s>
+                                       <a:s r="191">
+                                          <a:s r="188">
+                                             <a:s r="187">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="188">
+                                                <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="190">
+                                             <a:s r="189">
+                                                <a:s>Cx</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="190">
+                                                <a:s>&quot;Current physiological symptoms - Pain - Leg Choices&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>)</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="199">
+                                 <a:s>not </a:s>
+                                 <a:s r="198">
+                                    <a:s>(</a:s>
+                                    <a:s r="198">
+                                       <a:s r="195">
+                                          <a:s r="194">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="195">
+                                             <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="197">
+                                          <a:s r="196">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="197">
+                                             <a:s>&quot;Current physiological symptoms - Leg redness Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  or </a:s>
+                     <a:s r="220">
+                        <a:s>(
+    </a:s>
+                        <a:s r="220">
+                           <a:s r="213">
+                              <a:s r="206">
+                                 <a:s>(</a:s>
+                                 <a:s r="206">
+                                    <a:s r="203">
+                                       <a:s r="202">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="203">
+                                          <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="205">
+                                       <a:s r="204">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="205">
+                                          <a:s>&quot;Persistent physiological symptoms - Varicose veins Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                              <a:s>
+      and </a:s>
+                              <a:s r="212">
+                                 <a:s>not </a:s>
+                                 <a:s r="211">
+                                    <a:s>(</a:s>
+                                    <a:s r="211">
+                                       <a:s r="208">
+                                          <a:s r="207">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="208">
+                                             <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="210">
+                                          <a:s r="209">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="210">
+                                             <a:s>&quot;Current physiological symptoms - Pain - Leg Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>)</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="219">
+                              <a:s>not </a:s>
+                              <a:s r="218">
+                                 <a:s>(</a:s>
+                                 <a:s r="218">
+                                    <a:s r="215">
+                                       <a:s r="214">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="215">
+                                          <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="217">
+                                       <a:s r="216">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="217">
+                                          <a:s>&quot;Current physiological symptoms - Leg redness Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+  or </a:s>
+                  <a:s r="240">
+                     <a:s>(
+    </a:s>
+                     <a:s r="240">
+                        <a:s r="233">
+                           <a:s r="226">
+                              <a:s>(</a:s>
+                              <a:s r="226">
+                                 <a:s r="223">
+                                    <a:s r="222">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="223">
+                                       <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="225">
+                                    <a:s r="224">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="225">
+                                       <a:s>&quot;Persistent physiological symptoms - Oedema Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                           <a:s>
+      and </a:s>
+                           <a:s r="232">
+                              <a:s>not </a:s>
+                              <a:s r="231">
+                                 <a:s>(</a:s>
+                                 <a:s r="231">
+                                    <a:s r="228">
+                                       <a:s r="227">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="228">
+                                          <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="230">
+                                       <a:s r="229">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="230">
+                                          <a:s>&quot;Current physiological symptoms - Pain - Leg Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>)</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      and </a:s>
+                        <a:s r="239">
+                           <a:s>not </a:s>
+                           <a:s r="238">
+                              <a:s>(</a:s>
+                              <a:s r="238">
+                                 <a:s r="235">
+                                    <a:s r="234">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="235">
+                                       <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="237">
+                                    <a:s r="236">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="237">
+                                       <a:s>&quot;Current physiological symptoms - Leg redness Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="241" locator="109:3-128:3" xsi:type="Or">
+            <operand localId="221" locator="109:3-123:3" xsi:type="Or">
+               <operand localId="201" locator="109:3-118:3" xsi:type="Or">
+                  <operand localId="181" locator="109:3-113:3" xsi:type="And">
+                     <operand localId="174" locator="110:5-111:120" xsi:type="And">
+                        <operand localId="167" locator="110:5-110:114" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="164" locator="110:6-110:49" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="166" locator="110:54-110:113" name="Current physiological symptoms - Varicose veins Choices" libraryName="Cx"/>
+                        </operand>
+                        <operand localId="173" locator="111:11-111:120" xsi:type="Not">
+                           <operand localId="172" locator="111:15-111:120" xsi:type="AnyInValueSet">
+                              <codes xsi:type="Query">
+                                 <source alias="X">
+                                    <expression localId="169" locator="111:16-111:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </source>
+                                 <return distinct="false">
+                                    <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand name="X" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </codes>
+                              <valueset localId="171" locator="111:64-111:119" name="Current physiological symptoms - Pain - Leg Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                     </operand>
+                     <operand localId="180" locator="112:11-112:121" xsi:type="Not">
+                        <operand localId="179" locator="112:15-112:121" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="176" locator="112:16-112:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="178" locator="112:64-112:120" name="Current physiological symptoms - Leg redness Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="200" locator="114:6-118:3" xsi:type="And">
+                     <operand localId="193" locator="115:5-116:120" xsi:type="And">
+                        <operand localId="186" locator="115:5-115:106" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="183" locator="115:6-115:49" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="185" locator="115:54-115:105" name="Current physiological symptoms - Oedema Choices" libraryName="Cx"/>
+                        </operand>
+                        <operand localId="192" locator="116:11-116:120" xsi:type="Not">
+                           <operand localId="191" locator="116:15-116:120" xsi:type="AnyInValueSet">
+                              <codes xsi:type="Query">
+                                 <source alias="X">
+                                    <expression localId="188" locator="116:16-116:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </source>
+                                 <return distinct="false">
+                                    <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand name="X" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </codes>
+                              <valueset localId="190" locator="116:64-116:119" name="Current physiological symptoms - Pain - Leg Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                     </operand>
+                     <operand localId="199" locator="117:11-117:121" xsi:type="Not">
+                        <operand localId="198" locator="117:15-117:121" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="195" locator="117:16-117:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="197" locator="117:64-117:120" name="Current physiological symptoms - Leg redness Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="220" locator="119:6-123:3" xsi:type="And">
+                  <operand localId="213" locator="120:5-121:120" xsi:type="And">
+                     <operand localId="206" locator="120:5-120:120" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="203" locator="120:6-120:52" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="205" locator="120:57-120:119" name="Persistent physiological symptoms - Varicose veins Choices" libraryName="Cx"/>
+                     </operand>
+                     <operand localId="212" locator="121:11-121:120" xsi:type="Not">
+                        <operand localId="211" locator="121:15-121:120" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="208" locator="121:16-121:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="210" locator="121:64-121:119" name="Current physiological symptoms - Pain - Leg Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                  </operand>
+                  <operand localId="219" locator="122:11-122:121" xsi:type="Not">
+                     <operand localId="218" locator="122:15-122:121" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="215" locator="122:16-122:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="217" locator="122:64-122:120" name="Current physiological symptoms - Leg redness Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+               </operand>
+            </operand>
+            <operand localId="240" locator="124:6-128:3" xsi:type="And">
+               <operand localId="233" locator="125:5-126:120" xsi:type="And">
+                  <operand localId="226" locator="125:5-125:112" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="223" locator="125:6-125:52" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="225" locator="125:57-125:111" name="Persistent physiological symptoms - Oedema Choices" libraryName="Cx"/>
+                  </operand>
+                  <operand localId="232" locator="126:11-126:120" xsi:type="Not">
+                     <operand localId="231" locator="126:15-126:120" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="228" locator="126:16-126:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="230" locator="126:64-126:119" name="Current physiological symptoms - Pain - Leg Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+               </operand>
+               <operand localId="239" locator="127:11-127:121" xsi:type="Not">
+                  <operand localId="238" locator="127:15-127:121" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="235" locator="127:16-127:59" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="237" locator="127:64-127:120" name="Current physiological symptoms - Leg redness Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="266" locator="136:1-140:133" name="Should Conduct counselling on physiological symptoms 2" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="266">
+               <a:s>/*
+(((&quot;Current physiological symptoms&quot; = &quot;Contractions&quot;)
+  OR (Current physiological symptoms&quot; = &quot;Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)&quot;))
+  OR (&quot;Persistent physiological symptoms&quot; = &quot;Contractions&quot;))
+  OR (Persistent physiological symptoms&quot; = &quot;Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)&quot;)
+*/
+define &quot;Should Conduct counselling on physiological symptoms 2&quot;:
+  </a:s>
+               <a:s r="265">
+                  <a:s r="259">
+                     <a:s r="253">
+                        <a:s r="247">
+                           <a:s r="244">
+                              <a:s r="243">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="244">
+                                 <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="246">
+                              <a:s r="245">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="246">
+                                 <a:s>&quot;Current physiological symptoms - Contractions Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    or </a:s>
+                        <a:s r="252">
+                           <a:s r="249">
+                              <a:s r="248">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="249">
+                                 <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="251">
+                              <a:s r="250">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="251">
+                                 <a:s>&quot;Current physiological symptoms - Pain - Extreme pelvic pain Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    or </a:s>
+                     <a:s r="258">
+                        <a:s r="255">
+                           <a:s r="254">
+                              <a:s>ContactData</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="255">
+                              <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="257">
+                           <a:s r="256">
+                              <a:s>Cx</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="257">
+                              <a:s>&quot;Persistent physiological symptoms - Contractions Choices&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="264">
+                     <a:s r="261">
+                        <a:s r="260">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="261">
+                           <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="263">
+                        <a:s r="262">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="263">
+                           <a:s>&quot;Persistent physiological symptoms - Pain - Extreme pelvic pain Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="265" locator="137:3-140:133" xsi:type="Or">
+            <operand localId="259" locator="137:3-139:119" xsi:type="Or">
+               <operand localId="253" locator="137:3-138:127" xsi:type="Or">
+                  <operand localId="247" locator="137:3-137:108" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="244" locator="137:3-137:46" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="246" locator="137:51-137:108" name="Current physiological symptoms - Contractions Choices" libraryName="Cx"/>
+                  </operand>
+                  <operand localId="252" locator="138:8-138:127" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="249" locator="138:8-138:51" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="251" locator="138:56-138:127" name="Current physiological symptoms - Pain - Extreme pelvic pain Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+               <operand localId="258" locator="139:8-139:119" xsi:type="AnyInValueSet">
+                  <codes xsi:type="Query">
+                     <source alias="X">
+                        <expression localId="255" locator="139:8-139:54" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </source>
+                     <return distinct="false">
+                        <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand name="X" xsi:type="AliasRef"/>
+                        </expression>
+                     </return>
+                  </codes>
+                  <valueset localId="257" locator="139:59-139:119" name="Persistent physiological symptoms - Contractions Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+            <operand localId="264" locator="140:8-140:133" xsi:type="AnyInValueSet">
+               <codes xsi:type="Query">
+                  <source alias="X">
+                     <expression localId="261" locator="140:8-140:54" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </source>
+                  <return distinct="false">
+                     <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand name="X" xsi:type="AliasRef"/>
+                     </expression>
+                  </return>
+               </codes>
+               <valueset localId="263" locator="140:59-140:133" name="Persistent physiological symptoms - Pain - Extreme pelvic pain Choices" libraryName="Cx"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="278" locator="146:1-148:140" name="Should Conduct laboratory tests and imaging" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="278">
+               <a:s>/*
+(&quot;Current physiological symptoms&quot; = &quot;Pain during urination (dysuria)&quot;)
+  OR (&quot;Persistent physiological symptoms&quot; = &quot;Pain during urination (dysuria)&quot;)
+*/
+define &quot;Should Conduct laboratory tests and imaging&quot;:
+  </a:s>
+               <a:s r="277">
+                  <a:s r="271">
+                     <a:s r="268">
+                        <a:s r="267">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="268">
+                           <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="270">
+                        <a:s r="269">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="270">
+                           <a:s>&quot;Current physiological symptoms - Pain - during urination (dysuria) Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="276">
+                     <a:s r="273">
+                        <a:s r="272">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="273">
+                           <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="275">
+                        <a:s r="274">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="275">
+                           <a:s>&quot;Persistent physiological symptoms - Pain - during urination (dysuria) Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="277" locator="147:3-148:140" xsi:type="Or">
+            <operand localId="271" locator="147:3-147:129" xsi:type="AnyInValueSet">
+               <codes xsi:type="Query">
+                  <source alias="X">
+                     <expression localId="268" locator="147:3-147:46" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </source>
+                  <return distinct="false">
+                     <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand name="X" xsi:type="AliasRef"/>
+                     </expression>
+                  </return>
+               </codes>
+               <valueset localId="270" locator="147:51-147:129" name="Current physiological symptoms - Pain - during urination (dysuria) Choices" libraryName="Cx"/>
+            </operand>
+            <operand localId="276" locator="148:8-148:140" xsi:type="AnyInValueSet">
+               <codes xsi:type="Query">
+                  <source alias="X">
+                     <expression localId="273" locator="148:8-148:54" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </source>
+                  <return distinct="false">
+                     <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand name="X" xsi:type="AliasRef"/>
+                     </expression>
+                  </return>
+               </codes>
+               <valueset localId="275" locator="148:59-148:140" name="Persistent physiological symptoms - Pain - during urination (dysuria) Choices" libraryName="Cx"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="302" locator="156:1-160:118" name="Should Conduct counselling on physiological symptoms 3" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="302">
+               <a:s>/*
+(((&quot;Current physiological symptoms&quot; = &quot;Leg pain&quot;)
+  OR (&quot;Current physiological symptoms&quot; = &quot;Leg redness&quot;))
+  OR (&quot;Persistent physiological symptoms&quot; = &quot;Leg pain&quot;))
+  OR (&quot;Persistent physiological symptoms&quot; = &quot;Leg redness&quot;)
+*/
+define &quot;Should Conduct counselling on physiological symptoms 3&quot;:
+  </a:s>
+               <a:s r="301">
+                  <a:s r="295">
+                     <a:s r="289">
+                        <a:s r="283">
+                           <a:s r="280">
+                              <a:s r="279">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="280">
+                                 <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="282">
+                              <a:s r="281">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="282">
+                                 <a:s>&quot;Current physiological symptoms - Pain - Leg Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    or </a:s>
+                        <a:s r="288">
+                           <a:s r="285">
+                              <a:s r="284">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="285">
+                                 <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="287">
+                              <a:s r="286">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="287">
+                                 <a:s>&quot;Current physiological symptoms - Leg redness Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    or </a:s>
+                     <a:s r="294">
+                        <a:s r="291">
+                           <a:s r="290">
+                              <a:s>ContactData</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="291">
+                              <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="293">
+                           <a:s r="292">
+                              <a:s>Cx</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="293">
+                              <a:s>&quot;Persistent physiological symptoms - Pain - Leg Choices&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="300">
+                     <a:s r="297">
+                        <a:s r="296">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="297">
+                           <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="299">
+                        <a:s r="298">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="299">
+                           <a:s>&quot;Persistent physiological symptoms - Leg redness Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="301" locator="157:3-160:118" xsi:type="Or">
+            <operand localId="295" locator="157:3-159:117" xsi:type="Or">
+               <operand localId="289" locator="157:3-158:112" xsi:type="Or">
+                  <operand localId="283" locator="157:3-157:106" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="280" locator="157:3-157:46" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="282" locator="157:51-157:106" name="Current physiological symptoms - Pain - Leg Choices" libraryName="Cx"/>
+                  </operand>
+                  <operand localId="288" locator="158:8-158:112" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="285" locator="158:8-158:51" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="287" locator="158:56-158:112" name="Current physiological symptoms - Leg redness Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+               <operand localId="294" locator="159:8-159:117" xsi:type="AnyInValueSet">
+                  <codes xsi:type="Query">
+                     <source alias="X">
+                        <expression localId="291" locator="159:8-159:54" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </source>
+                     <return distinct="false">
+                        <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand name="X" xsi:type="AliasRef"/>
+                        </expression>
+                     </return>
+                  </codes>
+                  <valueset localId="293" locator="159:59-159:117" name="Persistent physiological symptoms - Pain - Leg Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+            <operand localId="300" locator="160:8-160:118" xsi:type="AnyInValueSet">
+               <codes xsi:type="Query">
+                  <source alias="X">
+                     <expression localId="297" locator="160:8-160:54" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </source>
+                  <return distinct="false">
+                     <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand name="X" xsi:type="AliasRef"/>
+                     </expression>
+                  </return>
+               </codes>
+               <valueset localId="299" locator="160:59-160:118" name="Persistent physiological symptoms - Leg redness Choices" libraryName="Cx"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="410" locator="184:1-202:125" name="Should Follow-up steps/investigations: clinician's discretion" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="410">
+               <a:s>/*
+(((((((((((((((((((&quot;Current physiological symptoms&quot; = &quot;Abnormal vaginal discharge&quot;)
+  OR (&quot;Current physiological symptoms&quot; = &quot;Breathing difficulty&quot;))
+  OR (&quot;Current physiological symptoms&quot; = &quot;Breathless during routine activities&quot;))
+  OR (&quot;Current physiological symptoms&quot; = &quot;Cough lasting more than 3 weeks&quot;))
+  OR (&quot;Current physiological symptoms&quot; = &quot;Fever&quot;))
+  OR (&quot;Current physiological symptoms&quot; = &quot;Gets tired easily&quot;))
+  OR (&quot;Current physiological symptoms&quot; = &quot;Headache&quot;))
+  OR (&quot;Current physiological symptoms&quot; = &quot;Vaginal bleeding&quot;))
+  OR (&quot;Current physiological symptoms&quot; = &quot;Vaginal discharge&quot;))
+  OR (&quot;Current physiological symptoms&quot; = &quot;Visual disturbance&quot;))
+  OR (&quot;Persistent physiological symptoms&quot; = &quot;Abnormal vaginal discharge&quot;))
+  OR (&quot;Persistent physiological symptoms&quot; = &quot;Breathing difficulty&quot;))
+  OR (&quot;Persistent physiological symptoms&quot; = &quot;Breathless during routine activities&quot;))
+  OR (&quot;Persistent physiological symptoms&quot; = &quot;Cough lasting more than 3 weeks&quot;))
+  OR (&quot;Persistent physiological symptoms&quot; = &quot;Fever&quot;))
+  OR (&quot;Persistent physiological symptoms&quot; = &quot;Gets tired easily&quot;))
+  OR (&quot;Persistent physiological symptoms&quot; = &quot;Headache&quot;))
+  OR (&quot;Persistent physiological symptoms&quot; = &quot;Vaginal bleeding&quot;))
+  OR (&quot;Persistent physiological symptoms&quot; = &quot;Vaginal discharge&quot;))
+  OR (&quot;Persistent physiological symptoms&quot; = &quot;Visual disturbance&quot;)
+*/
+define &quot;Should Follow-up steps/investigations: clinician's discretion&quot;:
+  </a:s>
+               <a:s r="409">
+                  <a:s r="403">
+                     <a:s r="397">
+                        <a:s r="391">
+                           <a:s r="385">
+                              <a:s r="379">
+                                 <a:s r="373">
+                                    <a:s r="367">
+                                       <a:s r="361">
+                                          <a:s r="355">
+                                             <a:s r="349">
+                                                <a:s r="343">
+                                                   <a:s r="337">
+                                                      <a:s r="331">
+                                                         <a:s r="325">
+                                                            <a:s r="319">
+                                                               <a:s r="313">
+                                                                  <a:s r="307">
+                                                                     <a:s r="304">
+                                                                        <a:s r="303">
+                                                                           <a:s>ContactData</a:s>
+                                                                        </a:s>
+                                                                        <a:s>.</a:s>
+                                                                        <a:s r="304">
+                                                                           <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                                                        </a:s>
+                                                                     </a:s>
+                                                                     <a:s> in </a:s>
+                                                                     <a:s r="306">
+                                                                        <a:s r="305">
+                                                                           <a:s>Cx</a:s>
+                                                                        </a:s>
+                                                                        <a:s>.</a:s>
+                                                                        <a:s r="306">
+                                                                           <a:s>&quot;Current physiological symptoms - Abnormal vaginal discharges Choices&quot;</a:s>
+                                                                        </a:s>
+                                                                     </a:s>
+                                                                  </a:s>
+                                                                  <a:s>
+    or </a:s>
+                                                                  <a:s r="312">
+                                                                     <a:s r="309">
+                                                                        <a:s r="308">
+                                                                           <a:s>ContactData</a:s>
+                                                                        </a:s>
+                                                                        <a:s>.</a:s>
+                                                                        <a:s r="309">
+                                                                           <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                                                        </a:s>
+                                                                     </a:s>
+                                                                     <a:s> in </a:s>
+                                                                     <a:s r="311">
+                                                                        <a:s r="310">
+                                                                           <a:s>Cx</a:s>
+                                                                        </a:s>
+                                                                        <a:s>.</a:s>
+                                                                        <a:s r="311">
+                                                                           <a:s>&quot;Current physiological symptoms - Breathing difficulty Choices&quot;</a:s>
+                                                                        </a:s>
+                                                                     </a:s>
+                                                                  </a:s>
+                                                               </a:s>
+                                                               <a:s>
+    or </a:s>
+                                                               <a:s r="318">
+                                                                  <a:s r="315">
+                                                                     <a:s r="314">
+                                                                        <a:s>ContactData</a:s>
+                                                                     </a:s>
+                                                                     <a:s>.</a:s>
+                                                                     <a:s r="315">
+                                                                        <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                                                     </a:s>
+                                                                  </a:s>
+                                                                  <a:s> in </a:s>
+                                                                  <a:s r="317">
+                                                                     <a:s r="316">
+                                                                        <a:s>Cx</a:s>
+                                                                     </a:s>
+                                                                     <a:s>.</a:s>
+                                                                     <a:s r="317">
+                                                                        <a:s>&quot;Current physiological symptoms - Breathless during routine activities Choices&quot;</a:s>
+                                                                     </a:s>
+                                                                  </a:s>
+                                                               </a:s>
+                                                            </a:s>
+                                                            <a:s>
+    or </a:s>
+                                                            <a:s r="324">
+                                                               <a:s r="321">
+                                                                  <a:s r="320">
+                                                                     <a:s>ContactData</a:s>
+                                                                  </a:s>
+                                                                  <a:s>.</a:s>
+                                                                  <a:s r="321">
+                                                                     <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                                                  </a:s>
+                                                               </a:s>
+                                                               <a:s> in </a:s>
+                                                               <a:s r="323">
+                                                                  <a:s r="322">
+                                                                     <a:s>Cx</a:s>
+                                                                  </a:s>
+                                                                  <a:s>.</a:s>
+                                                                  <a:s r="323">
+                                                                     <a:s>&quot;Current physiological symptoms - Cough lasting more than 3 weeks Choices&quot;</a:s>
+                                                                  </a:s>
+                                                               </a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                         <a:s>
+    or </a:s>
+                                                         <a:s r="330">
+                                                            <a:s r="327">
+                                                               <a:s r="326">
+                                                                  <a:s>ContactData</a:s>
+                                                               </a:s>
+                                                               <a:s>.</a:s>
+                                                               <a:s r="327">
+                                                                  <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                                               </a:s>
+                                                            </a:s>
+                                                            <a:s> in </a:s>
+                                                            <a:s r="329">
+                                                               <a:s r="328">
+                                                                  <a:s>Cx</a:s>
+                                                               </a:s>
+                                                               <a:s>.</a:s>
+                                                               <a:s r="329">
+                                                                  <a:s>&quot;Current physiological symptoms - Fever Choices&quot;</a:s>
+                                                               </a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                      <a:s>
+    or </a:s>
+                                                      <a:s r="336">
+                                                         <a:s r="333">
+                                                            <a:s r="332">
+                                                               <a:s>ContactData</a:s>
+                                                            </a:s>
+                                                            <a:s>.</a:s>
+                                                            <a:s r="333">
+                                                               <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                         <a:s> in </a:s>
+                                                         <a:s r="335">
+                                                            <a:s r="334">
+                                                               <a:s>Cx</a:s>
+                                                            </a:s>
+                                                            <a:s>.</a:s>
+                                                            <a:s r="335">
+                                                               <a:s>&quot;Current physiological symptoms - Gets tired easily Choices&quot;</a:s>
+                                                            </a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s>
+    or </a:s>
+                                                   <a:s r="342">
+                                                      <a:s r="339">
+                                                         <a:s r="338">
+                                                            <a:s>ContactData</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="339">
+                                                            <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                      <a:s> in </a:s>
+                                                      <a:s r="341">
+                                                         <a:s r="340">
+                                                            <a:s>Cx</a:s>
+                                                         </a:s>
+                                                         <a:s>.</a:s>
+                                                         <a:s r="341">
+                                                            <a:s>&quot;Current physiological symptoms - Headache Choices&quot;</a:s>
+                                                         </a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s>
+    or </a:s>
+                                                <a:s r="348">
+                                                   <a:s r="345">
+                                                      <a:s r="344">
+                                                         <a:s>ContactData</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="345">
+                                                         <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                   <a:s> in </a:s>
+                                                   <a:s r="347">
+                                                      <a:s r="346">
+                                                         <a:s>Cx</a:s>
+                                                      </a:s>
+                                                      <a:s>.</a:s>
+                                                      <a:s r="347">
+                                                         <a:s>&quot;Current physiological symptoms - Vaginal bleeding Choices&quot;</a:s>
+                                                      </a:s>
+                                                   </a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s>
+    or </a:s>
+                                             <a:s r="354">
+                                                <a:s r="351">
+                                                   <a:s r="350">
+                                                      <a:s>ContactData</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="351">
+                                                      <a:s>&quot;Current physiological symptoms&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                                <a:s> in </a:s>
+                                                <a:s r="353">
+                                                   <a:s r="352">
+                                                      <a:s>Cx</a:s>
+                                                   </a:s>
+                                                   <a:s>.</a:s>
+                                                   <a:s r="353">
+                                                      <a:s>&quot;Current physiological symptoms - Visual disturbance Choices&quot;</a:s>
+                                                   </a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s>
+    or </a:s>
+                                          <a:s r="360">
+                                             <a:s r="357">
+                                                <a:s r="356">
+                                                   <a:s>ContactData</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="357">
+                                                   <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                             <a:s> in </a:s>
+                                             <a:s r="359">
+                                                <a:s r="358">
+                                                   <a:s>Cx</a:s>
+                                                </a:s>
+                                                <a:s>.</a:s>
+                                                <a:s r="359">
+                                                   <a:s>&quot;Persistent physiological symptoms - Abnormal vaginal discharge Choices&quot;</a:s>
+                                                </a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s>
+    or </a:s>
+                                       <a:s r="366">
+                                          <a:s r="363">
+                                             <a:s r="362">
+                                                <a:s>ContactData</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="363">
+                                                <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                          <a:s> in </a:s>
+                                          <a:s r="365">
+                                             <a:s r="364">
+                                                <a:s>Cx</a:s>
+                                             </a:s>
+                                             <a:s>.</a:s>
+                                             <a:s r="365">
+                                                <a:s>&quot;Persistent physiological symptoms - Breathing difficulty Choices&quot;</a:s>
+                                             </a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>
+    or </a:s>
+                                    <a:s r="372">
+                                       <a:s r="369">
+                                          <a:s r="368">
+                                             <a:s>ContactData</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="369">
+                                             <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                       <a:s> in </a:s>
+                                       <a:s r="371">
+                                          <a:s r="370">
+                                             <a:s>Cx</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="371">
+                                             <a:s>&quot;Persistent physiological symptoms - Breathless routine activities Choices&quot;</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s>
+    or </a:s>
+                                 <a:s r="378">
+                                    <a:s r="375">
+                                       <a:s r="374">
+                                          <a:s>ContactData</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="375">
+                                          <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> in </a:s>
+                                    <a:s r="377">
+                                       <a:s r="376">
+                                          <a:s>Cx</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="377">
+                                          <a:s>&quot;Persistent physiological symptoms - Cough lasting more than 3 weeks Choices&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+    or </a:s>
+                              <a:s r="384">
+                                 <a:s r="381">
+                                    <a:s r="380">
+                                       <a:s>ContactData</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="381">
+                                       <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> in </a:s>
+                                 <a:s r="383">
+                                    <a:s r="382">
+                                       <a:s>Cx</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="383">
+                                       <a:s>&quot;Persistent physiological symptoms - Fever Choices&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+    or </a:s>
+                           <a:s r="390">
+                              <a:s r="387">
+                                 <a:s r="386">
+                                    <a:s>ContactData</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="387">
+                                    <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> in </a:s>
+                              <a:s r="389">
+                                 <a:s r="388">
+                                    <a:s>Cx</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="389">
+                                    <a:s>&quot;Persistent physiological symptoms - Gets tired easily Choices&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    or </a:s>
+                        <a:s r="396">
+                           <a:s r="393">
+                              <a:s r="392">
+                                 <a:s>ContactData</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="393">
+                                 <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> in </a:s>
+                           <a:s r="395">
+                              <a:s r="394">
+                                 <a:s>Cx</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="395">
+                                 <a:s>&quot;Persistent physiological symptoms - Headache Choices&quot;</a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    or </a:s>
+                     <a:s r="402">
+                        <a:s r="399">
+                           <a:s r="398">
+                              <a:s>ContactData</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="399">
+                              <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="401">
+                           <a:s r="400">
+                              <a:s>Cx</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="401">
+                              <a:s>&quot;Persistent physiological symptoms - Vaginal bleeding Choices&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="408">
+                     <a:s r="405">
+                        <a:s r="404">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="405">
+                           <a:s>&quot;Persistent physiological symptoms&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="407">
+                        <a:s r="406">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="407">
+                           <a:s>&quot;Persistent physiological symptoms - Visual disturbance Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="409" locator="185:3-202:125" xsi:type="Or">
+            <operand localId="403" locator="185:3-201:123" xsi:type="Or">
+               <operand localId="397" locator="185:3-200:115" xsi:type="Or">
+                  <operand localId="391" locator="185:3-199:124" xsi:type="Or">
+                     <operand localId="385" locator="185:3-198:112" xsi:type="Or">
+                        <operand localId="379" locator="185:3-197:138" xsi:type="Or">
+                           <operand localId="373" locator="185:3-196:136" xsi:type="Or">
+                              <operand localId="367" locator="185:3-195:127" xsi:type="Or">
+                                 <operand localId="361" locator="185:3-194:133" xsi:type="Or">
+                                    <operand localId="355" locator="185:3-193:119" xsi:type="Or">
+                                       <operand localId="349" locator="185:3-192:117" xsi:type="Or">
+                                          <operand localId="343" locator="185:3-191:109" xsi:type="Or">
+                                             <operand localId="337" locator="185:3-190:118" xsi:type="Or">
+                                                <operand localId="331" locator="185:3-189:106" xsi:type="Or">
+                                                   <operand localId="325" locator="185:3-188:132" xsi:type="Or">
+                                                      <operand localId="319" locator="185:3-187:137" xsi:type="Or">
+                                                         <operand localId="313" locator="185:3-186:121" xsi:type="Or">
+                                                            <operand localId="307" locator="185:3-185:123" xsi:type="AnyInValueSet">
+                                                               <codes xsi:type="Query">
+                                                                  <source alias="X">
+                                                                     <expression localId="304" locator="185:3-185:46" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                                  </source>
+                                                                  <return distinct="false">
+                                                                     <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                                        <operand name="X" xsi:type="AliasRef"/>
+                                                                     </expression>
+                                                                  </return>
+                                                               </codes>
+                                                               <valueset localId="306" locator="185:51-185:123" name="Current physiological symptoms - Abnormal vaginal discharges Choices" libraryName="Cx"/>
+                                                            </operand>
+                                                            <operand localId="312" locator="186:8-186:121" xsi:type="AnyInValueSet">
+                                                               <codes xsi:type="Query">
+                                                                  <source alias="X">
+                                                                     <expression localId="309" locator="186:8-186:51" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                                  </source>
+                                                                  <return distinct="false">
+                                                                     <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                                        <operand name="X" xsi:type="AliasRef"/>
+                                                                     </expression>
+                                                                  </return>
+                                                               </codes>
+                                                               <valueset localId="311" locator="186:56-186:121" name="Current physiological symptoms - Breathing difficulty Choices" libraryName="Cx"/>
+                                                            </operand>
+                                                         </operand>
+                                                         <operand localId="318" locator="187:8-187:137" xsi:type="AnyInValueSet">
+                                                            <codes xsi:type="Query">
+                                                               <source alias="X">
+                                                                  <expression localId="315" locator="187:8-187:51" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                               </source>
+                                                               <return distinct="false">
+                                                                  <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                                     <operand name="X" xsi:type="AliasRef"/>
+                                                                  </expression>
+                                                               </return>
+                                                            </codes>
+                                                            <valueset localId="317" locator="187:56-187:137" name="Current physiological symptoms - Breathless during routine activities Choices" libraryName="Cx"/>
+                                                         </operand>
+                                                      </operand>
+                                                      <operand localId="324" locator="188:8-188:132" xsi:type="AnyInValueSet">
+                                                         <codes xsi:type="Query">
+                                                            <source alias="X">
+                                                               <expression localId="321" locator="188:8-188:51" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                            </source>
+                                                            <return distinct="false">
+                                                               <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                                  <operand name="X" xsi:type="AliasRef"/>
+                                                               </expression>
+                                                            </return>
+                                                         </codes>
+                                                         <valueset localId="323" locator="188:56-188:132" name="Current physiological symptoms - Cough lasting more than 3 weeks Choices" libraryName="Cx"/>
+                                                      </operand>
+                                                   </operand>
+                                                   <operand localId="330" locator="189:8-189:106" xsi:type="AnyInValueSet">
+                                                      <codes xsi:type="Query">
+                                                         <source alias="X">
+                                                            <expression localId="327" locator="189:8-189:51" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                         </source>
+                                                         <return distinct="false">
+                                                            <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                               <operand name="X" xsi:type="AliasRef"/>
+                                                            </expression>
+                                                         </return>
+                                                      </codes>
+                                                      <valueset localId="329" locator="189:56-189:106" name="Current physiological symptoms - Fever Choices" libraryName="Cx"/>
+                                                   </operand>
+                                                </operand>
+                                                <operand localId="336" locator="190:8-190:118" xsi:type="AnyInValueSet">
+                                                   <codes xsi:type="Query">
+                                                      <source alias="X">
+                                                         <expression localId="333" locator="190:8-190:51" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                      </source>
+                                                      <return distinct="false">
+                                                         <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                            <operand name="X" xsi:type="AliasRef"/>
+                                                         </expression>
+                                                      </return>
+                                                   </codes>
+                                                   <valueset localId="335" locator="190:56-190:118" name="Current physiological symptoms - Gets tired easily Choices" libraryName="Cx"/>
+                                                </operand>
+                                             </operand>
+                                             <operand localId="342" locator="191:8-191:109" xsi:type="AnyInValueSet">
+                                                <codes xsi:type="Query">
+                                                   <source alias="X">
+                                                      <expression localId="339" locator="191:8-191:51" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                   </source>
+                                                   <return distinct="false">
+                                                      <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                         <operand name="X" xsi:type="AliasRef"/>
+                                                      </expression>
+                                                   </return>
+                                                </codes>
+                                                <valueset localId="341" locator="191:56-191:109" name="Current physiological symptoms - Headache Choices" libraryName="Cx"/>
+                                             </operand>
+                                          </operand>
+                                          <operand localId="348" locator="192:8-192:117" xsi:type="AnyInValueSet">
+                                             <codes xsi:type="Query">
+                                                <source alias="X">
+                                                   <expression localId="345" locator="192:8-192:51" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                                </source>
+                                                <return distinct="false">
+                                                   <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                      <operand name="X" xsi:type="AliasRef"/>
+                                                   </expression>
+                                                </return>
+                                             </codes>
+                                             <valueset localId="347" locator="192:56-192:117" name="Current physiological symptoms - Vaginal bleeding Choices" libraryName="Cx"/>
+                                          </operand>
+                                       </operand>
+                                       <operand localId="354" locator="193:8-193:119" xsi:type="AnyInValueSet">
+                                          <codes xsi:type="Query">
+                                             <source alias="X">
+                                                <expression localId="351" locator="193:8-193:51" name="Current physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                             </source>
+                                             <return distinct="false">
+                                                <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                   <operand name="X" xsi:type="AliasRef"/>
+                                                </expression>
+                                             </return>
+                                          </codes>
+                                          <valueset localId="353" locator="193:56-193:119" name="Current physiological symptoms - Visual disturbance Choices" libraryName="Cx"/>
+                                       </operand>
+                                    </operand>
+                                    <operand localId="360" locator="194:8-194:133" xsi:type="AnyInValueSet">
+                                       <codes xsi:type="Query">
+                                          <source alias="X">
+                                             <expression localId="357" locator="194:8-194:54" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                          </source>
+                                          <return distinct="false">
+                                             <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                                <operand name="X" xsi:type="AliasRef"/>
+                                             </expression>
+                                          </return>
+                                       </codes>
+                                       <valueset localId="359" locator="194:59-194:133" name="Persistent physiological symptoms - Abnormal vaginal discharge Choices" libraryName="Cx"/>
+                                    </operand>
+                                 </operand>
+                                 <operand localId="366" locator="195:8-195:127" xsi:type="AnyInValueSet">
+                                    <codes xsi:type="Query">
+                                       <source alias="X">
+                                          <expression localId="363" locator="195:8-195:54" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                       </source>
+                                       <return distinct="false">
+                                          <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                             <operand name="X" xsi:type="AliasRef"/>
+                                          </expression>
+                                       </return>
+                                    </codes>
+                                    <valueset localId="365" locator="195:59-195:127" name="Persistent physiological symptoms - Breathing difficulty Choices" libraryName="Cx"/>
+                                 </operand>
+                              </operand>
+                              <operand localId="372" locator="196:8-196:136" xsi:type="AnyInValueSet">
+                                 <codes xsi:type="Query">
+                                    <source alias="X">
+                                       <expression localId="369" locator="196:8-196:54" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                    </source>
+                                    <return distinct="false">
+                                       <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                          <operand name="X" xsi:type="AliasRef"/>
+                                       </expression>
+                                    </return>
+                                 </codes>
+                                 <valueset localId="371" locator="196:59-196:136" name="Persistent physiological symptoms - Breathless routine activities Choices" libraryName="Cx"/>
+                              </operand>
+                           </operand>
+                           <operand localId="378" locator="197:8-197:138" xsi:type="AnyInValueSet">
+                              <codes xsi:type="Query">
+                                 <source alias="X">
+                                    <expression localId="375" locator="197:8-197:54" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                                 </source>
+                                 <return distinct="false">
+                                    <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                       <operand name="X" xsi:type="AliasRef"/>
+                                    </expression>
+                                 </return>
+                              </codes>
+                              <valueset localId="377" locator="197:59-197:138" name="Persistent physiological symptoms - Cough lasting more than 3 weeks Choices" libraryName="Cx"/>
+                           </operand>
+                        </operand>
+                        <operand localId="384" locator="198:8-198:112" xsi:type="AnyInValueSet">
+                           <codes xsi:type="Query">
+                              <source alias="X">
+                                 <expression localId="381" locator="198:8-198:54" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                              </source>
+                              <return distinct="false">
+                                 <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                    <operand name="X" xsi:type="AliasRef"/>
+                                 </expression>
+                              </return>
+                           </codes>
+                           <valueset localId="383" locator="198:59-198:112" name="Persistent physiological symptoms - Fever Choices" libraryName="Cx"/>
+                        </operand>
+                     </operand>
+                     <operand localId="390" locator="199:8-199:124" xsi:type="AnyInValueSet">
+                        <codes xsi:type="Query">
+                           <source alias="X">
+                              <expression localId="387" locator="199:8-199:54" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                           </source>
+                           <return distinct="false">
+                              <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                                 <operand name="X" xsi:type="AliasRef"/>
+                              </expression>
+                           </return>
+                        </codes>
+                        <valueset localId="389" locator="199:59-199:124" name="Persistent physiological symptoms - Gets tired easily Choices" libraryName="Cx"/>
+                     </operand>
+                  </operand>
+                  <operand localId="396" locator="200:8-200:115" xsi:type="AnyInValueSet">
+                     <codes xsi:type="Query">
+                        <source alias="X">
+                           <expression localId="393" locator="200:8-200:54" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                        </source>
+                        <return distinct="false">
+                           <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="X" xsi:type="AliasRef"/>
+                           </expression>
+                        </return>
+                     </codes>
+                     <valueset localId="395" locator="200:59-200:115" name="Persistent physiological symptoms - Headache Choices" libraryName="Cx"/>
+                  </operand>
+               </operand>
+               <operand localId="402" locator="201:8-201:123" xsi:type="AnyInValueSet">
+                  <codes xsi:type="Query">
+                     <source alias="X">
+                        <expression localId="399" locator="201:8-201:54" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                     </source>
+                     <return distinct="false">
+                        <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                           <operand name="X" xsi:type="AliasRef"/>
+                        </expression>
+                     </return>
+                  </codes>
+                  <valueset localId="401" locator="201:59-201:123" name="Persistent physiological symptoms - Vaginal bleeding Choices" libraryName="Cx"/>
+               </operand>
+            </operand>
+            <operand localId="408" locator="202:8-202:125" xsi:type="AnyInValueSet">
+               <codes xsi:type="Query">
+                  <source alias="X">
+                     <expression localId="405" locator="202:8-202:54" name="Persistent physiological symptoms" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </source>
+                  <return distinct="false">
+                     <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand name="X" xsi:type="AliasRef"/>
+                     </expression>
+                  </return>
+               </codes>
+               <valueset localId="407" locator="202:59-202:125" name="Persistent physiological symptoms - Visual disturbance Choices" libraryName="Cx"/>
+            </operand>
+         </expression>
+      </def>
+   </statements>
+</library>

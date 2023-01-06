@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>WHO.FHIR.ANC-CDS\Quick Start - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/cqf.css" rel="stylesheet"/>
+
+    <link href="assets/css/who.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+<!--
+  Questionnaire:
+-->
+    <link href="assets/css/lforms.min.css" rel="stylesheet"/>
+
+
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+<div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://github.com/cqframework"><img height="50" alt="Visit the CQF github organization website" src="assets/images/cqf.png"/> </a>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">WHO Antenatal Care Guideline Implementation Guide</span><br/>0.3.0 - CI Build</p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="documentation.html">Documentation</a></li>
+  <li><a href="guidance.html">Guidance</a></li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://cql.hl7.org/index.html">CQL Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/cpg">FHIR Clinical Guidelines</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="license.html">License</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+    
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Quick Start</b></li>
+          
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
+  <h2>Quick Start</h2>
+  
+  
+  
+  <div xmlns="http://www.w3.org/1999/xhtml"><div class="markdown-toc"><p>Contents:</p><ul><li><a href="#quick-start">WHO Antenatal Care Guideline - Quick Start</a></li><li><a href="#approach">Overall Approach</a></li><li><a href="#api-request-and-response-http-client">API Requests/Responses Via HTTP Client</a></li><li><a href="#service">FHIR Clinical Reasoning Service</a></li><li><a href="#content-load">Loading Content</a></li><li><a href="#request-and-response">Request and Response</a></li></ul></div>
+
+  <a name="quick-start">  </a>
+  <ns0:h3 xmlns:ns0="http://www.w3.org/1999/xhtml">WHO Antenatal Care Guideline - Quick Start</ns0:h3>
+
+  <ns1:p xmlns:ns1="http://www.w3.org/1999/xhtml">This section provides a quick start guide to getting up and running quickly with the Clinical Quality Framework reference
+    implementation. This quick start focuses on the decision logic associated with the "Quick Check" activity, step 5 of the Routine
+    Contact.</ns1:p>
+
+  <a name="approach">  </a>
+  <ns2:h3 xmlns:ns2="http://www.w3.org/1999/xhtml">Overall Approach</ns2:h3>
+
+  <ns3:p xmlns:ns3="http://www.w3.org/1999/xhtml">This quick start will focus on standing up an instance of Clinical Quality Framework reference
+    implementation that can run the guidance artifacts published in this implementation guide.</ns3:p>
+
+  <a name="api-request-and-response-http-client">  </a>
+  <ns4:h3 xmlns:ns4="http://www.w3.org/1999/xhtml">API Requests/Responses Via HTTP Client</ns4:h3>
+
+  <ns5:p xmlns:ns5="http://www.w3.org/1999/xhtml">Throughout the Quick Start you will be required to upload/retrieve data and initiate execution of the
+      recommendations via HTTP requests. Requests can be submitted via any tool or client that allows you
+      to interact with an HTTP API. One popular client is Postman, available
+      <ns6:a xmlns:ns6="http://www.w3.org/1999/xhtml" href="https://www.getpostman.com" target="_blank">here</ns6:a>.
+      Postman is an application that provides a user-friendly GUI for constructing and submitting HTTP
+      requests to APIs and viewing responses in an easy-to-read format.
+  </ns5:p>
+
+  <a name="service">  </a>
+  <ns7:h3 xmlns:ns7="http://www.w3.org/1999/xhtml">FHIR Clinical Reasoning Service</ns7:h3>
+
+  <ns8:p xmlns:ns8="http://www.w3.org/1999/xhtml">The first step is to stand up an instance of the CQF Ruler, a reference implementation of the FHIR
+    Clinical Reasoning module. Follow the instructions on the
+    <ns9:a xmlns:ns9="http://www.w3.org/1999/xhtml" href="https://github.com/DBCG/cqf-ruler/wiki/Deployment" target="_blank">Deployment</ns9:a> page
+    of the CQF Ruler wiki to start a local CQF Ruler service.</ns8:p>
+
+  <ns10:p xmlns:ns10="http://www.w3.org/1999/xhtml">This service is a HAPI FHIR Server with some additional plug-ins to support the Clinical Reasoning module. To verify
+    the service is running, issue a couple basic queries:</ns10:p>
+
+  <ns11:div xmlns:ns11="http://www.w3.org/1999/xhtml" class="example">
+    <ns12:pre xmlns:ns12="http://www.w3.org/1999/xhtml" class="http">
+  GET http://localhost:8080/cqf-ruler-r4/fhir/Library
+
+  GET http://localhost:8080/cqf-ruler-r4/fhir/PlanDefinition
+    </ns12:pre>
+  </ns11:div>
+
+  <ns13:p xmlns:ns13="http://www.w3.org/1999/xhtml">For a newly instantiated CQF Ruler, both of these queries should return 0 results, indicating there is no content
+    currently loaded.</ns13:p>
+
+  <a name="content-load">  </a>
+  <ns14:h3 xmlns:ns14="http://www.w3.org/1999/xhtml">Loading Content</ns14:h3>
+
+  <ns15:p xmlns:ns15="http://www.w3.org/1999/xhtml">The next step is to load the content, i.e., the artifacts published in this implementation guide that
+    define the recommendations. For convenience, the resources for the decision table have all been
+    added to a plandefinition-dt-01-bundle transaction bundle that can be POSTed to the base URL of the server:</ns15:p>
+
+  <ns16:table xmlns:ns16="http://www.w3.org/1999/xhtml" class="list">
+  	<ns17:thead xmlns:ns17="http://www.w3.org/1999/xhtml">
+  		<ns18:tr xmlns:ns18="http://www.w3.org/1999/xhtml"><ns19:th xmlns:ns19="http://www.w3.org/1999/xhtml">Resource</ns19:th><ns20:th xmlns:ns20="http://www.w3.org/1999/xhtml">Type</ns20:th><ns21:th xmlns:ns21="http://www.w3.org/1999/xhtml">Description</ns21:th></ns18:tr>
+  	</ns17:thead>
+  	<ns22:tbody xmlns:ns22="http://www.w3.org/1999/xhtml">
+  		<ns23:tr xmlns:ns23="http://www.w3.org/1999/xhtml"><ns24:td xmlns:ns24="http://www.w3.org/1999/xhtml"><ns25:a xmlns:ns25="http://www.w3.org/1999/xhtml" href="https://raw.githubusercontent.com/WorldHealthOrganization/smart-anc/master/bundles/plandefinition/ANCDT01/ANCDT01-bundle.json">ANCDT-01-bundle</ns25:a></ns24:td><ns26:td xmlns:ns26="http://www.w3.org/1999/xhtml">Bundle</ns26:td><ns27:td xmlns:ns27="http://www.w3.org/1999/xhtml">The PlanDefinition and associated dependencies for Decision Table 01 - Danger Signs</ns27:td></ns23:tr>
+  	</ns22:tbody>
+  </ns16:table>
+
+  <ns28:p xmlns:ns28="http://www.w3.org/1999/xhtml">The bundle includes:</ns28:p>
+
+  <ns29:ul xmlns:ns29="http://www.w3.org/1999/xhtml">
+    <ns30:li xmlns:ns30="http://www.w3.org/1999/xhtml">PlanDefinition DT01 - The Event-Condition-Action rule that associates the decision logic for Danger Signs to the Quick Check activity</ns30:li>
+    <ns31:li xmlns:ns31="http://www.w3.org/1999/xhtml">Library DT01 - The logic for evaluating the criteria of the decision</ns31:li>
+    <ns32:li xmlns:ns32="http://www.w3.org/1999/xhtml">Library ANCCommon - ANC common functions</ns32:li>
+    <ns33:li xmlns:ns33="http://www.w3.org/1999/xhtml">Library ANCConcepts - Concept dictionary for the ANC content</ns33:li>
+    <ns34:li xmlns:ns34="http://www.w3.org/1999/xhtml">Library ANCDataElements - Expressions for referencing data elements throughout ANC content</ns34:li>
+    <ns35:li xmlns:ns35="http://www.w3.org/1999/xhtml">Library ANCContactDataElements - Expressions for referencing data elements from the perspective of an encounter</ns35:li>
+    <ns36:li xmlns:ns36="http://www.w3.org/1999/xhtml">ValueSets - Vocabulary resources used by the decision logic</ns36:li>
+    <ns37:li xmlns:ns37="http://www.w3.org/1999/xhtml">Test Data - Test resources for the "charity-with-danger-signs" test patient, which should evaluate to Referral for Central Cyanosis</ns37:li>
+  </ns29:ul>
+
+  <ns38:div xmlns:ns38="http://www.w3.org/1999/xhtml" class="example">
+    <ns39:pre xmlns:ns39="http://www.w3.org/1999/xhtml" class="http">
+  POST http://localhost:8080/cqf-ruler-r4/fhir
+    </ns39:pre>
+  </ns38:div>
+
+  <ns40:p xmlns:ns40="http://www.w3.org/1999/xhtml">Following normal FHIR server transaction processing, this will post all the content resources as
+    a single transaction.</ns40:p>
+
+  <a name="request-and-response">  </a>
+  <ns41:h3 xmlns:ns41="http://www.w3.org/1999/xhtml">Request and Response</ns41:h3>
+
+  <ns42:p xmlns:ns42="http://www.w3.org/1999/xhtml">Now that the content is loaded, you can apply the PlanDefinition for the DT.01 - Danger Signs via the $apply operation
+    and will receive a CarePlan resource in response.
+    For example, POST the following to apply the DT.01 PlanDefinition for the Patient with id 'charity-with-danger-signs':</ns42:p>
+
+  <ns43:div xmlns:ns43="http://www.w3.org/1999/xhtml" class="example">
+    <ns44:pre xmlns:ns44="http://www.w3.org/1999/xhtml" class="http">
+  POST http://localhost:8080/cqf-ruler-r4/fhir/PlanDefinition/DT01/$apply?patient=charity-with-danger-signs
+    </ns44:pre>
+  </ns43:div>
+
+  <ns45:p xmlns:ns45="http://www.w3.org/1999/xhtml">This POST results in the following response:</ns45:p>
+
+  <ns46:div xmlns:ns46="http://www.w3.org/1999/xhtml" class="example">
+    <ns47:pre xmlns:ns47="http://www.w3.org/1999/xhtml" class="xml">
+&lt;CarePlan xmlns="http://hl7.org/fhir"&gt;
+  &lt;id value="charity-with-danger-signs"/&gt;
+	&lt;instantiatesCanonical value="http://fhir.org/guides/who/anc-cds/PlanDefinition/DT01"/&gt;
+  &lt;status value="active"/&gt;
+  &lt;intent value="plan"/&gt;
+  &lt;subject&gt;
+    &lt;reference value="Patient/charity-with-danger-signs"/&gt;
+    &lt;display value="Charity Otala"/&gt;
+  &lt;/subject&gt;
+
+  &lt;activity&gt;
+    &lt;description value="If no danger signs are present, the health worker can continue with the normal ANC contact"/&gt;
+  &lt;/activity&gt;
+&lt;/CarePlan&gt;
+    </ns47:pre>
+  </ns46:div>
+</div>
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.who.int">World Health Organization (WHO)</a>.  Package who.fhir.anc-cds#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 4, 2023 17:07+0700">2023-01-04</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+                 | <a style="color: #81BEF7" target="_blank" href="http://fhir.org/guides/who/anc-cds/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+                 <!--<a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

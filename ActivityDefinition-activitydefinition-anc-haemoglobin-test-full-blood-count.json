@@ -1,0 +1,56 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "activitydefinition-anc-haemoglobin-test-full-blood-count",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-activitydefinition"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <table class=\"grid dict\">\r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Id: </b></th>\r\n            <td style=\"padding-left: 4px;\">activitydefinition-anc-haemoglobin-test-full-blood-count</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Url: </b></th>\r\n            <td style=\"padding-left: 4px;\"><a href=\"http://fhir.org/guides/who/anc-cds/ActivityDefinition/ANCHaemoglobinTestCompleteBloodCount\">http://fhir.org/guides/who/anc-cds/ActivityDefinition/ANCHaemoglobinTestCompleteBloodCount</a></td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Version: </b></th>\r\n            <td style=\"padding-left: 4px;\">0.3.0</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Name: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCHaemoglobinTestCompleteBloodCount</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Title: </b></th>\r\n            <td style=\"padding-left: 4px;\">ActivityDefinition - ANC Haemoglobin Test Complete Blood Count</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Status: </b></th>\r\n            <td style=\"padding-left: 4px;\">active</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Experimental: </b></th>\r\n            <td style=\"padding-left: 4px;\">true</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Date: </b></th>\r\n            <td style=\"padding-left: 4px;\">2020-02-01</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Publisher: </b></th>\r\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Description: </b></th>\r\n            <td style=\"padding-left: 4px;\">Haemoglobin Test Complete Blood Count</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\r\n            <td style=\"padding-left: 4px;\">001</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Purpose: </b></th>\r\n            <td style=\"padding-left: 4px;\">Defines a guideline supported request for a Complete Blood Count Haemoglobin test.</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Copyright: </b></th>\r\n            <td style=\"padding-left: 4px;\">© WHO 2020+.</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Kind: </b></th>\r\n            <td style=\"padding-left: 4px;\">ServiceRequest</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Type: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                    \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>system: </b> <span><a href=\"http://openmrs.org/concepts\">http://openmrs.org/concepts</a></span>\r\n                        </p>\r\n                        \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>code: </b> <span>1019AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span>\r\n                        </p>\r\n                        \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>display: </b> <span>COMPLETE BLOOD COUNT</span>\r\n                        </p>\r\n                        \r\n                    \r\n                \r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n    </table>\r\n</div>"
+  },
+  "url" : "http://fhir.org/guides/who/anc-cds/ActivityDefinition/ANCHaemoglobinTestCompleteBloodCount",
+  "version" : "0.3.0",
+  "name" : "ANCHaemoglobinTestCompleteBloodCount",
+  "title" : "ActivityDefinition - ANC Haemoglobin Test Complete Blood Count",
+  "status" : "active",
+  "experimental" : true,
+  "date" : "2020-02-01",
+  "publisher" : "World Health Organization (WHO)",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.who.int"
+    }]
+  }],
+  "description" : "Haemoglobin Test Complete Blood Count",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001"
+    }]
+  }],
+  "purpose" : "Defines a guideline supported request for a Complete Blood Count Haemoglobin test.",
+  "copyright" : "© WHO 2020+.",
+  "kind" : "ServiceRequest",
+  "code" : {
+    "coding" : [{
+      "system" : "http://openmrs.org/concepts",
+      "code" : "1019AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "display" : "COMPLETE BLOOD COUNT"
+    }]
+  },
+  "timingTiming" : {
+    "_event" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+        "valueExpression" : {
+          "language" : "text/cql",
+          "expression" : "Now()"
+        }
+      }]
+    }]
+  },
+  "participant" : [{
+    "type" : "practitioner"
+  }]
+}

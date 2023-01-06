@@ -1,0 +1,14 @@
+{
+  "resourceType" : "PractitionerRole",
+  "id" : "referral-provider-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/referral-provider"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: PractitionerRole</b><a name=\"referral-provider-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource PractitionerRole &quot;referral-provider-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-referral-provider.html\">Referral Provider</a></p></div><p><b>telecom</b>: km3pewy6kjf23b</p></div>"
+  },
+  "telecom" : [{
+    "value" : "km3pewy6kjf23b"
+  }]
+}

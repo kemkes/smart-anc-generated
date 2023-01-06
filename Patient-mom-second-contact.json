@@ -1,0 +1,33 @@
+{
+  "resourceType" : "Patient",
+  "id" : "mom-second-contact",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>Charity Otala(OFFICIAL)</b> female, DoB: 1993-05-31 ( id: 1000 (use: OFFICIAL))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td colspan=\"3\">true</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Details:</td><td colspan=\"3\"><ul><li>ph: 555-555-2003(MOBILE)</li><li>2222 House Street(HOME)</li></ul></td></tr></table></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "value" : "1000"
+  }],
+  "active" : true,
+  "name" : [{
+    "use" : "official",
+    "family" : "Otala",
+    "given" : ["Charity"],
+    "text" : "Charity Otala"
+  }],
+  "telecom" : [{
+    "system" : "phone",
+    "value" : "555-555-2003",
+    "use" : "mobile"
+  }],
+  "gender" : "female",
+  "birthDate" : "1993-05-31",
+  "address" : [{
+    "use" : "home",
+    "text" : "2222 House Street"
+  }]
+}

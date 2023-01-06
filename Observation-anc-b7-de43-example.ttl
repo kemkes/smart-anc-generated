@@ -1,0 +1,65 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Observation/anc-b7-de43-example> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "anc-b7-de43-example"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b7-de43";
+       fhir:index 0;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b7-de43>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"anc-b7-de43-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;anc-b7-de43-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b7-de43.html\">Current physiological symptoms</a></p></div><p><b>identifier</b>: id: anc-b7-de43-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Current physiological symptoms <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B7.DE43)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: Other current physiological symptoms (specify) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B7.DE70)</span></p></div>"
+  ]; # 
+  fhir:Observation.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "http://example.org/fhir/NamingSystem/identifiers" ];
+     fhir:Identifier.value [ fhir:value "anc-b7-de43-example" ]
+  ]; # 
+  fhir:Observation.status [ fhir:value "final"]; # 
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:Coding.code [ fhir:value "ANC.B7.DE43" ];
+       fhir:Coding.display [ fhir:value "Current physiological symptoms" ]
+     ]
+  ]; # 
+  fhir:Observation.subject [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Patient/anc-patient-example>;
+     fhir:Reference.reference [ fhir:value "Patient/anc-patient-example" ]
+  ]; # 
+  fhir:Observation.encounter [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Encounter/anc-encounter-example>;
+     fhir:Reference.reference [ fhir:value "Encounter/anc-encounter-example" ]
+  ]; # 
+  fhir:Observation.performer [
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/who/anc-cds/PractitionerRole/anc-practitionerrole-example>;
+     fhir:Reference.reference [ fhir:value "PractitionerRole/anc-practitionerrole-example" ]
+  ]; # 
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:Coding.code [ fhir:value "ANC.B7.DE70" ];
+       fhir:Coding.display [ fhir:value "Other current physiological symptoms (specify)" ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Observation/anc-b7-de43-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

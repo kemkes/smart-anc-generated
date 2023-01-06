@@ -1,0 +1,147 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de35> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "anc-b6-de35"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 8 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE35\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE35\">ANC.B6.DE35</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>No past pregnancy complications</td><td><div><p>Past pregnancy complications - No past pregnancy complications</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE36\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE36\">ANC.B6.DE36</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Does not know of any past pregnancy complications</td><td><div><p>Past pregnancy complications - Does not know of any past pregnancy complications</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE39\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE39\">ANC.B6.DE39</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Alcohol use</td><td><div><p>Past pregnancy complications - Alcohol use</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE40\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE40\">ANC.B6.DE40</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Baby died within 24 hours of birth</td><td><div><p>Past pregnancy complications - Baby died within 24 hours of birth</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE47\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE47\">ANC.B6.DE47</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Substance use</td><td><div><p>Past pregnancy complications - Substance use</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE48\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE48\">ANC.B6.DE48</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Tobacco use</td><td><div><p>Past pregnancy complications - Tobacco use</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE49\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE49\">ANC.B6.DE49</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Vacuum delivery</td><td><div><p>Past pregnancy complications - Vacuum delivery</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE50\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE50\">ANC.B6.DE50</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Other past pregnancy problems (specify)</td><td><div><p>Past pregnancy complications - Other past pregnancy problems (specify)</p>\n</div></td></tr></table></div>"
+  ]; # 
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel" ];
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ]; # 
+  fhir:ValueSet.url [ fhir:value "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de35"]; # 
+  fhir:ValueSet.version [ fhir:value "0.3.0"]; # 
+  fhir:ValueSet.name [ fhir:value "PastpregnancycomplicationsChoices"]; # 
+  fhir:ValueSet.title [ fhir:value "Past pregnancy complications Choices"]; # 
+  fhir:ValueSet.status [ fhir:value "draft"]; # 
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean]; # 
+  fhir:ValueSet.date [ fhir:value "2023-01-04T17:07:42+07:00"^^xsd:dateTime]; # 
+  fhir:ValueSet.publisher [ fhir:value "World Health Organization (WHO)"]; # 
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ]; # 
+  fhir:ValueSet.description [ fhir:value "Codes representing possible values for the Past pregnancy complications Choices element"]; # 
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ]; # 
+  fhir:ValueSet.immutable [ fhir:value "true"^^xsd:boolean]; # 
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE35" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "No past pregnancy complications" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE36" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Does not know of any past pregnancy complications" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE39" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Alcohol use" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE40" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Baby died within 24 hours of birth" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE47" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Substance use" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE48" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Tobacco use" ]
+       ], [
+         fhir:index 6;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE49" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Vacuum delivery" ]
+       ], [
+         fhir:index 7;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE50" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Other past pregnancy problems (specify)" ]
+       ]
+     ]
+  ]; # 
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2021-11-30T07:11:22-07:00"^^xsd:dateTime ];
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE35" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "No past pregnancy complications" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE36" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Does not know of any past pregnancy complications" ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE39" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Alcohol use" ]
+     ], [
+       fhir:index 3;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE40" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Baby died within 24 hours of birth" ]
+     ], [
+       fhir:index 4;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE47" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Substance use" ]
+     ], [
+       fhir:index 5;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE48" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Tobacco use" ]
+     ], [
+       fhir:index 6;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE49" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Vacuum delivery" ]
+     ], [
+       fhir:index 7;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE50" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Other past pregnancy problems (specify)" ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de35.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

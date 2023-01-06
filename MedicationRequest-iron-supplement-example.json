@@ -1,0 +1,35 @@
+{
+  "resourceType" : "MedicationRequest",
+  "id" : "iron-supplement-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/iron-supplement"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: MedicationRequest</b><a name=\"iron-supplement-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource MedicationRequest &quot;iron-supplement-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-iron-supplement.html\">Iron Supplement</a></p></div><p><b>identifier</b>: id: iron-supplement-example (use: OFFICIAL)</p><p><b>status</b>: active</p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>requester</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><blockquote><p><b>dosageInstruction</b></p></blockquote></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "iron-supplement-example"
+  }],
+  "status" : "active",
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "requester" : {
+    "reference" : "PractitionerRole/anc-practitionerrole-example"
+  },
+  "dosageInstruction" : [{
+    "doseAndRate" : [{
+      "doseQuantity" : {
+        "value" : 44.0031000000000034333424991928040981292724609375,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "g"
+      }
+    }]
+  }]
+}

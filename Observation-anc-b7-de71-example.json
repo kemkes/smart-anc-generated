@@ -1,0 +1,60 @@
+{
+  "resourceType" : "Observation",
+  "id" : "anc-b7-de71-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b7-de71"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"anc-b7-de71-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;anc-b7-de71-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b7-de71.html\">Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry</a></p></div><p><b>identifier</b>: id: anc-b7-de71-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B7.DE71)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: Children have emotional and behavioural problems <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B7.DE96; <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html\">ICD-10</a>#Z63.9 &quot;Problem related to primary support group, unspecified&quot;; mms#QE70.Z &quot;Problems related to primary support group, including family circumstances, unspecified&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#248036002 &quot;Problematic behaviour in children (finding)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#62924-6 &quot;Emotional state – child protocol 180502 [PhenX ]&quot;)</span></p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-b7-de71-example"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B7.DE71",
+      "display" : "Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "performer" : [{
+    "reference" : "PractitionerRole/anc-practitionerrole-example"
+  }],
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B7.DE96",
+      "display" : "Children have emotional and behavioural problems"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-10",
+      "code" : "Z63.9",
+      "display" : "Problem related to primary support group, unspecified"
+    },
+    {
+      "system" : "http://id.who.int/icd11/mms",
+      "code" : "QE70.Z",
+      "display" : "Problems related to primary support group, including family circumstances, unspecified"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "248036002",
+      "display" : "Problematic behaviour in children (finding)"
+    },
+    {
+      "system" : "http://loinc.org",
+      "code" : "62924-6",
+      "display" : "Emotional state – child protocol 180502 [PhenX ]"
+    }]
+  }
+}

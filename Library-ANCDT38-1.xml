@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="32">
+         <a:s>library ANCDT38</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCDT38" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="7:1-7:31" localIdentifier="Config" path="http://fhir.org/guides/who/anc-cds/ANCConfig">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConfig</a:s>
+               </a:s>
+               <a:s> called Config</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="8:1-8:29" localIdentifier="Cx" path="http://fhir.org/guides/who/anc-cds/ANCConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConcepts</a:s>
+               </a:s>
+               <a:s> called Cx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="9:1-9:42" localIdentifier="PatientData" path="http://fhir.org/guides/who/anc-cds/ANCDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCDataElements</a:s>
+               </a:s>
+               <a:s> called PatientData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="10:1-10:49" localIdentifier="ContactData" path="http://fhir.org/guides/who/anc-cds/ANCContactDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCContactDataElements</a:s>
+               </a:s>
+               <a:s> called ContactData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <statements>
+      <def locator="12:1-12:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="12:1-12:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="11" locator="17:1-18:41" name="Should Provide malaria prophylaxis" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="11">
+               <a:s>/*
+Malaria-endemic setting = TRUE
+*/
+define &quot;Should Provide malaria prophylaxis&quot;:
+  </a:s>
+               <a:s r="10">
+                  <a:s r="8">
+                     <a:s r="7">
+                        <a:s>Config</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="8">
+                        <a:s>&quot;Malaria-endemic setting&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s r="9"> = true</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="10" locator="18:3-18:41" xsi:type="Equal">
+            <operand localId="8" locator="18:3-18:34" name="Malaria-endemic setting" libraryName="Config" xsi:type="ExpressionRef"/>
+            <operand localId="9" locator="18:38-18:41" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+         </expression>
+      </def>
+      <def localId="22" locator="24:1-26:94" name="Should Do not give IPTp-SP, because woman is taking co-trimoxazole" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="22">
+               <a:s>/*
+(Malaria-endemic setting = TRUE)
+  AND (Current medications&quot; = &quot;Co-trimoxazole&quot;)
+*/
+define &quot;Should Do not give IPTp-SP, because woman is taking co-trimoxazole&quot;:
+  </a:s>
+               <a:s r="21">
+                  <a:s r="15">
+                     <a:s r="13">
+                        <a:s r="12">
+                           <a:s>Config</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="13">
+                           <a:s>&quot;Malaria-endemic setting&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s r="14"> = true</a:s>
+                  </a:s>
+                  <a:s>
+    and </a:s>
+                  <a:s r="20">
+                     <a:s r="17">
+                        <a:s r="16">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="17">
+                           <a:s>&quot;Current medications&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="19">
+                        <a:s r="18">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="19">
+                           <a:s>&quot;Current Medications - Co-trimoxazole Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="21" locator="25:3-26:94" xsi:type="And">
+            <operand localId="15" locator="25:3-25:41" xsi:type="Equal">
+               <operand localId="13" locator="25:3-25:34" name="Malaria-endemic setting" libraryName="Config" xsi:type="ExpressionRef"/>
+               <operand localId="14" locator="25:38-25:41" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+            </operand>
+            <operand localId="20" locator="26:9-26:94" xsi:type="AnyInValueSet">
+               <codes xsi:type="Query">
+                  <source alias="X">
+                     <expression localId="17" locator="26:9-26:41" name="Current medications" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </source>
+                  <return distinct="false">
+                     <expression name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                        <operand name="X" xsi:type="AliasRef"/>
+                     </expression>
+                  </return>
+               </codes>
+               <valueset localId="19" locator="26:46-26:94" name="Current Medications - Co-trimoxazole Choices" libraryName="Cx"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="32" locator="32:1-34:58" name="Should Conduct deworming" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="32">
+               <a:s>/*
+(&quot;Population prevalence of soil-transmitted helminth infection&quot; ≥ 20% )
+  OR (&quot;Population prevalence of anaemia&quot; ≥ 40%)
+*/
+define &quot;Should Conduct deworming&quot;:
+  </a:s>
+               <a:s r="31">
+                  <a:s r="26">
+                     <a:s r="24">
+                        <a:s r="23">
+                           <a:s>Config</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="24">
+                           <a:s>&quot;Population prevalence of soil-transmitted helminth infection&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> >= </a:s>
+                     <a:s r="25">
+                        <a:s>20 '%'</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="30">
+                     <a:s r="28">
+                        <a:s r="27">
+                           <a:s>Config</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="28">
+                           <a:s>&quot;Population prevalence of anaemia&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> >= </a:s>
+                     <a:s r="29">
+                        <a:s>40 '%'</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="31" locator="33:3-34:58" xsi:type="Or">
+            <operand localId="26" locator="33:3-33:81" xsi:type="GreaterOrEqual">
+               <operand localId="24" locator="33:3-33:71" name="Population prevalence of soil-transmitted helminth infection" libraryName="Config" xsi:type="ExpressionRef"/>
+               <operand localId="25" locator="33:76-33:81" value="20" unit="%" xsi:type="Quantity"/>
+            </operand>
+            <operand localId="30" locator="34:8-34:58" xsi:type="GreaterOrEqual">
+               <operand localId="28" locator="34:8-34:48" name="Population prevalence of anaemia" libraryName="Config" xsi:type="ExpressionRef"/>
+               <operand localId="29" locator="34:53-34:58" value="40" unit="%" xsi:type="Quantity"/>
+            </operand>
+         </expression>
+      </def>
+   </statements>
+</library>

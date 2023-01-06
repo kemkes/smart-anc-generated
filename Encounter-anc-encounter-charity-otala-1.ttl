@@ -1,0 +1,105 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+#  TODO: account 
+#  TODO: location 
+#  TODO: serviceProvider 
+
+<http://fhir.org/guides/who/anc-cds/Encounter/anc-encounter-charity-otala-1> a fhir:Encounter;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "anc-encounter-charity-otala-1"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter";
+       fhir:index 0;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter>
+     ], [
+       fhir:value "http://fhir.org/guides/who/core/StructureDefinition/who-encounter";
+       fhir:index 1;
+       fhir:link <http://fhir.org/guides/who/core/StructureDefinition/who-encounter>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Encounter</b><a name=\"anc-encounter-charity-otala-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Encounter &quot;anc-encounter-charity-otala-1&quot; </p><p style=\"margin-bottom: 0px\">Profiles: <a href=\"StructureDefinition-anc-encounter.html\">ANC Encounter</a>, <a href=\"StructureDefinition-who-encounter.html\">WHO Encounter</a></p></div><p><b>status</b>: in-progress</p><p><b>class</b>: ambulatory (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code AMB = 'ambulatory', stated as 'ambulatory')</p><p><b>type</b>: Antenatal care contact <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B5.DE2 &quot;First antenatal care contact&quot;)</span></p><p><b>subject</b>: <a href=\"Patient-charity-otala-1.html\">Patient/charity-otala-1</a> &quot; OTALA&quot;</p><p><b>episodeOfCare</b>: <a href=\"EpisodeOfCare-charity-otala-1-pregnancy-episode.html\">EpisodeOfCare/charity-otala-1-pregnancy-episode</a></p><h3>Participants</h3><table class=\"grid\"><tr><td>-</td><td><b>Type</b></td><td><b>Individual</b></td></tr><tr><td>*</td><td>primary performer <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ParticipationType.html\">ParticipationType</a>#PPRF)</span></td><td><a href=\"Practitioner-jane.html\">Practitioner/jane</a> &quot; NURSE&quot;</td></tr></table><p><b>period</b>: 2021-03-24 --&gt; (ongoing)</p><p><b>reasonCode</b>: First antenatal care contact <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B5.DE2; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#424441002 &quot;Prenatal initial visit (regime/therapy)&quot;)</span></p><h3>Diagnoses</h3><table class=\"grid\"><tr><td>-</td><td><b>Condition</b></td><td><b>Rank</b></td></tr><tr><td>*</td><td><a href=\"Condition-charity-otala-1-pregnancy.html\">Condition/charity-otala-1-pregnancy</a></td><td>1</td></tr></table></div>"
+  ]; # 
+  fhir:Encounter.status [ fhir:value "in-progress"]; # 
+  fhir:Encounter.class [
+     fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+     fhir:Coding.code [ fhir:value "AMB" ];
+     fhir:Coding.display [ fhir:value "ambulatory" ]
+  ]; # 
+  fhir:Encounter.type [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:Coding.code [ fhir:value "ANC.B5.DE2" ];
+       fhir:Coding.display [ fhir:value "First antenatal care contact" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Antenatal care contact" ]
+  ]; # 
+  fhir:Encounter.subject [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Patient/charity-otala-1>;
+     fhir:Reference.reference [ fhir:value "Patient/charity-otala-1" ]
+  ]; # 
+  fhir:Encounter.episodeOfCare [
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/who/anc-cds/EpisodeOfCare/charity-otala-1-pregnancy-episode>;
+     fhir:Reference.reference [ fhir:value "EpisodeOfCare/charity-otala-1-pregnancy-episode" ]
+  ]; # 
+  fhir:Encounter.participant [
+     fhir:index 0;
+     fhir:Encounter.participant.type [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+         fhir:Coding.code [ fhir:value "PPRF" ];
+         fhir:Coding.display [ fhir:value "primary performer" ]
+       ]
+     ];
+     fhir:Encounter.participant.individual [
+       fhir:link <http://fhir.org/guides/who/anc-cds/Practitioner/jane>;
+       fhir:Reference.reference [ fhir:value "Practitioner/jane" ]
+     ]
+  ]; # 
+  fhir:Encounter.period [
+     fhir:Period.start [ fhir:value "2021-03-24"^^xsd:date ]
+  ]; #  TODO: ServiceRequest 
+  fhir:Encounter.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:Coding.code [ fhir:value "ANC.B5.DE2" ];
+       fhir:Coding.display [ fhir:value "First antenatal care contact" ]
+     ], [
+       fhir:index 1;
+       a sct:424441002;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "424441002" ];
+       fhir:Coding.display [ fhir:value "Prenatal initial visit (regime/therapy)" ]
+     ]
+  ]; # 
+  fhir:Encounter.diagnosis [
+     fhir:index 0;
+     fhir:Encounter.diagnosis.condition [
+       fhir:link <http://fhir.org/guides/who/anc-cds/Condition/charity-otala-1-pregnancy>;
+       fhir:Reference.reference [ fhir:value "Condition/charity-otala-1-pregnancy" ]
+     ];
+     fhir:Encounter.diagnosis.rank [ fhir:value "1"^^xsd:positiveInteger ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Encounter/anc-encounter-charity-otala-1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,201 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de58> a fhir:ValueSet;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "anc-b6-de58"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset";
+       fhir:index 0;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 14 concepts</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE58\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE58\">ANC.B6.DE58</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>No known allergies</td><td><div><p>Allergies - No known allergies</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE59\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE59\">ANC.B6.DE59</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Albendazole</td><td><div><p>Allergies - Albendazole</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE60\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE60\">ANC.B6.DE60</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Aluminium hydroxide</td><td><div><p>Allergies - Aluminium hydroxide</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE61\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE61\">ANC.B6.DE61</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Calcium</td><td><div><p>Allergies - Calcium</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE62\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE62\">ANC.B6.DE62</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Chamomile</td><td><div><p>Allergies - Chamomile</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE63\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE63\">ANC.B6.DE63</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Folic acid</td><td><div><p>Allergies - Folic acid</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE64\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE64\">ANC.B6.DE64</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Ginger</td><td><div><p>Allergies - Ginger</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE65\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE65\">ANC.B6.DE65</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Iron</td><td><div><p>Allergies - Iron</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE66\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE66\">ANC.B6.DE66</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Magnesium carbonate</td><td><div><p>Allergies - Magnesium carbonate</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE67\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE67\">ANC.B6.DE67</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Malaria medication (sulfadoxine-pyrimethamine)</td><td><div><p>Allergies - Malaria medication (sulfadoxine-pyrimethamine)</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE68\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE68\">ANC.B6.DE68</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Mebendazole</td><td><div><p>Allergies - Mebendazole</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE69\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE69\">ANC.B6.DE69</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Penicillin</td><td><div><p>Allergies - Penicillin</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE70\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE70\">ANC.B6.DE70</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>PrEP tenofovir disoproxil fumarate (TDF)</td><td><div><p>Allergies - PrEP tenofovir disoproxil fumarate (TDF)</p>\n</div></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---fhir.org-guides-who-anc-cds-CodeSystem-anc-custom-codes-ANC.B6.DE71\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE71\">ANC.B6.DE71</a></td><td>http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes</td><td>Other allergies (specify)</td><td><div><p>Allergies - Other allergies (specify)</p>\n</div></td></tr></table></div>"
+  ]; # 
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ];
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel" ];
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ]; # 
+  fhir:ValueSet.url [ fhir:value "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de58"]; # 
+  fhir:ValueSet.version [ fhir:value "0.3.0"]; # 
+  fhir:ValueSet.name [ fhir:value "AllergiesChoices"]; # 
+  fhir:ValueSet.title [ fhir:value "Allergies Choices"]; # 
+  fhir:ValueSet.status [ fhir:value "draft"]; # 
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean]; # 
+  fhir:ValueSet.date [ fhir:value "2023-01-04T17:07:42+07:00"^^xsd:dateTime]; # 
+  fhir:ValueSet.publisher [ fhir:value "World Health Organization (WHO)"]; # 
+  fhir:ValueSet.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ]; # 
+  fhir:ValueSet.description [ fhir:value "Codes representing possible values for the Allergies Choices element"]; # 
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ]; # 
+  fhir:ValueSet.immutable [ fhir:value "true"^^xsd:boolean]; # 
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE58" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "No known allergies" ]
+       ], [
+         fhir:index 1;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE59" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Albendazole" ]
+       ], [
+         fhir:index 2;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE60" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Aluminium hydroxide" ]
+       ], [
+         fhir:index 3;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE61" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Calcium" ]
+       ], [
+         fhir:index 4;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE62" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Chamomile" ]
+       ], [
+         fhir:index 5;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE63" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Folic acid" ]
+       ], [
+         fhir:index 6;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE64" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Ginger" ]
+       ], [
+         fhir:index 7;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE65" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Iron" ]
+       ], [
+         fhir:index 8;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE66" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Magnesium carbonate" ]
+       ], [
+         fhir:index 9;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE67" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Malaria medication (sulfadoxine-pyrimethamine)" ]
+       ], [
+         fhir:index 10;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE68" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Mebendazole" ]
+       ], [
+         fhir:index 11;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE69" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Penicillin" ]
+       ], [
+         fhir:index 12;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE70" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "PrEP tenofovir disoproxil fumarate (TDF)" ]
+       ], [
+         fhir:index 13;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B6.DE71" ];
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Other allergies (specify)" ]
+       ]
+     ]
+  ]; # 
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2021-11-30T07:11:23-07:00"^^xsd:dateTime ];
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE58" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "No known allergies" ]
+     ], [
+       fhir:index 1;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE59" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Albendazole" ]
+     ], [
+       fhir:index 2;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE60" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Aluminium hydroxide" ]
+     ], [
+       fhir:index 3;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE61" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Calcium" ]
+     ], [
+       fhir:index 4;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE62" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Chamomile" ]
+     ], [
+       fhir:index 5;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE63" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Folic acid" ]
+     ], [
+       fhir:index 6;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE64" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Ginger" ]
+     ], [
+       fhir:index 7;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE65" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Iron" ]
+     ], [
+       fhir:index 8;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE66" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Magnesium carbonate" ]
+     ], [
+       fhir:index 9;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE67" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Malaria medication (sulfadoxine-pyrimethamine)" ]
+     ], [
+       fhir:index 10;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE68" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Mebendazole" ]
+     ], [
+       fhir:index 11;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE69" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Penicillin" ]
+     ], [
+       fhir:index 12;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE70" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "PrEP tenofovir disoproxil fumarate (TDF)" ]
+     ], [
+       fhir:index 13;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B6.DE71" ];
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Other allergies (specify)" ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de58.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

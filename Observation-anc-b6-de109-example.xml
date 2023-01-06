@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="anc-b6-de109-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de109"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Observation</b><a name="anc-b6-de109-example"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Observation &quot;anc-b6-de109-example&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-anc-b6-de109.html">Current medications</a></p></div><p><b>identifier</b>: id: anc-b6-de109-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Current medications <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B6.DE109)</span></p><p><b>subject</b>: <a href="Patient-anc-patient-example.html">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href="Encounter-anc-encounter-example.html">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href="PractitionerRole-anc-practitionerrole-example.html">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: Co-trimoxazole <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B6.DE125; <a href="http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html">ICD-10</a>#Z92.2 &quot;Personal history of long-term (current) use of other medicaments&quot;; mms#XM22Y8 &quot;Trimethoprim with sulfamethoxazole&quot;; <a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#703745000 &quot;Sulfamethoxazole and trimethoprim (substance)&quot;; ichi#PZX.DB.AC &quot;Administering pharmacotherapy, per orifice??Note: Nonspecific code&quot;)</span></p></div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://example.org/fhir/NamingSystem/identifiers"/>
+    <value value="anc-b6-de109-example"/>
+  </identifier>
+  <status value="final"/>
+  <code>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B6.DE109"/>
+      <display value="Current medications"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/anc-patient-example"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/anc-encounter-example"/>
+  </encounter>
+  <performer>
+    <reference value="PractitionerRole/anc-practitionerrole-example"/>
+  </performer>
+  <valueCodeableConcept>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B6.DE125"/>
+      <display value="Co-trimoxazole"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/sid/icd-10"/>
+      <code value="Z92.2"/>
+      <display value="Personal history of long-term (current) use of other medicaments"/>
+    </coding>
+    <coding>
+      <system value="http://id.who.int/icd11/mms"/>
+      <code value="XM22Y8"/>
+      <display value="Trimethoprim with sulfamethoxazole"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="703745000"/>
+      <display value="Sulfamethoxazole and trimethoprim (substance)"/>
+    </coding>
+    <coding>
+      <system value="https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi"/>
+      <code value="PZX.DB.AC"/>
+      <display value="Administering pharmacotherapy, per orifice??Note: Nonspecific code"/>
+    </coding>
+  </valueCodeableConcept>
+</Observation>

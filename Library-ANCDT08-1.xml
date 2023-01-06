@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="43">
+         <a:s>library ANCDT08</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCDT08" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="http://fhir.org/guides/who/anc-cds/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="7:1-7:31" localIdentifier="Config" path="http://fhir.org/guides/who/anc-cds/ANCConfig">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConfig</a:s>
+               </a:s>
+               <a:s> called Config</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="8:1-8:29" localIdentifier="Cx" path="http://fhir.org/guides/who/anc-cds/ANCConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCConcepts</a:s>
+               </a:s>
+               <a:s> called Cx</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="9:1-9:42" localIdentifier="PatientData" path="http://fhir.org/guides/who/anc-cds/ANCDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCDataElements</a:s>
+               </a:s>
+               <a:s> called PatientData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="10:1-10:49" localIdentifier="ContactData" path="http://fhir.org/guides/who/anc-cds/ANCContactDataElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>ANCContactDataElements</a:s>
+               </a:s>
+               <a:s> called ContactData</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <statements>
+      <def locator="12:1-12:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="12:1-12:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="16" locator="18:1-20:46" name="Should Conduct HIV test" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="16">
+               <a:s>/*
+(&quot;Population prevalence of HIV in pregnant women&quot; ≥ 5%)
+  AND (&quot;ANC contact number&quot; = 1)
+*/
+define &quot;Should Conduct HIV test&quot;:
+  </a:s>
+               <a:s r="15">
+                  <a:s r="10">
+                     <a:s r="8">
+                        <a:s r="7">
+                           <a:s>Config</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="8">
+                           <a:s>&quot;Population prevalence of HIV in pregnant women&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> >= </a:s>
+                     <a:s r="9">
+                        <a:s>5 '%'</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    and </a:s>
+                  <a:s r="14">
+                     <a:s>(</a:s>
+                     <a:s r="14">
+                        <a:s r="12">
+                           <a:s r="11">
+                              <a:s>ContactData</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="12">
+                              <a:s>&quot;ANC contact number&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="13"> = 1</a:s>
+                     </a:s>
+                     <a:s>)</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="15" locator="19:3-20:46" xsi:type="And">
+            <operand localId="10" locator="19:3-19:66" xsi:type="GreaterOrEqual">
+               <operand localId="8" locator="19:3-19:57" name="Population prevalence of HIV in pregnant women" libraryName="Config" xsi:type="ExpressionRef"/>
+               <operand localId="9" locator="19:62-19:66" value="5" unit="%" xsi:type="Quantity"/>
+            </operand>
+            <operand localId="14" locator="20:9-20:46" xsi:type="Equal">
+               <operand name="ToInteger" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="12" locator="20:10-20:41" name="ANC contact number" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand localId="13" locator="20:45" valueType="t:Integer" value="1" xsi:type="Literal"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="32" locator="27:1-30:74" name="Should Conduct HIV test 2" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="32">
+               <a:s>/*
+(&quot;Population prevalence of HIV in pregnant women&quot; ≥ 5%)
+  AND (&quot;Gestational age&quot; ≥ 29 weeks)
+  AND (&quot;HIV status&quot; = &quot;HIV negative&quot;)
+*/
+define &quot;Should Conduct HIV test 2&quot;:
+  </a:s>
+               <a:s r="31">
+                  <a:s r="25">
+                     <a:s r="20">
+                        <a:s r="18">
+                           <a:s r="17">
+                              <a:s>Config</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="18">
+                              <a:s>&quot;Population prevalence of HIV in pregnant women&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> >= </a:s>
+                        <a:s r="19">
+                           <a:s>5 '%'</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    and </a:s>
+                     <a:s r="24">
+                        <a:s r="22">
+                           <a:s r="21">
+                              <a:s>ContactData</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="22">
+                              <a:s>&quot;Gestational age&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> >= </a:s>
+                        <a:s r="23">
+                           <a:s>29 'weeks'</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    and </a:s>
+                  <a:s r="30">
+                     <a:s r="27">
+                        <a:s r="26">
+                           <a:s>ContactData</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="27">
+                           <a:s>&quot;HIV status&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s> in </a:s>
+                     <a:s r="29">
+                        <a:s r="28">
+                           <a:s>Cx</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="29">
+                           <a:s>&quot;HIV status - HIV negative Choices&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="31" locator="28:3-30:74" xsi:type="And">
+            <operand localId="25" locator="28:3-29:51" xsi:type="And">
+               <operand localId="20" locator="28:3-28:66" xsi:type="GreaterOrEqual">
+                  <operand localId="18" locator="28:3-28:57" name="Population prevalence of HIV in pregnant women" libraryName="Config" xsi:type="ExpressionRef"/>
+                  <operand localId="19" locator="28:62-28:66" value="5" unit="%" xsi:type="Quantity"/>
+               </operand>
+               <operand localId="24" locator="29:9-29:51" xsi:type="GreaterOrEqual">
+                  <operand name="ToQuantity" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                     <operand localId="22" locator="29:9-29:37" name="Gestational age" libraryName="ContactData" xsi:type="ExpressionRef"/>
+                  </operand>
+                  <operand localId="23" locator="29:42-29:51" value="29" unit="weeks" xsi:type="Quantity"/>
+               </operand>
+            </operand>
+            <operand localId="30" locator="30:9-30:74" xsi:type="InValueSet">
+               <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="27" locator="30:9-30:32" name="HIV status" libraryName="ContactData" xsi:type="ExpressionRef"/>
+               </code>
+               <valueset localId="29" locator="30:37-30:74" name="HIV status - HIV negative Choices" libraryName="Cx"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="37" locator="35:1-36:65" name="Should HIV test is optional" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="37">
+               <a:s>/*
+&quot;Population prevalence of HIV in pregnant women&quot; &lt; 5%
+*/
+define &quot;Should HIV test is optional&quot;:
+  </a:s>
+               <a:s r="36">
+                  <a:s r="34">
+                     <a:s r="33">
+                        <a:s>Config</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="34">
+                        <a:s>&quot;Population prevalence of HIV in pregnant women&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> &lt; </a:s>
+                  <a:s r="35">
+                     <a:s>5 '%'</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="36" locator="36:3-36:65" xsi:type="Less">
+            <operand localId="34" locator="36:3-36:57" name="Population prevalence of HIV in pregnant women" libraryName="Config" xsi:type="ExpressionRef"/>
+            <operand localId="35" locator="36:61-36:65" value="5" unit="%" xsi:type="Quantity"/>
+         </expression>
+      </def>
+      <def localId="43" locator="41:1-42:68" name="Should HIV test is not required" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="43">
+               <a:s>/*
+&quot;HIV status&quot; = &quot;HIV positive&quot;
+*/
+define &quot;Should HIV test is not required&quot;:
+  </a:s>
+               <a:s r="42">
+                  <a:s r="39">
+                     <a:s r="38">
+                        <a:s>ContactData</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="39">
+                        <a:s>&quot;HIV status&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> in </a:s>
+                  <a:s r="41">
+                     <a:s r="40">
+                        <a:s>Cx</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="41">
+                        <a:s>&quot;HIV status - HIV positive Choices&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="42" locator="42:3-42:68" xsi:type="InValueSet">
+            <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+               <operand localId="39" locator="42:3-42:26" name="HIV status" libraryName="ContactData" xsi:type="ExpressionRef"/>
+            </code>
+            <valueset localId="41" locator="42:31-42:68" name="HIV status - HIV positive Choices" libraryName="Cx"/>
+         </expression>
+      </def>
+   </statements>
+</library>

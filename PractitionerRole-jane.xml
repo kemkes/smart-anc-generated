@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PractitionerRole xmlns="http://hl7.org/fhir">
+  <id value="jane"/>
+  <meta>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitionerrole"/>
+    <profile value="http://fhir.org/guides/who/core/StructureDefinition/who-practitionerrole"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: PractitionerRole</b><a name="jane"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource PractitionerRole &quot;jane&quot; </p><p style="margin-bottom: 0px">Profiles: <a href="StructureDefinition-anc-practitionerrole.html">ANC PractitionerRole</a>, <a href="StructureDefinition-who-practitionerrole.html">WHO PractitionerRole</a></p></div><p><b>active</b>: true</p><p><b>practitioner</b>: <a href="Practitioner-jane.html">Practitioner/jane: Jane Nurse</a> &quot; NURSE&quot;</p><p><b>code</b>: Nurse <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-persona.html">ANC Personas</a>#NRS)</span></p><p><b>telecom</b>: ph: (03) 5555 6473(WORK)</p><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: mon, tue, wed</p><p><b>availableStartTime</b>: 09:00:00</p><p><b>availableEndTime</b>: 16:30:00</p></blockquote><blockquote><p><b>availableTime</b></p><p><b>daysOfWeek</b>: thu, fri</p><p><b>availableStartTime</b>: 09:00:00</p><p><b>availableEndTime</b>: 12:00:00</p></blockquote><h3>NotAvailables</h3><table class="grid"><tr><td>-</td><td><b>Description</b></td><td><b>During</b></td></tr><tr><td>*</td><td>Jane will be on extended leave during May 2022</td><td>2022-05-01 --&gt; 2022-05-20</td></tr></table><p><b>availabilityExceptions</b>: Jane is generally unavailable on public holidays and during the Christmas/New Year break</p></div>
+  </text>
+  <!--  TODO: identifier  -->
+  <active value="true"/>
+  <practitioner>
+    <reference value="Practitioner/jane"/>
+    <display value="Jane Nurse"/>
+  </practitioner>
+  <!--  TODO: organization  -->
+  <code>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-persona"/>
+      <code value="NRS"/>
+      <display value="Nurse"/>
+    </coding>
+    <text value="Nurse"/>
+  </code>
+  <!--  TODO: specialty  -->
+  <!--  TODO: location  -->
+  <!--  TODO: healthcareService  -->
+  <telecom>
+    <system value="phone"/>
+    <value value="(03) 5555 6473"/>
+    <use value="work"/>
+  </telecom>
+  <availableTime>
+    <daysOfWeek value="mon"/>
+    <daysOfWeek value="tue"/>
+    <daysOfWeek value="wed"/>
+    <availableStartTime value="09:00:00"/>
+    <availableEndTime value="16:30:00"/>
+  </availableTime>
+  <availableTime>
+    <daysOfWeek value="thu"/>
+    <daysOfWeek value="fri"/>
+    <availableStartTime value="09:00:00"/>
+    <availableEndTime value="12:00:00"/>
+  </availableTime>
+  <notAvailable>
+    <description value="Jane will be on extended leave during May 2022"/>
+    <during>
+      <start value="2022-05-01"/>
+      <end value="2022-05-20"/>
+    </during>
+  </notAvailable>
+  <availabilityExceptions value="Jane is generally unavailable on public holidays and during the Christmas/New Year break"/>
+</PractitionerRole>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="anc-b9-de102-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de102"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Observation</b><a name="anc-b9-de102-example"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Observation &quot;anc-b9-de102-example&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-anc-b9-de102.html">Reason syphilis test not done</a></p></div><p><b>identifier</b>: id: anc-b9-de102-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Reason syphilis test not done <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B9.DE102)</span></p><p><b>subject</b>: <a href="Patient-anc-patient-example.html">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href="Encounter-anc-encounter-example.html">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href="PractitionerRole-anc-practitionerrole-example.html">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: Test stock-out <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B9.DE103; <a href="http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html">ICD-10</a>#Z75.3 &quot;Unavailability or inaccessibility of health-care facilities&quot;; mms#QB14 &quot;Unavailability or inaccessibility of health-care facilities&quot;; <a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#397807004 &quot;Equipment not available (finding)&quot;)</span></p></div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://example.org/fhir/NamingSystem/identifiers"/>
+    <value value="anc-b9-de102-example"/>
+  </identifier>
+  <status value="final"/>
+  <code>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B9.DE102"/>
+      <display value="Reason syphilis test not done"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/anc-patient-example"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/anc-encounter-example"/>
+  </encounter>
+  <performer>
+    <reference value="PractitionerRole/anc-practitionerrole-example"/>
+  </performer>
+  <valueCodeableConcept>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B9.DE103"/>
+      <display value="Test stock-out"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/sid/icd-10"/>
+      <code value="Z75.3"/>
+      <display value="Unavailability or inaccessibility of health-care facilities"/>
+    </coding>
+    <coding>
+      <system value="http://id.who.int/icd11/mms"/>
+      <code value="QB14"/>
+      <display value="Unavailability or inaccessibility of health-care facilities"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="397807004"/>
+      <display value="Equipment not available (finding)"/>
+    </coding>
+  </valueCodeableConcept>
+</Observation>

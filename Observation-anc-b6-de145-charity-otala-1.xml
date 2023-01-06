@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="anc-b6-de145-charity-otala-1"/>
+  <meta>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de145"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Observation</b><a name="anc-b6-de145-charity-otala-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Observation &quot;anc-b6-de145-charity-otala-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-anc-b6-de145.html">Clinical enquiry for alcohol and other substance use done</a></p></div><p><b>status</b>: final</p><p><b>code</b>: Clinical enquiry for alcohol and other substance use done <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B6.DE145; <a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#713132000 &quot;Assessment of drug use (procedure)&quot;; ichi#UAA.AA.ZZ &quot;Assessment of products and substances for personal consumption&quot;)</span></p><p><b>subject</b>: <a href="Patient-charity-otala-1.html">Patient/charity-otala-1</a> &quot; OTALA&quot;</p><p><b>encounter</b>: <a href="Encounter-anc-encounter-charity-otala-1.html">Encounter/anc-encounter-charity-otala-1</a></p><p><b>performer</b>: <a href="PractitionerRole-jane.html">PractitionerRole/jane</a></p><p><b>value</b>: true</p></div>
+  </text>
+  <status value="final"/>
+  <code>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B6.DE145"/>
+      <display value="Clinical enquiry for alcohol and other substance use done"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="713132000"/>
+      <display value="Assessment of drug use (procedure)"/>
+    </coding>
+    <coding>
+      <system value="https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi"/>
+      <code value="UAA.AA.ZZ"/>
+      <display value="Assessment of products and substances for personal consumption"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/charity-otala-1"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/anc-encounter-charity-otala-1"/>
+  </encounter>
+  <performer>
+    <reference value="PractitionerRole/jane"/>
+  </performer>
+  <valueBoolean value="true"/>
+</Observation>

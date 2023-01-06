@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="34">
+         <a:s>library ANCConfig</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="ANCConfig" system="http://fhir.org/guides/who/anc-cds"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+   </usings>
+   <statements>
+      <def localId="2" locator="7:1-8:8" name="Population prevalence of undernourishment" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>/*
+  Description: The proportion of women in the adult population
+    (18 years or older) with a BMI less than 18.5s
+*/
+define &quot;Population prevalence of undernourishment&quot;:
+  </a:s>
+               <a:s r="1">
+                  <a:s>21 '%'</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="1" locator="8:3-8:8" value="21" unit="%" xsi:type="Quantity"/>
+      </def>
+      <def localId="4" locator="14:1-15:8" name="Population prevalence of anaemia" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>/*
+  Description: The proportion of pregnant women in the population
+    with anaemia (haemoglobin level less than 11 g/dl)
+*/
+define &quot;Population prevalence of anaemia&quot;:
+  </a:s>
+               <a:s r="3">
+                  <a:s>41 '%'</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="3" locator="15:3-15:8" value="41" unit="%" xsi:type="Quantity"/>
+      </def>
+      <def localId="6" locator="21:1-22:6" name="Population with low dietary calcium intake" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s r="5">/*
+  Description: Women in the population are likely to have low dietary
+    calcium intake (less than 900 mg of calcium per day)
+*/
+define &quot;Population with low dietary calcium intake&quot;:
+  true</a:s>
+            </a:s>
+         </annotation>
+         <expression localId="5" locator="22:3-22:6" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+      </def>
+      <def localId="8" locator="28:1-29:5" name="Population prevalence of tuberculosis (TB)" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="8">
+               <a:s r="7">/*
+Description: The tuberculosis prevalence in the general population
+  in number of cases per 100 000 persons or greater
+*/
+define &quot;Population prevalence of tuberculosis (TB)&quot;:
+  102</a:s>
+            </a:s>
+         </annotation>
+         <expression localId="7" locator="29:3-29:5" valueType="t:Integer" value="102" xsi:type="Literal"/>
+      </def>
+      <def localId="10" locator="38:1-39:6" name="Population with vitamin A deficiency" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="10">
+               <a:s r="9">/*
+  Description: Vitamin A deficiency is a severe public health problem
+    if 5% or more of women in a population have a history of night
+    blindness in their most recent pregnancy in the previous 3–5 years
+    that ended in a live birth, or if 20% or more of pregnant women
+    have a serum retinol level below 0.70 µmol/L
+*/
+define &quot;Population with vitamin A deficiency&quot;:
+  true</a:s>
+            </a:s>
+         </annotation>
+         <expression localId="9" locator="39:3-39:6" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+      </def>
+      <def localId="12" locator="45:1-46:8" name="Population prevalence of soil-transmitted helminth infection" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="12">
+               <a:s>/*
+  Description: The percentage of individuals in the general population
+    infected with at least one species of soil-transmitted helminth
+*/
+define &quot;Population prevalence of soil-transmitted helminth infection&quot;:
+  </a:s>
+               <a:s r="11">
+                  <a:s>21 '%'</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="11" locator="46:3-46:8" value="21" unit="%" xsi:type="Quantity"/>
+      </def>
+      <def localId="16" locator="51:1-52:54" name="Population incidence of HIV in the absence of PrEP" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="16">
+               <a:s>/*
+  Description: HIV incidence number of cases per 100 person-years
+*/
+define &quot;Population incidence of HIV in the absence of PrEP&quot;:
+  </a:s>
+               <a:s r="15">
+                  <a:s>System.Quantity { </a:s>
+                  <a:s>
+                     <a:s r="13">value: 4</a:s>
+                  </a:s>
+                  <a:s>, </a:s>
+                  <a:s>
+                     <a:s>unit: </a:s>
+                     <a:s r="14">
+                        <a:s>'{Person-years}'</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> }</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="15" locator="52:3-52:54" classType="t:Quantity" xsi:type="Instance">
+            <element name="value">
+               <value xsi:type="ToDecimal">
+                  <operand localId="13" locator="52:28" valueType="t:Integer" value="4" xsi:type="Literal"/>
+               </value>
+            </element>
+            <element name="unit">
+               <value localId="14" locator="52:37-52:52" valueType="t:String" value="{Person-years}" xsi:type="Literal"/>
+            </element>
+         </expression>
+      </def>
+      <def localId="18" locator="59:1-60:6" name="Population prevalence of HIV in key populations (men who have sex with men, people in prison or other closed settings, people who inject drugs, sex workers and transgender people) " context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="18">
+               <a:s r="17">/*
+  Description: HIV prevalence is consistently over 5% in at least one
+    defined key population but is below 1% in pregnant women attending
+    antenatal clinics
+*/
+define &quot;Population prevalence of HIV in key populations (men who have sex with men, people in prison or other closed settings, people who inject drugs, sex workers and transgender people) &quot;:
+  true</a:s>
+            </a:s>
+         </annotation>
+         <expression localId="17" locator="60:3-60:6" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+      </def>
+      <def localId="20" locator="66:1-67:7" name="Population prevalence of HIV in pregnant women" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="20">
+               <a:s>/*
+  Description: The proportion of pregnant women in the population who are
+    HIV positive
+*/
+define &quot;Population prevalence of HIV in pregnant women&quot;:
+  </a:s>
+               <a:s r="19">
+                  <a:s>6 '%'</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="19" locator="67:3-67:7" value="6" unit="%" xsi:type="Quantity"/>
+      </def>
+      <def localId="22" locator="72:1-73:6" name="Malaria-endemic setting" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="22">
+               <a:s r="21">/*
+  Description: Whether the setting is a malaria-endemic setting
+*/
+define &quot;Malaria-endemic setting&quot;:
+  true</a:s>
+            </a:s>
+         </annotation>
+         <expression localId="21" locator="73:3-73:6" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+      </def>
+      <def localId="24" locator="78:1-79:7" name="Population prevalence of syphilis in pregnant women" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="24">
+               <a:s>/*
+  Description: The proportion of pregnant women in the population with syphilis
+*/
+define &quot;Population prevalence of syphilis in pregnant women&quot;:
+  </a:s>
+               <a:s r="23">
+                  <a:s>6 '%'</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="23" locator="79:3-79:7" value="6" unit="%" xsi:type="Quantity"/>
+      </def>
+      <def localId="26" locator="85:1-86:7" name="Population prevalence of hepatitis B" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="26">
+               <a:s>/*
+  Description: The proportion of hepatitis B seroprevalence in the
+    general population
+*/
+define &quot;Population prevalence of hepatitis B&quot;:
+  </a:s>
+               <a:s r="25">
+                  <a:s>3 '%'</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="25" locator="86:3-86:7" value="3" unit="%" xsi:type="Quantity"/>
+      </def>
+      <def localId="28" locator="92:1-93:7" name="Population prevalence of hepatitis C" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="28">
+               <a:s>/*
+  Description: The proportion of hepatitis C virus (HCV) antibody
+    seroprevalance in the general population
+*/
+define &quot;Population prevalence of hepatitis C&quot;:
+  </a:s>
+               <a:s r="27">
+                  <a:s>3 '%'</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="27" locator="93:3-93:7" value="3" unit="%" xsi:type="Quantity"/>
+      </def>
+      <def localId="30" locator="110:1-111:6" name="Minimum requirements for IPV assessment" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="30">
+               <a:s r="29">/*
+  Description: &quot;WHO does not recommend universal screening for violence of
+    women attending health care. WHO does encourage health-care providers
+    to raise the topic with women who have injuries or conditions that they
+    suspect may be related to violence. All of the following must be in
+    place at the health facility for this to be TRUE:
+      a. A protocol or standard operating procedure for intimate partner
+        violence (IPV)
+      b. A health worker trained on how to ask about IPV and how to provide
+        the minimum response or beyond
+      c. A private setting
+      d. A way to ensure confidentiality
+      e. Time to allow for appropriate disclosure AND
+      f. A system for referral in place.&quot;
+*/
+define &quot;Minimum requirements for IPV assessment&quot;:
+  true</a:s>
+            </a:s>
+         </annotation>
+         <expression localId="29" locator="111:3-111:6" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+      </def>
+      <def localId="32" locator="117:1-118:6" name="Ultrasound available at the health-care facility" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="32">
+               <a:s r="31">/*
+  Description: Is an ultrasound machine available and functional at your
+    facility and a trained health worker available to use it?
+*/
+define &quot;Ultrasound available at the health-care facility&quot;:
+  true</a:s>
+            </a:s>
+         </annotation>
+         <expression localId="31" locator="118:3-118:6" valueType="t:Boolean" value="true" xsi:type="Literal"/>
+      </def>
+      <def localId="34" locator="125:1-126:7" name="Prevalence of HIV in pregnant women in the catchment area" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="34">
+               <a:s>/*
+  Description: The proportion of pregnant women in the health-care facility's
+    catchment area who are HIV positive, based on the number of pregnant
+    women attending antenatal clinics at the health-care facility
+*/
+define &quot;Prevalence of HIV in pregnant women in the catchment area&quot;:
+  </a:s>
+               <a:s r="33">
+                  <a:s>2 '%'</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="33" locator="126:3-126:7" value="2" unit="%" xsi:type="Quantity"/>
+      </def>
+   </statements>
+</library>

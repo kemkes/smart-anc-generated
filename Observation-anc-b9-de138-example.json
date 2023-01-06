@@ -1,0 +1,55 @@
+{
+  "resourceType" : "Observation",
+  "id" : "anc-b9-de138-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de138"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"anc-b9-de138-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;anc-b9-de138-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b9-de138.html\">Urine dipstick result - leukocytes</a></p></div><p><b>identifier</b>: id: anc-b9-de138-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Urine dipstick result - leukocytes <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B9.DE138)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: ++++ <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B9.DE143; mms#XS2R &quot;Profound&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#795002 &quot;Deep (qualifier value)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#20408-1 &quot;Leukocytes [#/volume] in urine by test strip&quot;)</span></p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-b9-de138-example"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B9.DE138",
+      "display" : "Urine dipstick result - leukocytes"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "performer" : [{
+    "reference" : "PractitionerRole/anc-practitionerrole-example"
+  }],
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B9.DE143",
+      "display" : "++++"
+    },
+    {
+      "system" : "http://id.who.int/icd11/mms",
+      "code" : "XS2R",
+      "display" : "Profound"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "795002",
+      "display" : "Deep (qualifier value)"
+    },
+    {
+      "system" : "http://loinc.org",
+      "code" : "20408-1",
+      "display" : "Leukocytes [#/volume] in urine by test strip"
+    }]
+  }
+}

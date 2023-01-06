@@ -1,0 +1,12 @@
+{
+  "resourceType" : "AllergyIntolerance",
+  "id" : "anc-allergyintolerance-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-allergyintolerance",
+    "http://fhir.org/guides/who/core/StructureDefinition/who-allergyintolerance"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"anc-allergyintolerance-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;anc-allergyintolerance-example&quot; </p><p style=\"margin-bottom: 0px\">Profiles: <a href=\"StructureDefinition-anc-allergyintolerance.html\">ANC AllergyIntolerance</a>, <a href=\"StructureDefinition-who-allergyintolerance.html\">WHO AllergyIntolerance</a></p></div></div>"
+  }
+}

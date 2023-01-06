@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Immunization xmlns="http://hl7.org/fhir">
+  <id value="anc-b10-de189-example"/>
+  <meta>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de189"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Immunization</b><a name="anc-b10-de189-example"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Immunization &quot;anc-b10-de189-example&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-anc-b10-de189.html">Reason Hep B vaccination not provided</a></p></div><p><b>identifier</b>: id: anc-b10-de189-example (use: OFFICIAL)</p><p><b>status</b>: completed</p><p><b>statusReason</b>: Stock-out <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B10.DE190; <a href="http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html">ICD-10</a>#Z75.3 &quot;Unavailability and inaccessibility of health-care facilities&quot;; mms#QB14 &quot;Unavailability or inaccessibility of health care facilities&quot;; <a href="https://browser.ihtsdotools.org/">SNOMED CT</a>#182856006 &quot;Drug not available – out of stock (finding)&quot;)</span></p><p><b>vaccineCode</b>: Reason Hep B vaccination not provided <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="CodeSystem-anc-custom-codes.html">Extended Codes CodeSystem</a>#ANC.B10.DE189)</span></p><p><b>patient</b>: <a href="Patient-anc-patient-example.html">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href="Encounter-anc-encounter-example.html">Encounter/anc-encounter-example</a></p></div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://example.org/fhir/NamingSystem/identifiers"/>
+    <value value="anc-b10-de189-example"/>
+  </identifier>
+  <status value="completed"/>
+  <statusReason>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B10.DE190"/>
+      <display value="Stock-out"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/sid/icd-10"/>
+      <code value="Z75.3"/>
+      <display value="Unavailability and inaccessibility of health-care facilities"/>
+    </coding>
+    <coding>
+      <system value="http://id.who.int/icd11/mms"/>
+      <code value="QB14"/>
+      <display value="Unavailability or inaccessibility of health care facilities"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="182856006"/>
+      <display value="Drug not available – out of stock (finding)"/>
+    </coding>
+  </statusReason>
+  <vaccineCode>
+    <coding>
+      <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B10.DE189"/>
+      <display value="Reason Hep B vaccination not provided"/>
+    </coding>
+  </vaccineCode>
+  <patient>
+    <reference value="Patient/anc-patient-example"/>
+  </patient>
+  <encounter>
+    <reference value="Encounter/anc-encounter-example"/>
+  </encounter>
+</Immunization>

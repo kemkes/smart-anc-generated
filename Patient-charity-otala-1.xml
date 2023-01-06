@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="charity-otala-1"/>
+  <meta>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;"><b>Charity Otala(OFFICIAL)</b> (no stated gender), DoB: 1994-07-01 ( id: charity-otala-1 (use: OFFICIAL))</p><hr/><table class="grid"><tr><td style="background-color: #f3f5da" title="Ways to contact the Patient">Contact Details:</td><td colspan="3"><ul><li>ph: 555-555-2003(MOBILE)</li><li>2222 Home Street(HOME)</li></ul></td></tr><tr><td style="background-color: #f3f5da" title="Patient Links">Links:</td><td colspan="3"><ul><li>General Practitioner: <a href="PractitionerRole-anc-practitionerrole-example.html">PractitionerRole/anc-practitionerrole-example</a></li></ul></td></tr><tr><td style="background-color: #f3f5da" title="The woman's occupation (select all that apply)"><a href="StructureDefinition-occupation.html">Occupation:</a></td><td colspan="3"><ul><li><span title="Codes: {http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes ANC.B6.DE12}">Informal employment (other)</span></li></ul></td></tr><tr><td style="background-color: #f3f5da" title="The highest level of schooling the woman has reached"><a href="StructureDefinition-educationlevel.html">Highest level of education achieved:</a></td><td colspan="3"><ul><li><span title="Codes: {http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes ANC.B6.DE4}">Primary school</span></li></ul></td></tr></table></div>
+  </text>
+  <extension url="http://fhir.org/guides/who/anc-cds/StructureDefinition/educationlevel">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+        <code value="ANC.B6.DE4"/>
+        <display value="Primary school"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="http://fhir.org/guides/who/anc-cds/StructureDefinition/occupation">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+        <code value="ANC.B6.DE12"/>
+        <display value="Informal employment (other)"/>
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <identifier>
+    <use value="official"/>
+    <system value="http://example.org/identifier"/>
+    <value value="charity-otala-1"/>
+  </identifier>
+  <name>
+    <use value="official"/>
+    <text value="Charity Otala"/>
+    <family value="Otala"/>
+    <given value="Charity"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="555-555-2003"/>
+    <use value="mobile"/>
+  </telecom>
+  <birthDate value="1994-07-01"/>
+  <address>
+    <use value="home"/>
+    <text value="2222 Home Street"/>
+  </address>
+  <generalPractitioner>
+    <reference value="PractitionerRole/anc-practitionerrole-example"/>
+  </generalPractitioner>
+</Patient>

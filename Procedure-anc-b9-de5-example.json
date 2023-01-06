@@ -1,0 +1,60 @@
+{
+  "resourceType" : "Procedure",
+  "id" : "anc-b9-de5-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de5"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Procedure</b><a name=\"anc-b9-de5-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Procedure &quot;anc-b9-de5-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b9-de5.html\">Reason ultrasound scan not done</a></p></div><p><b>identifier</b>: id: anc-b9-de5-example (use: OFFICIAL)</p><p><b>status</b>: completed</p><p><b>statusReason</b>: Machine not functioning <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B9.DE6; <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html\">ICD-10</a>#Z75.3 &quot;Unavailability or inaccessibility of health care facilities&quot;; mms#QB14 &quot;Unavailability or inaccessibility of health care facilities&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#397807004 &quot;Equipment not available (finding)&quot;)</span></p><p><b>code</b>: Reason ultrasound scan not done <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B9.DE5)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><h3>Performers</h3><table class=\"grid\"><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></td></tr></table><p><b>location</b>: <a href=\"Location-anc-location-example.html\">Location/anc-location-example</a> &quot;123&quot;</p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-b9-de5-example"
+  }],
+  "status" : "completed",
+  "statusReason" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B9.DE6",
+      "display" : "Machine not functioning"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-10",
+      "code" : "Z75.3",
+      "display" : "Unavailability or inaccessibility of health care facilities"
+    },
+    {
+      "system" : "http://id.who.int/icd11/mms",
+      "code" : "QB14",
+      "display" : "Unavailability or inaccessibility of health care facilities"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "397807004",
+      "display" : "Equipment not available (finding)"
+    }]
+  },
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B9.DE5",
+      "display" : "Reason ultrasound scan not done"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "performer" : [{
+    "actor" : {
+      "reference" : "PractitionerRole/anc-practitionerrole-example"
+    }
+  }],
+  "location" : {
+    "reference" : "Location/anc-location-example"
+  }
+}

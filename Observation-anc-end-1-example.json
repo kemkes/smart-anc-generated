@@ -1,0 +1,60 @@
+{
+  "resourceType" : "Observation",
+  "id" : "anc-end-1-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-end-1"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"anc-end-1-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;anc-end-1-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-end-1.html\">Reason for closing ANC record</a></p></div><p><b>identifier</b>: id: anc-end-1-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Reason for closing ANC record <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.End.1)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: Live birth <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.End.2; <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html\">ICD-10</a>#Z37.0 &quot;Single live birth&quot;; mms#QA46.0 &quot;Single live birth??Default applied&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#281050002 &quot;Livebirth (finding)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#68499-3 &quot;Date last live birth&quot;)</span></p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-end-1-example"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.End.1",
+      "display" : "Reason for closing ANC record"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "performer" : [{
+    "reference" : "PractitionerRole/anc-practitionerrole-example"
+  }],
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.End.2",
+      "display" : "Live birth"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-10",
+      "code" : "Z37.0",
+      "display" : "Single live birth"
+    },
+    {
+      "system" : "http://id.who.int/icd11/mms",
+      "code" : "QA46.0",
+      "display" : "Single live birth??Default applied"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "281050002",
+      "display" : "Livebirth (finding)"
+    },
+    {
+      "system" : "http://loinc.org",
+      "code" : "68499-3",
+      "display" : "Date last live birth"
+    }]
+  }
+}

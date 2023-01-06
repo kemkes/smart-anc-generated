@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>WHO.FHIR.ANC-CDS\ - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/cqf.css" rel="stylesheet"/>
+
+    <link href="assets/css/who.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+<!--
+  Questionnaire:
+-->
+    <link href="assets/css/lforms.min.css" rel="stylesheet"/>
+
+
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"9.135"}
+    h3,h4,h5,h6{--heading-prefix:"9.135"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+<div id="family-nav">
+  <a id="family-logo" no-external="true" href="https://github.com/cqframework"><img height="50" alt="Visit the CQF github organization website" src="assets/images/cqf.png"/> </a>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">WHO Antenatal Care Guideline Implementation Guide</span><br/>0.3.0 - CI Build</p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="documentation.html">Documentation</a></li>
+  <li><a href="guidance.html">Guidance</a></li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://cql.hl7.org/index.html">CQL Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/cpg">FHIR Clinical Guidelines</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="license.html">License</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+    
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b></b></li>
+          
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publish Box goes here</p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="Library-FHIRCommon.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Library-FHIRCommon.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+  <h2 id="root">Library: 
+
+  </h2>
+
+  <table class="colsd">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://fhir.org/guides/who/anc-cds/Library/FHIRCommon<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://fhir.org/guides/who/anc-cds/Library/FHIRCommon"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">0.3.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://fhir.org/guides/who/anc-cds/Library/FHIRCommon|0.3.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="2">
+        
+          Draft
+          
+            as of 2023-01-04
+          
+        
+      </td>
+
+
+      <td>
+        <i>Responsible:</i> 
+
+        <a href="https://www.who.int">World Health Organization (WHO)</a>
+
+      </td>
+
+
+      <td>
+        <i>Realm:</i> World
+      </td>
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">FHIRCommon</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+<!--  <p>
+  Formats: <a href="Library-FHIRCommon.xml.html">XML</a>, <a href="Library-FHIRCommon.json.html">JSON</a>, <a href="Library-FHIRCommon.ttl.html">Turtle</a>
+  </p>-->
+
+  
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">FHIRCommon</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://fhir.org/guides/who/anc-cds/Library/FHIRCommon">http://fhir.org/guides/who/anc-cds/Library/FHIRCommon</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.3.0</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">FHIRCommon</td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">draft</td>
+        </tr>
+        
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2023-01-04 17:07:42+0700</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">World Health Organization (WHO)</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">001</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+        <tr>
+          <th scope="row"><b>Related Artifacts: </b></th>
+          <td style="padding-left: 4px;">
+            
+            
+            
+            <p><b>Dependencies</b></p>
+            <ul>
+              
+                <li><a href="http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1">http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1</a></li>
+              
+                <li><a href="http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1">http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1</a></li>
+              
+                <li><a href="http://loinc.org">http://loinc.org</a></li>
+              
+                <li><a href="http://snomed.info/sct">http://snomed.info/sct</a></li>
+              
+                <li><a href="http://terminology.hl7.org/CodeSystem/v3-RoleCode">http://terminology.hl7.org/CodeSystem/v3-RoleCode</a></li>
+              
+                <li><a href="http://terminology.hl7.org/CodeSystem/diagnosis-role">http://terminology.hl7.org/CodeSystem/diagnosis-role</a></li>
+              
+                <li><a href="http://terminology.hl7.org/CodeSystem/request-intent">http://terminology.hl7.org/CodeSystem/request-intent</a></li>
+              
+                <li><a href="http://terminology.hl7.org/CodeSystem/medicationrequest-category">http://terminology.hl7.org/CodeSystem/medicationrequest-category</a></li>
+              
+                <li><a href="http://terminology.hl7.org/CodeSystem/condition-clinical">http://terminology.hl7.org/CodeSystem/condition-clinical</a></li>
+              
+                <li><a href="http://terminology.hl7.org/CodeSystem/condition-ver-status">http://terminology.hl7.org/CodeSystem/condition-ver-status</a></li>
+              
+                <li><a href="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical">http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical</a></li>
+              
+                <li><a href="http://terminology.hl7.org/CodeSystem/allergyintolerance-verification">http://terminology.hl7.org/CodeSystem/allergyintolerance-verification</a></li>
+              
+                <li><a href="http://fhir.org/guides/cqf/common/ValueSet/active-condition">http://fhir.org/guides/cqf/common/ValueSet/active-condition</a></li>
+              
+                <li><a href="http://fhir.org/guides/cqf/common/ValueSet/inactive-condition">http://fhir.org/guides/cqf/common/ValueSet/inactive-condition</a></li>
+              
+            </ul>
+            
+            
+            
+            
+            
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <th scope="row"><b>Parameters: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              <tr><th><b>Name</b></th><th><b>Type</b></th><th><b>Min</b></th><th><b>Max</b></th><th><b>In/Out</b></th></tr>
+              
+                <tr><th>Patient</th><th>Patient</th><th>0</th><th>1</th><th>out</th></tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <th scope="row"><b>Data Requirements:</b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              <tr><th><b>Type</b></th><th><b>Profile</b></th><th><b>MS</b></th><th><b>Code Filter</b></th></tr>
+              
+                <tr>
+                  <th>Patient</th>
+                  <th>http://hl7.org/fhir/StructureDefinition/Patient</th>
+                  <th></th>
+                  <th>
+                    
+                  </th>
+                </tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+        
+        
+        <tr>
+          <td colspan="2">
+            <table>
+              <tr><th><a id="cql-content"><b>Content: </b></a> text/cql</th></tr>
+              <tr><td><pre><code class="language-cql">/*
+@author: Bryn Rhodes
+@description: Common terminologies and functions used in FHIR-based CQL artifacts
+*/
+library FHIRCommon version '4.0.1'
+
+using FHIR version '4.0.1'
+
+include FHIRHelpers version '4.0.1'
+
+codesystem &amp;quot;LOINC&amp;quot;: 'http://loinc.org'
+codesystem &amp;quot;SNOMEDCT&amp;quot;: 'http://snomed.info/sct'
+codesystem &amp;quot;RoleCode&amp;quot;: 'http://terminology.hl7.org/CodeSystem/v3-RoleCode'
+codesystem &amp;quot;Diagnosis Role&amp;quot;: 'http://terminology.hl7.org/CodeSystem/diagnosis-role'
+codesystem &amp;quot;RequestIntent&amp;quot;: 'http://terminology.hl7.org/CodeSystem/request-intent'
+codesystem &amp;quot;MedicationRequestCategory&amp;quot;: 'http://terminology.hl7.org/CodeSystem/medicationrequest-category'
+codesystem &amp;quot;ConditionClinicalStatusCodes&amp;quot;: 'http://terminology.hl7.org/CodeSystem/condition-clinical'
+codesystem &amp;quot;ConditionVerificationStatusCodes&amp;quot;: 'http://terminology.hl7.org/CodeSystem/condition-ver-status'
+codesystem &amp;quot;AllergyIntoleranceClinicalStatusCodes&amp;quot;: 'http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical'
+codesystem &amp;quot;AllergyIntoleranceVerificationStatusCodes&amp;quot;: 'http://terminology.hl7.org/CodeSystem/allergyintolerance-verification'
+
+valueset &amp;quot;Active Condition&amp;quot;: 'http://fhir.org/guides/cqf/common/ValueSet/active-condition'
+valueset &amp;quot;Inactive Condition&amp;quot;: 'http://fhir.org/guides/cqf/common/ValueSet/inactive-condition'
+
+code &amp;quot;Birthdate&amp;quot;: '21112-8' from &amp;quot;LOINC&amp;quot; display 'Birth date'
+code &amp;quot;Dead&amp;quot;: '419099009' from &amp;quot;SNOMEDCT&amp;quot; display 'Dead'
+code &amp;quot;ER&amp;quot;: 'ER' from &amp;quot;RoleCode&amp;quot; display 'Emergency room'
+code &amp;quot;ICU&amp;quot;: 'ICU' from &amp;quot;RoleCode&amp;quot; display 'Intensive care unit'
+code &amp;quot;Billing&amp;quot;: 'billing' from &amp;quot;Diagnosis Role&amp;quot; display 'Billing'
+
+// Condition Clinical Status Codes - Consider value sets for these
+code &amp;quot;active&amp;quot;: 'active' from &amp;quot;ConditionClinicalStatusCodes&amp;quot;
+code &amp;quot;recurrence&amp;quot;: 'recurrence' from &amp;quot;ConditionClinicalStatusCodes&amp;quot;
+code &amp;quot;relapse&amp;quot;: 'relapse' from &amp;quot;ConditionClinicalStatusCodes&amp;quot;
+code &amp;quot;inactive&amp;quot;: 'inactive' from &amp;quot;ConditionClinicalStatusCodes&amp;quot;
+code &amp;quot;remission&amp;quot;: 'remission' from &amp;quot;ConditionClinicalStatusCodes&amp;quot;
+code &amp;quot;resolved&amp;quot;: 'resolved' from &amp;quot;ConditionClinicalStatusCodes&amp;quot;
+
+// Condition Verification Status Codes - Consider value sets for these
+code &amp;quot;unconfirmed&amp;quot;: 'unconfirmed' from ConditionVerificationStatusCodes
+code &amp;quot;provisional&amp;quot;: 'provisional' from ConditionVerificationStatusCodes
+code &amp;quot;differential&amp;quot;: 'differential' from ConditionVerificationStatusCodes
+code &amp;quot;confirmed&amp;quot;: 'confirmed' from ConditionVerificationStatusCodes
+code &amp;quot;refuted&amp;quot;: 'refuted' from ConditionVerificationStatusCodes
+code &amp;quot;entered-in-error&amp;quot;: 'entered-in-error' from ConditionVerificationStatusCodes
+
+code &amp;quot;allergy-active&amp;quot;: 'active' from &amp;quot;AllergyIntoleranceClinicalStatusCodes&amp;quot;
+code &amp;quot;allergy-inactive&amp;quot;: 'inactive' from &amp;quot;AllergyIntoleranceClinicalStatusCodes&amp;quot;
+code &amp;quot;allergy-resolved&amp;quot;: 'resolved' from &amp;quot;AllergyIntoleranceClinicalStatusCodes&amp;quot;
+
+// Allergy/Intolerance Verification Status Codes - Consider value sets for these
+code &amp;quot;allergy-unconfirmed&amp;quot;: 'unconfirmed' from AllergyIntoleranceVerificationStatusCodes
+code &amp;quot;allergy-confirmed&amp;quot;: 'confirmed' from AllergyIntoleranceVerificationStatusCodes
+code &amp;quot;allergy-refuted&amp;quot;: 'refuted' from AllergyIntoleranceVerificationStatusCodes
+
+// MedicationRequest Category Codes
+code &amp;quot;Community&amp;quot;: 'community' from &amp;quot;MedicationRequestCategory&amp;quot; display 'Community'
+code &amp;quot;Discharge&amp;quot;: 'discharge' from &amp;quot;MedicationRequestCategory&amp;quot; display 'Discharge'
+
+// Diagnosis Role Codes
+code &amp;quot;AD&amp;quot;: 'AD' from &amp;quot;Diagnosis Role&amp;quot; display 'Admission diagnosis'
+code &amp;quot;DD&amp;quot;: 'DD' from &amp;quot;Diagnosis Role&amp;quot; display 'Discharge diagnosis'
+code &amp;quot;CC&amp;quot;: 'CC' from &amp;quot;Diagnosis Role&amp;quot; display 'Chief complaint'
+code &amp;quot;CM&amp;quot;: 'CM' from &amp;quot;Diagnosis Role&amp;quot; display 'Comorbidity diagnosis'
+code &amp;quot;pre-op&amp;quot;: 'pre-op' from &amp;quot;Diagnosis Role&amp;quot; display 'pre-op diagnosis'
+code &amp;quot;post-op&amp;quot;: 'post-op' from &amp;quot;Diagnosis Role&amp;quot; display 'post-op diagnosis'
+code &amp;quot;billing&amp;quot;: 'billing' from &amp;quot;Diagnosis Role&amp;quot; display 'billing diagnosis'
+
+context Patient
+
+/*
+@description: Normalizes a value that is a choice of timing-valued types to an equivalent interval
+@comment: Normalizes a choice type of FHIR.dateTime, FHIR.Period, FHIR.Timing, FHIR.instance, FHIR.string, FHIR.Age, or FHIR.Range types
+to an equivalent interval. This selection of choice types is a superset of the majority of choice types that are used as possible
+representations for timing-valued elements in FHIR, allowing this function to be used across any resource. NOTE: Due to the
+complexity of determining a single interval from a Timing or String type, this function will throw a run-time exception if it is used
+with a Timing or String.
+*/
+define function ToInterval(choice Choice&amp;lt;FHIR.dateTime, FHIR.Period, FHIR.Timing, FHIR.instant, FHIR.string, FHIR.Age, FHIR.Range&amp;gt;):
+  case
+	  when choice is FHIR.dateTime then
+    	Interval[FHIRHelpers.ToDateTime(choice as FHIR.dateTime), FHIRHelpers.ToDateTime(choice as FHIR.dateTime)]
+		when choice is FHIR.Period then
+  		FHIRHelpers.ToInterval(choice as FHIR.Period)
+		when choice is FHIR.instant then
+			Interval[FHIRHelpers.ToDateTime(choice as FHIR.instant), FHIRHelpers.ToDateTime(choice as FHIR.instant)]
+		when choice is FHIR.Age then
+		  Interval[FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity(choice as FHIR.Age),
+			  FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity(choice as FHIR.Age) + 1 year)
+		when choice is FHIR.Range then
+		  Interval[FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity((choice as FHIR.Range).low),
+			  FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity((choice as FHIR.Range).high) + 1 year)
+		when choice is FHIR.Timing then
+		  Message(null as Interval&amp;lt;DateTime&amp;gt;, true, '1', 'Error', 'Cannot compute a single interval from a Timing type')
+    when choice is FHIR.string then
+      Message(null as Interval&amp;lt;DateTime&amp;gt;, true, '1', 'Error', 'Cannot compute an interval from a String value')
+		else
+			null as Interval&amp;lt;DateTime&amp;gt;
+	end
+
+/*
+@description: Returns an interval representing the normalized Abatement of a given Condition resource.
+@comment: NOTE: Due to the complexity of determining an interval from a String, this function will throw
+a run-time exception if used with a Condition instance that has a String as the abatement value.
+*/
+define function ToAbatementInterval(condition Condition):
+	if condition.abatement is FHIR.dateTime then
+	  Interval[FHIRHelpers.ToDateTime(condition.abatement as FHIR.dateTime), FHIRHelpers.ToDateTime(condition.abatement as FHIR.dateTime)]
+	else if condition.abatement is FHIR.Period then
+	  FHIRHelpers.ToInterval(condition.abatement as FHIR.Period)
+	else if condition.abatement is FHIR.string then
+    Message(null as Interval&amp;lt;DateTime&amp;gt;, true, '1', 'Error', 'Cannot compute an interval from a String value')
+	else if condition.abatement is FHIR.Age then
+		Interval[FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity(condition.abatement as FHIR.Age),
+			FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity(condition.abatement as FHIR.Age) + 1 year)
+	else if condition.abatement is FHIR.Range then
+	  Interval[FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity((condition.abatement as FHIR.Range).low),
+		  FHIRHelpers.ToDate(Patient.birthDate) + FHIRHelpers.ToQuantity((condition.abatement as FHIR.Range).high) + 1 year)
+	else if condition.abatement is FHIR.boolean then
+	  Interval[end of ToInterval(condition.onset), condition.recordedDate)
+	else null
+
+/*
+@description: Returns an interval representing the normalized prevalence period of a given Condition resource.
+@comment: Uses the ToInterval and ToAbatementInterval functions to determine the widest potential interval from
+onset to abatement as specified in the given Condition.
+*/
+define function ToPrevalenceInterval(condition Condition):
+if condition.clinicalStatus ~ &amp;quot;active&amp;quot;
+  or condition.clinicalStatus ~ &amp;quot;recurrence&amp;quot;
+  or condition.clinicalStatus ~ &amp;quot;relapse&amp;quot; then
+  Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition)]
+else
+  Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition))
+
+/*
+@description: Returns any extensions defined on the given resource with the specified url.
+@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access
+content that is defined by extensions but not yet surfaced in the
+CQL model info.
+*/
+define function Extensions(domainResource DomainResource, url String):
+  domainResource.extension E
+	  where E.url = url
+		return E
+
+/*
+@description: Returns the single extension (if present) on the given resource with the specified url.
+@comment: This function uses singleton from to ensure that a run-time exception is thrown if there
+is more than one extension on the given resource with the specified url.
+*/
+define function Extension(domainResource DomainResource, url String):
+  singleton from &amp;quot;Extensions&amp;quot;(domainResource, url)
+
+/*
+@description: Returns any extensions defined on the given element with the specified url.
+@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access
+content that is defined by extensions but not yet surfaced in the CQL model info.
+*/
+define function Extensions(element Element, url String):
+  element.extension E
+	  where E.url = url
+		return E
+
+/*
+@description: Returns the single extension (if present) on the given element with the specified url.
+@comment: This function uses singleton from to ensure that a run-time exception is thrown if there
+is more than one extension on the given resource with the specified url.
+*/
+define function Extension(element Element, url String):
+  singleton from Extensions(element, url)
+
+/*
+@description: Returns any modifier extensions defined on the given resource with the specified url.
+@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access
+content that is defined by extensions but not yet surfaced in the
+CQL model info.
+*/
+define function ModifierExtensions(domainResource DomainResource, url String):
+  domainResource.modifierExtension E
+	  where E.url = url
+		return E
+
+/*
+@description: Returns the single modifier extension (if present) on the given resource with the specified url.
+@comment: This function uses singleton from to ensure that a run-time exception is thrown if there
+is more than one extension on the given resource with the specified url.
+*/
+define function ModifierExtension(domainResource DomainResource, url String):
+  singleton from ModifierExtensions(domainResource, url)
+
+/*
+@description: Returns any modifier extensions defined on the given element with the specified url.
+@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access
+content that is defined by extensions but not yet surfaced in the CQL model info.
+*/
+define function ModifierExtensions(element BackboneElement, url String):
+  element.modifierExtension E
+	  where E.url = url
+		return E
+
+/*
+@description: Returns the single modifier extension (if present) on the given element with the specified url.
+@comment: This function uses singleton from to ensure that a run-time exception is thrown if there
+is more than one extension on the given resource with the specified url.
+*/
+define function ModifierExtension(element BackboneElement, url String):
+  singleton from ModifierExtensions(element, url)
+
+/*
+@description: Returns any base-FHIR extensions defined on the given resource with the specified id.
+@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access
+content that is defined by extensions but not yet surfaced in the CQL model info.
+*/
+define function BaseExtensions(domainResource DomainResource, id String):
+  domainResource.extension E
+	  where E.url = ('http://hl7.org/fhir/StructureDefinition/' + id)
+		return E
+
+/*
+@description: Returns the single base-FHIR extension (if present) on the given resource with the specified id.
+@comment: This function uses singleton from to ensure that a run-time exception is thrown if there
+is more than one extension on the given resource with the specified url.
+*/
+define function BaseExtension(domainResource DomainResource, id String):
+  singleton from BaseExtensions(domainResource, id)
+
+/*
+@description: Returns any base-FHIR extensions defined on the given element with the specified id.
+@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access
+content that is defined by extensions but not yet surfaced in the CQL model info.
+*/
+define function BaseExtensions(element Element, id String):
+  element.extension E
+	  where E.url = ('http://hl7.org/fhir/StructureDefinition/' + id)
+		return E
+
+/*
+@description: Returns the single base-FHIR extension (if present) on the given element with the specified id.
+@comment: This function uses singleton from to ensure that a run-time exception is thrown if there
+is more than one extension on the given resource with the specified url.
+*/
+define function BaseExtension(element Element, id String):
+  singleton from BaseExtensions(element, id)
+
+/*
+@description: Returns any base-FHIR modifier extensions defined on the given resource with the specified id.
+@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access
+content that is defined by extensions but not yet surfaced in the CQL model info.
+*/
+define function BaseModifierExtensions(domainResource DomainResource, id String):
+  domainResource.modifierExtension E
+	  where E.url = ('http://hl7.org/fhir/StructureDefinition/' + id)
+		return E
+
+/*
+@description: Returns the single base-FHIR modifier extension (if present) on the given resource with the specified id.
+@comment: This function uses singleton from to ensure that a run-time exception is thrown if there
+is more than one extension on the given resource with the specified url.
+*/
+define function BaseModifierExtension(domainResource DomainResource, id String):
+  singleton from BaseModifierExtensions(domainResource, id)
+
+/*
+@description: Returns any base-FHIR modifier extensions defined on the given element with the specified id.
+@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access
+content that is defined by extensions but not yet surfaced in the CQL model info.
+*/
+define function BaseModifierExtensions(element BackboneElement, id String):
+  element.modifierExtension E
+	  where E.url = ('http://hl7.org/fhir/StructureDefinition/' + id)
+		return E
+
+/*
+@description: Returns the single base-FHIR extension (if present) on the given element with the specified id.
+@comment: This function uses singleton from to ensure that a run-time exception is thrown if there
+is more than one extension on the given resource with the specified url.
+*/
+define function BaseModifierExtension(element BackboneElement, id String):
+  singleton from BaseModifierExtensions(element, id)
+</code></pre></td></tr>
+            </table>
+          </td>
+        </tr>
+        
+        
+        
+        
+        
+        <tr>
+          <td colspan="2">
+            <table>
+              <tr><th><b>Content: </b> application/elm+xml</th></tr>
+              <tr><td><pre><code>Encoded data (281664 characters)</code></pre></td></tr>
+            </table>
+          </td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+          <td colspan="2">
+            <table>
+              <tr><th><b>Content: </b> application/elm+json</th></tr>
+              <tr><td><pre><code>Encoded data (1378780 characters)</code></pre></td></tr>
+            </table>
+          </td>
+        </tr>
+        
+        
+    </table>
+</div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.who.int">World Health Organization (WHO)</a>.  Package who.fhir.anc-cds#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 4, 2023 17:07+0700">2023-01-04</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+                 | <a style="color: #81BEF7" target="_blank" href="http://fhir.org/guides/who/anc-cds/history.html">Version History <img alt="external" style="vertical-align: baseline" src="external.png"/></a></a> |
+                 <!--<a style="color: #81BEF7" href="todo.html">Search</a> | --> 
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

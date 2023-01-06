@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Appointment xmlns="http://hl7.org/fhir">
+  <id value="mom-second-contact"/>
+  <meta>
+    <profile value="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-appointment"/>
+    <profile value="http://fhir.org/guides/who/core/StructureDefinition/who-appointment"/>
+    <profile value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-appointment"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Appointment</b><a name="mom-second-contact"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Appointment &quot;mom-second-contact&quot; </p><p style="margin-bottom: 0px">Profiles: <code>http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-appointment</code>, <a href="StructureDefinition-who-appointment.html">WHO Appointment</a>, <a href="StructureDefinition-anc-appointment.html">ANC Appointment</a></p></div><p><b>status</b>: booked</p><p><b>serviceCategory</b>: General Practice <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (service-category#gp)</span></p><p><b>serviceType</b>: General Discussion <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ([not stated]#52)</span></p><p><b>appointmentType</b>: Unplanned Visit <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-v2-0276.html">appointmentReason</a>#FOLLOWUP)</span></p><p><b>reasonReference</b>: <a href="Condition-mom-pregnancy-second-contact.html">Condition/mom-pregnancy-second-contact</a></p><p><b>description</b>: Antenatal care second contact</p><p><b>start</b>: Jul 26, 2019, 10:00:00 PM</p><p><b>minutesDuration</b>: 30</p><p><b>created</b>: 2019-06-24</p><blockquote><p><b>participant</b></p><p><b>actor</b>: <a href="Patient-mom-second-contact.html">Patient/mom-second-contact: Charity Otala</a> &quot; OTALA&quot;</p><p><b>required</b>: required</p><p><b>status</b>: accepted</p></blockquote><blockquote><p><b>participant</b></p><p><b>type</b>: attender <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-v3-ParticipationType.html">ParticipationType</a>#ATND)</span></p><p><b>actor</b>: <a href="Practitioner-midwife-amina-second-contact.html">Practitioner/midwife-amina-second-contact: Amina Midwife</a> &quot; MIDWIFE&quot;</p><p><b>required</b>: required</p><p><b>status</b>: accepted</p></blockquote></div>
+  </text>
+  <status value="booked"/>
+  <!--  TODO: serviceCategory  -->
+  <serviceCategory>
+    <coding>
+      <system value="http://example.org/service-category"/>
+      <code value="gp"/>
+      <display value="General Practice"/>
+    </coding>
+  </serviceCategory>
+  <!--  TODO: serviceType  -->
+  <serviceType>
+    <coding>
+      <code value="52"/>
+      <display value="General Discussion"/>
+    </coding>
+  </serviceType>
+  <!--  TODO: specialty  -->
+  <appointmentType>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0276"/>
+      <code value="FOLLOWUP"/>
+      <display value="Unplanned Visit"/>
+    </coding>
+  </appointmentType>
+  <reasonReference>
+    <reference value="Condition/mom-pregnancy-second-contact"/>
+  </reasonReference>
+  <description value="Antenatal care second contact"/>
+  <start value="2019-07-26T15:00:00Z"/>
+  <minutesDuration value="30"/>
+  <created value="2019-06-24"/>
+  <participant>
+    <actor>
+      <reference value="Patient/mom-second-contact"/>
+      <display value="Charity Otala"/>
+    </actor>
+    <required value="required"/>
+    <status value="accepted"/>
+  </participant>
+  <participant>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+        <code value="ATND"/>
+      </coding>
+    </type>
+    <actor>
+      <reference value="Practitioner/midwife-amina-second-contact"/>
+      <display value="Amina Midwife"/>
+    </actor>
+    <required value="required"/>
+    <status value="accepted"/>
+  </participant>
+</Appointment>

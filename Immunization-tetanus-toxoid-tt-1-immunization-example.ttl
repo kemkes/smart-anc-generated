@@ -1,0 +1,75 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Immunization/tetanus-toxoid-tt-1-immunization-example> a fhir:Immunization;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "tetanus-toxoid-tt-1-immunization-example"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/tetanus-toxoid-tt-1-immunization";
+       fhir:index 0;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/tetanus-toxoid-tt-1-immunization>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Immunization</b><a name=\"tetanus-toxoid-tt-1-immunization-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Immunization &quot;tetanus-toxoid-tt-1-immunization-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-tetanus-toxoid-tt-1-immunization.html\">Tetanus toxoid (TT) 1 Immunization</a></p></div><p><b>identifier</b>: id: tetanus-toxoid-tt-1-immunization-example (use: OFFICIAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: Tetanus toxoid (TT) 1 immunization provided <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B10.DE165; <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html\">ICD-10</a>#Z23.5 &quot;Need for immunization against tetanus alone&quot;; mms#QC00.5 &quot;Need for immunization against tetanus alone&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#170330007 &quot;Administration of first dose of vaccine product containing only Clostridium tetani antigen (procedure)&quot;; ichi#DTB.DB.AE &quot;Percutaneous administration of immunological agent, not elsewhere classified&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>occurrence</b>: 2021-04-25 20:34:39-0600</p></div>"
+  ]; # 
+  fhir:Immunization.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "http://example.org/fhir/NamingSystem/identifiers" ];
+     fhir:Identifier.value [ fhir:value "tetanus-toxoid-tt-1-immunization-example" ]
+  ]; # 
+  fhir:Immunization.status [ fhir:value "completed"]; # 
+  fhir:Immunization.vaccineCode [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:Coding.code [ fhir:value "ANC.B10.DE165" ];
+       fhir:Coding.display [ fhir:value "Tetanus toxoid (TT) 1 immunization provided" ]
+     ], [
+       fhir:index 1;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ];
+       fhir:Coding.code [ fhir:value "Z23.5" ];
+       fhir:Coding.display [ fhir:value "Need for immunization against tetanus alone" ]
+     ], [
+       fhir:index 2;
+       fhir:Coding.system [ fhir:value "http://id.who.int/icd11/mms" ];
+       fhir:Coding.code [ fhir:value "QC00.5" ];
+       fhir:Coding.display [ fhir:value "Need for immunization against tetanus alone" ]
+     ], [
+       fhir:index 3;
+       a sct:170330007;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "170330007" ];
+       fhir:Coding.display [ fhir:value "Administration of first dose of vaccine product containing only Clostridium tetani antigen (procedure)" ]
+     ], [
+       fhir:index 4;
+       fhir:Coding.system [ fhir:value "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi" ];
+       fhir:Coding.code [ fhir:value "DTB.DB.AE" ];
+       fhir:Coding.display [ fhir:value "Percutaneous administration of immunological agent, not elsewhere classified" ]
+     ]
+  ]; # 
+  fhir:Immunization.patient [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Patient/anc-patient-example>;
+     fhir:Reference.reference [ fhir:value "Patient/anc-patient-example" ]
+  ]; # 
+  fhir:Immunization.encounter [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Encounter/anc-encounter-example>;
+     fhir:Reference.reference [ fhir:value "Encounter/anc-encounter-example" ]
+  ]; # 
+  fhir:Immunization.occurrenceDateTime [ fhir:value "2021-04-25T20:34:39-06:00"^^xsd:dateTime] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Immunization/tetanus-toxoid-tt-1-immunization-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

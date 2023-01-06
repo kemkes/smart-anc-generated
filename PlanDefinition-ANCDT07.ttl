@@ -1,0 +1,224 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT07> a fhir:PlanDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ANCDT07"]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <table class=\"grid dict\">\r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Id: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT07</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Url: </b></th>\r\n            <td style=\"padding-left: 4px;\"><a href=\"http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT07\">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT07</a></td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Version: </b></th>\r\n            <td style=\"padding-left: 4px;\">0.3.0</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Identifier: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                \r\n                <p style=\"margin-bottom: 5px;\">\r\n                    <b>value: </b> <span>ANC.DT.07</span>\r\n                </p>\r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Name: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANCDT07</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Title: </b></th>\r\n            <td style=\"padding-left: 4px;\">ANC.DT.07 Ultrasound recommendation</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Status: </b></th>\r\n            <td style=\"padding-left: 4px;\">active</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Experimental: </b></th>\r\n            <td style=\"padding-left: 4px;\">false</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Type: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                \r\n                    \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/CodeSystem/plan-definition-type\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\r\n                        </p>\r\n                        \r\n                        \r\n                        <p style=\"margin-bottom: 5px;\">\r\n                            <b>code: </b> <span>eca-rule</span>\r\n                        </p>\r\n                        \r\n                        \r\n                    \r\n                \r\n                \r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Date: </b></th>\r\n            <td style=\"padding-left: 4px;\">2021-06-11 23:02:59-0600</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Publisher: </b></th>\r\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Description: </b></th>\r\n            <td style=\"padding-left: 4px;\">An ultrasound is recommended for all pregnant women before 24 weeks of gestation (early ultrasound). If there's no ultrasound available at that health-carte facility, the woman should be referred to another facility in which she can receive an ultrasound.</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Use Context: </b></th>\r\n            <td style=\"padding-left: 4px;\">\r\n                <table class=\"grid-dict\">\r\n                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>\r\n                    \r\n                      <tr>\r\n                        <td>task</td>\r\n                        <td>During</td>\r\n                        <td>woman’s history/profile or lab and imaging tests</td>\r\n                      </tr>\r\n                    \r\n                </table>\r\n            </td>\r\n        </tr>\r\n        \r\n        \r\n        <tr>\r\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\r\n            <td style=\"padding-left: 4px;\">001</td>\r\n        </tr>\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Libraries: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr><td><a href=\"http://fhir.org/guides/who/anc-cds/Library/ANCDT07\">http://fhir.org/guides/who/anc-cds/Library/ANCDT07</a></td></tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n\r\n        \r\n        <tr>\r\n          <th scope=\"row\"><b>Actions: </b></th>\r\n          <td style=\"padding-left: 4px;\">\r\n            <table class=\"grid-dict\">\r\n              \r\n                <tr>\r\n                  <td>\r\n                    <b> ANC.DT.07 Ultrasound recommendation:</b> <br/>\r\n                    <b>When:</b> <i>named-event:</i> During woman’s history/profile or lab and imaging tests<br/>\r\n                    \r\n                    \r\n                      <b>Then:</b>\r\n                      <table class=\"grid-dict\">\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              An ultrasound is recommended for all women before 24 weeks gestation<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Gestational age&amp;quot; &amp;lt; 24 weeks <i>(Should Conduct ultrasound at the health-care facility or the referral facility)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              An ultrasound is recommended for all women even after 24 weeks gestation if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> &amp;quot;Gestational age&amp;quot; ≥ 24 weeks <i>(Should Conduct ultrasound at the health-care facility or the referral facility optional if deemed necessary by the health worker)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location). \nAn early ultrasound is key to estimate gestational age, improve detection of fetal anomalies and multiple fetuses, reduce induction of labour for post-term pregnancy, and improve a woman’s pregnancy experience.<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (&amp;quot;Ultrasound scan conducted&amp;quot; = FALSE)\n  AND (&amp;quot;Ultrasound available at the health-care facility&amp;quot; = TRUE)\n  AND (&amp;quot;Gestational age&amp;quot; &amp;lt; 24 weeks) <i>(Should Conduct ultrasound scan)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              If an ultrasound cannot be conducted at the health-care facility, the woman should be referred to another health-care facility in which she can receive an ultrasound. \nAn ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location). \nAn early U/S is key to estimate gestational age, improve detection of fetal anomalies and multiple fetuses, reduce induction of labour for post-term pregnancy, and improve a woman’s pregnancy experience.<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (&amp;quot;Ultrasound scan conducted&amp;quot; = FALSE)\n  AND (&amp;quot;Ultrasound available at the health-care facility&amp;quot; = FALSE)\n  AND (&amp;quot;Gestational age&amp;quot; &amp;lt; 24 weeks) <i>(Should Refer to a facility with ultrasound equipment)</i><br/>\r\n                              \r\n                                \r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (&amp;quot;Ultrasound scan conducted&amp;quot; = FALSE)\n  AND (&amp;quot;Ultrasound available at the health-care facility&amp;quot; = TRUE)\n  AND (&amp;quot;Gestational age&amp;quot; ≥ 24 weeks) <i>(Should Ultrasound scan is optional)</i><br/>\r\n                              \r\n                                <b>Then:</b>\r\n                                <table class=\"grid-dict\">\r\n                                  \r\n                                    <tr>\r\n                                      <td>\r\n                                        <b> Ultrasound scan is optional:</b> <br/>\r\n                                        \r\n                                        \r\n                                        \r\n                                          \r\n                                        \r\n                                      </td>\r\n                                    </tr>\r\n                                  \r\n                                    <tr>\r\n                                      <td>\r\n                                        <b> Conduct ultrasound if deemed necessary by the health worker:</b> <br/>\r\n                                        \r\n                                        \r\n                                        \r\n                                          \r\n                                        \r\n                                      </td>\r\n                                    </tr>\r\n                                  \r\n                                </table>\r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                          <tr>\r\n                            <td>\r\n                              An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)<br/>\r\n                              \r\n                              <b>If:</b> <i>applicability:</i> (&amp;quot;Ultrasound scan conducted&amp;quot; = FALSE)\n  AND (&amp;quot;Ultrasound available at the health-care facility&amp;quot; = FALSE)\n  AND (&amp;quot;Gestational age&amp;quot; ≥ 24 weeks) <i>(Should Ultrasound scan is optional 2)</i><br/>\r\n                              \r\n                                <b>Then:</b>\r\n                                <table class=\"grid-dict\">\r\n                                  \r\n                                    <tr>\r\n                                      <td>\r\n                                        <b> Ultrasound scan is optional:</b> <br/>\r\n                                        \r\n                                        \r\n                                        \r\n                                          \r\n                                        \r\n                                      </td>\r\n                                    </tr>\r\n                                  \r\n                                    <tr>\r\n                                      <td>\r\n                                        <b> Refer for ultrasound if deemed necessary by the health worker:</b> <br/>\r\n                                        \r\n                                        \r\n                                        \r\n                                          \r\n                                        \r\n                                      </td>\r\n                                    </tr>\r\n                                  \r\n                                </table>\r\n                              \r\n                            </td>\r\n                          </tr>\r\n                        \r\n                      </table>\r\n                    \r\n                  </td>\r\n                </tr>\r\n              \r\n            </table>\r\n          </td>\r\n        </tr>\r\n        \r\n    </table>\r\n</div>"
+  ]; # 
+  fhir:PlanDefinition.url [ fhir:value "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT07"]; # 
+  fhir:PlanDefinition.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.value [ fhir:value "ANC.DT.07" ]
+  ]; # 
+  fhir:PlanDefinition.version [ fhir:value "0.3.0"]; # 
+  fhir:PlanDefinition.name [ fhir:value "ANCDT07"]; # 
+  fhir:PlanDefinition.title [ fhir:value "ANC.DT.07 Ultrasound recommendation"]; # 
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ];
+       fhir:Coding.code [ fhir:value "eca-rule" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.status [ fhir:value "active"]; # 
+  fhir:PlanDefinition.experimental [ fhir:value "false"^^xsd:boolean]; # 
+  fhir:PlanDefinition.date [ fhir:value "2021-06-11T23:02:59-06:00"^^xsd:dateTime]; # 
+  fhir:PlanDefinition.publisher [ fhir:value "World Health Organization (WHO)"]; # 
+  fhir:PlanDefinition.contact [
+     fhir:index 0;
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.description [ fhir:value "An ultrasound is recommended for all pregnant women before 24 weeks of gestation (early ultrasound). If there's no ultrasound available at that health-carte facility, the woman should be referred to another facility in which she can receive an ultrasound."]; # 
+  fhir:PlanDefinition.useContext [
+     fhir:index 0;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ];
+       fhir:Coding.code [ fhir:value "task" ];
+       fhir:Coding.display [ fhir:value "Workflow Task" ]
+     ];
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes" ];
+         fhir:Coding.code [ fhir:value "During" ];
+         fhir:Coding.display [ fhir:value "woman’s history/profile or lab and imaging tests" ]
+       ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ]; # 
+  fhir:PlanDefinition.library [
+     fhir:value "http://fhir.org/guides/who/anc-cds/Library/ANCDT07";
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/who/anc-cds/Library/ANCDT07>
+  ]; # 
+  fhir:PlanDefinition.action [
+     fhir:index 0;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC.DT.07 Ultrasound recommendation" ];
+     fhir:PlanDefinition.action.trigger [
+       fhir:index 0;
+       fhir:TriggerDefinition.type [ fhir:value "named-event" ];
+       fhir:TriggerDefinition.name [ fhir:value "During woman’s history/profile or lab and imaging tests" ]
+     ];
+     fhir:PlanDefinition.action.action [
+       fhir:index 0;
+       fhir:Element.id [ fhir:value "1" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct ultrasound at the health-care facility or the referral facility" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct ultrasound at the health-care facility or the referral facility" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "An ultrasound is recommended for all women before 24 weeks gestation" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): B.2.4. Ultrasound scan (3)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Gestational age\" < 24 weeks" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct ultrasound at the health-care facility or the referral facility" ]
+         ]
+       ]
+     ], [
+       fhir:index 1;
+       fhir:Element.id [ fhir:value "2" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct ultrasound at the health-care facility or the referral facility optional if deemed necessary by the health worker" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct ultrasound at the health-care facility or the referral facility optional if deemed necessary by the health worker" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "An ultrasound is recommended for all women even after 24 weeks gestation if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): B.2.4. Ultrasound scan (3)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Gestational age\" ≥ 24 weeks" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct ultrasound at the health-care facility or the referral facility optional if deemed necessary by the health worker" ]
+         ]
+       ]
+     ], [
+       fhir:index 2;
+       fhir:Element.id [ fhir:value "3" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct ultrasound scan" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct ultrasound scan" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location). \nAn early ultrasound is key to estimate gestational age, improve detection of fetal anomalies and multiple fetuses, reduce induction of labour for post-term pregnancy, and improve a woman’s pregnancy experience." ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): B.2.4. Ultrasound scan (3)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = TRUE)\n  AND (\"Gestational age\" < 24 weeks)" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Conduct ultrasound scan" ]
+         ]
+       ]
+     ], [
+       fhir:index 3;
+       fhir:Element.id [ fhir:value "4" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Refer to a facility with ultrasound equipment" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Refer to a facility with ultrasound equipment" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "If an ultrasound cannot be conducted at the health-care facility, the woman should be referred to another health-care facility in which she can receive an ultrasound. \nAn ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location). \nAn early U/S is key to estimate gestational age, improve detection of fetal anomalies and multiple fetuses, reduce induction of labour for post-term pregnancy, and improve a woman’s pregnancy experience." ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): B.2.4. Ultrasound scan (3)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = FALSE)\n  AND (\"Gestational age\" < 24 weeks)" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Refer to a facility with ultrasound equipment" ]
+         ]
+       ]
+     ], [
+       fhir:index 4;
+       fhir:Element.id [ fhir:value "5" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Ultrasound scan is optional" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Ultrasound scan is optional" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations (2016): B.2.4. Ultrasound scan (3)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = TRUE)\n  AND (\"Gestational age\" ≥ 24 weeks)" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Ultrasound scan is optional" ]
+         ]
+       ];
+       fhir:PlanDefinition.action.action [
+         fhir:index 0;
+         fhir:PlanDefinition.action.title [ fhir:value "Ultrasound scan is optional" ]
+       ], [
+         fhir:index 1;
+         fhir:PlanDefinition.action.title [ fhir:value "Conduct ultrasound if deemed necessary by the health worker" ]
+       ]
+     ], [
+       fhir:index 5;
+       fhir:Element.id [ fhir:value "6" ];
+       fhir:PlanDefinition.action.title [ fhir:value "Ultrasound scan is optional" ];
+       fhir:PlanDefinition.action.description [ fhir:value "Ultrasound scan is optional 2" ];
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)" ];
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ];
+         fhir:RelatedArtifact.label [ fhir:value "WHO ANC recommendations: B.2.4. Ultrasound scan (3)" ]
+       ];
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ];
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = FALSE)\n  AND (\"Gestational age\" ≥ 24 weeks)" ];
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ];
+           fhir:Expression.expression [ fhir:value "Should Ultrasound scan is optional 2" ]
+         ]
+       ];
+       fhir:PlanDefinition.action.action [
+         fhir:index 0;
+         fhir:PlanDefinition.action.title [ fhir:value "Ultrasound scan is optional" ]
+       ], [
+         fhir:index 1;
+         fhir:PlanDefinition.action.title [ fhir:value "Refer for ultrasound if deemed necessary by the health worker" ]
+       ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT07.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

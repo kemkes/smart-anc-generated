@@ -1,0 +1,64 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+#  TODO: careManager 
+#  TODO: team 
+#  TODO: account 
+
+<http://fhir.org/guides/who/anc-cds/EpisodeOfCare/mom-pregnancy-episode-second-contact> a fhir:EpisodeOfCare;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "mom-pregnancy-episode-second-contact"]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: EpisodeOfCare</b><a name=\"mom-pregnancy-episode-second-contact\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource EpisodeOfCare &quot;mom-pregnancy-episode-second-contact&quot; </p></div><p><b>identifier</b>: id: 123</p><p><b>status</b>: active</p><p><b>type</b>: Home and Community Care <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-episodeofcare-type.html\">Episode of care type</a>#hacc)</span></p><h3>Diagnoses</h3><table class=\"grid\"><tr><td>-</td><td><b>Condition</b></td><td><b>Role</b></td><td><b>Rank</b></td></tr><tr><td>*</td><td><a href=\"Condition-mom-pregnancy-second-contact.html\">Condition/mom-pregnancy-second-contact</a></td><td>Chief complaint <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-diagnosis-role.html\">DiagnosisRole</a>#CC)</span></td><td>1</td></tr></table><p><b>patient</b>: <a href=\"Patient-mom-second-contact.html\">Patient/mom-second-contact</a> &quot; OTALA&quot;</p><p><b>period</b>: 2019-06-06 --&gt; (ongoing)</p></div>"
+  ]; # 
+  fhir:EpisodeOfCare.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://example.org/sampleepisodeofcare-identifier" ];
+     fhir:Identifier.value [ fhir:value "123" ]
+  ]; # 
+  fhir:EpisodeOfCare.status [ fhir:value "active"]; # 
+  fhir:EpisodeOfCare.type [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/episodeofcare-type" ];
+       fhir:Coding.code [ fhir:value "hacc" ];
+       fhir:Coding.display [ fhir:value "Home and Community Care" ]
+     ]
+  ]; # 
+  fhir:EpisodeOfCare.diagnosis [
+     fhir:index 0;
+     fhir:EpisodeOfCare.diagnosis.condition [
+       fhir:link <http://fhir.org/guides/who/anc-cds/Condition/mom-pregnancy-second-contact>;
+       fhir:Reference.reference [ fhir:value "Condition/mom-pregnancy-second-contact" ]
+     ];
+     fhir:EpisodeOfCare.diagnosis.role [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/diagnosis-role" ];
+         fhir:Coding.code [ fhir:value "CC" ];
+         fhir:Coding.display [ fhir:value "Chief complaint" ]
+       ]
+     ];
+     fhir:EpisodeOfCare.diagnosis.rank [ fhir:value "1"^^xsd:positiveInteger ]
+  ]; # 
+  fhir:EpisodeOfCare.patient [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Patient/mom-second-contact>;
+     fhir:Reference.reference [ fhir:value "Patient/mom-second-contact" ]
+  ]; # 
+  fhir:EpisodeOfCare.period [
+     fhir:Period.start [ fhir:value "2019-06-06"^^xsd:date ]
+  ] . #  TODO: managingOrganization 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/EpisodeOfCare/mom-pregnancy-episode-second-contact.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

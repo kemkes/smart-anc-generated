@@ -1,0 +1,59 @@
+{
+  "resourceType" : "Observation",
+  "id" : "anc-b8-de128-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de128"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"anc-b8-de128-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;anc-b8-de128-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b8-de128.html\">Has the woman  been subjected to intimate partner violence</a></p></div><p><b>identifier</b>: id: anc-b8-de128-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Has the woman  been subjected to intimate partner violence <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B8.DE128; <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html\">ICD-10</a>#Z81.8 &quot;Code titles: Family history of other mental and behavioural disorders&quot;; mms#QE51.1 &quot;History of spouse or partner violence&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#720407008 &quot;Mother victim of domestic violence (situation)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#95391-9 &quot;Has a partner threatened, shoved, hit or kicked you or hurt you physically in any way in the past 3 months caregiver [SEEK]&quot;; ichi#VBB.AA.ZZ &quot;Assessment of family and partner violence behaviours&quot;)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: false</p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-b8-de128-example"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B8.DE128",
+      "display" : "Has the woman  been subjected to intimate partner violence"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-10",
+      "code" : "Z81.8",
+      "display" : "Code titles: Family history of other mental and behavioural disorders"
+    },
+    {
+      "system" : "http://id.who.int/icd11/mms",
+      "code" : "QE51.1",
+      "display" : "History of spouse or partner violence"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "720407008",
+      "display" : "Mother victim of domestic violence (situation)"
+    },
+    {
+      "system" : "http://loinc.org",
+      "code" : "95391-9",
+      "display" : "Has a partner threatened, shoved, hit or kicked you or hurt you physically in any way in the past 3 months caregiver [SEEK]"
+    },
+    {
+      "system" : "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code" : "VBB.AA.ZZ",
+      "display" : "Assessment of family and partner violence behaviours"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "performer" : [{
+    "reference" : "PractitionerRole/anc-practitionerrole-example"
+  }],
+  "valueBoolean" : false
+}

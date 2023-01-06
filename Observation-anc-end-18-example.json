@@ -1,0 +1,65 @@
+{
+  "resourceType" : "Observation",
+  "id" : "anc-end-18-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-end-18"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"anc-end-18-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;anc-end-18-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-end-18.html\">Delivery mode</a></p></div><p><b>identifier</b>: id: anc-end-18-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Delivery mode <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.End.18)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: Normal <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.End.19; <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html\">ICD-10</a>#O80.9 &quot;Single spontaneous delivery, unspecified&quot;; mms#JB20.Z Single spontaneous delivery, unspecified &quot;JB20.Z Single spontaneous delivery, unspecified&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#48782003 &quot;Delivery normal (finding)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#57071-3 &quot;Obstetric delivery method&quot;; ichi#NME.AI.AH &quot;Monitoring of delivery&quot;)</span></p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-end-18-example"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.End.18",
+      "display" : "Delivery mode"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "performer" : [{
+    "reference" : "PractitionerRole/anc-practitionerrole-example"
+  }],
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.End.19",
+      "display" : "Normal"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-10",
+      "code" : "O80.9",
+      "display" : "Single spontaneous delivery, unspecified"
+    },
+    {
+      "system" : "http://id.who.int/icd11/mms",
+      "code" : "JB20.Z Single spontaneous delivery, unspecified",
+      "display" : "JB20.Z Single spontaneous delivery, unspecified"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "48782003",
+      "display" : "Delivery normal (finding)"
+    },
+    {
+      "system" : "http://loinc.org",
+      "code" : "57071-3",
+      "display" : "Obstetric delivery method"
+    },
+    {
+      "system" : "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code" : "NME.AI.AH",
+      "display" : "Monitoring of delivery"
+    }]
+  }
+}

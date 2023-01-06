@@ -1,0 +1,60 @@
+{
+  "resourceType" : "Observation",
+  "id" : "anc-end-40-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-end-40"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"anc-end-40-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;anc-end-40-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-end-40.html\">Cause of death</a></p></div><p><b>identifier</b>: id: anc-end-40-example (use: OFFICIAL)</p><p><b>status</b>: final</p><p><b>code</b>: Cause of death <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.End.40)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>performer</b>: <a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></p><p><b>value</b>: Unknown <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.End.41; <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html\">ICD-10</a>#O95 &quot;Obstetric death of unspecified cause&quot;; mms#JB60 &quot;Obstetric death of unspecified cause&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#87309006 &quot;Death of unknown cause (event)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#79378-6 &quot;Cause of death??Note: Multiple options?Note: Best fit&quot;)</span></p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-end-40-example"
+  }],
+  "status" : "final",
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.End.40",
+      "display" : "Cause of death"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "performer" : [{
+    "reference" : "PractitionerRole/anc-practitionerrole-example"
+  }],
+  "valueCodeableConcept" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.End.41",
+      "display" : "Unknown"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-10",
+      "code" : "O95",
+      "display" : "Obstetric death of unspecified cause"
+    },
+    {
+      "system" : "http://id.who.int/icd11/mms",
+      "code" : "JB60",
+      "display" : "Obstetric death of unspecified cause"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "87309006",
+      "display" : "Death of unknown cause (event)"
+    },
+    {
+      "system" : "http://loinc.org",
+      "code" : "79378-6",
+      "display" : "Cause of death??Note: Multiple options?Note: Best fit"
+    }]
+  }
+}

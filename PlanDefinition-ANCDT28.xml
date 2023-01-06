@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="ANCDT28"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">ANCDT28</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT28">http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT28</a></td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.3.0</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Identifier: </b></th>
+            <td style="padding-left: 4px;">
+                
+                
+                <p style="margin-bottom: 5px;">
+                    <b>value: </b> <span>ANC.DT.28</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Name: </b></th>
+            <td style="padding-left: 4px;">ANCDT28</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">ANC.DT.28 Gestational diabetes mellitus (GDM) risk counselling</td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Status: </b></th>
+            <td style="padding-left: 4px;">active</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Experimental: </b></th>
+            <td style="padding-left: 4px;">false</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/CodeSystem/plan-definition-type">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2021-06-11 23:42:28-0600</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">World Health Organization (WHO)</td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;">If the woman has risk factors for developing gestational diabetes mellitus (GDM), provide counselling to reduce risk of developing GDM</td>
+        </tr>
+        
+        
+        
+        
+        <tr>
+            <th scope="row"><b>Use Context: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    <tr><th><b>code</b></th><th><b>value</b></th><th><b>display</b></th></tr>
+                    
+                      <tr>
+                        <td>task</td>
+                        <td>ANC.B9.</td>
+                        <td>Conduct laboratory tests and imaging</td>
+                      </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">001</td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        <tr>
+          <th scope="row"><b>Libraries: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              
+                <tr><td><a href="http://fhir.org/guides/who/anc-cds/Library/ANCDT28">http://fhir.org/guides/who/anc-cds/Library/ANCDT28</a></td></tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+
+        
+        <tr>
+          <th scope="row"><b>Actions: </b></th>
+          <td style="padding-left: 4px;">
+            <table class="grid-dict">
+              
+                <tr>
+                  <td>
+                    <b> ANC.DT.28 Gestational diabetes mellitus (GDM) risk counselling:</b> <br/>
+                    <b>When:</b> <i>named-event:</i> ANC.B9. Conduct laboratory tests and imaging<br/>
+                    
+                    
+                      <b>Then:</b>
+                      <table class="grid-dict">
+                        
+                          <tr>
+                            <td>
+                              The woman is considered at risk for GDM if she has any of the following risk factors: 
+– BMI of 30 kg/m2 or more
+– Previous GDM
+– Previous macrosomia 
+– Glycosuria on dipstick testing is ++ or above on one occasion OR + on two or more occasions
+
+Please provide appropriate counseling for GDM risk mitigation, including: 
+– Reasserting dietary interventions
+– Reasserting physical activity during pregnancy<br/>
+                              
+                              <b>If:</b> <i>applicability:</i> (((((((&amp;quot;BMI&amp;quot; ≥ 30)
+  AND (&amp;quot;Gestational diabetes mellitus (GDM) diagnosis&amp;quot; = &amp;quot;GDM negative&amp;quot;)
+  AND (&amp;quot;Diabetes mellitus (DM) during pregnancy diagnosis&amp;quot; = &amp;quot;DM negative&amp;quot;))
+  OR ((&amp;quot;Past pregnancy complications&amp;quot; = &amp;quot;Gestational diabetes mellitus&amp;quot;)
+  AND (&amp;quot;Gestational diabetes mellitus (GDM) diagnosis&amp;quot; = &amp;quot;GDM negative&amp;quot;)
+  AND (&amp;quot;Diabetes mellitus (DM) during pregnancy diagnosis&amp;quot; = &amp;quot;DM negative&amp;quot;)))
+  OR ((&amp;quot;Past pregnancy complications&amp;quot; = &amp;quot;Macrosomia&amp;quot;)
+  AND (&amp;quot;Gestational diabetes mellitus (GDM) diagnosis&amp;quot; = &amp;quot;GDM negative&amp;quot;)
+  AND (&amp;quot;Diabetes mellitus (DM) during pregnancy diagnosis&amp;quot; = &amp;quot;DM negative&amp;quot;)))
+  OR ((&amp;quot;Urine dipstick result – glucose&amp;quot; = &amp;quot;++&amp;quot;)
+  AND (&amp;quot;Gestational diabetes mellitus (GDM) diagnosis&amp;quot; = &amp;quot;GDM negative&amp;quot;)
+  AND (&amp;quot;Diabetes mellitus (DM) during pregnancy diagnosis&amp;quot; = &amp;quot;DM negative&amp;quot;)))
+  OR ((&amp;quot;Urine dipstick result – glucose&amp;quot; = &amp;quot;+++&amp;quot;)
+  AND (&amp;quot;Gestational diabetes mellitus (GDM) diagnosis&amp;quot; = &amp;quot;GDM negative&amp;quot;)
+  AND (&amp;quot;Diabetes mellitus (DM) during pregnancy diagnosis&amp;quot; = &amp;quot;DM negative&amp;quot;)))
+  OR ((&amp;quot;Urine dipstick result – glucose&amp;quot; = &amp;quot;++++&amp;quot;)
+  AND (&amp;quot;Gestational diabetes mellitus (GDM) diagnosis&amp;quot; = &amp;quot;GDM negative&amp;quot;)
+  AND (&amp;quot;Diabetes mellitus (DM) during pregnancy diagnosis&amp;quot; = &amp;quot;DM negative&amp;quot;)))
+  OR ((&amp;quot;Urine dipstick result – glucose&amp;quot; = &amp;quot;+&amp;quot; ON MORE THAN ONE TEST ACROSS PREGNANCY)
+  AND (&amp;quot;Gestational diabetes mellitus (GDM) diagnosis&amp;quot; = &amp;quot;GDM negative&amp;quot;)
+  AND (&amp;quot;Diabetes mellitus (DM) during pregnancy diagnosis&amp;quot; = &amp;quot;DM negative&amp;quot;)) <i>(Should Provide counselling on gestational diabetes mellitus (GDM) risk)</i><br/>
+                              
+                                
+                              
+                            </td>
+                          </tr>
+                        
+                      </table>
+                    
+                  </td>
+                </tr>
+              
+            </table>
+          </td>
+        </tr>
+        
+    </table>
+</div>
+  </text>
+  <url value="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT28"/>
+  <identifier>
+    <use value="official"/>
+    <value value="ANC.DT.28"/>
+  </identifier>
+  <version value="0.3.0"/>
+  <name value="ANCDT28"/>
+  <title value="ANC.DT.28 Gestational diabetes mellitus (GDM) risk counselling"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2021-06-11T23:42:28-06:00"/>
+  <publisher value="World Health Organization (WHO)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.who.int"/>
+    </telecom>
+  </contact>
+  <description value="If the woman has risk factors for developing gestational diabetes mellitus (GDM), provide counselling to reduce risk of developing GDM"/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="task"/>
+      <display value="Workflow Task"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes"/>
+        <code value="ANC.B9."/>
+        <display value="Conduct laboratory tests and imaging"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <library value="http://fhir.org/guides/who/anc-cds/Library/ANCDT28"/>
+  <action>
+    <title value="ANC.DT.28 Gestational diabetes mellitus (GDM) risk counselling"/>
+    <trigger>
+      <type value="named-event"/>
+      <name value="ANC.B9. Conduct laboratory tests and imaging"/>
+    </trigger>
+    <action id="1">
+      <title value="Provide counselling on gestational diabetes mellitus (GDM) risk"/>
+      <description value="Provide counselling on gestational diabetes mellitus (GDM) risk"/>
+      <textEquivalent value="The woman is considered at risk for GDM if she has any of the following risk factors: &#xA;– BMI of 30 kg/m2 or more&#xA;– Previous GDM&#xA;– Previous macrosomia &#xA;– Glycosuria on dipstick testing is ++ or above on one occasion OR + on two or more occasions&#xA;&#xA;Please provide appropriate counseling for GDM risk mitigation, including: &#xA;– Reasserting dietary interventions&#xA;– Reasserting physical activity during pregnancy"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B.1.4 (2)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="(((((((&quot;BMI&quot; ≥ 30)&#xA;  AND (&quot;Gestational diabetes mellitus (GDM) diagnosis&quot; = &quot;GDM negative&quot;)&#xA;  AND (&quot;Diabetes mellitus (DM) during pregnancy diagnosis&quot; = &quot;DM negative&quot;))&#xA;  OR ((&quot;Past pregnancy complications&quot; = &quot;Gestational diabetes mellitus&quot;)&#xA;  AND (&quot;Gestational diabetes mellitus (GDM) diagnosis&quot; = &quot;GDM negative&quot;)&#xA;  AND (&quot;Diabetes mellitus (DM) during pregnancy diagnosis&quot; = &quot;DM negative&quot;)))&#xA;  OR ((&quot;Past pregnancy complications&quot; = &quot;Macrosomia&quot;)&#xA;  AND (&quot;Gestational diabetes mellitus (GDM) diagnosis&quot; = &quot;GDM negative&quot;)&#xA;  AND (&quot;Diabetes mellitus (DM) during pregnancy diagnosis&quot; = &quot;DM negative&quot;)))&#xA;  OR ((&quot;Urine dipstick result – glucose&quot; = &quot;++&quot;)&#xA;  AND (&quot;Gestational diabetes mellitus (GDM) diagnosis&quot; = &quot;GDM negative&quot;)&#xA;  AND (&quot;Diabetes mellitus (DM) during pregnancy diagnosis&quot; = &quot;DM negative&quot;)))&#xA;  OR ((&quot;Urine dipstick result – glucose&quot; = &quot;+++&quot;)&#xA;  AND (&quot;Gestational diabetes mellitus (GDM) diagnosis&quot; = &quot;GDM negative&quot;)&#xA;  AND (&quot;Diabetes mellitus (DM) during pregnancy diagnosis&quot; = &quot;DM negative&quot;)))&#xA;  OR ((&quot;Urine dipstick result – glucose&quot; = &quot;++++&quot;)&#xA;  AND (&quot;Gestational diabetes mellitus (GDM) diagnosis&quot; = &quot;GDM negative&quot;)&#xA;  AND (&quot;Diabetes mellitus (DM) during pregnancy diagnosis&quot; = &quot;DM negative&quot;)))&#xA;  OR ((&quot;Urine dipstick result – glucose&quot; = &quot;+&quot; ON MORE THAN ONE TEST ACROSS PREGNANCY)&#xA;  AND (&quot;Gestational diabetes mellitus (GDM) diagnosis&quot; = &quot;GDM negative&quot;)&#xA;  AND (&quot;Diabetes mellitus (DM) during pregnancy diagnosis&quot; = &quot;DM negative&quot;))"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Provide counselling on gestational diabetes mellitus (GDM) risk"/>
+        </expression>
+      </condition>
+    </action>
+  </action>
+</PlanDefinition>

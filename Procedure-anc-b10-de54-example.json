@@ -1,0 +1,70 @@
+{
+  "resourceType" : "Procedure",
+  "id" : "anc-b10-de54-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de54"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Procedure</b><a name=\"anc-b10-de54-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Procedure &quot;anc-b10-de54-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b10-de54.html\">Reason counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain was not conducted</a></p></div><p><b>identifier</b>: id: anc-b10-de54-example (use: OFFICIAL)</p><p><b>status</b>: completed</p><p><b>statusReason</b>: Client was referred <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B10.DE3; <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html\">ICD-10</a>#Z53.9 &quot;Procedure not carried out, unspecified reason&quot;; mms#QC1Z &quot;Intervention not carried out, unspecified reason&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#3457005 &quot;Patient referral (procedure)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#39269-6 &quot;Follow-up (referred to) provider /specialist, provider type [CPHS]&quot;; ichi#UEP.TI.ZZ &quot;Referral to health provider&quot;)</span></p><p><b>code</b>: Reason counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain was not conducted <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B10.DE54)</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><h3>Performers</h3><table class=\"grid\"><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><a href=\"PractitionerRole-anc-practitionerrole-example.html\">PractitionerRole/anc-practitionerrole-example</a></td></tr></table><p><b>location</b>: <a href=\"Location-anc-location-example.html\">Location/anc-location-example</a> &quot;123&quot;</p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "anc-b10-de54-example"
+  }],
+  "status" : "completed",
+  "statusReason" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B10.DE3",
+      "display" : "Client was referred"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-10",
+      "code" : "Z53.9",
+      "display" : "Procedure not carried out, unspecified reason"
+    },
+    {
+      "system" : "http://id.who.int/icd11/mms",
+      "code" : "QC1Z",
+      "display" : "Intervention not carried out, unspecified reason"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "3457005",
+      "display" : "Patient referral (procedure)"
+    },
+    {
+      "system" : "http://loinc.org",
+      "code" : "39269-6",
+      "display" : "Follow-up (referred to) provider /specialist, provider type [CPHS]"
+    },
+    {
+      "system" : "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code" : "UEP.TI.ZZ",
+      "display" : "Referral to health provider"
+    }]
+  },
+  "code" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B10.DE54",
+      "display" : "Reason counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain was not conducted"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "performer" : [{
+    "actor" : {
+      "reference" : "PractitionerRole/anc-practitionerrole-example"
+    }
+  }],
+  "location" : {
+    "reference" : "Location/anc-location-example"
+  }
+}

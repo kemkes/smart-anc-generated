@@ -1,0 +1,81 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Encounter/anc-encounter-example> a fhir:Encounter;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "anc-encounter-example"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter";
+       fhir:index 0;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter>
+     ], [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-base-encounter";
+       fhir:index 1;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-base-encounter>
+     ], [
+       fhir:value "http://fhir.org/guides/who/core/StructureDefinition/who-encounter";
+       fhir:index 2;
+       fhir:link <http://fhir.org/guides/who/core/StructureDefinition/who-encounter>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Encounter</b><a name=\"anc-encounter-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Encounter &quot;anc-encounter-example&quot; </p><p style=\"margin-bottom: 0px\">Profiles: <a href=\"StructureDefinition-anc-encounter.html\">ANC Encounter</a>, <a href=\"StructureDefinition-anc-base-encounter.html\">ANC Base Encounter</a>, <a href=\"StructureDefinition-who-encounter.html\">WHO Encounter</a></p></div><p><b>identifier</b>: id: anc-encounter-example (use: OFFICIAL)</p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>period</b>: 2020-12-07 06:24:03-0700 --&gt; 2021-09-07 14:24:12-0600</p><p><b>reasonCode</b>: Specific complaint related to antenatal care <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B5.DE4; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#118189007 &quot;Prenatal finding (finding)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#52454-6 &quot;Reason for assessment??Note: There are multiple codes in LOINC with same name ?57200-8 Reason for assessment [CMS Assessment] ?46502-1 Reason for assessment [OASIS]&quot;)</span></p><h3>Locations</h3><table class=\"grid\"><tr><td>-</td><td><b>Location</b></td></tr><tr><td>*</td><td><a href=\"Location-anc-location-example.html\">Location/anc-location-example</a> &quot;123&quot;</td></tr></table></div>"
+  ]; # 
+  fhir:Encounter.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.system [ fhir:value "http://example.org/fhir/NamingSystem/identifiers" ];
+     fhir:Identifier.value [ fhir:value "anc-encounter-example" ]
+  ]; # 
+  fhir:Encounter.subject [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Patient/anc-patient-example>;
+     fhir:Reference.reference [ fhir:value "Patient/anc-patient-example" ]
+  ]; # 
+  fhir:Encounter.period [
+     fhir:Period.start [ fhir:value "2020-12-07T06:24:03-07:00"^^xsd:dateTime ];
+     fhir:Period.end [ fhir:value "2021-09-07T14:24:12-06:00"^^xsd:dateTime ]
+  ]; # 
+  fhir:Encounter.reasonCode [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes" ];
+       fhir:Coding.code [ fhir:value "ANC.B5.DE4" ];
+       fhir:Coding.display [ fhir:value "Specific complaint related to antenatal care" ]
+     ], [
+       fhir:index 1;
+       a sct:118189007;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ];
+       fhir:Coding.code [ fhir:value "118189007" ];
+       fhir:Coding.display [ fhir:value "Prenatal finding (finding)" ]
+     ], [
+       fhir:index 2;
+       a loinc:52454-6;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "52454-6" ];
+       fhir:Coding.display [ fhir:value "Reason for assessment??Note: There are multiple codes in LOINC with same name ?57200-8 Reason for assessment [CMS Assessment] ?46502-1 Reason for assessment [OASIS]" ]
+     ]
+  ]; # 
+  fhir:Encounter.location [
+     fhir:index 0;
+     fhir:Encounter.location.location [
+       fhir:link <http://fhir.org/guides/who/anc-cds/Location/anc-location-example>;
+       fhir:Reference.reference [ fhir:value "Location/anc-location-example" ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Encounter/anc-encounter-example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

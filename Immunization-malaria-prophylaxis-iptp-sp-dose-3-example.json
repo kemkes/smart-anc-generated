@@ -1,0 +1,56 @@
+{
+  "resourceType" : "Immunization",
+  "id" : "malaria-prophylaxis-iptp-sp-dose-3-example",
+  "meta" : {
+    "profile" : ["http://fhir.org/guides/who/anc-cds/StructureDefinition/malaria-prophylaxis-iptp-sp-dose-3"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Immunization</b><a name=\"malaria-prophylaxis-iptp-sp-dose-3-example\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Immunization &quot;malaria-prophylaxis-iptp-sp-dose-3-example&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-malaria-prophylaxis-iptp-sp-dose-3.html\">Malaria Prophylaxis (IPTp-SP) Dose 3</a></p></div><p><b>identifier</b>: id: malaria-prophylaxis-iptp-sp-dose-3-example (use: OFFICIAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: IPTp-SP dose 3 provided <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-anc-custom-codes.html\">Extended Codes CodeSystem</a>#ANC.B10.DE249; <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd10.html\">ICD-10</a>#Z29.2 &quot;Other prophylactic chemotherapy&quot;; mms#QC05.Y Other specified prophylactic measures &quot;QC05.Y Other specified prophylactic measures&quot;; <a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#777371007 &quot;Product containing only pyrimethamine and sulfadoxine (medicinal product)&quot;; <a href=\"https://loinc.org/\">LOINC</a>#34484-6 &quot;Administered medication, time administration started&quot;; ichi#PZX.DB.AC &quot;Administering pharmacotherapy, per orifice&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-anc-patient-example.html\">Patient/anc-patient-example</a> &quot; UJM2JA8IGHP1A&quot;</p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter/anc-encounter-example</a></p><p><b>occurrence</b>: 2021-01-20 15:43:13-0700</p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://example.org/fhir/NamingSystem/identifiers",
+    "value" : "malaria-prophylaxis-iptp-sp-dose-3-example"
+  }],
+  "status" : "completed",
+  "vaccineCode" : {
+    "coding" : [{
+      "system" : "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code" : "ANC.B10.DE249",
+      "display" : "IPTp-SP dose 3 provided"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/icd-10",
+      "code" : "Z29.2",
+      "display" : "Other prophylactic chemotherapy"
+    },
+    {
+      "system" : "http://id.who.int/icd11/mms",
+      "code" : "QC05.Y Other specified prophylactic measures",
+      "display" : "QC05.Y Other specified prophylactic measures"
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "code" : "777371007",
+      "display" : "Product containing only pyrimethamine and sulfadoxine (medicinal product)"
+    },
+    {
+      "system" : "http://loinc.org",
+      "code" : "34484-6",
+      "display" : "Administered medication, time administration started"
+    },
+    {
+      "system" : "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code" : "PZX.DB.AC",
+      "display" : "Administering pharmacotherapy, per orifice"
+    }]
+  },
+  "patient" : {
+    "reference" : "Patient/anc-patient-example"
+  },
+  "encounter" : {
+    "reference" : "Encounter/anc-encounter-example"
+  },
+  "occurrenceDateTime" : "2021-01-20T15:43:13-07:00"
+}

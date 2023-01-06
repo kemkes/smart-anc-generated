@@ -1,0 +1,73 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Observation/charity-danger-signs-vaginal-bleeding> a fhir:Observation;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "charity-danger-signs-vaginal-bleeding"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b5-de4";
+       fhir:index 0;
+       fhir:link <http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b5-de4>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"charity-danger-signs-vaginal-bleeding\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;charity-danger-signs-vaginal-bleeding&quot; </p><p style=\"margin-bottom: 0px\">Profile: <code>http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b5-de4</code></p></div><p><b>status</b>: final</p><p><b>category</b>: exam <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (observation-category#exam)</span></p><p><b>code</b>: Danger Signs <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (anc-custom-codes#Danger signs)</span></p><p><b>subject</b>: <a href=\"Patient-mom-second-contact.html\">Patient/mom-second-contact: Charity Everywoman</a> &quot; OTALA&quot;</p><p><b>encounter</b>: <a href=\"Encounter/encounter-charity-second-contact\">Encounter/encounter-charity-second-contact</a></p><p><b>effective</b>: 2019-06-06 15:30:00+0000</p><p><b>issued</b>: Jun 6, 2019, 10:30:00 PM</p><p><b>performer</b>: <a href=\"Practitioner-midwife-amina-second-contact.html\">Practitioner/midwife-amina-second-contact: Amina Midwife</a> &quot; MIDWIFE&quot;</p><p><b>value</b>: Bleeding from vagina (finding) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (SNOMED CT#289530006)</span></p></div>"
+  ]; # 
+  fhir:Observation.status [ fhir:value "final"]; # 
+  fhir:Observation.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/observation-category" ];
+       fhir:Coding.code [ fhir:value "exam" ]
+     ]
+  ]; # 
+  fhir:Observation.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://fhir.org/guides/who/anc-cds/anc-custom-codes" ];
+       fhir:Coding.code [ fhir:value "Danger signs" ];
+       fhir:Coding.display [ fhir:value "Danger Signs" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Danger Signs" ]
+  ]; # 
+  fhir:Observation.subject [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Patient/mom-second-contact>;
+     fhir:Reference.reference [ fhir:value "Patient/mom-second-contact" ];
+     fhir:Reference.display [ fhir:value "Charity Everywoman" ]
+  ]; # 
+  fhir:Observation.encounter [
+     fhir:link <http://fhir.org/guides/who/anc-cds/Encounter/encounter-charity-second-contact>;
+     fhir:Reference.reference [ fhir:value "Encounter/encounter-charity-second-contact" ]
+  ]; # 
+  fhir:Observation.effectiveDateTime [ fhir:value "2019-06-06T15:30:00Z"^^xsd:dateTime]; # 
+  fhir:Observation.issued [ fhir:value "2019-06-06T15:30:00Z"^^xsd:dateTime]; # 
+  fhir:Observation.performer [
+     fhir:index 0;
+     fhir:link <http://fhir.org/guides/who/anc-cds/Practitioner/midwife-amina-second-contact>;
+     fhir:Reference.reference [ fhir:value "Practitioner/midwife-amina-second-contact" ];
+     fhir:Reference.display [ fhir:value "Amina Midwife" ]
+  ]; # 
+  fhir:Observation.valueCodeableConcept [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct " ];
+       fhir:Coding.code [ fhir:value "289530006" ];
+       fhir:Coding.display [ fhir:value "Bleeding from vagina (finding)" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Bleeding from vagina (finding)" ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<http://fhir.org/guides/who/anc-cds/Observation/charity-danger-signs-vaginal-bleeding.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
